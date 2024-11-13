@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
 public class ProyectoRepository : IRepository<Proyecto>
 {
     private readonly string _connectionString;
@@ -38,7 +37,7 @@ public class ProyectoRepository : IRepository<Proyecto>
                             Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
                             Ubicacion = reader.IsDBNull(4) ? null : reader.GetString(4),
                             FechaInicio = reader.GetDateTime(5),
-                            FechaFin = reader.IsDBNull(6) ? (DateTime?)null : reader.GetDateTime(6),
+                            FechaFin = reader.GetDateTime(6),
                             PresupuestoTotal = reader.GetDecimal(7),
                             Estado = reader.IsDBNull(8) ? null : reader.GetString(8),
                             TiempoTotalDias = reader.GetInt32(9)
@@ -77,7 +76,7 @@ public class ProyectoRepository : IRepository<Proyecto>
                             Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
                             Ubicacion = reader.IsDBNull(4) ? null : reader.GetString(4),
                             FechaInicio = reader.GetDateTime(5),
-                            FechaFin = reader.IsDBNull(6) ? (DateTime?)null : reader.GetDateTime(6),
+                            FechaFin = reader.GetDateTime(6),
                             PresupuestoTotal = reader.GetDecimal(7),
                             Estado = reader.IsDBNull(8) ? null : reader.GetString(8),
                             TiempoTotalDias = reader.GetInt32(9)
@@ -106,7 +105,7 @@ public class ProyectoRepository : IRepository<Proyecto>
                 command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Ubicacion", entity.Ubicacion ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
-                command.Parameters.AddWithValue("@FechaFin", entity.FechaFin ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaFin", entity.FechaFin);
                 command.Parameters.AddWithValue("@PresupuestoTotal", entity.PresupuestoTotal);
                 command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@TiempoTotalDias", entity.TiempoTotalDias);
@@ -134,7 +133,7 @@ public class ProyectoRepository : IRepository<Proyecto>
                 command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Ubicacion", entity.Ubicacion ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
-                command.Parameters.AddWithValue("@FechaFin", entity.FechaFin ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaFin", entity.FechaFin);
                 command.Parameters.AddWithValue("@PresupuestoTotal", entity.PresupuestoTotal);
                 command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@TiempoTotalDias", entity.TiempoTotalDias);

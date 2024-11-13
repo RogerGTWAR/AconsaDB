@@ -1,146 +1,173 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
 
-public class AvaluoDetalleRepository : IRepository<AvaluoDetalle>
+//Listo
+
+namespace Gestor_Api.Data
 {
-    private readonly string _connectionString;
-
-    public AvaluoDetalleRepository(string connectionString)
+    public class AvaluoDetalleRepository : IRepository<AvaluoDetalle>
     {
-        _connectionString = connectionString;
-    }
+        private readonly string _connectionString;
 
-    public async Task<IEnumerable<AvaluoDetalle>> GetAllAsync()
-    {
-        var detalles = new List<AvaluoDetalle>();
-
-        using (var connection = new SqlConnection(_connectionString))
+        public AvaluoDetalleRepository(string connectionString)
         {
-            string query = "SELECT * FROM [Avaluo Detalles]"; 
+            _connectionString = connectionString;
+        }
 
-            await connection.OpenAsync();
+        public async Task<IEnumerable<AvaluoDetalle>> GetAllAsync()
+        {
+            var detalles = new List<AvaluoDetalle>();
 
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                using (var reader = await command.ExecuteReaderAsync())
+                string query = "SELECT * FROM [Avaluo Detalles]";
+
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
                 {
-                    while (await reader.ReadAsync())
+                    using (var reader = await command.ExecuteReaderAsync())
                     {
-                        detalles.Add(new AvaluoDetalle
+                        while (await reader.ReadAsync())
                         {
-                            AvaluoDetalleID = reader.GetInt32(0),
-                            AvaluoID = reader.GetInt32(1),
-                            ProductoID = reader.GetInt32(2),
-                            Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
-                            Cantidad = reader.GetInt32(4),
-                            PrecioUnitario = reader.GetDecimal(5)
-                        });
+                            detalles.Add(new AvaluoDetalle
+                            {
+                                Avaluo_DetalleID = reader.GetInt32(0),
+                                AvaluoID = reader.GetInt32(1),
+                                ProductoID = reader.GetInt32(2),
+                                Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
+                                Cantidad = reader.GetInt32(4),
+                                PrecioUnitario = reader.GetDecimal(5)
+                            });
+                        }
                     }
                 }
             }
+
+            return detalles;
         }
 
-        return detalles;
-    }
-
-    public async Task<AvaluoDetalle> GetByIdAsync(int id)
-    {
-        AvaluoDetalle detalle = null;
-
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<AvaluoDetalle> GetByIdAsync(int id)
         {
-            string query = "SELECT * FROM [Avaluo Detalles] WHERE AvaluoDetalleID = @AvaluoDetalleID";
+            AvaluoDetalle detalle = null;
 
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                command.Parameters.AddWithValue("@AvaluoDetalleID", id);
+                string query = "SELECT * FROM [Avaluo Detalles] WHERE Avaluo_DetalleID = @Avaluo_DetalleID";
 
-                using (var reader = await command.ExecuteReaderAsync())
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
                 {
-                    if (await reader.ReadAsync())
+                    command.Parameters.Add(new SqlParameter("@Avaluo_DetalleID", SqlDbType.Int) { Value = id });
+
+                    using (var reader = await command.ExecuteReaderAsync())
                     {
-                        detalle = new AvaluoDetalle
+                        if (await reader.ReadAsync())
                         {
-                            AvaluoDetalleID = reader.GetInt32(0),
-                            AvaluoID = reader.GetInt32(1),
-                            ProductoID = reader.GetInt32(2),
-                            Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
-                            Cantidad = reader.GetInt32(4),
-                            PrecioUnitario = reader.GetDecimal(5)
-                        };
+                            detalle = new AvaluoDetalle
+                            {
+                                Avaluo_DetalleID = reader.GetInt32(0),
+                                AvaluoID = reader.GetInt32(1),
+                                ProductoID = reader.GetInt32(2),
+                                Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
+                                Cantidad = reader.GetInt32(4),
+                                PrecioUnitario = reader.GetDecimal(5)
+                            };
+                        }
                     }
                 }
             }
+
+            return detalle;
         }
 
-        return detalle;
-    }
-
-    public async Task<int> InsertAsync(AvaluoDetalle entity)
-    {
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> InsertAsync(AvaluoDetalle entity)
         {
-            string query = "INSERT INTO [Avaluo Detalles] (AvaluoID, ProductoID, Descripcion, Cantidad, PrecioUnitario) " +
-                           "VALUES (@AvaluoID, @ProductoID, @Descripcion, @Cantidad, @PrecioUnitario)";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@AvaluoID", entity.AvaluoID);
-                command.Parameters.AddWithValue("@ProductoID", entity.ProductoID);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Cantidad", entity.Cantidad);
-                command.Parameters.AddWithValue("@PrecioUnitario", entity.PrecioUnitario);
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    string query = "INSERT INTO [Avaluo Detalles] (AvaluoID, ProductoID, Descripcion, Cantidad, PrecioUnitario) " +
+                                   "VALUES (@AvaluoID, @ProductoID, @Descripcion, @Cantidad, @PrecioUnitario)";
 
-                return await command.ExecuteNonQueryAsync();
+                    await connection.OpenAsync();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@AvaluoID", SqlDbType.Int) { Value = entity.AvaluoID });
+                        command.Parameters.Add(new SqlParameter("@ProductoID", SqlDbType.Int) { Value = entity.ProductoID });
+                        command.Parameters.Add(new SqlParameter("@Descripcion", SqlDbType.NVarChar, 255) { Value = entity.Descripcion ?? (object)DBNull.Value });
+                        command.Parameters.Add(new SqlParameter("@Cantidad", SqlDbType.Int) { Value = entity.Cantidad });
+                        command.Parameters.Add(new SqlParameter("@PrecioUnitario", SqlDbType.Decimal) { Value = entity.PrecioUnitario });
+
+                        return await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al insertar el detalle de avalúo.", ex);
             }
         }
-    }
 
-    public async Task<int> UpdateAsync(AvaluoDetalle entity)
-    {
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> UpdateAsync(AvaluoDetalle entity)
         {
-            string query = "UPDATE [Avaluo Detalles] SET AvaluoID = @AvaluoID, ProductoID = @ProductoID, " +
-                           "Descripcion = @Descripcion, Cantidad = @Cantidad, PrecioUnitario = @PrecioUnitario " +
-                           "WHERE AvaluoDetalleID = @AvaluoDetalleID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@AvaluoDetalleID", entity.AvaluoDetalleID);
-                command.Parameters.AddWithValue("@AvaluoID", entity.AvaluoID);
-                command.Parameters.AddWithValue("@ProductoID", entity.ProductoID);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Cantidad", entity.Cantidad);
-                command.Parameters.AddWithValue("@PrecioUnitario", entity.PrecioUnitario);
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    string query = "UPDATE [Avaluo Detalles] SET AvaluoID = @AvaluoID, ProductoID = @ProductoID, " +
+                                   "Descripcion = @Descripcion, Cantidad = @Cantidad, PrecioUnitario = @PrecioUnitario " +
+                                   "WHERE Avaluo_DetalleID = @Avaluo_DetalleID";
 
-                return await command.ExecuteNonQueryAsync();
+                    await connection.OpenAsync();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@Avaluo_DetalleID", SqlDbType.Int) { Value = entity.Avaluo_DetalleID });
+                        command.Parameters.Add(new SqlParameter("@AvaluoID", SqlDbType.Int) { Value = entity.AvaluoID });
+                        command.Parameters.Add(new SqlParameter("@ProductoID", SqlDbType.Int) { Value = entity.ProductoID });
+                        command.Parameters.Add(new SqlParameter("@Descripcion", SqlDbType.NVarChar, 255) { Value = entity.Descripcion ?? (object)DBNull.Value });
+                        command.Parameters.Add(new SqlParameter("@Cantidad", SqlDbType.Int) { Value = entity.Cantidad });
+                        command.Parameters.Add(new SqlParameter("@PrecioUnitario", SqlDbType.Decimal) { Value = entity.PrecioUnitario });
+
+                        return await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception($"Error al actualizar el detalle de avalúo con ID {entity.Avaluo_DetalleID}: {ex.Message}", ex);
             }
         }
-    }
 
-    public async Task<int> DeleteAsync(int id)
-    {
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> DeleteAsync(int id)
         {
-            string query = "DELETE FROM [Avaluo Detalles] WHERE AvaluoDetalleID = @AvaluoDetalleID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@AvaluoDetalleID", id);
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    string query = "DELETE FROM [Avaluo Detalles] WHERE Avaluo_DetalleID = @Avaluo_DetalleID";
 
-                return await command.ExecuteNonQueryAsync();
+                    await connection.OpenAsync();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@Avaluo_DetalleID", SqlDbType.Int) { Value = id });
+
+                        return await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al eliminar el detalle de avalúo.", ex);
             }
         }
     }

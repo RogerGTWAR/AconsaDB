@@ -13,6 +13,6 @@ namespace SharedModels
         public string? UsuarioNombre { get; set; }
         public string? Contraseña { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public DateTime? FechaModificacion { get; set; }
+        public DateTime FechaModificacion { get; set; }
     }
 }

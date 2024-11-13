@@ -12,7 +12,7 @@ namespace SharedModels.Dto.MaquinariaDetalle
         public int MaquinariaID { get; set; }
         public int HorasUtilizadas { get; set; }
         public DateTime FechaInicioAsignacion { get; set; }
-        public DateTime? FechaFinAsignacion { get; set; }
+        public DateTime FechaFinAsignacion { get; set; }
     }
 
 }

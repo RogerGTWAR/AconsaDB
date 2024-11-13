@@ -2,10 +2,11 @@
 using System.Data;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System.Configuration;
 
 namespace Gestor_Api.Data
 {
-    public class Context : IDisposable
+    public class Context 
     {
         private readonly string _connectionString;
         private SqlConnection _connection;
@@ -28,7 +29,7 @@ namespace Gestor_Api.Data
                 await _connection.OpenAsync();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, _connection);
                 DataTable dataTable = new DataTable();
-                await Task.Run(() => dataAdapter.Fill(dataTable)); 
+                await Task.Run(() => dataAdapter.Fill(dataTable));
                 return dataTable;
             }
         }
@@ -47,6 +48,6 @@ namespace Gestor_Api.Data
         {
             _connection?.Dispose();
         }
-    
+
     }
 }

@@ -10,7 +10,7 @@ namespace SharedModels.Dto.Usuario
     {
         public int UsuarioID { get; set; }
         public int EmpleadoID { get; set; }
-        public string? Usuario { get; set; }
+        public string? UsuarioNombre { get; set; }
         public string? Contraseña { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaModificacion { get; set; }

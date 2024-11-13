@@ -6,7 +6,6 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-
 namespace Gestor_Api.IRepository.Repository
 {
     public class UsuarioRepository : IUsuario
@@ -42,7 +41,7 @@ namespace Gestor_Api.IRepository.Repository
                             UsuarioNombre = reader.IsDBNull(reader.GetOrdinal("UsuarioNombre")) ? null : reader.GetString(reader.GetOrdinal("UsuarioNombre")),
                             Contraseña = reader.IsDBNull(reader.GetOrdinal("Contraseña")) ? null : reader.GetString(reader.GetOrdinal("Contraseña")),
                             FechaCreacion = reader.GetDateTime(reader.GetOrdinal("FechaCreacion")),
-                            FechaModificacion = reader.IsDBNull(reader.GetOrdinal("FechaModificacion")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("FechaModificacion"))
+                            FechaModificacion = reader.GetDateTime(reader.GetOrdinal("FechaModificacion"))
                         };
                     }
                 }
@@ -73,7 +72,7 @@ namespace Gestor_Api.IRepository.Repository
                             UsuarioNombre = reader.IsDBNull(reader.GetOrdinal("UsuarioNombre")) ? null : reader.GetString(reader.GetOrdinal("UsuarioNombre")),
                             Contraseña = reader.IsDBNull(reader.GetOrdinal("Contraseña")) ? null : reader.GetString(reader.GetOrdinal("Contraseña")),
                             FechaCreacion = reader.GetDateTime(reader.GetOrdinal("FechaCreacion")),
-                            FechaModificacion = reader.IsDBNull(reader.GetOrdinal("FechaModificacion")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("FechaModificacion"))
+                            FechaModificacion = reader.GetDateTime(reader.GetOrdinal("FechaModificacion"))
                         };
                     }
                 }
@@ -95,7 +94,7 @@ namespace Gestor_Api.IRepository.Repository
                 command.Parameters.AddWithValue("@UsuarioNombre", user.UsuarioNombre ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Contraseña", hashedPassword);
                 command.Parameters.AddWithValue("@FechaCreacion", user.FechaCreacion);
-                command.Parameters.AddWithValue("@FechaModificacion", user.FechaModificacion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaModificacion", user.FechaModificacion);
 
                 await connection.OpenAsync();
                 await command.ExecuteNonQueryAsync();

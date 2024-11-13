@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
 public class ProductoRepository : IRepository<Producto>
 {
     private readonly string _connectionString;
@@ -34,8 +33,8 @@ public class ProductoRepository : IRepository<Producto>
                         {
                             ProductoID = reader.GetInt32(0),
                             NombreProducto = reader.GetString(1),
-                            ProveedorID = reader.IsDBNull(2) ? (int?)null : reader.GetInt32(2),
-                            CategoriaID = reader.IsDBNull(3) ? (int?)null : reader.GetInt32(3),
+                            ProveedorID = reader.GetInt32(2),
+                            CategoriaID = reader.GetInt32(3),
                             Descripcion = reader.IsDBNull(4) ? null : reader.GetString(4),
                             UnidadDeMedida = reader.IsDBNull(5) ? null : reader.GetString(5),
                             CantidadEnStock = reader.GetInt32(6),
@@ -71,8 +70,8 @@ public class ProductoRepository : IRepository<Producto>
                         {
                             ProductoID = reader.GetInt32(0),
                             NombreProducto = reader.GetString(1),
-                            ProveedorID = reader.IsDBNull(2) ? (int?)null : reader.GetInt32(2),
-                            CategoriaID = reader.IsDBNull(3) ? (int?)null : reader.GetInt32(3),
+                            ProveedorID = reader.GetInt32(2),
+                            CategoriaID = reader.GetInt32(3),
                             Descripcion = reader.IsDBNull(4) ? null : reader.GetString(4),
                             UnidadDeMedida = reader.IsDBNull(5) ? null : reader.GetString(5),
                             CantidadEnStock = reader.GetInt32(6),
@@ -98,8 +97,8 @@ public class ProductoRepository : IRepository<Producto>
             using (var command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@NombreProducto", entity.NombreProducto);
-                command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@CategoriaID", entity.CategoriaID ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID);
+                command.Parameters.AddWithValue("@CategoriaID", entity.CategoriaID);
                 command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@UnidadDeMedida", entity.UnidadDeMedida ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@CantidadEnStock", entity.CantidadEnStock);
@@ -124,8 +123,8 @@ public class ProductoRepository : IRepository<Producto>
             {
                 command.Parameters.AddWithValue("@ProductoID", entity.ProductoID);
                 command.Parameters.AddWithValue("@NombreProducto", entity.NombreProducto);
-                command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@CategoriaID", entity.CategoriaID ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID);
+                command.Parameters.AddWithValue("@CategoriaID", entity.CategoriaID);
                 command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@UnidadDeMedida", entity.UnidadDeMedida ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@CantidadEnStock", entity.CantidadEnStock);

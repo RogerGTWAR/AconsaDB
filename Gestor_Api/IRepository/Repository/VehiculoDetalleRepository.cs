@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
 public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
 {
     private readonly string _connectionString;
@@ -36,7 +35,7 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
                             EmpleadoID = reader.GetInt32(1),
                             VehiculoID = reader.GetInt32(2),
                             FechaAsignacion = reader.GetDateTime(3),
-                            FechaFinAsignacion = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime(4),
+                            FechaFinAsignacion = reader.GetDateTime(4),
                             Descripcion = reader.IsDBNull(5) ? null : reader.GetString(5)
                         });
                     }
@@ -71,7 +70,7 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
                             EmpleadoID = reader.GetInt32(1),
                             VehiculoID = reader.GetInt32(2),
                             FechaAsignacion = reader.GetDateTime(3),
-                            FechaFinAsignacion = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime(4),
+                            FechaFinAsignacion = reader.GetDateTime(4),
                             Descripcion = reader.IsDBNull(5) ? null : reader.GetString(5)
                         };
                     }
@@ -96,7 +95,7 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
                 command.Parameters.AddWithValue("@EmpleadoID", entity.EmpleadoID);
                 command.Parameters.AddWithValue("@VehiculoID", entity.VehiculoID);
                 command.Parameters.AddWithValue("@FechaAsignacion", entity.FechaAsignacion);
-                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion);
                 command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
 
                 return await command.ExecuteNonQueryAsync();
@@ -119,7 +118,7 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
                 command.Parameters.AddWithValue("@EmpleadoID", entity.EmpleadoID);
                 command.Parameters.AddWithValue("@VehiculoID", entity.VehiculoID);
                 command.Parameters.AddWithValue("@FechaAsignacion", entity.FechaAsignacion);
-                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion);
                 command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
 
                 return await command.ExecuteNonQueryAsync();

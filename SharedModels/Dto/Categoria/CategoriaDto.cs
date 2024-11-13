@@ -9,8 +9,8 @@ namespace SharedModels.Dto.Categoria
     public class CategoriaDto
     {
         public int CategoriaID { get; set; }
-        public string? NombreCategoria { get; set; }
-        public string? Descripcion { get; set; }
+        public string NombreCategoria { get; set; }
+        public string Descripcion { get; set; }
     }
 
 }

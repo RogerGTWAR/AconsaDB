@@ -8,8 +8,8 @@ namespace SharedModels.Dto.Categoria
 {
     public class CategoriaCreateDto
     {
-        public string? NombreCategoria { get; set; }
-        public string? Descripcion { get; set; }
+        public string NombreCategoria { get; set; }
+        public string Descripcion { get; set; }
     }
 
 }

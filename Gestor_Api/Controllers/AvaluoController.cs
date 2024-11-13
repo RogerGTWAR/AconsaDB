@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using SharedModels.Dto.Avaluo;
 using SharedModels;
 using AutoMapper;
+using Gestor_Api.Fliters;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.Data.SqlClient;
 
 namespace Gestor_Api.Controllers
 {
@@ -12,42 +15,32 @@ namespace Gestor_Api.Controllers
     public class AvaluoController : ControllerBase
     {
         private readonly IRepository<Avaluo> _repository;
-        private readonly ILogger<AvaluoController> _logger;
         private readonly IMapper _mapper;
+        private readonly ILogger<AvaluoController> _logger;
 
-        public AvaluoController(IRepository<Avaluo> repository, ILogger<AvaluoController> logger, IMapper mapper)
+        public AvaluoController(ILogger<AvaluoController> logger, IMapper mapper, IRepository<Avaluo> repository)
         {
-            _repository = repository;
             _logger = logger;
+            _mapper = mapper;
+            _repository = repository;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllAvaluos()
         {
+            _logger.LogInformation("Fetching all Avaluos from database.");
             try
             {
-                _logger.LogInformation("Obteniendo todos los avalúos");
                 var avaluos = await _repository.GetAllAsync();
-
-                var avaluosDtos = avaluos.Select(avaluo => new AvaluoDto
-                {
-                    AvaluoID = avaluo.AvaluoID,
-                    ProyectoID = avaluo.ProyectoID,
-                    Descripcion = avaluo.Descripcion,
-                    MontoEjecutado = avaluo.MontoEjecutado,
-                    FechaInicio = avaluo.FechaInicio,
-                    FechaFin = avaluo.FechaFin,
-                    TiempoTotalDias = avaluo.TiempoTotalDias
-                });
-
-                return Ok(avaluosDtos);
+                var avaluoDtos = _mapper.Map<IEnumerable<AvaluoDto>>(avaluos);
+                return Ok(avaluoDtos);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                _logger.LogError($"Error al obtener avalúos: {ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error al obtener los avalúos");
+                _logger.LogError(ex, "Error while fetching Avaluos");
+                return StatusCode(500, "Internal server error");
             }
         }
 
@@ -55,75 +48,26 @@ namespace Gestor_Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetAvaluoById(int id)
         {
+            _logger.LogInformation($"Fetching Avaluo with ID {id} from database.");
             try
             {
-                _logger.LogInformation($"Obteniendo avalúo con ID {id}");
                 var avaluo = await _repository.GetByIdAsync(id);
-
                 if (avaluo == null)
                 {
-                    return NotFound("Avalúo no encontrado");
+                    return NotFound();
                 }
-
-                var avaluoDto = new AvaluoDto
-                {
-                    AvaluoID = avaluo.AvaluoID,
-                    ProyectoID = avaluo.ProyectoID,
-                    Descripcion = avaluo.Descripcion,
-                    MontoEjecutado = avaluo.MontoEjecutado,
-                    FechaInicio = avaluo.FechaInicio,
-                    FechaFin = avaluo.FechaFin,
-                    TiempoTotalDias = avaluo.TiempoTotalDias
-                };
-
+                var avaluoDto = _mapper.Map<AvaluoDto>(avaluo);
                 return Ok(avaluoDto);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                _logger.LogError($"Error al obtener avalúo con ID {id}: {ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error al obtener el avalúo");
+                _logger.LogError(ex, "Error while fetching Avaluo by ID");
+                return StatusCode(500, "Internal server error");
             }
         }
 
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Create([FromBody] AvaluoCreateDto avaluoDto)
-        {
-            if (avaluoDto == null || !ModelState.IsValid)
-            {
-                return BadRequest("Los datos del avalúo son inválidos");
-            }
-
-            try
-            {
-                var avaluo = new Avaluo
-                {
-                    ProyectoID = avaluoDto.ProyectoID,
-                    Descripcion = avaluoDto.Descripcion,
-                    MontoEjecutado = avaluoDto.MontoEjecutado,
-                    FechaInicio = avaluoDto.FechaInicio,
-                    FechaFin = avaluoDto.FechaFin,
-                    TiempoTotalDias = avaluoDto.TiempoTotalDias
-                };
-
-                var createdAvaluoId = await _repository.InsertAsync(avaluo);
-                if (createdAvaluoId > 0)
-                {
-                    return CreatedAtAction(nameof(GetById), new { id = createdAvaluoId }, avaluo);
-                }
-
-                return BadRequest("No se pudo crear el avalúo");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error al crear avalúo: {ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error al crear el avalúo");
-            }
-        }
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -138,31 +82,14 @@ namespace Gestor_Api.Controllers
 
             try
             {
-                _logger.LogInformation($"Creando un nuevo avaluo para el proyecto ID: {createDto.ProyectoID}");
+                _logger.LogInformation($"Creando un nuevo avaluo con descripción: {createDto.ProyectoID}");
 
-                // Verificar si ya existe un avaluo para el proyecto
-                var existingAvaluo = await _repository.GetAsync(a => a.ProyectoID == createDto.ProyectoID && a.FechaFin >= DateTime.Now);
+                var newIngreso = _mapper.Map<Avaluo>(createDto);
 
-                if (existingAvaluo != null)
-                {
-                    _logger.LogWarning($"Ya existe un avaluo para el proyecto ID '{createDto.ProyectoID}' que aún está activo.");
-                    ModelState.AddModelError("AvaluoExiste", "¡Ya existe un avaluo activo para este proyecto!");
-                    return BadRequest(ModelState);
-                }
+                await _repository.InsertAsync(newIngreso);
 
-                if (!ModelState.IsValid)
-                {
-                    _logger.LogError("El modelo de avaluo no es válido.");
-                    return BadRequest(ModelState);
-                }
-
-                var newAvaluo = _logger.Mapper<Avaluo>(createDto);
-
-                // Guardar el nuevo avaluo en la base de datos
-                await _repository.InsertAsync(newAvaluo);
-
-                _logger.LogInformation($"Nuevo avaluo creado para el proyecto ID: {createDto.ProyectoID} con ID: {newAvaluo.AvaluoID}");
-                return CreatedAtAction(nameof(GetAvaluo), new { id = newAvaluo.AvaluoID }, newAvaluo);
+                _logger.LogInformation($"Nuevo avaluo '{createDto.ProyectoID}' creado con ID: {newIngreso.ProyectoID}");
+                return CreatedAtAction(nameof(GetAllAvaluos), new { id = newIngreso.ProyectoID }, _mapper.Map<AvaluoDto>(newIngreso));
             }
             catch (Exception ex)
             {
@@ -177,44 +104,37 @@ namespace Gestor_Api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Update(int id, [FromBody] AvaluoUpdateDto avaluoDto)
+        public async Task<IActionResult> PutAvaluo(int id, AvaluoUpdateDto updateDto)
         {
-            if (avaluoDto == null || id != avaluoDto.AvaluoID || !ModelState.IsValid)
+            if (updateDto == null || id != updateDto.AvaluoID)
             {
-                return BadRequest("Los datos del avalúo son inválidos o el ID no coincide");
+                return BadRequest("Los datos de entrada no son válidos o el ID del Avaluo no coincide.");
             }
 
             try
             {
-                _logger.LogInformation($"Actualizando avalúo con ID {id}");
+                _logger.LogInformation($"Actualizando Avaluo con ID: {id}");
+                var avaluoToUpdate = _mapper.Map<Avaluo>(updateDto);
+                var rowsAffected = await _repository.UpdateAsync(avaluoToUpdate);
 
-                var existingAvaluo = await _repository.GetByIdAsync(id);
-                if (existingAvaluo == null)
+                if (rowsAffected == 0)
                 {
-                    _logger.LogWarning($"Avalúo con ID {id} no encontrado.");
-                    return NotFound("Avalúo no encontrado.");
+                    _logger.LogWarning($"El Avaluo con ID {id} no fue encontrado o no se pudo actualizar.");
+                    return NotFound("El Avaluo no existe.");
                 }
 
-                existingAvaluo.ProyectoID = avaluoDto.ProyectoID;
-                existingAvaluo.Descripcion = avaluoDto.Descripcion;
-                existingAvaluo.MontoEjecutado = avaluoDto.MontoEjecutado;
-                existingAvaluo.FechaInicio = avaluoDto.FechaInicio;
-                existingAvaluo.FechaFin = avaluoDto.FechaFin;
-                existingAvaluo.TiempoTotalDias = avaluoDto.TiempoTotalDias;
-
-                var updated = await _repository.UpdateAsync(existingAvaluo);
-                if (updated > 0)
-                {
-                    _logger.LogInformation($"Avalúo con ID {id} actualizado correctamente.");
-                    return NoContent();
-                }
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "No se pudo actualizar el avalúo.");
+                _logger.LogInformation($"Avaluo con ID {id} actualizado correctamente.");
+                return NoContent();
+            }
+            catch (SqlException ex)
+            {
+                _logger.LogError($"Error al actualizar el Avaluo con ID {id}: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error interno del servidor al actualizar el Avaluo.");
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Error al actualizar avalúo: {ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error al actualizar el avalúo");
+                _logger.LogError($"Error inesperado al actualizar el Avaluo con ID {id}: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error interno del servidor.");
             }
         }
 
@@ -222,23 +142,23 @@ namespace Gestor_Api.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteAvaluo(int id)
         {
+            _logger.LogInformation($"Deleting Avaluo with ID {id}.");
             try
             {
-                _logger.LogInformation($"Eliminando avalúo con ID {id}");
-                var deleted = await _repository.DeleteAsync(id);
-                if (deleted > 0)
+                var result = await _repository.DeleteAsync(id);
+                if (result == 0)
                 {
-                    return NoContent();
+                    return NotFound();
                 }
 
-                return NotFound("Avalúo no encontrado");
+                return NoContent();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                _logger.LogError($"Error al eliminar avalúo con ID {id}: {ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error al eliminar el avalúo");
+                _logger.LogError(ex, "Error while deleting Avaluo");
+                return StatusCode(500, "Internal server error");
             }
         }
     }

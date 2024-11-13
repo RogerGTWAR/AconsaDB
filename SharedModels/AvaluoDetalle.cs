@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Listo
 namespace SharedModels
 {
     public class AvaluoDetalle
     {
-        public int AvaluoDetalleID { get; set; }
+        public int Avaluo_DetalleID { get; set; }
         public int AvaluoID { get; set; }
         public int ProductoID { get; set; }
         public string? Descripcion { get; set; }

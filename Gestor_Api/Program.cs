@@ -1,9 +1,11 @@
+using Gestor_Api;
 using Gestor_Api.Data;
 using Gestor_Api.IRepository;
 using Gestor_Api.IRepository.Repository;
 using Gestor_Api.Repository.IRepository;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -17,18 +19,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 //Conexion
-builder.Services.AddSingleton<Context>();
-//builder.Services.AddControllers().AddNewtonsoftJson();
-string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
 // Registrar Contexto y repositorios
-builder.Services.AddSingleton<Context>(sp => new Context(connectionString));
-
-// Registrar los repositorios e inyectar la cadena de conexión
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddScoped<IRepository<Avaluo>>(sp => new AvaluoRepository(connectionString));
 builder.Services.AddScoped<IRepository<AvaluoDetalle>>(sp => new AvaluoDetalleRepository(connectionString));
 builder.Services.AddScoped<IRepository<Categoria>>(sp => new CategoriaRepository(connectionString));
-builder.Services.AddScoped<IRepository<Cliente>>(sp => new ClienteRepository(connectionString));
+builder.Services.AddScoped<IClienteRepository<Cliente>>(sp => new ClienteRepository(connectionString));
+
+// Registrar los repositorios e inyectar la cadena de conexión
+
+
+//Faltan
 builder.Services.AddScoped<IRepository<Empleado>>(sp => new EmpleadoRepository(connectionString));
 builder.Services.AddScoped<IRepository<EmpleadoDetalle>>(sp => new EmpleadoDetalleRepository(connectionString));
 builder.Services.AddScoped<IRepository<Maquinaria>>(sp => new MaquinariaRepository(connectionString));
@@ -41,9 +42,15 @@ builder.Services.AddScoped<IRepository<VehiculoDetalle>>(sp => new VehiculoDetal
 builder.Services.AddScoped<IUsuario, UsuarioRepository>();
 builder.Services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
 
+
+
+
 // Configuración de AutoMapper
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(typeof(MappingConfig));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

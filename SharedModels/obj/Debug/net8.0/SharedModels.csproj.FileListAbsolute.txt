@@ -9,3 +9,4 @@ C:\Users\rpere\OneDrive\Desktop\AconsaDB\SharedModels\obj\Debug\net8.0\SharedMod
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\SharedModels\obj\Debug\net8.0\refint\SharedModels.dll
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.pdb
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\SharedModels\obj\Debug\net8.0\ref\SharedModels.dll
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.sourcelink.json

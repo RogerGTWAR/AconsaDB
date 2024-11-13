@@ -10,8 +10,8 @@ namespace SharedModels
     {
         public int ProductoID { get; set; }
         public string? NombreProducto { get; set; }
-        public int? ProveedorID { get; set; }
-        public int? CategoriaID { get; set; }
+        public int ProveedorID { get; set; }
+        public int CategoriaID { get; set; }
         public string? Descripcion { get; set; }
         public string? UnidadDeMedida { get; set; }
         public int CantidadEnStock { get; set; }

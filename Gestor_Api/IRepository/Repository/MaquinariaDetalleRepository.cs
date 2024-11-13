@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
 public class MaquinariaDetalleRepository : IRepository<MaquinariaDetalle>
 {
     private readonly string _connectionString;
@@ -37,7 +36,7 @@ public class MaquinariaDetalleRepository : IRepository<MaquinariaDetalle>
                             MaquinariaID = reader.GetInt32(2),
                             HorasUtilizadas = reader.GetInt32(3),
                             FechaInicioAsignacion = reader.GetDateTime(4),
-                            FechaFinAsignacion = reader.IsDBNull(5) ? (DateTime?)null : reader.GetDateTime(5)
+                            FechaFinAsignacion = reader.GetDateTime(5)
                         });
                     }
                 }
@@ -71,7 +70,7 @@ public class MaquinariaDetalleRepository : IRepository<MaquinariaDetalle>
                             MaquinariaID = reader.GetInt32(2),
                             HorasUtilizadas = reader.GetInt32(3),
                             FechaInicioAsignacion = reader.GetDateTime(4),
-                            FechaFinAsignacion = reader.IsDBNull(5) ? (DateTime?)null : reader.GetDateTime(5)
+                            FechaFinAsignacion = reader.GetDateTime(5)
                         };
                     }
                 }
@@ -95,7 +94,7 @@ public class MaquinariaDetalleRepository : IRepository<MaquinariaDetalle>
                 command.Parameters.AddWithValue("@MaquinariaID", entity.MaquinariaID);
                 command.Parameters.AddWithValue("@HorasUtilizadas", entity.HorasUtilizadas);
                 command.Parameters.AddWithValue("@FechaInicioAsignacion", entity.FechaInicioAsignacion);
-                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion );
 
                 return await command.ExecuteNonQueryAsync();
             }
@@ -117,7 +116,7 @@ public class MaquinariaDetalleRepository : IRepository<MaquinariaDetalle>
                 command.Parameters.AddWithValue("@MaquinariaID", entity.MaquinariaID);
                 command.Parameters.AddWithValue("@HorasUtilizadas", entity.HorasUtilizadas);
                 command.Parameters.AddWithValue("@FechaInicioAsignacion", entity.FechaInicioAsignacion);
-                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion);
 
                 return await command.ExecuteNonQueryAsync();
             }
@@ -138,5 +137,10 @@ public class MaquinariaDetalleRepository : IRepository<MaquinariaDetalle>
                 return await command.ExecuteNonQueryAsync();
             }
         }
+    }
+
+    public Task SaveChangesAsync()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -13,9 +13,10 @@ namespace SharedModels.Dto.Proyecto
         public string? Descripcion { get; set; }
         public string? Ubicacion { get; set; }
         public DateTime FechaInicio { get; set; }
-        public DateTime? FechaFin { get; set; }
+        public DateTime FechaFin { get; set; }
         public decimal PresupuestoTotal { get; set; }
-        public string?   Estado { get; set; }
+        public string? Estado { get; set; }
+        public int TiempoTotalDias { get; set; }
     }
 
 }

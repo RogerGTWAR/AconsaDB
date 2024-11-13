@@ -8,8 +8,8 @@ namespace SharedModels
 {
     public class Cliente
     {
-        public string? ClienteID { get; set; }
-        public string? NombreEmpresa { get; set; }
+        public required string ClienteID { get; set; }
+        public required string NombreEmpresa { get; set; }
         public string? NombreContacto { get; set; }
         public string? CargoContacto { get; set; }
         public string? Direccion { get; set; }

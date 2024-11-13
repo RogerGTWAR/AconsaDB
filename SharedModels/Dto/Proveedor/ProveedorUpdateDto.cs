@@ -8,7 +8,7 @@ namespace SharedModels.Dto.Proveedor
 {
     public class ProveedorUpdateDto
     {
-        public int ProveedorID { get; set; } 
+        public int ProveedorID { get; set; }
         public string? NombreEmpresa { get; set; }
         public string? NombreContacto { get; set; }
         public string? CargoContacto { get; set; }

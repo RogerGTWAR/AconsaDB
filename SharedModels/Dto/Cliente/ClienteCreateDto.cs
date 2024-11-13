@@ -8,7 +8,7 @@ namespace SharedModels.Dto.Cliente
 {
     public class ClienteCreateDto
     {
-        public string? NombreEmpresa { get; set; }
+        public required string NombreEmpresa { get; set; }
         public string? NombreContacto { get; set; }
         public string? CargoContacto { get; set; }
         public string? Direccion { get; set; }

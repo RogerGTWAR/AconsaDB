@@ -37,8 +37,8 @@ public class MaquinariaRepository : IRepository<Maquinaria>
                             NombreMaquinaria = reader.IsDBNull(2) ? null : reader.GetString(2),
                             Marca = reader.IsDBNull(3) ? null : reader.GetString(3),
                             Modelo = reader.IsDBNull(4) ? null : reader.GetString(4),
-                            FechaInicioRenta = reader.IsDBNull(5) ? null : reader.GetDateTime(5),
-                            FechaFinalizacionRenta = reader.IsDBNull(6) ? null : reader.GetDateTime(6),
+                            FechaInicioRenta =reader.GetDateTime(5),
+                            FechaFinalizacionRenta = reader.GetDateTime(6),
                             PrecioPorHora = reader.GetDecimal(7),
                             Estado = reader.IsDBNull(8) ? null : reader.GetString(8)
                         });
@@ -74,8 +74,8 @@ public class MaquinariaRepository : IRepository<Maquinaria>
                             NombreMaquinaria = reader.IsDBNull(2) ? null : reader.GetString(2),
                             Marca = reader.IsDBNull(3) ? null : reader.GetString(3),
                             Modelo = reader.IsDBNull(4) ? null : reader.GetString(4),
-                            FechaInicioRenta = reader.IsDBNull(5) ? null : reader.GetDateTime(5),
-                            FechaFinalizacionRenta = reader.IsDBNull(6) ? null : reader.GetDateTime(6),
+                            FechaInicioRenta = reader.GetDateTime(5),
+                            FechaFinalizacionRenta =  reader.GetDateTime(6),
                             PrecioPorHora = reader.GetDecimal(7),
                             Estado = reader.IsDBNull(8) ? null : reader.GetString(8)
                         };
@@ -102,8 +102,8 @@ public class MaquinariaRepository : IRepository<Maquinaria>
                 command.Parameters.AddWithValue("@NombreMaquinaria", entity.NombreMaquinaria ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Marca", entity.Marca ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Modelo", entity.Modelo ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@FechaInicioRenta", entity.FechaInicioRenta ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@FechaFinalizacionRenta", entity.FechaFinalizacionRenta ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaInicioRenta", entity.FechaInicioRenta );
+                command.Parameters.AddWithValue("@FechaFinalizacionRenta", entity.FechaFinalizacionRenta);
                 command.Parameters.AddWithValue("@PrecioPorHora", entity.PrecioPorHora);
                 command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
 
@@ -129,10 +129,10 @@ public class MaquinariaRepository : IRepository<Maquinaria>
                 command.Parameters.AddWithValue("@NombreMaquinaria", entity.NombreMaquinaria ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Marca", entity.Marca ?? (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Modelo", entity.Modelo ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@FechaInicioRenta", entity.FechaInicioRenta ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@FechaFinalizacionRenta", entity.FechaFinalizacionRenta ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaInicioRenta", entity.FechaInicioRenta);
+                command.Parameters.AddWithValue("@FechaFinalizacionRenta", entity.FechaFinalizacionRenta);
                 command.Parameters.AddWithValue("@PrecioPorHora", entity.PrecioPorHora);
-                command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Estado", entity.Estado);
 
                 return await command.ExecuteNonQueryAsync();
             }

@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
 public class VehiculoRepository : IRepository<Vehiculo>
 {
     private readonly string _connectionString;

@@ -12,8 +12,9 @@ namespace SharedModels.Dto.Maquinaria
         public string? NombreMaquinaria { get; set; }
         public string? Marca { get; set; }
         public string? Modelo { get; set; }
-        public string? Tipo { get; set; }
-        public decimal PrecioPorHora { get; set; }
+        public DateTime FechaInicioRenta { get; set; }
+        public DateTime FechaFinalizacionRenta { get; set; }
+        public decimal Precio { get; set; }
         public string? Estado { get; set; }
     }
 

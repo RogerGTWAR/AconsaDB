@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
-using Gestor_Api.IRepository;
+﻿using Gestor_Api.Data;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
+using System.Data;
+//Listo para la api
 public class AvaluoRepository : IRepository<Avaluo>
 {
     private readonly string _connectionString;
@@ -21,7 +18,7 @@ public class AvaluoRepository : IRepository<Avaluo>
 
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM Avaluos";  
+            string query = "SELECT * FROM Avaluos";
 
             await connection.OpenAsync();
 
@@ -51,7 +48,7 @@ public class AvaluoRepository : IRepository<Avaluo>
 
     public async Task<Avaluo> GetByIdAsync(int id)
     {
-        Avaluo avaluo = null;
+        Avaluo? avaluo = null;
 
         using (var connection = new SqlConnection(_connectionString))
         {
@@ -87,65 +84,86 @@ public class AvaluoRepository : IRepository<Avaluo>
 
     public async Task<int> InsertAsync(Avaluo entity)
     {
-        using (var connection = new SqlConnection(_connectionString))
+        try
         {
-            string query = "INSERT INTO Avaluos (ProyectoID, Descripcion, MontoEjecutado, FechaInicio, FechaFin, TiempoTotalDias) " +
-                           "VALUES (@ProyectoID, @Descripcion, @MontoEjecutado, @FechaInicio, @FechaFin, @TiempoTotalDias)";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
+                await connection.OpenAsync();
+
+                var command = new SqlCommand("INSERT INTO Avaluos (ProyectoID, Descripcion, MontoEjecutado, FechaInicio, FechaFin) " +
+                           "VALUES (@ProyectoID, @Descripcion, @MontoEjecutado, @FechaInicio, @FechaFin)", connection);
+
                 command.Parameters.AddWithValue("@ProyectoID", entity.ProyectoID);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value); 
                 command.Parameters.AddWithValue("@MontoEjecutado", entity.MontoEjecutado);
                 command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
                 command.Parameters.AddWithValue("@FechaFin", entity.FechaFin);
-                command.Parameters.AddWithValue("@TiempoTotalDias", entity.TiempoTotalDias);
 
-                return await command.ExecuteNonQueryAsync();
+                return Convert.ToInt32(await command.ExecuteScalarAsync());
             }
+        }
+        catch (SqlException ex)
+        {
+            throw new Exception("Error al insertar el registro", ex);
         }
     }
 
     public async Task<int> UpdateAsync(Avaluo entity)
     {
-        using (var connection = new SqlConnection(_connectionString))
+        try
         {
-            string query = "UPDATE Avaluos SET ProyectoID = @ProyectoID, Descripcion = @Descripcion, MontoEjecutado = @MontoEjecutado, " +
-                           "FechaInicio = @FechaInicio, FechaFin = @FechaFin, TiempoTotalDias = @TiempoTotalDias WHERE AvaluoID = @AvaluoID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                command.Parameters.AddWithValue("@AvaluoID", entity.AvaluoID);
-                command.Parameters.AddWithValue("@ProyectoID", entity.ProyectoID);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@MontoEjecutado", entity.MontoEjecutado);
-                command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
-                command.Parameters.AddWithValue("@FechaFin", entity.FechaFin);
-                command.Parameters.AddWithValue("@TiempoTotalDias", entity.TiempoTotalDias);
+                await connection.OpenAsync();
 
-                return await command.ExecuteNonQueryAsync();
+                var command = new SqlCommand("UPDATE Avaluos SET ProyectoID = @ProyectoID, Descripcion = @Descripcion, MontoEjecutado = @MontoEjecutado, " +
+                                             "FechaInicio = @FechaInicio, FechaFin = @FechaFin WHERE AvaluoID = @AvaluoID", connection);
+
+                command.Parameters.Add(new SqlParameter("@AvaluoID", SqlDbType.Int) { Value = entity.AvaluoID });
+                command.Parameters.Add(new SqlParameter("@ProyectoID", SqlDbType.Int) { Value = entity.ProyectoID });
+                command.Parameters.Add(new SqlParameter("@Descripcion", SqlDbType.NVarChar, 255) { Value = entity.Descripcion ?? (object)DBNull.Value });
+                command.Parameters.Add(new SqlParameter("@MontoEjecutado", SqlDbType.Decimal) { Value = entity.MontoEjecutado });
+                command.Parameters.Add(new SqlParameter("@FechaInicio", SqlDbType.DateTime) { Value = entity.FechaInicio });
+                command.Parameters.Add(new SqlParameter("@FechaFin", SqlDbType.DateTime) { Value = entity.FechaFin });
+
+                int rowsAffected = await command.ExecuteNonQueryAsync();
+
+                if (rowsAffected == 0)
+                {
+                    throw new Exception("No se encontró el registro a actualizar.");
+                }
+
+                return rowsAffected; 
             }
+        }
+        catch (SqlException ex)
+        {
+            throw new Exception($"Error al actualizar el registro Avaluo con ID {entity.AvaluoID}: {ex.Message}", ex);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Ocurrió un error inesperado al actualizar el registro.", ex);
         }
     }
 
+
     public async Task<int> DeleteAsync(int id)
     {
-        using (var connection = new SqlConnection(_connectionString))
+        try
         {
-            string query = "DELETE FROM Avaluos WHERE AvaluoID = @AvaluoID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
+                await connection.OpenAsync();
+                var command = new SqlCommand("DELETE FROM Avaluos WHERE AvaluoID = @AvaluoID", connection);
                 command.Parameters.AddWithValue("@AvaluoID", id);
 
                 return await command.ExecuteNonQueryAsync();
             }
         }
+        catch (SqlException ex)
+        {
+            throw new Exception("Error al eliminar el registro", ex);
+        }
     }
+
 }

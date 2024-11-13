@@ -19,16 +19,17 @@ CREATE TABLE Empleados (
     FOREIGN KEY (Reportes) REFERENCES Empleados(EmpleadoID)
 );
 
-CREATE TABLE Clientes (
-    ClienteID nchar(5) PRIMARY KEY not null,      
-    NombreEmpresa VARCHAR(100) NOT NULL,     
-    NombreContacto VARCHAR(100),         
-    CargoContacto VARCHAR(50),
-    Dirección VARCHAR(150),                
-    Ciudad VARCHAR(100),                  
-    País VARCHAR(50),                        
-    Teléfono NVARCHAR(20),              
-);
+--Listo
+--CREATE TABLE Clientes (
+--    ClienteID nchar(5) PRIMARY KEY not null,      
+--    NombreEmpresa VARCHAR(100) NOT NULL,     
+--    NombreContacto VARCHAR(100),         
+--    CargoContacto VARCHAR(50),
+--    Dirección VARCHAR(150),                
+--    Ciudad VARCHAR(100),                  
+--    País VARCHAR(50),                        
+--    Teléfono NVARCHAR(20),              
+--);
 
 CREATE TABLE Proveedores (
     ProveedorID INT IDENTITY(1,1) PRIMARY KEY,
@@ -42,11 +43,12 @@ CREATE TABLE Proveedores (
     Correo VARCHAR(100) CHECK (Correo LIKE '%_@__%.__%')
 );
 
-CREATE TABLE Categorias (
-    CategoriaID INT IDENTITY(1,1) PRIMARY KEY,
-    NombreCategoria VARCHAR(100) NOT NULL,
-	Descripcion NVarChar(150) Not Null
-);
+--Listo
+--CREATE TABLE Categorias (
+--    CategoriaID INT IDENTITY(1,1) PRIMARY KEY,
+--    NombreCategoria VARCHAR(100) NOT NULL,
+--	Descripcion NVarChar(150) Not Null
+--);
  
 CREATE TABLE Proyectos (
     ProyectoID INT PRIMARY KEY IDENTITY(1,1), 
@@ -62,16 +64,18 @@ CREATE TABLE Proyectos (
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
 );
 
-CREATE TABLE Avaluos(
-    AvaluoID INT PRIMARY KEY IDENTITY(1,1), 
-    ProyectoID INT NOT NULL, 
-	Descripcion Varchar(100) Not Null,
-    MontoEjecutado MONEY  NOT NULL CHECK (MontoEjecutado >= 0),
-    FechaInicio DATE NOT NULL, 
-    FechaFin DATE NOT NULL, 
-    TiempoTotalDias AS (DATEDIFF(DAY, FechaInicio, FechaFin)) PERSISTED, 
-    FOREIGN KEY (ProyectoID) REFERENCES Proyectos(ProyectoID)
-);
+--Listo
+--CREATE TABLE Avaluos(
+--    AvaluoID INT PRIMARY KEY IDENTITY(1,1), 
+--    ProyectoID INT NOT NULL, 
+--	Descripcion Varchar(200) Null,
+--    MontoEjecutado MONEY  NOT NULL CHECK (MontoEjecutado >= 0),
+--    FechaInicio DATETIME NOT NULL, 
+--    FechaFin DATETIME NOT NULL, 
+--    TiempoTotalDias AS (DATEDIFF(DAY, FechaInicio, FechaFin)) PERSISTED, 
+--    FOREIGN KEY (ProyectoID) REFERENCES Proyectos(ProyectoID)
+--);
+
 
 Create Table [Empleados Detalles] (
     Empleado_DetalleID Int Identity(1,1),
@@ -95,18 +99,24 @@ CREATE TABLE Productos (
 	FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID),
     FOREIGN KEY (CategoriaID) REFERENCES Categorias(CategoriaID)
 );
+Select * From [Avaluo Detalles]
+Alter table Avaluos
+Alter column Descripcion Varchar(200) Null
 
-CREATE TABLE [Avaluo Detalles] (
-    Avaluo_DetalleID Int Identity(1,1),
-    AvaluoID INT NOT NULL,
-    ProductoID INT NOT NULL,
-	Descripcion Varchar(200) Not Null,
-	Cantidad INT Not Null,
-	PrecioUnitario Money Not Null,
-    PRIMARY KEY (Avaluo_DetalleID, AvaluoID, ProductoID),
-	FOREIGN KEY (AvaluoID) REFERENCES Avaluos(AvaluoID),
-    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID) 
-);
+--Listo
+--CREATE TABLE [Avaluo Detalles] (
+--    Avaluo_DetalleID Int Identity(1,1),
+--    AvaluoID INT NOT NULL,
+--    ProductoID INT NOT NULL,
+--	Descripcion Varchar(200) Null,
+--	Cantidad INT Not Null,
+--	PrecioUnitario Money Not Null,
+--    PRIMARY KEY (Avaluo_DetalleID, AvaluoID, ProductoID),
+--	FOREIGN KEY (AvaluoID) REFERENCES Avaluos(AvaluoID),
+--    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID) 
+--);
+Select * From [Avaluo Detalles]
+
 
 CREATE TABLE Maquinarias (
     MaquinariaID INT IDENTITY(1,1) PRIMARY KEY,
@@ -168,3 +178,6 @@ Create table Usuarios (
 	FechaModificacion DateTIme,
     FOREIGN KEY (EmpleadoID) REFERENCES Empleados(EmpleadoID)
 )
+
+--Llevo 4 controladores bien
+--Me faltan 10 
