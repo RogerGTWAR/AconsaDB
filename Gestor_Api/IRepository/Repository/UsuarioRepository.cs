@@ -6,6 +6,8 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+//Falta
+
 namespace Gestor_Api.IRepository.Repository
 {
     public class UsuarioRepository : IUsuario

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedModels", "SharedModels\SharedModels.csproj", "{F361030A-9C62-449A-8A44-E99F434F70D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestor_Api", "Gestor_Api\Gestor_Api.csproj", "{D224B2B6-5DC6-439A-BA01-63B913136A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gestor_Api", "Gestor_Api\Gestor_Api.csproj", "{D224B2B6-5DC6-439A-BA01-63B913136A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aconsa_Data", "Aconsa_Data\Aconsa_Data.csproj", "{4B4C0EA0-559D-4BDD-AEE8-9ECE111FB017}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms", "WinForms\WinForms.csproj", "{036C3976-C15F-4F29-A7BA-C43416D11FC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{D224B2B6-5DC6-439A-BA01-63B913136A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D224B2B6-5DC6-439A-BA01-63B913136A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D224B2B6-5DC6-439A-BA01-63B913136A6E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B4C0EA0-559D-4BDD-AEE8-9ECE111FB017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B4C0EA0-559D-4BDD-AEE8-9ECE111FB017}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B4C0EA0-559D-4BDD-AEE8-9ECE111FB017}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B4C0EA0-559D-4BDD-AEE8-9ECE111FB017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{036C3976-C15F-4F29-A7BA-C43416D11FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{036C3976-C15F-4F29-A7BA-C43416D11FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{036C3976-C15F-4F29-A7BA-C43416D11FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{036C3976-C15F-4F29-A7BA-C43416D11FC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

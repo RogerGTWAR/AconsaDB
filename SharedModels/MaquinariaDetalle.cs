@@ -8,7 +8,7 @@ namespace SharedModels
 {
     public class MaquinariaDetalle
     {
-        public int MaquinariaDetalleID { get; set; }
+        public int Maquinaria_DetalleID { get; set; }
         public int ProyectoID { get; set; }
         public int MaquinariaID { get; set; }
         public int HorasUtilizadas { get; set; }

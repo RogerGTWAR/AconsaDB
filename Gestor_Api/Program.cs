@@ -2,6 +2,7 @@ using Gestor_Api;
 using Gestor_Api.Data;
 using Gestor_Api.IRepository;
 using Gestor_Api.IRepository.Repository;
+using Gestor_Api.Repositories;
 using Gestor_Api.Repository.IRepository;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -25,11 +26,6 @@ builder.Services.AddScoped<IRepository<Avaluo>>(sp => new AvaluoRepository(conne
 builder.Services.AddScoped<IRepository<AvaluoDetalle>>(sp => new AvaluoDetalleRepository(connectionString));
 builder.Services.AddScoped<IRepository<Categoria>>(sp => new CategoriaRepository(connectionString));
 builder.Services.AddScoped<IClienteRepository<Cliente>>(sp => new ClienteRepository(connectionString));
-
-// Registrar los repositorios e inyectar la cadena de conexión
-
-
-//Faltan
 builder.Services.AddScoped<IRepository<Empleado>>(sp => new EmpleadoRepository(connectionString));
 builder.Services.AddScoped<IRepository<EmpleadoDetalle>>(sp => new EmpleadoDetalleRepository(connectionString));
 builder.Services.AddScoped<IRepository<Maquinaria>>(sp => new MaquinariaRepository(connectionString));
@@ -37,6 +33,10 @@ builder.Services.AddScoped<IRepository<MaquinariaDetalle>>(sp => new MaquinariaD
 builder.Services.AddScoped<IRepository<Producto>>(sp => new ProductoRepository(connectionString));
 builder.Services.AddScoped<IRepository<Proveedor>>(sp => new ProveedorRepository(connectionString));
 builder.Services.AddScoped<IRepository<Proyecto>>(sp => new ProyectoRepository(connectionString));
+// Registrar los repositorios e inyectar la cadena de conexión
+//Faltan
+
+
 builder.Services.AddScoped<IRepository<Vehiculo>>(sp => new VehiculoRepository(connectionString));
 builder.Services.AddScoped<IRepository<VehiculoDetalle>>(sp => new VehiculoDetalleRepository(connectionString));
 builder.Services.AddScoped<IUsuario, UsuarioRepository>();

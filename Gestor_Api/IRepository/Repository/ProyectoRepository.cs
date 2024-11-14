@@ -4,158 +4,160 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-public class ProyectoRepository : IRepository<Proyecto>
+//Listo
+namespace Gestor_Api.Repositories
 {
-    private readonly string _connectionString;
-
-    public ProyectoRepository(string connectionString)
+    public class ProyectoRepository : IRepository<Proyecto>
     {
-        _connectionString = connectionString;
-    }
+        private readonly string _connectionString;
 
-    public async Task<IEnumerable<Proyecto>> GetAllAsync()
-    {
-        var proyectos = new List<Proyecto>();
-
-        using (var connection = new SqlConnection(_connectionString))
+        public ProyectoRepository(string connectionString)
         {
-            string query = "SELECT * FROM Proyectos";
+            _connectionString = connectionString;
+        }
 
-            await connection.OpenAsync();
+        public async Task<IEnumerable<Proyecto>> GetAllAsync()
+        {
+            var proyectos = new List<Proyecto>();
 
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                using (var reader = await command.ExecuteReaderAsync())
+                string query = "SELECT ProyectoID, ClienteID, NombreProyecto, Descripcion, Ubicacion, FechaInicio, FechaFin, PresupuestoTotal, Estado, TiempoTotalDias FROM Proyectos";
+
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
                 {
-                    while (await reader.ReadAsync())
+                    using (var reader = await command.ExecuteReaderAsync())
                     {
-                        proyectos.Add(new Proyecto
+                        while (await reader.ReadAsync())
                         {
-                            ProyectoID = reader.GetInt32(0),
-                            ClienteID = reader.IsDBNull(1) ? null : reader.GetString(1),
-                            NombreProyecto = reader.IsDBNull(2) ? null : reader.GetString(2),
-                            Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
-                            Ubicacion = reader.IsDBNull(4) ? null : reader.GetString(4),
-                            FechaInicio = reader.GetDateTime(5),
-                            FechaFin = reader.GetDateTime(6),
-                            PresupuestoTotal = reader.GetDecimal(7),
-                            Estado = reader.IsDBNull(8) ? null : reader.GetString(8),
-                            TiempoTotalDias = reader.GetInt32(9)
-                        });
+                            proyectos.Add(new Proyecto
+                            {
+                                ProyectoID = reader.GetInt32(0),
+                                ClienteID = reader.GetString(1),
+                                NombreProyecto = reader.GetString(2),
+                                Descripcion = reader.GetString(3),
+                                Ubicacion = reader.GetString(4),
+                                FechaInicio = reader.GetDateTime(5),
+                                FechaFin = reader.GetDateTime(6),
+                                PresupuestoTotal = reader.GetDecimal(7),
+                                Estado = reader.GetString(8),
+                                TiempoTotalDias = reader.GetInt32(9)
+                            });
+                        }
                     }
+                }
+            }
+
+            return proyectos;
+        }
+
+        public async Task<Proyecto> GetByIdAsync(int id)
+        {
+            Proyecto proyecto = null;
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                string query = "SELECT ProyectoID, ClienteID, NombreProyecto, Descripcion, Ubicacion, FechaInicio, FechaFin, PresupuestoTotal, Estado, TiempoTotalDias FROM Proyectos WHERE ProyectoID = @ProyectoID";
+
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProyectoID", id);
+
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            proyecto = new Proyecto
+                            {
+                                ProyectoID = reader.GetInt32(0),
+                                ClienteID = reader.GetString(1),
+                                NombreProyecto = reader.GetString(2),
+                                Descripcion = reader.GetString(3),
+                                Ubicacion = reader.GetString(4),
+                                FechaInicio = reader.GetDateTime(5),
+                                FechaFin =   reader.GetDateTime(6),
+                                PresupuestoTotal = reader.GetDecimal(7),
+                                Estado = reader.GetString(8),
+                                TiempoTotalDias = reader.GetInt32(9)
+                            };
+                        }
+                    }
+                }
+            }
+
+            return proyecto;
+        }
+
+        public async Task<int> InsertAsync(Proyecto entity)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                string query = "INSERT INTO Proyectos (ClienteID, NombreProyecto, Descripcion, Ubicacion, FechaInicio, FechaFin, PresupuestoTotal, Estado) " +
+                               "VALUES (@ClienteID, @NombreProyecto, @Descripcion, @Ubicacion, @FechaInicio, @FechaFin, @PresupuestoTotal, @Estado)";
+
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ClienteID", entity.ClienteID);
+                    command.Parameters.AddWithValue("@NombreProyecto", entity.NombreProyecto);
+                    command.Parameters.AddWithValue("@Descripcion", entity.Descripcion);
+                    command.Parameters.AddWithValue("@Ubicacion", entity.Ubicacion  );
+                    command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
+                    command.Parameters.AddWithValue("@FechaFin", entity.FechaFin);
+                    command.Parameters.AddWithValue("@PresupuestoTotal", entity.PresupuestoTotal);
+                    command.Parameters.AddWithValue("@Estado", entity.Estado);
+
+                    return await command.ExecuteNonQueryAsync();
                 }
             }
         }
 
-        return proyectos;
-    }
-
-    public async Task<Proyecto> GetByIdAsync(int id)
-    {
-        Proyecto proyecto = null;
-
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> UpdateAsync(Proyecto entity)
         {
-            string query = "SELECT * FROM Proyectos WHERE ProyectoID = @ProyectoID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                command.Parameters.AddWithValue("@ProyectoID", id);
+                string query = "UPDATE Proyectos SET ClienteID = @ClienteID, NombreProyecto = @NombreProyecto, Descripcion = @Descripcion, " +
+                               "Ubicacion = @Ubicacion, FechaInicio = @FechaInicio, FechaFin = @FechaFin, PresupuestoTotal = @PresupuestoTotal, " +
+                               "Estado = @Estado WHERE ProyectoID = @ProyectoID";
 
-                using (var reader = await command.ExecuteReaderAsync())
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
                 {
-                    if (await reader.ReadAsync())
-                    {
-                        proyecto = new Proyecto
-                        {
-                            ProyectoID = reader.GetInt32(0),
-                            ClienteID = reader.IsDBNull(1) ? null : reader.GetString(1),
-                            NombreProyecto = reader.IsDBNull(2) ? null : reader.GetString(2),
-                            Descripcion = reader.IsDBNull(3) ? null : reader.GetString(3),
-                            Ubicacion = reader.IsDBNull(4) ? null : reader.GetString(4),
-                            FechaInicio = reader.GetDateTime(5),
-                            FechaFin = reader.GetDateTime(6),
-                            PresupuestoTotal = reader.GetDecimal(7),
-                            Estado = reader.IsDBNull(8) ? null : reader.GetString(8),
-                            TiempoTotalDias = reader.GetInt32(9)
-                        };
-                    }
+                    command.Parameters.AddWithValue("@ProyectoID", entity.ProyectoID);
+                    command.Parameters.AddWithValue("@ClienteID", entity.ClienteID);
+                    command.Parameters.AddWithValue("@NombreProyecto", entity.NombreProyecto);
+                    command.Parameters.AddWithValue("@Descripcion", entity.Descripcion);
+                    command.Parameters.AddWithValue("@Ubicacion", entity.Ubicacion);
+                    command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
+                    command.Parameters.AddWithValue("@FechaFin", entity.FechaFin );
+                    command.Parameters.AddWithValue("@PresupuestoTotal", entity.PresupuestoTotal);
+                    command.Parameters.AddWithValue("@Estado", entity.Estado);
+
+                    return await command.ExecuteNonQueryAsync();
                 }
             }
         }
 
-        return proyecto;
-    }
-
-    public async Task<int> InsertAsync(Proyecto entity)
-    {
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> DeleteAsync(int id)
         {
-            string query = "INSERT INTO Proyectos (ClienteID, NombreProyecto, Descripcion, Ubicacion, FechaInicio, FechaFin, PresupuestoTotal, Estado, TiempoTotalDias) " +
-                           "VALUES (@ClienteID, @NombreProyecto, @Descripcion, @Ubicacion, @FechaInicio, @FechaFin, @PresupuestoTotal, @Estado, @TiempoTotalDias)";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                command.Parameters.AddWithValue("@ClienteID", entity.ClienteID ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@NombreProyecto", entity.NombreProyecto ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Ubicacion", entity.Ubicacion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
-                command.Parameters.AddWithValue("@FechaFin", entity.FechaFin);
-                command.Parameters.AddWithValue("@PresupuestoTotal", entity.PresupuestoTotal);
-                command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@TiempoTotalDias", entity.TiempoTotalDias);
+                string query = "DELETE FROM Proyectos WHERE ProyectoID = @ProyectoID";
 
-                return await command.ExecuteNonQueryAsync();
-            }
-        }
-    }
+                await connection.OpenAsync();
 
-    public async Task<int> UpdateAsync(Proyecto entity)
-    {
-        using (var connection = new SqlConnection(_connectionString))
-        {
-            string query = "UPDATE Proyectos SET ClienteID = @ClienteID, NombreProyecto = @NombreProyecto, Descripcion = @Descripcion, " +
-                           "Ubicacion = @Ubicacion, FechaInicio = @FechaInicio, FechaFin = @FechaFin, PresupuestoTotal = @PresupuestoTotal, " +
-                           "Estado = @Estado, TiempoTotalDias = @TiempoTotalDias WHERE ProyectoID = @ProyectoID";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProyectoID", id);
 
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@ProyectoID", entity.ProyectoID);
-                command.Parameters.AddWithValue("@ClienteID", entity.ClienteID ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@NombreProyecto", entity.NombreProyecto ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Ubicacion", entity.Ubicacion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@FechaInicio", entity.FechaInicio);
-                command.Parameters.AddWithValue("@FechaFin", entity.FechaFin);
-                command.Parameters.AddWithValue("@PresupuestoTotal", entity.PresupuestoTotal);
-                command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@TiempoTotalDias", entity.TiempoTotalDias);
-
-                return await command.ExecuteNonQueryAsync();
-            }
-        }
-    }
-
-    public async Task<int> DeleteAsync(int id)
-    {
-        using (var connection = new SqlConnection(_connectionString))
-        {
-            string query = "DELETE FROM Proyectos WHERE ProyectoID = @ProyectoID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@ProyectoID", id);
-
-                return await command.ExecuteNonQueryAsync();
+                    return await command.ExecuteNonQueryAsync();
+                }
             }
         }
     }

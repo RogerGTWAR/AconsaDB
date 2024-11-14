@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
+//Listo
 public class VehiculoRepository : IRepository<Vehiculo>
 {
     private readonly string _connectionString;
@@ -33,13 +34,13 @@ public class VehiculoRepository : IRepository<Vehiculo>
                         {
                             VehiculoID = reader.GetInt32(0),
                             ProveedorID = reader.GetInt32(1),
-                            Marca = reader.IsDBNull(2) ? null : reader.GetString(2),
-                            Modelo = reader.IsDBNull(3) ? null : reader.GetString(3),
+                            Marca = reader.GetString(2),
+                            Modelo = reader.GetString(3),
                             Año = reader.GetInt32(4),
-                            Placa = reader.IsDBNull(5) ? null : reader.GetString(5),
-                            TipoDeVehiculo = reader.IsDBNull(6) ? null : reader.GetString(6),
-                            TipoDeCombustible = reader.IsDBNull(7) ? null : reader.GetString(7),
-                            Estado = reader.IsDBNull(8) ? null : reader.GetString(8),
+                            Placa = reader.GetString(5),
+                            TipoDeVehiculo = reader.GetString(6),
+                            TipoDeCombustible = reader.GetString(7),
+                            Estado = reader.GetString(8),
                             FechaRegistro = reader.GetDateTime(9)
                         });
                     }
@@ -52,7 +53,7 @@ public class VehiculoRepository : IRepository<Vehiculo>
 
     public async Task<Vehiculo> GetByIdAsync(int id)
     {
-        Vehiculo vehiculo = null;
+        Vehiculo? vehiculo = null;
 
         using (var connection = new SqlConnection(_connectionString))
         {
@@ -72,13 +73,13 @@ public class VehiculoRepository : IRepository<Vehiculo>
                         {
                             VehiculoID = reader.GetInt32(0),
                             ProveedorID = reader.GetInt32(1),
-                            Marca = reader.IsDBNull(2) ? null : reader.GetString(2),
-                            Modelo = reader.IsDBNull(3) ? null : reader.GetString(3),
+                            Marca = reader.GetString(2),
+                            Modelo = reader.GetString(3),
                             Año = reader.GetInt32(4),
-                            Placa = reader.IsDBNull(5) ? null : reader.GetString(5),
-                            TipoDeVehiculo = reader.IsDBNull(6) ? null : reader.GetString(6),
-                            TipoDeCombustible = reader.IsDBNull(7) ? null : reader.GetString(7),
-                            Estado = reader.IsDBNull(8) ? null : reader.GetString(8),
+                            Placa = reader.GetString(5),
+                            TipoDeVehiculo = reader.GetString(6),
+                            TipoDeCombustible = reader.GetString(7),
+                            Estado = reader.GetString(8),
                             FechaRegistro = reader.GetDateTime(9)
                         };
                     }
@@ -101,13 +102,13 @@ public class VehiculoRepository : IRepository<Vehiculo>
             using (var command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID);
-                command.Parameters.AddWithValue("@Marca", entity.Marca ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Modelo", entity.Modelo ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Marca", entity.Marca);
+                command.Parameters.AddWithValue("@Modelo", entity.Modelo);
                 command.Parameters.AddWithValue("@Año", entity.Año);
-                command.Parameters.AddWithValue("@Placa", entity.Placa ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@TipoDeVehiculo", entity.TipoDeVehiculo ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@TipoDeCombustible", entity.TipoDeCombustible ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Placa", entity.Placa);
+                command.Parameters.AddWithValue("@TipoDeVehiculo", entity.TipoDeVehiculo  );
+                command.Parameters.AddWithValue("@TipoDeCombustible", entity.TipoDeCombustible  );
+                command.Parameters.AddWithValue("@Estado", entity.Estado);
                 command.Parameters.AddWithValue("@FechaRegistro", entity.FechaRegistro);
 
                 return await command.ExecuteNonQueryAsync();
@@ -119,9 +120,9 @@ public class VehiculoRepository : IRepository<Vehiculo>
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "UPDATE Vehiculos SET ProveedorID = @ProveedorID, Marca = @Marca, Modelo = @Modelo, Año = @Año, Placa = @Placa, " +
-                           "TipoDeVehiculo = @TipoDeVehiculo, TipoDeCombustible = @TipoDeCombustible, Estado = @Estado, FechaRegistro = @FechaRegistro " +
-                           "WHERE VehiculoID = @VehiculoID";
+            string query = "UPDATE Vehiculos SET ProveedorID = @ProveedorID, Marca = @Marca, Modelo = @Modelo, Año = @Año, " +
+                           "Placa = @Placa, TipoDeVehiculo = @TipoDeVehiculo, TipoDeCombustible = @TipoDeCombustible, " +
+                           "Estado = @Estado, FechaRegistro = @FechaRegistro WHERE VehiculoID = @VehiculoID";
 
             await connection.OpenAsync();
 
@@ -129,13 +130,13 @@ public class VehiculoRepository : IRepository<Vehiculo>
             {
                 command.Parameters.AddWithValue("@VehiculoID", entity.VehiculoID);
                 command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID);
-                command.Parameters.AddWithValue("@Marca", entity.Marca ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Modelo", entity.Modelo ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Marca", entity.Marca);
+                command.Parameters.AddWithValue("@Modelo", entity.Modelo);
                 command.Parameters.AddWithValue("@Año", entity.Año);
-                command.Parameters.AddWithValue("@Placa", entity.Placa ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@TipoDeVehiculo", entity.TipoDeVehiculo ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@TipoDeCombustible", entity.TipoDeCombustible ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Estado", entity.Estado ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Placa", entity.Placa);
+                command.Parameters.AddWithValue("@TipoDeVehiculo", entity.TipoDeVehiculo);
+                command.Parameters.AddWithValue("@TipoDeCombustible", entity.TipoDeCombustible);
+                command.Parameters.AddWithValue("@Estado", entity.Estado);
                 command.Parameters.AddWithValue("@FechaRegistro", entity.FechaRegistro);
 
                 return await command.ExecuteNonQueryAsync();

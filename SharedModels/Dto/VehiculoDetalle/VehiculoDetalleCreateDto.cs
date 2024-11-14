@@ -12,7 +12,7 @@ namespace SharedModels.Dto.VehiculoDetalle
         public int VehiculoID { get; set; }
         public DateTime FechaAsignacion { get; set; }
         public DateTime FechaFinAsignacion { get; set; }
-        public string? Descripcion { get; set; }
+        public required string Descripcion { get; set; }
     }
 
 }

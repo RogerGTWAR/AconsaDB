@@ -178,17 +178,18 @@ VALUES
 ('UNI', 'Mantenimiento Edificio', 'Obras menores y mantenimiento de edificios.', 'Managua', '2024-04-08', '2023-03-05', 1785424.45, 'Activo'),
 ('UNIJ', 'Construccion de infraestructura', 'Construcción de infraestructura educativa.', 'Juigalpa', '2025-01-04', '2026-04-14', 30000140.18, 'En Espera')
 
-INSERT INTO Avaluos (ProyectoID, Descripcion, MontoEjecutado, FechaInicio, FechaFin)  
+INSERT INTO Avaluos (ProyectoID, Descripcion, MontoEjecutado, FechaInicio, FechaFin)
 VALUES
-(9, 'Construcción de losas de losas de fundacion', 1819505.10, '2024-10-01', '2024-10-23'),
-(9, 'Instalación Acero y Formaletas para Muros', 606601.70, '2024-10-24', '2024-11-03'),
-(9, 'Instalación de concreto en muros retención', 1141838.50, '2024-11-04', '2024-12-02'),
-(10, 'Movimiento de tierra para fundaciones', 2509236.55, '2024-06-03', '2024-07-15'),
-(10, 'Construcción de canchas', 2987186.37, '2024-07-16', '2024-09-04'),
-(10, 'Instalaciones sanitarias, agua potable y electricidad', 2389749.10, '2024-09-05', '2024-10-15'),
-(10, 'Instalación de juegos', 2389750.10, '2024-10-16', '2024-11-25');
+(9, 'Construcción de losas de fundacion', 1819505.10, CONVERT(DATETIME, '2024-10-01', 102), CONVERT(DATETIME, '2024-10-23', 102)),
+(9, 'Instalación Acero y Formaletas para Muros', 606601.70, CONVERT(DATETIME, '2024-10-24', 102), CONVERT(DATETIME, '2024-11-03', 102)),
+(9, 'Instalación de concreto en muros retención', 1141838.50, CONVERT(DATETIME, '2024-11-04', 102), CONVERT(DATETIME, '2024-12-02', 102)),
+(10, 'Movimiento de tierra para fundaciones', 2509236.55, CONVERT(DATETIME, '2024-06-03', 102), CONVERT(DATETIME, '2024-07-15', 102)),
+(10, 'Construcción de canchas', 2987186.37, CONVERT(DATETIME, '2024-07-16', 102), CONVERT(DATETIME, '2024-09-04', 102)),
+(10, 'Instalaciones sanitarias, agua potable y electricidad', 2389749.10, CONVERT(DATETIME, '2024-09-05', 102), CONVERT(DATETIME, '2024-10-15', 102)),
+(10, 'Instalación de juegos', 2389750.10, CONVERT(DATETIME, '2024-10-16', 102), CONVERT(DATETIME, '2024-11-25', 102));
 
-INSERT INTO Maquinaria (ProveedorID, NombreMaquinaria, Marca, Modelo, FechaInicioRenta, FechaFinalizacionRenta, Estado, PrecioPorHora) 
+
+INSERT INTO Maquinarias(ProveedorID, NombreMaquinaria, Marca, Modelo, FechaInicioRenta, FechaFinalizacionRenta, Estado, PrecioPorHora) 
 VALUES 
 (6, 'Tractor', 'Caterpillar', 'D-6', '2023-10-01', '2024-02-01', 'Contrato Terminado', 85.00),
 (6, 'Motoniveladora', 'Caterpillar', '140-H', '2022-11-15', '2023-11-15', 'Contrato Terminado', 65.00),
@@ -202,7 +203,7 @@ VALUES
 (8, 'Cisterna Agua Potable', 'Izusu/HOWO', 'N/A', '2023-07-01', '2023-12-01', 'Contrato Terminado', 15.00),
 (8, 'Camión Volquete', 'Freightliner', 'M2 106 54K', '2023-07-01', '2023-12-01', 'Contrato Terminado', 20.00);
 
-INSERT INTO [Maquinaria Detalles] (ProyectoID, MaquinariaID, HorasUtilizadas, FechaInicioAsignacion, FechaFinAsignacion)
+INSERT INTO [Maquinaria Detalles](ProyectoID, MaquinariaID, HorasUtilizadas, FechaInicioAsignacion, FechaFinAsignacion)
 VALUES 
 (1, 1, 120, '2023-04-16', '2023-07-15'), 
 (1, 2, 80, '2023-04-16', '2023-07-15'),
@@ -212,8 +213,8 @@ VALUES
 (4, 6, 75, '2023-02-03', '2023-12-20'), 
 (5, 7, 60, '2021-05-31', '2021-08-16'), 
 (6, 8, 90, '2023-02-08', '2023-03-05'), 
-(7, 9, 120, '2018-12-27', '2019-02-27'), 
-(8, 10, 110, '2024-10-01', '2024-07-15'), 
+(7, 7, 120, '2018-12-27', '2019-02-27'), 
+(8, 7, 110, '2024-10-01', '2024-07-15'), 
 (2, 1, 100, '2023-09-20', '2023-10-20'), 
 (3, 2, 90, '2023-10-01', '2023-11-01'); 
 
@@ -286,12 +287,12 @@ VALUES
 	
 INSERT INTO [Vehiculo Detalles] (EmpleadoID, VehiculoID, FechaAsignacion, FechaFinAsignacion, Descripcion) VALUES
 (1, 1, '2021-08-02', '2021-12-31', 'Asignación de vehículo para labores de conserje.'),
-(2, 2, '2024-04-09', NULL, 'Vehículo asignado para la gerencia administrativa.'),
+(2, 2, '2024-04-09', '2024-02-01', 'Vehículo asignado para la gerencia administrativa.'),
 (3, 3, '2022-06-12', '2023-12-31', 'Asignación temporal para proyectos específicos.'),
 (4, 4, '2024-05-08', '2024-10-01', 'Asignación de camión para transporte de materiales.'),
 (5, 5, '2021-03-06', '2021-09-30', 'Uso del camión para entrega de productos.'),
-(1, 6, '2005-05-14', NULL, 'Asignación histórica para transporte.'),
+(1, 6, '2005-05-14', '2024-02-01', 'Asignación histórica para transporte.'),
 (2, 3, '2022-01-01', '2022-03-01', 'Asignación temporal de un vehículo adicional.'),
-(3, 1, '2024-05-10', NULL, 'Vehículo asignado para giras administrativas.'),
+(3, 1, '2024-05-10', '2024-02-01', 'Vehículo asignado para giras administrativas.'),
 (4, 2, '2023-01-01', '2023-05-01', 'Uso del vehículo de la empresa para tareas de mantenimiento.'),
 (5, 4, '2024-06-15', '2024-07-15', 'Asignación de vehículo para una obra específica.');

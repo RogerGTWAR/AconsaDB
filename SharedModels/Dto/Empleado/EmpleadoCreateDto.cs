@@ -8,17 +8,17 @@ namespace SharedModels.Dto.Avaluo
 {
     public class EmpleadoCreateDto
     {
-        public string? Nombres { get; set; }
-        public string? Apellidos { get; set; }
-        public string? Cedula { get; set; }
-        public string? Cargo { get; set; }
+        public required string Nombres { get; set; }
+        public required string Apellidos { get; set; }
+        public required string Cedula { get; set; }
+        public required string Cargo { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaContratacion { get; set; }
-        public string? Direccion { get; set; }
-        public string? Pais { get; set; }
-        public string? Telefono { get; set; }
-        public string? Correo { get; set; }
-        public int Reportes { get; set; }
+        public required string Direccion { get; set; }
+        public required string Pais { get; set; }
+        public required string Telefono { get; set; }
+        public required string Correo { get; set; }
+        public int? Reportes { get; set; }
     }
 
 }

@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
+//Listo
 public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
 {
     private readonly string _connectionString;
@@ -19,7 +20,7 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
 
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM [Vehiculo Detalles]";
+            string query = "SELECT Vehiculo_DetalleID, EmpleadoID, VehiculoID, FechaAsignacion, FechaFinAsignacion, Descripcion FROM [Vehiculo Detalles]";
 
             await connection.OpenAsync();
 
@@ -31,12 +32,12 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
                     {
                         vehiculoDetalles.Add(new VehiculoDetalle
                         {
-                            VehiculoDetalleID = reader.GetInt32(0),
+                            Vehiculo_DetalleID = reader.GetInt32(0),
                             EmpleadoID = reader.GetInt32(1),
                             VehiculoID = reader.GetInt32(2),
                             FechaAsignacion = reader.GetDateTime(3),
                             FechaFinAsignacion = reader.GetDateTime(4),
-                            Descripcion = reader.IsDBNull(5) ? null : reader.GetString(5)
+                            Descripcion =  reader.GetString(5)
                         });
                     }
                 }
@@ -52,13 +53,13 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
 
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "SELECT * FROM [Vehiculo Detalles] WHERE VehiculoDetalleID = @VehiculoDetalleID";
+            string query = "SELECT Vehiculo_DetalleID, EmpleadoID, VehiculoID, FechaAsignacion, FechaFinAsignacion, Descripcion FROM [Vehiculo Detalles] WHERE Vehiculo_DetalleID = @Vehiculo_DetalleID";
 
             await connection.OpenAsync();
 
             using (var command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@VehiculoDetalleID", id);
+                command.Parameters.AddWithValue("@Vehiculo_DetalleID", id);
 
                 using (var reader = await command.ExecuteReaderAsync())
                 {
@@ -66,12 +67,12 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
                     {
                         vehiculoDetalle = new VehiculoDetalle
                         {
-                            VehiculoDetalleID = reader.GetInt32(0),
+                            Vehiculo_DetalleID = reader.GetInt32(0),
                             EmpleadoID = reader.GetInt32(1),
                             VehiculoID = reader.GetInt32(2),
                             FechaAsignacion = reader.GetDateTime(3),
                             FechaFinAsignacion = reader.GetDateTime(4),
-                            Descripcion = reader.IsDBNull(5) ? null : reader.GetString(5)
+                            Descripcion =  reader.GetString(5)
                         };
                     }
                 }
@@ -95,8 +96,8 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
                 command.Parameters.AddWithValue("@EmpleadoID", entity.EmpleadoID);
                 command.Parameters.AddWithValue("@VehiculoID", entity.VehiculoID);
                 command.Parameters.AddWithValue("@FechaAsignacion", entity.FechaAsignacion);
-                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion );
+                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion);
 
                 return await command.ExecuteNonQueryAsync();
             }
@@ -108,18 +109,18 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
         using (var connection = new SqlConnection(_connectionString))
         {
             string query = "UPDATE [Vehiculo Detalles] SET EmpleadoID = @EmpleadoID, VehiculoID = @VehiculoID, FechaAsignacion = @FechaAsignacion, " +
-                           "FechaFinAsignacion = @FechaFinAsignacion, Descripcion = @Descripcion WHERE VehiculoDetalleID = @VehiculoDetalleID";
+                           "FechaFinAsignacion = @FechaFinAsignacion, Descripcion = @Descripcion WHERE Vehiculo_DetalleID = @Vehiculo_DetalleID";
 
             await connection.OpenAsync();
 
             using (var command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@VehiculoDetalleID", entity.VehiculoDetalleID);
+                command.Parameters.AddWithValue("@Vehiculo_DetalleID", entity.Vehiculo_DetalleID);
                 command.Parameters.AddWithValue("@EmpleadoID", entity.EmpleadoID);
                 command.Parameters.AddWithValue("@VehiculoID", entity.VehiculoID);
                 command.Parameters.AddWithValue("@FechaAsignacion", entity.FechaAsignacion);
                 command.Parameters.AddWithValue("@FechaFinAsignacion", entity.FechaFinAsignacion);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion );
 
                 return await command.ExecuteNonQueryAsync();
             }
@@ -130,13 +131,13 @@ public class VehiculoDetalleRepository : IRepository<VehiculoDetalle>
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "DELETE FROM [Vehiculo Detalles] WHERE VehiculoDetalleID = @VehiculoDetalleID";
+            string query = "DELETE FROM [Vehiculo Detalles] WHERE Vehiculo_DetalleID = @Vehiculo_DetalleID";
 
             await connection.OpenAsync();
 
             using (var command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@VehiculoDetalleID", id);
+                command.Parameters.AddWithValue("@Vehiculo_DetalleID", id);
 
                 return await command.ExecuteNonQueryAsync();
             }

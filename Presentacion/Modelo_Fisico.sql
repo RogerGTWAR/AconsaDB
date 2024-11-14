@@ -2,7 +2,6 @@
 --CREATE DATABASE AconsaDB;
 --Usar la base de datos AconsaDB y crear las tablas.
 USE AconsaDB;
-
 CREATE TABLE Empleados (
     EmpleadoID INT IDENTITY(1,1) PRIMARY KEY,
     Nombres VARCHAR(100) NOT NULL,
@@ -19,17 +18,16 @@ CREATE TABLE Empleados (
     FOREIGN KEY (Reportes) REFERENCES Empleados(EmpleadoID)
 );
 
---Listo
---CREATE TABLE Clientes (
---    ClienteID nchar(5) PRIMARY KEY not null,      
---    NombreEmpresa VARCHAR(100) NOT NULL,     
---    NombreContacto VARCHAR(100),         
---    CargoContacto VARCHAR(50),
---    Dirección VARCHAR(150),                
---    Ciudad VARCHAR(100),                  
---    País VARCHAR(50),                        
---    Teléfono NVARCHAR(20),              
---);
+CREATE TABLE Clientes (
+    ClienteID nchar(5) PRIMARY KEY not null,      
+    NombreEmpresa VARCHAR(100) NOT NULL,     
+    NombreContacto VARCHAR(100),         
+    CargoContacto VARCHAR(50),
+    Dirección VARCHAR(150),                
+    Ciudad VARCHAR(100),                  
+    País VARCHAR(50),                        
+    Teléfono NVARCHAR(20),              
+);
 
 CREATE TABLE Proveedores (
     ProveedorID INT IDENTITY(1,1) PRIMARY KEY,
@@ -43,12 +41,11 @@ CREATE TABLE Proveedores (
     Correo VARCHAR(100) CHECK (Correo LIKE '%_@__%.__%')
 );
 
---Listo
---CREATE TABLE Categorias (
---    CategoriaID INT IDENTITY(1,1) PRIMARY KEY,
---    NombreCategoria VARCHAR(100) NOT NULL,
---	Descripcion NVarChar(150) Not Null
---);
+CREATE TABLE Categorias (
+    CategoriaID INT IDENTITY(1,1) PRIMARY KEY,
+    NombreCategoria VARCHAR(100) NOT NULL,
+	Descripcion NVarChar(150) Not Null
+);
  
 CREATE TABLE Proyectos (
     ProyectoID INT PRIMARY KEY IDENTITY(1,1), 
@@ -64,18 +61,16 @@ CREATE TABLE Proyectos (
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
 );
 
---Listo
---CREATE TABLE Avaluos(
---    AvaluoID INT PRIMARY KEY IDENTITY(1,1), 
---    ProyectoID INT NOT NULL, 
---	Descripcion Varchar(200) Null,
---    MontoEjecutado MONEY  NOT NULL CHECK (MontoEjecutado >= 0),
---    FechaInicio DATETIME NOT NULL, 
---    FechaFin DATETIME NOT NULL, 
---    TiempoTotalDias AS (DATEDIFF(DAY, FechaInicio, FechaFin)) PERSISTED, 
---    FOREIGN KEY (ProyectoID) REFERENCES Proyectos(ProyectoID)
---);
-
+CREATE TABLE Avaluos(
+    AvaluoID INT PRIMARY KEY IDENTITY(1,1), 
+    ProyectoID INT NOT NULL, 
+	Descripcion Varchar(200) Null,
+    MontoEjecutado MONEY  NOT NULL CHECK (MontoEjecutado >= 0),
+    FechaInicio DATETIME NOT NULL, 
+    FechaFin DATETIME NOT NULL, 
+    TiempoTotalDias AS (DATEDIFF(DAY, FechaInicio, FechaFin)) PERSISTED, 
+    FOREIGN KEY (ProyectoID) REFERENCES Proyectos(ProyectoID)
+);
 
 Create Table [Empleados Detalles] (
     Empleado_DetalleID Int Identity(1,1),
@@ -99,23 +94,19 @@ CREATE TABLE Productos (
 	FOREIGN KEY (ProveedorID) REFERENCES Proveedores(ProveedorID),
     FOREIGN KEY (CategoriaID) REFERENCES Categorias(CategoriaID)
 );
-Select * From [Avaluo Detalles]
-Alter table Avaluos
-Alter column Descripcion Varchar(200) Null
 
---Listo
---CREATE TABLE [Avaluo Detalles] (
---    Avaluo_DetalleID Int Identity(1,1),
---    AvaluoID INT NOT NULL,
---    ProductoID INT NOT NULL,
---	Descripcion Varchar(200) Null,
---	Cantidad INT Not Null,
---	PrecioUnitario Money Not Null,
---    PRIMARY KEY (Avaluo_DetalleID, AvaluoID, ProductoID),
---	FOREIGN KEY (AvaluoID) REFERENCES Avaluos(AvaluoID),
---    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID) 
---);
-Select * From [Avaluo Detalles]
+
+CREATE TABLE [Avaluo Detalles] (
+    Avaluo_DetalleID Int Identity(1,1),
+    AvaluoID INT NOT NULL,
+    ProductoID INT NOT NULL,
+	Descripcion Varchar(200) Null,
+	Cantidad INT Not Null,
+	PrecioUnitario Money Not Null,
+    PRIMARY KEY (Avaluo_DetalleID, AvaluoID, ProductoID),
+	FOREIGN KEY (AvaluoID) REFERENCES Avaluos(AvaluoID),
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID) 
+);
 
 
 CREATE TABLE Maquinarias (
@@ -140,7 +131,7 @@ CREATE TABLE [Maquinaria Detalles] (
     FechaFinAsignacion Date,
 	PRIMARY KEY (Maquinaria_DetalleID, ProyectoID, MaquinariaID), 
     FOREIGN KEY (ProyectoID) REFERENCES Proyectos(ProyectoID),
-    FOREIGN KEY (MaquinariaID) REFERENCES Maquinaria(MaquinariaID)
+    FOREIGN KEY (MaquinariaID) REFERENCES Maquinarias(MaquinariaID)
 );
 
 CREATE TABLE Vehiculos (
@@ -162,13 +153,13 @@ CREATE TABLE [Vehiculo Detalles] (
     EmpleadoID INT NOT NULL,
     VehiculoID INT NOT NULL,
 	FechaAsignacion Date not null,
-	FechaFinAsignacion Date null,
+	FechaFinAsignacion Date,
 	Descripcion Varchar(100),
     PRIMARY KEY (Vehiculo_DetalleID, EmpleadoID, VehiculoID), 
     FOREIGN KEY (EmpleadoID) REFERENCES Empleados(EmpleadoID),
     FOREIGN KEY (VehiculoID) REFERENCES Vehiculos(VehiculoID) 
 );
-
+Select * From [Vehiculo Detalles]
 Create table Usuarios (
     UsuarioID Int Primary Key Identity(1,1),
     EmpleadoID Int Not Null,

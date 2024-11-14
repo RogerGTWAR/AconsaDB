@@ -8,7 +8,7 @@ namespace SharedModels.Dto.EmpleadoDetalle
 {
     public class EmpleadoDetalleUpdateDto
     {
-        public int EmpleadoDetalleID { get; set; }
+        public int Empleado_DetalleID { get; set; }
         public int EmpleadoID { get; set; }
         public int ProyectoID { get; set; }
         public DateTime FechaDeProyecto { get; set; }

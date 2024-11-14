@@ -82,13 +82,13 @@ namespace Gestor_Api.Controllers
 
             try
             {
-                _logger.LogInformation($"Creando un nuevo AvaluoDetalle con ProductoID: {createDto.AvaluoID}");
+                _logger.LogInformation($"Creando un nuevo AvaluoDetalle con AvaluoID: {createDto.AvaluoID}");
 
                 var newAvaluoDetalle = _mapper.Map<AvaluoDetalle>(createDto);
 
                 await _repository.InsertAsync(newAvaluoDetalle);
 
-                _logger.LogInformation($"Nuevo AvaluoDetalle con ProductoID '{createDto.AvaluoID}' creado con ID: {newAvaluoDetalle.AvaluoID}");
+                _logger.LogInformation($"Nuevo AvaluoDetalle con AvaluoID '{createDto.AvaluoID}' creado con ID: {newAvaluoDetalle.AvaluoID}");
                 return CreatedAtAction(nameof(GetAvaluoDetalleById), new { id = newAvaluoDetalle.AvaluoID }, _mapper.Map<AvaluoDetallesDto>(newAvaluoDetalle));
             }
             catch (Exception ex)

@@ -1,137 +1,163 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
-public class EmpleadoDetalleRepository : IRepository<EmpleadoDetalle>
+//Listo
+namespace Gestor_Api.Data
 {
-    private readonly string _connectionString;
-
-    public EmpleadoDetalleRepository(string connectionString)
+    public class EmpleadoDetalleRepository : IRepository<EmpleadoDetalle>
     {
-        _connectionString = connectionString;
-    }
+        private readonly string _connectionString;
 
-    public async Task<IEnumerable<EmpleadoDetalle>> GetAllAsync()
-    {
-        var empleadoDetalles = new List<EmpleadoDetalle>();
-
-        using (var connection = new SqlConnection(_connectionString))
+        public EmpleadoDetalleRepository(string connectionString)
         {
-            string query = "SELECT * FROM [Empleado Detalles]"; 
+            _connectionString = connectionString;
+        }
 
-            await connection.OpenAsync();
+        public async Task<IEnumerable<EmpleadoDetalle>> GetAllAsync()
+        {
+            var detalles = new List<EmpleadoDetalle>();
 
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                using (var reader = await command.ExecuteReaderAsync())
+                string query = "SELECT * FROM [Empleados Detalles]";
+
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
                 {
-                    while (await reader.ReadAsync())
+                    using (var reader = await command.ExecuteReaderAsync())
                     {
-                        empleadoDetalles.Add(new EmpleadoDetalle
+                        while (await reader.ReadAsync())
                         {
-                            EmpleadoDetalleID = reader.GetInt32(0),
-                            EmpleadoID = reader.GetInt32(1),
-                            ProyectoID = reader.GetInt32(2),
-                            FechaDeProyecto = reader.GetDateTime(3)
-                        });
+                            detalles.Add(new EmpleadoDetalle
+                            {
+                                Empleado_DetalleID = reader.GetInt32(0),
+                                EmpleadoID = reader.GetInt32(1),
+                                ProyectoID = reader.GetInt32(2),
+                                FechaDeProyecto = reader.GetDateTime(3)
+                            });
+                        }
                     }
                 }
             }
+
+            return detalles;
         }
 
-        return empleadoDetalles;
-    }
-
-    public async Task<EmpleadoDetalle> GetByIdAsync(int id)
-    {
-        EmpleadoDetalle empleadoDetalle = null;
-
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<EmpleadoDetalle> GetByIdAsync(int id)
         {
-            string query = "SELECT * FROM [Empleado Detalles] WHERE EmpleadoDetalleID = @EmpleadoDetalleID";
+            EmpleadoDetalle detalle = null;
 
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            using (var connection = new SqlConnection(_connectionString))
             {
-                command.Parameters.AddWithValue("@EmpleadoDetalleID", id);
+                string query = "SELECT * FROM [Empleados Detalles] WHERE Empleado_DetalleID = @Empleado_DetalleID";
 
-                using (var reader = await command.ExecuteReaderAsync())
+                await connection.OpenAsync();
+
+                using (var command = new SqlCommand(query, connection))
                 {
-                    if (await reader.ReadAsync())
+                    command.Parameters.Add(new SqlParameter("@Empleado_DetalleID", SqlDbType.Int) { Value = id });
+
+                    using (var reader = await command.ExecuteReaderAsync())
                     {
-                        empleadoDetalle = new EmpleadoDetalle
+                        if (await reader.ReadAsync())
                         {
-                            EmpleadoDetalleID = reader.GetInt32(0),
-                            EmpleadoID = reader.GetInt32(1),
-                            ProyectoID = reader.GetInt32(2),
-                            FechaDeProyecto = reader.GetDateTime(3)
-                        };
+                            detalle = new EmpleadoDetalle
+                            {
+                                Empleado_DetalleID = reader.GetInt32(0),
+                                EmpleadoID = reader.GetInt32(1),
+                                ProyectoID = reader.GetInt32(2),
+                                FechaDeProyecto = reader.GetDateTime(3)
+                            };
+                        }
                     }
                 }
             }
+
+            return detalle;
         }
 
-        return empleadoDetalle;
-    }
-
-    public async Task<int> InsertAsync(EmpleadoDetalle entity)
-    {
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> InsertAsync(EmpleadoDetalle entity)
         {
-            string query = "INSERT INTO [Empleado Detalles] (EmpleadoID, ProyectoID, FechaDeProyecto) " +
-                           "VALUES (@EmpleadoID, @ProyectoID, @FechaDeProyecto)";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@EmpleadoID", entity.EmpleadoID);
-                command.Parameters.AddWithValue("@ProyectoID", entity.ProyectoID);
-                command.Parameters.AddWithValue("@FechaDeProyecto", entity.FechaDeProyecto);
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    string query = "INSERT INTO [Empleados Detalles] (EmpleadoID, ProyectoID, FechaDeProyecto) " +
+                                   "VALUES (@EmpleadoID, @ProyectoID, @FechaDeProyecto)";
 
-                return await command.ExecuteNonQueryAsync();
+                    await connection.OpenAsync();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@EmpleadoID", SqlDbType.Int) { Value = entity.EmpleadoID });
+                        command.Parameters.Add(new SqlParameter("@ProyectoID", SqlDbType.Int) { Value = entity.ProyectoID });
+                        command.Parameters.Add(new SqlParameter("@FechaDeProyecto", SqlDbType.DateTime) { Value = entity.FechaDeProyecto });
+
+                        return await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al insertar el detalle de empleado.", ex);
             }
         }
-    }
 
-    public async Task<int> UpdateAsync(EmpleadoDetalle entity)
-    {
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> UpdateAsync(EmpleadoDetalle entity)
         {
-            string query = "UPDATE [Empleado Detalles] SET EmpleadoID = @EmpleadoID, ProyectoID = @ProyectoID, " +
-                           "FechaDeProyecto = @FechaDeProyecto WHERE EmpleadoDetalleID = @EmpleadoDetalleID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@EmpleadoDetalleID", entity.EmpleadoDetalleID);
-                command.Parameters.AddWithValue("@EmpleadoID", entity.EmpleadoID);
-                command.Parameters.AddWithValue("@ProyectoID", entity.ProyectoID);
-                command.Parameters.AddWithValue("@FechaDeProyecto", entity.FechaDeProyecto);
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    string query = "UPDATE [Empleados Detalles] SET EmpleadoID = @EmpleadoID, ProyectoID = @ProyectoID, " +
+                                   "FechaDeProyecto = @FechaDeProyecto " +
+                                   "WHERE Empleado_DetalleID = @Empleado_DetalleID";
 
-                return await command.ExecuteNonQueryAsync();
+                    await connection.OpenAsync();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@Empleado_DetalleID", SqlDbType.Int) { Value = entity.Empleado_DetalleID });
+                        command.Parameters.Add(new SqlParameter("@EmpleadoID", SqlDbType.Int) { Value = entity.EmpleadoID });
+                        command.Parameters.Add(new SqlParameter("@ProyectoID", SqlDbType.Int) { Value = entity.ProyectoID });
+                        command.Parameters.Add(new SqlParameter("@FechaDeProyecto", SqlDbType.DateTime) { Value = entity.FechaDeProyecto });
+
+                        return await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception($"Error al actualizar el detalle de empleado con ID {entity.Empleado_DetalleID}: {ex.Message}", ex);
             }
         }
-    }
 
-    public async Task<int> DeleteAsync(int id)
-    {
-        using (var connection = new SqlConnection(_connectionString))
+        public async Task<int> DeleteAsync(int id)
         {
-            string query = "DELETE FROM [Empleado Detalles] WHERE EmpleadoDetalleID = @EmpleadoDetalleID";
-
-            await connection.OpenAsync();
-
-            using (var command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@EmpleadoDetalleID", id);
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    string query = "DELETE FROM [Empleados Detalles] WHERE Empleado_DetalleID = @Empleado_DetalleID";
 
-                return await command.ExecuteNonQueryAsync();
+                    await connection.OpenAsync();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@Empleado_DetalleID", SqlDbType.Int) { Value = id });
+
+                        return await command.ExecuteNonQueryAsync();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al eliminar el detalle de empleado.", ex);
             }
         }
     }

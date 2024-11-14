@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
+//Listo
 public class ProductoRepository : IRepository<Producto>
 {
     private readonly string _connectionString;
@@ -13,6 +14,7 @@ public class ProductoRepository : IRepository<Producto>
         _connectionString = connectionString;
     }
 
+    // Obtener todos los productos
     public async Task<IEnumerable<Producto>> GetAllAsync()
     {
         var productoList = new List<Producto>();
@@ -35,8 +37,8 @@ public class ProductoRepository : IRepository<Producto>
                             NombreProducto = reader.GetString(1),
                             ProveedorID = reader.GetInt32(2),
                             CategoriaID = reader.GetInt32(3),
-                            Descripcion = reader.IsDBNull(4) ? null : reader.GetString(4),
-                            UnidadDeMedida = reader.IsDBNull(5) ? null : reader.GetString(5),
+                            Descripcion = reader.GetString(4),
+                            UnidadDeMedida = reader.GetString(5),
                             CantidadEnStock = reader.GetInt32(6),
                             PrecioUnitario = reader.GetDecimal(7)
                         });
@@ -48,6 +50,7 @@ public class ProductoRepository : IRepository<Producto>
         return productoList;
     }
 
+    // Obtener producto por ID
     public async Task<Producto> GetByIdAsync(int id)
     {
         Producto producto = null;
@@ -72,8 +75,8 @@ public class ProductoRepository : IRepository<Producto>
                             NombreProducto = reader.GetString(1),
                             ProveedorID = reader.GetInt32(2),
                             CategoriaID = reader.GetInt32(3),
-                            Descripcion = reader.IsDBNull(4) ? null : reader.GetString(4),
-                            UnidadDeMedida = reader.IsDBNull(5) ? null : reader.GetString(5),
+                            Descripcion = reader.GetString(4),
+                            UnidadDeMedida = reader.GetString(5),
                             CantidadEnStock = reader.GetInt32(6),
                             PrecioUnitario = reader.GetDecimal(7)
                         };
@@ -85,6 +88,7 @@ public class ProductoRepository : IRepository<Producto>
         return producto;
     }
 
+    // Insertar un nuevo producto
     public async Task<int> InsertAsync(Producto entity)
     {
         using (var connection = new SqlConnection(_connectionString))
@@ -99,8 +103,8 @@ public class ProductoRepository : IRepository<Producto>
                 command.Parameters.AddWithValue("@NombreProducto", entity.NombreProducto);
                 command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID);
                 command.Parameters.AddWithValue("@CategoriaID", entity.CategoriaID);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@UnidadDeMedida", entity.UnidadDeMedida ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion);
+                command.Parameters.AddWithValue("@UnidadDeMedida", entity.UnidadDeMedida );
                 command.Parameters.AddWithValue("@CantidadEnStock", entity.CantidadEnStock);
                 command.Parameters.AddWithValue("@PrecioUnitario", entity.PrecioUnitario);
 
@@ -109,6 +113,7 @@ public class ProductoRepository : IRepository<Producto>
         }
     }
 
+    // Actualizar producto
     public async Task<int> UpdateAsync(Producto entity)
     {
         using (var connection = new SqlConnection(_connectionString))
@@ -125,8 +130,8 @@ public class ProductoRepository : IRepository<Producto>
                 command.Parameters.AddWithValue("@NombreProducto", entity.NombreProducto);
                 command.Parameters.AddWithValue("@ProveedorID", entity.ProveedorID);
                 command.Parameters.AddWithValue("@CategoriaID", entity.CategoriaID);
-                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@UnidadDeMedida", entity.UnidadDeMedida ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Descripcion", entity.Descripcion);
+                command.Parameters.AddWithValue("@UnidadDeMedida", entity.UnidadDeMedida);
                 command.Parameters.AddWithValue("@CantidadEnStock", entity.CantidadEnStock);
                 command.Parameters.AddWithValue("@PrecioUnitario", entity.PrecioUnitario);
 
@@ -135,6 +140,7 @@ public class ProductoRepository : IRepository<Producto>
         }
     }
 
+    // Eliminar producto
     public async Task<int> DeleteAsync(int id)
     {
         using (var connection = new SqlConnection(_connectionString))

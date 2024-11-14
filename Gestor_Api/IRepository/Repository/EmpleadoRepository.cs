@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
+//Listo
 public class EmpleadoRepository : IRepository<Empleado>
 {
     private readonly string _connectionString;
@@ -33,17 +33,17 @@ public class EmpleadoRepository : IRepository<Empleado>
                         empleados.Add(new Empleado
                         {
                             EmpleadoID = reader.GetInt32(0),
-                            Nombres = reader.IsDBNull(1) ? null : reader.GetString(1),
-                            Apellidos = reader.IsDBNull(2) ? null : reader.GetString(2),
-                            Cedula = reader.IsDBNull(3) ? null : reader.GetString(3),
-                            Cargo = reader.IsDBNull(4) ? null : reader.GetString(4),
+                            Nombres = reader.GetString(1),
+                            Apellidos = reader.GetString(2),
+                            Cedula = reader.GetString(3),
+                            Cargo = reader.GetString(4),
                             FechaNacimiento = reader.GetDateTime(5),
                             FechaContratacion = reader.GetDateTime(6),
-                            Direccion = reader.IsDBNull(7) ? null : reader.GetString(7),
-                            Pais = reader.IsDBNull(8) ? null : reader.GetString(8),
-                            Telefono = reader.IsDBNull(9) ? null : reader.GetString(9),
-                            Correo = reader.IsDBNull(10) ? null : reader.GetString(10),
-                            Reportes = reader.IsDBNull(11) ? (int?)null : reader.GetInt32(11)
+                            Direccion = reader.GetString(7),
+                            Pais = reader.GetString(8),
+                            Telefono = reader.GetString(9),
+                            Correo = reader.GetString(10),
+                            Reportes = reader.IsDBNull(11) ? null : reader.GetInt32(11)
                         });
                     }
                 }
@@ -74,17 +74,17 @@ public class EmpleadoRepository : IRepository<Empleado>
                         empleado = new Empleado
                         {
                             EmpleadoID = reader.GetInt32(0),
-                            Nombres = reader.IsDBNull(1) ? null : reader.GetString(1),
-                            Apellidos = reader.IsDBNull(2) ? null : reader.GetString(2),
-                            Cedula = reader.IsDBNull(3) ? null : reader.GetString(3),
-                            Cargo = reader.IsDBNull(4) ? null : reader.GetString(4),
+                            Nombres = reader.GetString(1),
+                            Apellidos = reader.GetString(2),
+                            Cedula = reader.GetString(3),
+                            Cargo = reader.GetString(4),
                             FechaNacimiento = reader.GetDateTime(5),
                             FechaContratacion = reader.GetDateTime(6),
-                            Direccion = reader.IsDBNull(7) ? null : reader.GetString(7),
-                            Pais = reader.IsDBNull(8) ? null : reader.GetString(8),
-                            Telefono = reader.IsDBNull(9) ? null : reader.GetString(9),
-                            Correo = reader.IsDBNull(10) ? null : reader.GetString(10),
-                            Reportes = reader.IsDBNull(11) ? (int?)null : reader.GetInt32(11)
+                            Direccion = reader.GetString(7),
+                            Pais = reader.GetString(8),
+                            Telefono = reader.GetString(9),
+                            Correo = reader.GetString(10),
+                            Reportes = reader.IsDBNull(11) ? null : reader.GetInt32(11)
                         };
                     }
                 }
@@ -105,16 +105,16 @@ public class EmpleadoRepository : IRepository<Empleado>
 
             using (var command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Nombres", entity.Nombres ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Apellidos", entity.Apellidos ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Cedula", entity.Cedula ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Cargo", entity.Cargo ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Nombres", entity.Nombres );
+                command.Parameters.AddWithValue("@Apellidos", entity.Apellidos);
+                command.Parameters.AddWithValue("@Cedula", entity.Cedula);
+                command.Parameters.AddWithValue("@Cargo", entity.Cargo);
                 command.Parameters.AddWithValue("@FechaNacimiento", entity.FechaNacimiento);
                 command.Parameters.AddWithValue("@FechaContratacion", entity.FechaContratacion);
-                command.Parameters.AddWithValue("@Direccion", entity.Direccion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Pais", entity.Pais ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Telefono", entity.Telefono ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Correo", entity.Correo ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Direccion", entity.Direccion);
+                command.Parameters.AddWithValue("@Pais", entity.Pais);
+                command.Parameters.AddWithValue("@Telefono", entity.Telefono    );
+                command.Parameters.AddWithValue("@Correo", entity.Correo);
                 command.Parameters.AddWithValue("@Reportes", entity.Reportes ?? (object)DBNull.Value);
 
                 return await command.ExecuteNonQueryAsync();
@@ -135,16 +135,16 @@ public class EmpleadoRepository : IRepository<Empleado>
             using (var command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@EmpleadoID", entity.EmpleadoID);
-                command.Parameters.AddWithValue("@Nombres", entity.Nombres ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Apellidos", entity.Apellidos ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Cedula", entity.Cedula ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Cargo", entity.Cargo ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Nombres", entity.Nombres );
+                command.Parameters.AddWithValue("@Apellidos", entity.Apellidos);
+                command.Parameters.AddWithValue("@Cedula", entity.Cedula);
+                command.Parameters.AddWithValue("@Cargo", entity.Cargo);
                 command.Parameters.AddWithValue("@FechaNacimiento", entity.FechaNacimiento);
                 command.Parameters.AddWithValue("@FechaContratacion", entity.FechaContratacion);
-                command.Parameters.AddWithValue("@Direccion", entity.Direccion ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Pais", entity.Pais ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Telefono", entity.Telefono ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Correo", entity.Correo ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Direccion", entity.Direccion);
+                command.Parameters.AddWithValue("@Pais", entity.Pais);
+                command.Parameters.AddWithValue("@Telefono", entity.Telefono);
+                command.Parameters.AddWithValue("@Correo", entity.Correo);
                 command.Parameters.AddWithValue("@Reportes", entity.Reportes ?? (object)DBNull.Value);
 
                 return await command.ExecuteNonQueryAsync();

@@ -9,13 +9,13 @@ namespace SharedModels.Dto.Vehiculo
     public class VehiculoCreateDto
     {
         public int ProveedorID { get; set; }
-        public string?  Marca { get; set; }
-        public string? Modelo { get; set; }
+        public required string Marca { get; set; }
+        public required string Modelo { get; set; }
         public int Año { get; set; }
-        public string? Placa { get; set; }
-        public string? TipoDeVehiculo { get; set; }
-        public string? TipoDeCombustible { get; set; }
-        public string? Estado { get; set; }
+        public required string Placa { get; set; }
+        public required string TipoDeVehiculo { get; set; }
+        public required string TipoDeCombustible { get; set; }
+        public required string Estado { get; set; }
         public DateTime FechaRegistro { get; set; }
     }
 
