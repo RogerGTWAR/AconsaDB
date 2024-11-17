@@ -13,21 +13,21 @@ namespace Gestor_Api.IRepository.Repository
     public class UsuarioRepository : IUsuario
     {
         private readonly string _connectionString;
-        private readonly IPasswordHasher<Usuario> _passwordHasher;
+        private readonly IPasswordHasher<Usuarioz> _passwordHasher;
 
-        public UsuarioRepository(IConfiguration configuration, IPasswordHasher<Usuario> passwordHasher)
+        public UsuarioRepository(IConfiguration configuration, IPasswordHasher<Usuarioz> passwordHasher)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
             _passwordHasher = passwordHasher;
         }
 
-        public async Task<Usuario> GetUserByIdAsync(int id)
+        public async Task<Usuarioz> GetUserByIdAsync(int id)
         {
-            Usuario user = null;
+            Usuarioz? user = null;
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM Users WHERE UsuarioID = @UsuarioID";
+                string query = "SELECT * FROM Usuarios WHERE UsuarioID = @UsuarioID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@UsuarioID", id);
 
@@ -36,12 +36,12 @@ namespace Gestor_Api.IRepository.Repository
                 {
                     if (await reader.ReadAsync())
                     {
-                        user = new Usuario
+                        user = new Usuarioz
                         {
                             UsuarioID = reader.GetInt32(reader.GetOrdinal("UsuarioID")),
                             EmpleadoID = reader.GetInt32(reader.GetOrdinal("EmpleadoID")),
-                            UsuarioNombre = reader.IsDBNull(reader.GetOrdinal("UsuarioNombre")) ? null : reader.GetString(reader.GetOrdinal("UsuarioNombre")),
-                            Contraseña = reader.IsDBNull(reader.GetOrdinal("Contraseña")) ? null : reader.GetString(reader.GetOrdinal("Contraseña")),
+                            Usuario = reader.GetString(reader.GetOrdinal("Usuario")),
+                            Contraseña = reader.GetString(reader.GetOrdinal("Contraseña")),
                             FechaCreacion = reader.GetDateTime(reader.GetOrdinal("FechaCreacion")),
                             FechaModificacion = reader.GetDateTime(reader.GetOrdinal("FechaModificacion"))
                         };
@@ -52,27 +52,27 @@ namespace Gestor_Api.IRepository.Repository
             return user;
         }
 
-        public async Task<Usuario> GetUserByUserNameAsync(string username)
+        public async Task<Usuarioz> GetUserByUserNameAsync(string username)
         {
-            Usuario user = null;
+            Usuarioz? user = null;
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "SELECT * FROM Users WHERE UsuarioNombre = @UsuarioNombre";
+                string query = "SELECT * FROM Usuarios WHERE Usuario = @Usuario";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UsuarioNombre", username);
+                command.Parameters.AddWithValue("@Usuario", username);
 
                 await connection.OpenAsync();
                 using (SqlDataReader reader = await command.ExecuteReaderAsync())
                 {
                     if (await reader.ReadAsync())
                     {
-                        user = new Usuario
+                        user = new Usuarioz
                         {
                             UsuarioID = reader.GetInt32(reader.GetOrdinal("UsuarioID")),
                             EmpleadoID = reader.GetInt32(reader.GetOrdinal("EmpleadoID")),
-                            UsuarioNombre = reader.IsDBNull(reader.GetOrdinal("UsuarioNombre")) ? null : reader.GetString(reader.GetOrdinal("UsuarioNombre")),
-                            Contraseña = reader.IsDBNull(reader.GetOrdinal("Contraseña")) ? null : reader.GetString(reader.GetOrdinal("Contraseña")),
+                            Usuario =  reader.GetString(reader.GetOrdinal("Usuario")),
+                            Contraseña = reader.GetString(reader.GetOrdinal("Contraseña")),
                             FechaCreacion = reader.GetDateTime(reader.GetOrdinal("FechaCreacion")),
                             FechaModificacion = reader.GetDateTime(reader.GetOrdinal("FechaModificacion"))
                         };
@@ -83,17 +83,17 @@ namespace Gestor_Api.IRepository.Repository
             return user;
         }
 
-        public async Task RegisterUserAsync(Usuario user, string password)
+        public async Task RegisterUserAsync(Usuarioz user, string password)
         {
             string hashedPassword = _passwordHasher.HashPassword(user, password);
 
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "INSERT INTO Users (EmpleadoID, UsuarioNombre, Contraseña, FechaCreacion, FechaModificacion) " +
-                               "VALUES (@EmpleadoID, @UsuarioNombre, @Contraseña, @FechaCreacion, @FechaModificacion)";
+                string query = "INSERT INTO Usuarios (EmpleadoID, Usuario, Contraseña, FechaCreacion, FechaModificacion) " +
+                               "VALUES (@EmpleadoID, @Usuario, @Contraseña, @FechaCreacion, @FechaModificacion)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@EmpleadoID", user.EmpleadoID);
-                command.Parameters.AddWithValue("@UsuarioNombre", user.UsuarioNombre ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@Usuario", user.Usuario);
                 command.Parameters.AddWithValue("@Contraseña", hashedPassword);
                 command.Parameters.AddWithValue("@FechaCreacion", user.FechaCreacion);
                 command.Parameters.AddWithValue("@FechaModificacion", user.FechaModificacion);
@@ -114,12 +114,12 @@ namespace Gestor_Api.IRepository.Repository
             var verificationResult = _passwordHasher.VerifyHashedPassword(user, user.Contraseña, password);
             return verificationResult == PasswordVerificationResult.Success;
         }
-        async Task<Usuario> IUsuario.GetUserByIdAsync(int id)
+        async Task<Usuarioz> IUsuario.GetUserByIdAsync(int id)
         {
             return await GetUserByIdAsync(id);
         }
 
-        async Task<Usuario> IUsuario.GetUserByUserNameAsync(string userName)
+        async Task<Usuarioz> IUsuario.GetUserByUserNameAsync(string userName)
         {
             return await GetUserByUserNameAsync(userName);
         }

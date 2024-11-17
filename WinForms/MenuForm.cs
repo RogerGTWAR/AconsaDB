@@ -1,0 +1,129 @@
+using FontAwesome.Sharp;
+using System.Net.Http;
+using System.Runtime.InteropServices;
+
+namespace WinForms
+{
+    public partial class MenuForm : Form
+    {
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
+        private readonly HttpClient _httpClient;
+        private Form currentchilform;
+        public MenuForm(ApiClient _apiClient)
+        {
+            InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panelMenu.Controls.Add(leftBorderBtn);
+            //Form
+            //Solo con esto, no saldra la barra de tareas
+            //this.Text = string.Empty;
+            //this.ControlBox = false;
+            //this.DoubleBuffered = true;
+            ////Para solucionarlo
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; 
+            _httpClient = new HttpClient
+            {
+                BaseAddress = new Uri("https://localhost:7067/api/")
+            };
+        }
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisableButton();
+                currentBtn = (IconButton)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+
+                IconoFormulario.IconChar = currentBtn.IconChar;
+                IconoFormulario.IconColor = color;
+            }
+        }
+        private struct RGBColors
+        {
+            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(95, 77, 221);
+            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
+
+        }
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.ForeColor = Color.White;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.White;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+
+            IconoFormulario.IconChar = IconChar.Home;
+            IconoFormulario.IconColor = Color.MediumPurple;
+            TituloFormulario.Text = "Home";
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChilForm(new EmpleadosForm(_httpClient));
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+        private void btnHome_Click_1(object sender, EventArgs e)
+        {
+            currentchilform.Close();
+            Reset();
+        }
+
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelTituloBarra_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void OpenChilForm (Form chilform)
+        {
+            if (currentchilform != null)
+            {
+                currentchilform.Close();
+            }
+                currentchilform = chilform;
+                chilform.TopLevel = false;
+                chilform.FormBorderStyle = FormBorderStyle.None;
+                chilform.Dock = DockStyle.Fill;
+                panelContenedor.Controls.Add(chilform);
+                panelContenedor.Tag = chilform;
+                chilform.BringToFront();
+                chilform.Show();
+                TituloFormulario.Text = chilform.Text;
+            }
+        }
+    }

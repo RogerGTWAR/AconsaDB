@@ -67,9 +67,8 @@ namespace Gestor_Api
             CreateMap<Proyecto, ProyectoUpdateDto>().ReverseMap();
 
             // Mapeos de Usuario
-            CreateMap<Usuario, UsuarioDto>().ReverseMap();
-            CreateMap<Usuario, UsuarioCreateDto>().ReverseMap();
-            CreateMap<Usuario, UsuarioUpdateDto>().ReverseMap();
+            CreateMap<Usuarioz, RegisterUsuario>().ReverseMap();
+            CreateMap<Usuarioz, LoginUsuario>().ReverseMap();
 
             // Mapeos de Vehiculo
             CreateMap<Vehiculo, VehiculoDto>().ReverseMap();
@@ -88,7 +87,6 @@ namespace Gestor_Api
             CreateMap<EmpleadoDetalle, EmpleadoDetallesDto>().ReverseMap();
             CreateMap<EmpleadoDetalle, EmpleadoDetalleCreateDto>().ReverseMap();
             CreateMap<EmpleadoDetalle, EmpleadoDetalleUpdateDto>().ReverseMap();
-
         }
     }
 }

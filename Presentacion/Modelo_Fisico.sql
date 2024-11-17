@@ -159,7 +159,7 @@ CREATE TABLE [Vehiculo Detalles] (
     FOREIGN KEY (EmpleadoID) REFERENCES Empleados(EmpleadoID),
     FOREIGN KEY (VehiculoID) REFERENCES Vehiculos(VehiculoID) 
 );
-Select * From [Vehiculo Detalles]
+Select * From Users
 Create table Usuarios (
     UsuarioID Int Primary Key Identity(1,1),
     EmpleadoID Int Not Null,
