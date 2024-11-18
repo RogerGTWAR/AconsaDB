@@ -48,16 +48,16 @@
             panelLogo = new Panel();
             btnHome = new PictureBox();
             panelTituloBarra = new Panel();
-            lblUsuario = new Label();
             btnUsuario = new FontAwesome.Sharp.IconButton();
             lblFecha = new Label();
             lblHora = new Label();
             TituloFormulario = new Label();
             IconoFormulario = new FontAwesome.Sharp.IconPictureBox();
+            lblUsuario = new Label();
             panelContenedor = new Panel();
+            label1 = new Label();
             pictureBox1 = new PictureBox();
             horafecha = new System.Windows.Forms.Timer(components);
-            label1 = new Label();
             panelMenu.SuspendLayout();
             panelsubmenuDetalles.SuspendLayout();
             panelLogo.SuspendLayout();
@@ -372,9 +372,9 @@
             // btnHome
             // 
             btnHome.Image = Properties.Resources.Aconsa;
-            btnHome.Location = new Point(57, 36);
+            btnHome.Location = new Point(24, 0);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(91, 83);
+            btnHome.Size = new Size(157, 137);
             btnHome.SizeMode = PictureBoxSizeMode.Zoom;
             btnHome.TabIndex = 0;
             btnHome.TabStop = false;
@@ -394,17 +394,6 @@
             panelTituloBarra.Size = new Size(1156, 75);
             panelTituloBarra.TabIndex = 2;
             panelTituloBarra.MouseDown += panelTituloBarra_MouseDown;
-            // 
-            // lblUsuario
-            // 
-            lblUsuario.AutoSize = true;
-            lblUsuario.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsuario.ForeColor = Color.White;
-            lblUsuario.Location = new Point(610, 229);
-            lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(126, 41);
-            lblUsuario.TabIndex = 5;
-            lblUsuario.Text = "Usuario";
             // 
             // btnUsuario
             // 
@@ -472,6 +461,17 @@
             IconoFormulario.TabIndex = 0;
             IconoFormulario.TabStop = false;
             // 
+            // lblUsuario
+            // 
+            lblUsuario.AutoSize = true;
+            lblUsuario.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsuario.ForeColor = Color.White;
+            lblUsuario.Location = new Point(188, 21);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(126, 41);
+            lblUsuario.TabIndex = 5;
+            lblUsuario.Text = "Usuario";
+            // 
             // panelContenedor
             // 
             panelContenedor.BackColor = Color.FromArgb(34, 33, 74);
@@ -484,11 +484,22 @@
             panelContenedor.Size = new Size(1156, 813);
             panelContenedor.TabIndex = 3;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(6, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(176, 41);
+            label1.TabIndex = 6;
+            label1.Text = "Bienvenido";
+            // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.Aconsa;
-            pictureBox1.Location = new Point(517, 284);
+            pictureBox1.Location = new Point(518, 273);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(117, 152);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -499,17 +510,6 @@
             // 
             horafecha.Enabled = true;
             horafecha.Tick += horafecha_Tick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(410, 229);
-            label1.Name = "label1";
-            label1.Size = new Size(176, 41);
-            label1.TabIndex = 6;
-            label1.Text = "Bienvenido";
             // 
             // MenuForm
             // 
