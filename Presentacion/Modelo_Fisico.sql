@@ -28,7 +28,6 @@ CREATE TABLE Clientes (
     País VARCHAR(50),                        
     Teléfono NVARCHAR(20),              
 );
-
 CREATE TABLE Proveedores (
     ProveedorID INT IDENTITY(1,1) PRIMARY KEY,
     NombreEmpresa VARCHAR(100) NOT NULL,      
@@ -159,7 +158,6 @@ CREATE TABLE [Vehiculo Detalles] (
     FOREIGN KEY (EmpleadoID) REFERENCES Empleados(EmpleadoID),
     FOREIGN KEY (VehiculoID) REFERENCES Vehiculos(VehiculoID) 
 );
-Select * From Users
 Create table Usuarios (
     UsuarioID Int Primary Key Identity(1,1),
     EmpleadoID Int Not Null,

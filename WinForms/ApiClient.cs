@@ -2,6 +2,7 @@
 using SharedModels;
 using SharedModels.Dto.Cliente;
 using SharedModels.Dto.Empleado;
+using SharedModels.Dto.Proveedor;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,6 +19,7 @@ namespace WinForms
         private readonly HttpClient _httpClient;
         public IRepository<EmpleadoDto> Empleados { get; set; }
         public IRepository<ClienteDto> Clientes { get; set; }
+        public IRepository<ProveedorDto> Proveedores { get; set; }
         public IUserRepository LoginUsers { get; }
         public IUserRepository RegisterUsuarios { get; }
 
@@ -28,6 +30,7 @@ namespace WinForms
             //Nota lo que esta entre "" tiene que llamarse igual que la clase de shared models o la api
             Empleados = new Repository<EmpleadoDto>(_httpClient, "Empleado");
             Clientes = new Repository<ClienteDto>(_httpClient, "Cliente");
+            Proveedores = new Repository<ProveedorDto>(_httpClient, "Proveedor");
             LoginUsers = new UserRepository(_httpClient, "Auth/Login");
             RegisterUsuarios = new UserRepository(_httpClient, "Auth/Register");
 

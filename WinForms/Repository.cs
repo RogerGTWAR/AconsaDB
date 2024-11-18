@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -61,6 +62,14 @@ namespace WinForms
             }
         }
 
+
+
+        public async Task<bool> DeleteClienteAsync(string id)
+        {
+            var response = await _httpClient.DeleteAsync($"{_endpoint}/{id}");
+            return response.IsSuccessStatusCode;
+        }
+
         public async Task<bool> ExistsAsync(int id)
         {
             var response = await _httpClient.GetAsync($"{_endpoint}/{id}");
@@ -96,6 +105,28 @@ namespace WinForms
             }
         }
 
+        public async Task<T> GetByClienteIDAsync(string clienteID)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"{_endpoint}/{clienteID}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<T>(content);
+                }
+
+                return null; 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener el cliente: {ex.Message}");
+            }
+        }
+
+
+
         public async Task<T> GetByIdAsync(int id)
         {
             var response = await _httpClient.GetAsync($"{_endpoint}/{id}");
@@ -128,5 +159,7 @@ namespace WinForms
                 throw new Exception(errorResponse);
             }
         }
+
+
     }
 }

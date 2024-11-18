@@ -64,7 +64,9 @@ namespace WinForms
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
-
+            public static Color color7 = Color.FromArgb(34, 193, 195);
+            public static Color color8 = Color.FromArgb(253, 187, 45);
+            public static Color color9 = Color.FromArgb(252, 74, 85);
         }
         private void DisableButton()
         {
@@ -156,7 +158,7 @@ namespace WinForms
         private void horafecha_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblFecha.Text = DateTime.Now.ToShortTimeString();
+            lblFecha.Text = DateTime.Now.ToShortDateString();
         }
 
         private void lblFecha_Click(object sender, EventArgs e)
@@ -171,6 +173,7 @@ namespace WinForms
 
         private void btnDetalles_Click_1(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color9);
             showsubMenu(panelsubmenuDetalles);
         }
         //Revisar luego
@@ -182,6 +185,43 @@ namespace WinForms
         private void MenuForm_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = _usuario;
+
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChilForm(new ProveedoresForm(_httpClient));
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+            //Agregar el form
+
+        }
+
+        private void btnProyectos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color5);
+
+        }
+
+        private void btnAvaluos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color6);
+
+        }
+
+        private void btnVehiculos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color7);
+
+        }
+
+        private void btnMaquinarias_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color8);
 
         }
     }
