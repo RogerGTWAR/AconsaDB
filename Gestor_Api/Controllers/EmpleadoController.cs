@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SharedModels.Dto.Empleado;
-using SharedModels;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SharedModels.Dto.Avaluo;
+using SharedModels;
 
 namespace Gestor_Api.Controllers
 {

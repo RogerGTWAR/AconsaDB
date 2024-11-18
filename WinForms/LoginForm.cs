@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,8 @@ namespace WindowsForm
         {
             InitializeComponent();
             _apiClient = new ApiClient();
+            //Para ocultar la contraseña
+            txtPassword.UseSystemPasswordChar = true;
         }
 
         private async void btnCargar_Click(object sender, EventArgs e)
@@ -38,11 +41,15 @@ namespace WindowsForm
 
                 if (!string.IsNullOrEmpty(token))
                 {
-                    MessageBox.Show("¡Inicio de sesión exitoso!");
                     _apiClient.SetAuthToken(token);
-                    Hide();
-                    var mainForm = new MenuForm(_apiClient);
-                    mainForm.Show();
+
+                    this.Hide();
+                    BienvenidadForm frm = new BienvenidadForm(username);
+                    frm.ShowDialog();
+                    //Hide();
+
+                    MenuForm menuForm = new MenuForm(_apiClient, username);
+                    menuForm.Show();
                 }
                 else
                 {
@@ -64,6 +71,16 @@ namespace WindowsForm
         {
             var mainForm = new RegisterForm(_apiClient, _httpClient);
             mainForm.Show();
+        }
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

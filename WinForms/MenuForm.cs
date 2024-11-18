@@ -10,12 +10,14 @@ namespace WinForms
         private Panel leftBorderBtn;
         private readonly HttpClient _httpClient;
         private Form currentchilform;
-        public MenuForm(ApiClient _apiClient)
+        private readonly string _usuario;
+        public MenuForm(ApiClient _apiClient, string username)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            _usuario = username;
             //Form
             //Solo con esto, no saldra la barra de tareas
             //this.Text = string.Empty;
@@ -27,7 +29,11 @@ namespace WinForms
             {
                 BaseAddress = new Uri("https://localhost:7067/api/")
             };
+            CustomizeDesing();
+            hidesubMenu();
         }
+
+
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -91,6 +97,7 @@ namespace WinForms
         private void btnClientes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChilForm(new ClientesForm(_httpClient));
         }
         private void btnHome_Click_1(object sender, EventArgs e)
         {
@@ -109,21 +116,74 @@ namespace WinForms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void OpenChilForm (Form chilform)
+        private void OpenChilForm(Form chilform)
         {
             if (currentchilform != null)
             {
                 currentchilform.Close();
             }
-                currentchilform = chilform;
-                chilform.TopLevel = false;
-                chilform.FormBorderStyle = FormBorderStyle.None;
-                chilform.Dock = DockStyle.Fill;
-                panelContenedor.Controls.Add(chilform);
-                panelContenedor.Tag = chilform;
-                chilform.BringToFront();
-                chilform.Show();
-                TituloFormulario.Text = chilform.Text;
+            currentchilform = chilform;
+            chilform.TopLevel = false;
+            chilform.FormBorderStyle = FormBorderStyle.None;
+            chilform.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Add(chilform);
+            panelContenedor.Tag = chilform;
+            chilform.BringToFront();
+            chilform.Show();
+            TituloFormulario.Text = chilform.Text;
+        }
+        private void CustomizeDesing()
+        {
+            panelsubmenuDetalles.Visible = false;
+        }
+
+        private void hidesubMenu()
+        {
+            if (panelsubmenuDetalles.Visible == true)
+                panelsubmenuDetalles.Visible = false;
+        }
+        private void showsubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hidesubMenu();
+                subMenu.Visible = true;
             }
+            else
+                subMenu.Visible = false;
+        }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblFecha.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void lblFecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDetalles_Click_1(object sender, EventArgs e)
+        {
+            showsubMenu(panelsubmenuDetalles);
+        }
+        //Revisar luego
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = _usuario;
+
         }
     }
+}
+    

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using SharedModels;
+using SharedModels.Dto.Cliente;
 using SharedModels.Dto.Empleado;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace WinForms
     {
         private readonly HttpClient _httpClient;
         public IRepository<EmpleadoDto> Empleados { get; set; }
+        public IRepository<ClienteDto> Clientes { get; set; }
         public IUserRepository LoginUsers { get; }
         public IUserRepository RegisterUsuarios { get; }
 
@@ -23,7 +25,9 @@ namespace WinForms
         {
             string apiBaseUrl = ConfigurationManager.AppSettings["ApiBaseUrl"];
             _httpClient = new HttpClient { BaseAddress = new Uri(apiBaseUrl) };    
-            Empleados = new Repository<EmpleadoDto>(_httpClient, "Empleados");
+            //Nota lo que esta entre "" tiene que llamarse igual que la clase de shared models o la api
+            Empleados = new Repository<EmpleadoDto>(_httpClient, "Empleado");
+            Clientes = new Repository<ClienteDto>(_httpClient, "Cliente");
             LoginUsers = new UserRepository(_httpClient, "Auth/Login");
             RegisterUsuarios = new UserRepository(_httpClient, "Auth/Register");
 

@@ -81,3 +81,5 @@ C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\bin\Debug\net8.0-windows\Gesto
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\bin\Debug\net8.0-windows\SharedModels.pdb
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WindowsForm.LoginForm.resources
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.RegisterForm.resources
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.ClientesForm.resources
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.BienvenidadForm.resources
