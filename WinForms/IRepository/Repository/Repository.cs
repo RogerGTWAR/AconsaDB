@@ -9,7 +9,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinForms
+namespace WinForms.IRepository.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
@@ -117,7 +117,7 @@ namespace WinForms
                     return JsonConvert.DeserializeObject<T>(content);
                 }
 
-                return null; 
+                return null;
             }
             catch (Exception ex)
             {

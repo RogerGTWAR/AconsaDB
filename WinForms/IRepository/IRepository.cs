@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinForms
+namespace WinForms.IRepository
 {
     public interface IRepository<T>
     {
@@ -14,7 +14,7 @@ namespace WinForms
         Task<bool> UpdateAsync(int id, object dto);
         Task<bool> DeleteAsync(int id);
         Task<bool> ExistsAsync(int id);
-        Task<bool> DeleteClienteAsync(string id);  
+        Task<bool> DeleteClienteAsync(string id);
 
     }
 }

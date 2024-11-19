@@ -6,9 +6,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using WinForms.IRepository;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace WinForms
+namespace WinForms.IRepository.Repository
 {
     public class UserRepository : IUserRepository
     {
