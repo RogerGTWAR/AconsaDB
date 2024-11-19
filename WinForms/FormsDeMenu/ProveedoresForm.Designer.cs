@@ -51,6 +51,7 @@
             label1 = new Label();
             txtNombreEmpresa = new TextBox();
             dgvProveedores = new DataGridView();
+            proveedorBindingSource = new BindingSource(components);
             proveedorIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -60,11 +61,8 @@
             paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             correoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            proveedorBindingSource1 = new BindingSource(components);
-            proveedorBindingSource = new BindingSource(components);
             panelSubContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)proveedorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proveedorBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -307,7 +305,7 @@
             dgvProveedores.BackgroundColor = Color.White;
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { proveedorIDDataGridViewTextBoxColumn, nombreEmpresaDataGridViewTextBoxColumn, nombreContactoDataGridViewTextBoxColumn, cargoContactoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, ciudadDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, correoDataGridViewTextBoxColumn });
-            dgvProveedores.DataSource = proveedorBindingSource1;
+            dgvProveedores.DataSource = proveedorBindingSource;
             dgvProveedores.Dock = DockStyle.Bottom;
             dgvProveedores.Location = new Point(0, 367);
             dgvProveedores.Name = "dgvProveedores";
@@ -317,6 +315,10 @@
             dgvProveedores.Size = new Size(1199, 228);
             dgvProveedores.TabIndex = 0;
             dgvProveedores.CellContentClick += dgvProveedores_CellContentClick;
+            // 
+            // proveedorBindingSource
+            // 
+            proveedorBindingSource.DataSource = typeof(SharedModels.Proveedor);
             // 
             // proveedorIDDataGridViewTextBoxColumn
             // 
@@ -334,7 +336,7 @@
             nombreEmpresaDataGridViewTextBoxColumn.MinimumWidth = 6;
             nombreEmpresaDataGridViewTextBoxColumn.Name = "nombreEmpresaDataGridViewTextBoxColumn";
             nombreEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            nombreEmpresaDataGridViewTextBoxColumn.Width = 140;
+            nombreEmpresaDataGridViewTextBoxColumn.Width = 125;
             // 
             // nombreContactoDataGridViewTextBoxColumn
             // 
@@ -399,14 +401,6 @@
             correoDataGridViewTextBoxColumn.ReadOnly = true;
             correoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // proveedorBindingSource1
-            // 
-            proveedorBindingSource1.DataSource = typeof(SharedModels.Proveedor);
-            // 
-            // proveedorBindingSource
-            // 
-            proveedorBindingSource.DataSource = typeof(SharedModels.Proveedor);
-            // 
             // ProveedoresForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -420,7 +414,6 @@
             panelSubContenedor.ResumeLayout(false);
             panelSubContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
-            ((System.ComponentModel.ISupportInitialize)proveedorBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)proveedorBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -447,7 +440,6 @@
         private TextBox txtNombreEmpresa;
         private Button btnAgregar;
         private Label label9;
-        private BindingSource proveedorBindingSource;
         private Button btnEliminar;
         private Button btnModificar;
         private DataGridViewTextBoxColumn proveedorIDDataGridViewTextBoxColumn;
@@ -459,6 +451,6 @@
         private DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
-        private BindingSource proveedorBindingSource1;
+        private BindingSource proveedorBindingSource;
     }
 }
