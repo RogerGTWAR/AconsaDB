@@ -204,7 +204,7 @@ namespace WinForms
         private void btnProyectos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-
+            OpenChilForm(new ProyectosForm(_httpClient));
         }
 
         private void btnAvaluos_Click(object sender, EventArgs e)

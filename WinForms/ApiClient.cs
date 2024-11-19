@@ -3,6 +3,7 @@ using SharedModels;
 using SharedModels.Dto.Cliente;
 using SharedModels.Dto.Empleado;
 using SharedModels.Dto.Proveedor;
+using SharedModels.Dto.Proyecto;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,6 +21,7 @@ namespace WinForms
         public IRepository<EmpleadoDto> Empleados { get; set; }
         public IRepository<ClienteDto> Clientes { get; set; }
         public IRepository<ProveedorDto> Proveedores { get; set; }
+        public IRepository<ProyectoDto> Proyectos { get; set; }
         public IUserRepository LoginUsers { get; }
         public IUserRepository RegisterUsuarios { get; }
 
@@ -31,6 +33,7 @@ namespace WinForms
             Empleados = new Repository<EmpleadoDto>(_httpClient, "Empleado");
             Clientes = new Repository<ClienteDto>(_httpClient, "Cliente");
             Proveedores = new Repository<ProveedorDto>(_httpClient, "Proveedor");
+            Proyectos = new Repository<ProyectoDto>(_httpClient, "Proyecto");
             LoginUsers = new UserRepository(_httpClient, "Auth/Login");
             RegisterUsuarios = new UserRepository(_httpClient, "Auth/Register");
 
