@@ -32,19 +32,6 @@ namespace WinForms
         {
             components = new System.ComponentModel.Container();
             dgvEmpleados = new DataGridView();
-            empleadoIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            apellidosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cedulaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaNacimientoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaContratacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            correoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            reportesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            empleadoBindingSource = new BindingSource(components);
             btnAgregar = new Button();
             btnEliminar = new Button();
             btnModificar = new Button();
@@ -61,9 +48,22 @@ namespace WinForms
             dtpFechaNacimiento = new DateTimePicker();
             panelSubcontenedor = new Panel();
             cbPagina = new ComboBox();
+            empleadoBindingSource = new BindingSource(components);
+            empleadoIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            apellidosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cedulaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            rolIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaNacimientoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaContratacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            correoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            reportesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)empleadoBindingSource).BeginInit();
             panelSubcontenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)empleadoBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dgvEmpleados
@@ -71,7 +71,7 @@ namespace WinForms
             dgvEmpleados.AutoGenerateColumns = false;
             dgvEmpleados.BackgroundColor = Color.White;
             dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { empleadoIDDataGridViewTextBoxColumn, nombresDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, cedulaDataGridViewTextBoxColumn, cargoDataGridViewTextBoxColumn, fechaNacimientoDataGridViewTextBoxColumn, fechaContratacionDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, correoDataGridViewTextBoxColumn, reportesDataGridViewTextBoxColumn });
+            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { empleadoIDDataGridViewTextBoxColumn, nombresDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, cedulaDataGridViewTextBoxColumn, rolIDDataGridViewTextBoxColumn, fechaNacimientoDataGridViewTextBoxColumn, fechaContratacionDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, correoDataGridViewTextBoxColumn, reportesDataGridViewTextBoxColumn });
             dgvEmpleados.DataSource = empleadoBindingSource;
             dgvEmpleados.Dock = DockStyle.Bottom;
             dgvEmpleados.Location = new Point(0, 315);
@@ -82,118 +82,6 @@ namespace WinForms
             dgvEmpleados.Size = new Size(1448, 333);
             dgvEmpleados.TabIndex = 0;
             dgvEmpleados.CellContentClick += dgvEmpleados_CellContentClick;
-            // 
-            // empleadoIDDataGridViewTextBoxColumn
-            // 
-            empleadoIDDataGridViewTextBoxColumn.DataPropertyName = "EmpleadoID";
-            empleadoIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            empleadoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            empleadoIDDataGridViewTextBoxColumn.Name = "empleadoIDDataGridViewTextBoxColumn";
-            empleadoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            empleadoIDDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // nombresDataGridViewTextBoxColumn
-            // 
-            nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
-            nombresDataGridViewTextBoxColumn.HeaderText = "Nombres";
-            nombresDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
-            nombresDataGridViewTextBoxColumn.ReadOnly = true;
-            nombresDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
-            apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
-            apellidosDataGridViewTextBoxColumn.MinimumWidth = 6;
-            apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            apellidosDataGridViewTextBoxColumn.ReadOnly = true;
-            apellidosDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cedulaDataGridViewTextBoxColumn
-            // 
-            cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            cedulaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
-            cedulaDataGridViewTextBoxColumn.ReadOnly = true;
-            cedulaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cargoDataGridViewTextBoxColumn
-            // 
-            cargoDataGridViewTextBoxColumn.DataPropertyName = "Cargo";
-            cargoDataGridViewTextBoxColumn.HeaderText = "Cargo";
-            cargoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
-            cargoDataGridViewTextBoxColumn.ReadOnly = true;
-            cargoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechaNacimientoDataGridViewTextBoxColumn
-            // 
-            fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
-            fechaNacimientoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
-            fechaNacimientoDataGridViewTextBoxColumn.ReadOnly = true;
-            fechaNacimientoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechaContratacionDataGridViewTextBoxColumn
-            // 
-            fechaContratacionDataGridViewTextBoxColumn.DataPropertyName = "FechaContratacion";
-            fechaContratacionDataGridViewTextBoxColumn.HeaderText = "FechaContratacion";
-            fechaContratacionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            fechaContratacionDataGridViewTextBoxColumn.Name = "fechaContratacionDataGridViewTextBoxColumn";
-            fechaContratacionDataGridViewTextBoxColumn.ReadOnly = true;
-            fechaContratacionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            direccionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // paisDataGridViewTextBoxColumn
-            // 
-            paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
-            paisDataGridViewTextBoxColumn.HeaderText = "Pais";
-            paisDataGridViewTextBoxColumn.MinimumWidth = 6;
-            paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
-            paisDataGridViewTextBoxColumn.ReadOnly = true;
-            paisDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            telefonoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // correoDataGridViewTextBoxColumn
-            // 
-            correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
-            correoDataGridViewTextBoxColumn.HeaderText = "Correo";
-            correoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
-            correoDataGridViewTextBoxColumn.ReadOnly = true;
-            correoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // reportesDataGridViewTextBoxColumn
-            // 
-            reportesDataGridViewTextBoxColumn.DataPropertyName = "Reportes";
-            reportesDataGridViewTextBoxColumn.HeaderText = "Reportes";
-            reportesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            reportesDataGridViewTextBoxColumn.Name = "reportesDataGridViewTextBoxColumn";
-            reportesDataGridViewTextBoxColumn.ReadOnly = true;
-            reportesDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // empleadoBindingSource
-            // 
-            empleadoBindingSource.DataSource = typeof(Empleado);
             // 
             // btnAgregar
             // 
@@ -334,6 +222,118 @@ namespace WinForms
             cbPagina.TabIndex = 15;
             cbPagina.SelectedIndexChanged += cbPagina_SelectedIndexChanged;
             // 
+            // empleadoBindingSource
+            // 
+            empleadoBindingSource.DataSource = typeof(Empleado);
+            // 
+            // empleadoIDDataGridViewTextBoxColumn
+            // 
+            empleadoIDDataGridViewTextBoxColumn.DataPropertyName = "EmpleadoID";
+            empleadoIDDataGridViewTextBoxColumn.HeaderText = "EmpleadoID";
+            empleadoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            empleadoIDDataGridViewTextBoxColumn.Name = "empleadoIDDataGridViewTextBoxColumn";
+            empleadoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            empleadoIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombresDataGridViewTextBoxColumn
+            // 
+            nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
+            nombresDataGridViewTextBoxColumn.HeaderText = "Nombres";
+            nombresDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
+            nombresDataGridViewTextBoxColumn.ReadOnly = true;
+            nombresDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
+            apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
+            apellidosDataGridViewTextBoxColumn.MinimumWidth = 6;
+            apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            apellidosDataGridViewTextBoxColumn.ReadOnly = true;
+            apellidosDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            cedulaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            cedulaDataGridViewTextBoxColumn.ReadOnly = true;
+            cedulaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // rolIDDataGridViewTextBoxColumn
+            // 
+            rolIDDataGridViewTextBoxColumn.DataPropertyName = "RolID";
+            rolIDDataGridViewTextBoxColumn.HeaderText = "RolID";
+            rolIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            rolIDDataGridViewTextBoxColumn.Name = "rolIDDataGridViewTextBoxColumn";
+            rolIDDataGridViewTextBoxColumn.ReadOnly = true;
+            rolIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaNacimientoDataGridViewTextBoxColumn
+            // 
+            fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
+            fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
+            fechaNacimientoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
+            fechaNacimientoDataGridViewTextBoxColumn.ReadOnly = true;
+            fechaNacimientoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaContratacionDataGridViewTextBoxColumn
+            // 
+            fechaContratacionDataGridViewTextBoxColumn.DataPropertyName = "FechaContratacion";
+            fechaContratacionDataGridViewTextBoxColumn.HeaderText = "FechaContratacion";
+            fechaContratacionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            fechaContratacionDataGridViewTextBoxColumn.Name = "fechaContratacionDataGridViewTextBoxColumn";
+            fechaContratacionDataGridViewTextBoxColumn.ReadOnly = true;
+            fechaContratacionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            direccionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // paisDataGridViewTextBoxColumn
+            // 
+            paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
+            paisDataGridViewTextBoxColumn.HeaderText = "Pais";
+            paisDataGridViewTextBoxColumn.MinimumWidth = 6;
+            paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
+            paisDataGridViewTextBoxColumn.ReadOnly = true;
+            paisDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            telefonoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // correoDataGridViewTextBoxColumn
+            // 
+            correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
+            correoDataGridViewTextBoxColumn.HeaderText = "Correo";
+            correoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            correoDataGridViewTextBoxColumn.ReadOnly = true;
+            correoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // reportesDataGridViewTextBoxColumn
+            // 
+            reportesDataGridViewTextBoxColumn.DataPropertyName = "Reportes";
+            reportesDataGridViewTextBoxColumn.HeaderText = "Reportes";
+            reportesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            reportesDataGridViewTextBoxColumn.Name = "reportesDataGridViewTextBoxColumn";
+            reportesDataGridViewTextBoxColumn.ReadOnly = true;
+            reportesDataGridViewTextBoxColumn.Width = 125;
+            // 
             // EmpleadosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -345,9 +345,9 @@ namespace WinForms
             Text = "EmpleadosForm";
             Load += EmpleadosForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
-            ((System.ComponentModel.ISupportInitialize)empleadoBindingSource).EndInit();
             panelSubcontenedor.ResumeLayout(false);
             panelSubcontenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)empleadoBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -368,14 +368,13 @@ namespace WinForms
         private TextBox txtReportes;
         private DateTimePicker dtpFechaContratacion;
         private DateTimePicker dtpFechaNacimiento;
-        private BindingSource empleadoBindingSource;
         private Panel panelSubcontenedor;
         private ComboBox cbPagina;
         private DataGridViewTextBoxColumn empleadoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cargoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn rolIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaContratacionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
@@ -383,5 +382,6 @@ namespace WinForms
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn reportesDataGridViewTextBoxColumn;
+        private BindingSource empleadoBindingSource;
     }
 }

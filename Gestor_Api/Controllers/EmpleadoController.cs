@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SharedModels.Dto.Avaluo;
 using SharedModels;
 
 namespace Gestor_Api.Controllers

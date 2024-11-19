@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using SharedModels;
-
 //Listo
 public class EmpleadoRepository : IRepository<Empleado>
 {
@@ -37,7 +37,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                             Nombres = reader.GetString(1),
                             Apellidos = reader.GetString(2),
                             Cedula = reader.GetString(3),
-                            Cargo = reader.GetString(4),
+                            RolID = reader.GetInt32(4),
                             FechaNacimiento = reader.GetDateTime(5),
                             FechaContratacion = reader.GetDateTime(6),
                             Direccion = reader.GetString(7),
@@ -78,7 +78,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                             Nombres = reader.GetString(1),
                             Apellidos = reader.GetString(2),
                             Cedula = reader.GetString(3),
-                            Cargo = reader.GetString(4),
+                            RolID = reader.GetInt32(4),
                             FechaNacimiento = reader.GetDateTime(5),
                             FechaContratacion = reader.GetDateTime(6),
                             Direccion = reader.GetString(7),
@@ -99,8 +99,8 @@ public class EmpleadoRepository : IRepository<Empleado>
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "INSERT INTO Empleados (Nombres, Apellidos, Cedula, Cargo, FechaNacimiento, FechaContratacion, Direccion, Pais, Telefono, Correo, Reportes) " +
-                           "VALUES (@Nombres, @Apellidos, @Cedula, @Cargo, @FechaNacimiento, @FechaContratacion, @Direccion, @Pais, @Telefono, @Correo, @Reportes)";
+            string query = "INSERT INTO Empleados (Nombres, Apellidos, Cedula, RolID, FechaNacimiento, FechaContratacion, Direccion, Pais, Telefono, Correo, Reportes) " +
+                           "VALUES (@Nombres, @Apellidos, @Cedula, @RolID, @FechaNacimiento, @FechaContratacion, @Direccion, @Pais, @Telefono, @Correo, @Reportes)";
 
             await connection.OpenAsync();
 
@@ -109,7 +109,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                 command.Parameters.AddWithValue("@Nombres", entity.Nombres );
                 command.Parameters.AddWithValue("@Apellidos", entity.Apellidos);
                 command.Parameters.AddWithValue("@Cedula", entity.Cedula);
-                command.Parameters.AddWithValue("@Cargo", entity.Cargo);
+                command.Parameters.AddWithValue("@RolID", entity.RolID);
                 command.Parameters.AddWithValue("@FechaNacimiento", entity.FechaNacimiento);
                 command.Parameters.AddWithValue("@FechaContratacion", entity.FechaContratacion);
                 command.Parameters.AddWithValue("@Direccion", entity.Direccion);
@@ -127,7 +127,7 @@ public class EmpleadoRepository : IRepository<Empleado>
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "UPDATE Empleados SET Nombres = @Nombres, Apellidos = @Apellidos, Cedula = @Cedula, Cargo = @Cargo, " +
+            string query = "UPDATE Empleados SET Nombres = @Nombres, Apellidos = @Apellidos, Cedula = @Cedula, RolID = @RolID, " +
                            "FechaNacimiento = @FechaNacimiento, FechaContratacion = @FechaContratacion, Direccion = @Direccion, Pais = @Pais, " +
                            "Telefono = @Telefono, Correo = @Correo, Reportes = @Reportes WHERE EmpleadoID = @EmpleadoID";
 
@@ -139,7 +139,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                 command.Parameters.AddWithValue("@Nombres", entity.Nombres );
                 command.Parameters.AddWithValue("@Apellidos", entity.Apellidos);
                 command.Parameters.AddWithValue("@Cedula", entity.Cedula);
-                command.Parameters.AddWithValue("@Cargo", entity.Cargo);
+                command.Parameters.AddWithValue("@RolID", entity.RolID);
                 command.Parameters.AddWithValue("@FechaNacimiento", entity.FechaNacimiento);
                 command.Parameters.AddWithValue("@FechaContratacion", entity.FechaContratacion);
                 command.Parameters.AddWithValue("@Direccion", entity.Direccion);

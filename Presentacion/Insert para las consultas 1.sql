@@ -1,6 +1,15 @@
 --Usar la base de datos creada anteriormente con el modelo fisico
 USE AconsaDB;
 --Insertar la informacion a las tablas
+INSERT INTO Roles (Cargo, Descripcion)
+VALUES
+('Conserje', 'Responsable de limpieza y mantenimiento.'),
+('Gerencia Administrativa y Recursos Humanos', 'Encargado de la administración y gestión del personal.'),
+('Contador', 'Responsable de la contabilidad y finanzas.'),
+('Conductor', 'Encargado del transporte de bienes o personas.'),
+('Albañil', 'Encargado de trabajos de construcción.'),
+('Ingeniero Residente Proyectos', 'Responsable técnico en proyectos de construcción.'),
+('Topografo', 'Especialista en mediciones y delimitación de terrenos.');
 
 INSERT INTO Clientes (ClienteID, NombreEmpresa, NombreContacto, CargoContacto, Dirección, Ciudad, País, Teléfono)
 VALUES ('ALDSC', 'Alcaldía San Carlos', 'Roberto Santos', 'Secretario', 'Alcaldía San Carlos', 'San Carlos', 'Nicaragua', '(+505) 8741-5542'),
@@ -144,26 +153,26 @@ VALUES
     ('Adhesivo para Cerámica', 1, 8, 'Adhesivo para cerámica y azulejos.', 'litro', 50, 120.00),
     ('Cinta Aislante', 5, 8, 'Cinta aislante para instalaciones eléctricas.', 'unidad', 50, 90.00);
 
-INSERT INTO Empleados (Nombres, Apellidos, Cedula, Cargo, FechaNacimiento, FechaContratacion, Direccion, Pais, Telefono, Correo, Reportes)
+INSERT INTO Empleados (Nombres, Apellidos, Cedula, RolID, FechaNacimiento, FechaContratacion, Direccion, Pais, Telefono, Correo, Reportes)
 VALUES
-('María Fernanda', 'Molina Vargas', '0871604660010P', 'Conserje', '1965-07-22', '2018-01-15', 'Colonia Centroamérica, Casa A-12', 'Nicaragua', '8211-1123', 'maria.molina@empresa.com', NULL),
-('Ana Patricia', 'Rivas Morales', '2411011810009X', 'Gerencia Administrativa y Recursos Humanos', '1980-11-24', '2015-06-01', 'Residencial Las Colinas, Módulo 3, Casa 14', 'Nicaragua', '8789-2234', 'ana.rivas@empresa.com', NULL),
-('Maria Clementina', 'Munguia Campos', '0871604660000Q', 'Conserje', '1985-05-12', '2021-08-02', 'Residencial Managua, Casa 45', 'Nicaragua', '8211-2233', 'maria.munguia@empresa.com', 2),
-('Aura Ross', 'Perez Rodriguez', '2411011810003X', 'Gerencia Administrativa y Recursos Humanos', '1980-03-20', '2021-09-04', 'Las Palmas, Casa 12', 'Nicaragua', '8222-3344', 'aura.perez@empresa.com', null),
-('Walter Martin', 'Perez Rodriguez', '2411312860002H', 'Contador', '1990-07-15', '2021-10-05', 'Colonia Universidad, Bloque 2, Casa 3', 'Nicaragua', '8233-4455', 'walter.perez@empresa.com', null),
-('Fernando Antonio', 'López Pérez', '0023005760022W', 'Conductor', '1976-07-30', '2018-08-15', 'Barrio Monseñor Lezcano, Calle 8, Casa 19', 'Nicaragua', '8320-8899', 'fernando.lopez@empresa.com', 1),
-('Miguel Ángel', 'Aleman Obregón', '5702007930018W', 'Albañil', '1970-02-20', '2019-10-12', 'Reparto Bello Horizonte, Casa 32', 'Nicaragua', '8415-9900', 'miguel.aleman@empresa.com', 1),
-('Lester Dolores', 'Castillo Palacios', '2442403930000K', 'Ingeniero Residente Proyectos', '1987-11-11', '2021-11-06', 'Los Robles, Casa 11B', 'Nicaragua', '8244-5566', 'lester.castillo@empresa.com', null),
-('José Andres', 'Jimenez Meneses', '2810409770005R', 'Ingeniero Residente Proyectos', '1983-04-22', '2021-12-07', 'Urbanización Don Bosco, Casa 6', 'Nicaragua', '8255-6677', 'jose.jimenez@empresa.com', NULL),
-('Juan Manuel', 'López Sanchez', '4011711740003J', 'Ingeniero Residente Proyectos', '1985-09-29', '2021-01-08', 'Colonia Américas 2, Casa 22', 'Nicaragua', '8266-7788', 'juan.lopez@empresa.com', 4),
-('Jimmy Jose', 'Arevalo Arias', '0012403770055F', 'Ingeniero Residente Proyectos', '1992-01-05', '2021-02-09', 'Colonia San Luis, Casa 17', 'Nicaragua', '8277-8899', 'jimmy.arevalo@empresa.com', NULL),
-('Dorling Antonio', 'Lopez Perez', '0023005760002W', 'Conductor', '1980-02-18', '2021-03-10', 'Villa Progreso, Casa 18A', 'Nicaragua', '8288-9900', 'dorling.lopez@empresa.com', NULL),
-('Migdonio D.', 'Aleman Obregon', '5702007930000W', 'Topografo', '1975-03-07', '2021-04-11', 'Barrio Cuba, Casa 15', 'Nicaragua', '8299-1011', 'migdonio.aleman@empresa.com', 4),
-('Carlos Alberto', 'Ortiz Pérez', '2411312860015H', 'Albañil', '1982-08-31', '2017-09-20', 'Barrio San Judas, Calle 3, Casa 21', 'Nicaragua', '8123-3455', 'carlos.ortiz@empresa.com', null),
-('Luis Enrique', 'Castillo Ramírez', '2442403930099K', 'Albañil', '1978-03-24', '2019-03-11', 'Reparto Schick, Casa 9', 'Nicaragua', '8145-4556', 'luis.castillo@empresa.com', null),
-('Andrés Felipe', 'Jiménez Vargas', '2810409770017R', 'Albañil', '1987-10-28', '2020-01-09', 'Residencial El Dorado, Manzana C, Casa 8', 'Nicaragua', '8142-5567', 'andres.jimenez@empresa.com', null),
-('Jorge Manuel', 'López García', '4011711740021J', 'Albañil', '1985-11-17', '2016-02-17', 'Villa Fontana, Calle del Club, Casa 23', 'Nicaragua', '8111-7878', 'jorge.lopez@empresa.com', 6),
-('Jimmy Alejandro', 'Arevalo Gutiérrez', '0012403770060F', 'Albañil', '1990-12-04', '2021-04-05', 'Urbanización Las Mercedes, Casa 5A', 'Nicaragua', '8333-9488', 'jimmy.arevalo@empresa.com', 9);
+('María Fernanda', 'Molina Vargas', '0871604660010P', 1, '1965-07-22', '2018-01-15', 'Colonia Centroamérica, Casa A-12', 'Nicaragua', '8211-1123', 'maria.molina@empresa.com', NULL),
+('Ana Patricia', 'Rivas Morales', '2411011810009X', 2, '1980-11-24', '2015-06-01', 'Residencial Las Colinas, Módulo 3, Casa 14', 'Nicaragua', '8789-2234', 'ana.rivas@empresa.com', NULL),
+('Maria Clementina', 'Munguia Campos', '0871604660000Q', 1, '1985-05-12', '2021-08-02', 'Residencial Managua, Casa 45', 'Nicaragua', '8211-2233', 'maria.munguia@empresa.com', 2),
+('Aura Ross', 'Perez Rodriguez', '2411011810003X', 3, '1980-03-20', '2021-09-04', 'Las Palmas, Casa 12', 'Nicaragua', '8222-3344', 'aura.perez@empresa.com', null),
+('Walter Martin', 'Perez Rodriguez', '2411312860002H', 4, '1990-07-15', '2021-10-05', 'Colonia Universidad, Bloque 2, Casa 3', 'Nicaragua', '8233-4455', 'walter.perez@empresa.com', null),
+('Fernando Antonio', 'López Pérez', '0023005760022W', 5, '1976-07-30', '2018-08-15', 'Barrio Monseñor Lezcano, Calle 8, Casa 19', 'Nicaragua', '8320-8899', 'fernando.lopez@empresa.com', 1),
+('Miguel Ángel', 'Aleman Obregón', '5702007930018W', 6, '1970-02-20', '2019-10-12', 'Reparto Bello Horizonte, Casa 32', 'Nicaragua', '8415-9900', 'miguel.aleman@empresa.com', 1),
+('Lester Dolores', 'Castillo Palacios', '2442403930000K', 7, '1987-11-11', '2021-11-06', 'Los Robles, Casa 11B', 'Nicaragua', '8244-5566', 'lester.castillo@empresa.com', null),
+('José Andres', 'Jimenez Meneses', '2810409770005R', 7, '1983-04-22', '2021-12-07', 'Urbanización Don Bosco, Casa 6', 'Nicaragua', '8255-6677', 'jose.jimenez@empresa.com', NULL),
+('Juan Manuel', 'López Sanchez', '4011711740003J', 7, '1985-09-29', '2021-01-08', 'Colonia Américas 2, Casa 22', 'Nicaragua', '8266-7788', 'juan.lopez@empresa.com', 4),
+('Jimmy Jose', 'Arevalo Arias', '0012403770055F', 7, '1992-01-05', '2021-02-09', 'Colonia San Luis, Casa 17', 'Nicaragua', '8277-8899', 'jimmy.arevalo@empresa.com', NULL),
+('Dorling Antonio', 'Lopez Perez', '0023005760002W', 6, '1980-02-18', '2021-03-10', 'Villa Progreso, Casa 18A', 'Nicaragua', '8288-9900', 'dorling.lopez@empresa.com', NULL),
+('Migdonio D.', 'Aleman Obregon', '5702007930000W', 7, '1975-03-07', '2021-04-11', 'Barrio Cuba, Casa 15', 'Nicaragua', '8299-1011', 'migdonio.aleman@empresa.com', 4),
+('Carlos Alberto', 'Ortiz Pérez', '2411312860015H', 3, '1982-08-31', '2017-09-20', 'Barrio San Judas, Calle 3, Casa 21', 'Nicaragua', '8123-3455', 'carlos.ortiz@empresa.com', null),
+('Luis Enrique', 'Castillo Ramírez', '2442403930099K', 3, '1978-03-24', '2019-03-11', 'Reparto Schick, Casa 9', 'Nicaragua', '8145-4556', 'luis.castillo@empresa.com', null),
+('Andrés Felipe', 'Jiménez Vargas', '2810409770017R', 3, '1987-10-28', '2020-01-09', 'Residencial El Dorado, Manzana C, Casa 8', 'Nicaragua', '8142-5567', 'andres.jimenez@empresa.com', null),
+('Jorge Manuel', 'López García', '4011711740021J', 3, '1985-11-17', '2016-02-17', 'Villa Fontana, Calle del Club, Casa 23', 'Nicaragua', '8111-7878', 'jorge.lopez@empresa.com', 6),
+('Jimmy Alejandro', 'Arevalo Gutiérrez', '0012403770060F', 3, '1990-12-04', '2021-04-05', 'Urbanización Las Mercedes, Casa 5A', 'Nicaragua', '8333-9488', 'jimmy.arevalo@empresa.com', 9);
 
 INSERT INTO Proyectos (ClienteID, NombreProyecto, Descripcion, Ubicacion, FechaInicio, FechaFin, PresupuestoTotal, Estado)
 VALUES 
@@ -296,3 +305,4 @@ INSERT INTO [Vehiculo Detalles] (EmpleadoID, VehiculoID, FechaAsignacion, FechaF
 (3, 1, '2024-05-10', '2024-02-01', 'Vehículo asignado para giras administrativas.'),
 (4, 2, '2023-01-01', '2023-05-01', 'Uso del vehículo de la empresa para tareas de mantenimiento.'),
 (5, 4, '2024-06-15', '2024-07-15', 'Asignación de vehículo para una obra específica.');
+

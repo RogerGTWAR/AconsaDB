@@ -89,3 +89,4 @@ C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinFo
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.MenuProductosForm.resources
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.ProductosForm.resources
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.AvaluoForm.resources
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.VehiculoForm.resources

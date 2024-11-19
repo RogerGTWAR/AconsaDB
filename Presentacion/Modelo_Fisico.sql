@@ -2,20 +2,27 @@
 --CREATE DATABASE AconsaDB;
 --Usar la base de datos AconsaDB y crear las tablas.
 USE AconsaDB;
+Create table Roles(
+    RolID Int Identity(1,1) Primary Key,
+	Cargo NVarchar(100),
+	Descripcion Nvarchar(150)
+
+);
 CREATE TABLE Empleados (
     EmpleadoID INT IDENTITY(1,1) PRIMARY KEY,
     Nombres VARCHAR(100) NOT NULL,
     Apellidos VARCHAR(100) NOT NULL,
-	Cedula NVarchar(25) not null,
-    Cargo VARCHAR(50) NOT NULL,
+	Cedula NVarchar(25) not null,	
+	RolID Int NOT NULL,
 	FechaNacimiento Date Not Null,
     FechaContratacion DATE NOT NULL,
 	Direccion NVarchar(150),
     País VARCHAR(50),                        
     Telefono VARCHAR(15) CHECK (Telefono LIKE '[0-9]%' OR Telefono IS NULL), 
     Correo VARCHAR(100) CHECK (Correo LIKE '%_@__%.__%'), 
-	Reportes Int NULL ,
-    FOREIGN KEY (Reportes) REFERENCES Empleados(EmpleadoID)
+	Reportes Int NULL,
+    FOREIGN KEY (Reportes) REFERENCES Empleados(EmpleadoID),
+	FOREIGN KEY (RolID) REFERENCES Roles(RolID)
 );
 
 CREATE TABLE Clientes (
@@ -28,6 +35,7 @@ CREATE TABLE Clientes (
     País VARCHAR(50),                        
     Teléfono NVARCHAR(20),              
 );
+
 CREATE TABLE Proveedores (
     ProveedorID INT IDENTITY(1,1) PRIMARY KEY,
     NombreEmpresa VARCHAR(100) NOT NULL,      
@@ -45,7 +53,6 @@ CREATE TABLE Categorias (
     NombreCategoria VARCHAR(100) NOT NULL,
 	Descripcion NVarChar(150) Not Null
 );
- 
 CREATE TABLE Proyectos (
     ProyectoID INT PRIMARY KEY IDENTITY(1,1), 
     ClienteID NCHAR(5) NOT NULL,
@@ -59,7 +66,6 @@ CREATE TABLE Proyectos (
     Estado VARCHAR(50) NOT NULL CHECK (Estado IN ('En Espera', 'Activo', 'Completado', 'Cancelado')), 
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
 );
-
 CREATE TABLE Avaluos(
     AvaluoID INT PRIMARY KEY IDENTITY(1,1), 
     ProyectoID INT NOT NULL, 
@@ -167,6 +173,3 @@ Create table Usuarios (
 	FechaModificacion DateTIme,
     FOREIGN KEY (EmpleadoID) REFERENCES Empleados(EmpleadoID)
 )
-
---Llevo 4 controladores bien
---Me faltan 10 
