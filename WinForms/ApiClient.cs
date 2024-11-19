@@ -4,6 +4,7 @@ using SharedModels.Dto.Avaluo;
 using SharedModels.Dto.Categoria;
 using SharedModels.Dto.Cliente;
 using SharedModels.Dto.Empleado;
+using SharedModels.Dto.Producto;
 using SharedModels.Dto.Proveedor;
 using SharedModels.Dto.Proyecto;
 using System;
@@ -27,6 +28,7 @@ namespace WinForms
         public IRepository<ProyectoDto> Proyectos { get; set; }
         public IRepository<CategoriaDto> Categorias { get; set; }
         public IRepository<AvaluoDto> Avaluos { get; set; }
+        public IRepository<ProductoDto> Productos { get; set; }
         public IUserRepository LoginUsers { get; }
         public IUserRepository RegisterUsuarios { get; }
 
@@ -41,8 +43,9 @@ namespace WinForms
             Proyectos = new Repository<ProyectoDto>(_httpClient, "Proyecto");
             Categorias = new Repository<CategoriaDto>(_httpClient, "Categoria");
             Avaluos = new Repository<AvaluoDto>(_httpClient, "Avaluo");
+            Productos = new Repository<ProductoDto>(_httpClient, "Producto");
             LoginUsers = new UserRepository(_httpClient, "Auth/Login");
-            RegisterUsuarios = new UserRepository(_httpClient, "Auth/Register");
+            RegisterUsuarios = new UserRepository(_httpClient, "Auth/register");
 
         }
         internal void SetAuthToken(string token)

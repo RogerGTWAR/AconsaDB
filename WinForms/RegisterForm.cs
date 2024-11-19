@@ -43,6 +43,7 @@ namespace WinForms
                     {
                         string userName = txtUsuario.Text;
                         string contraseña = txtContraseña.Text;
+
                         var user = await _apiClient.RegisterUsuarios.Register(userName, empleadoId, contraseña, fechaCreacion, fechaModificacion);
 
                         if (!string.IsNullOrEmpty(user))
