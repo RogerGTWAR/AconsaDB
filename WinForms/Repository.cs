@@ -9,7 +9,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinForms.IRepository.Repository
+namespace WinForms
 {
     public class Repository<T> : IRepository<T> where T : class
     {
