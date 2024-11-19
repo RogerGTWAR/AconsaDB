@@ -29,13 +29,22 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgvClientes = new DataGridView();
+            clienteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cargoContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ciudadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clienteBindingSource = new BindingSource(components);
             panelSubContenedor = new Panel();
+            label9 = new Label();
             label8 = new Label();
             txtCiudad = new TextBox();
             label7 = new Label();
@@ -55,15 +64,6 @@
             btnModificar = new Button();
             btnEliminar = new Button();
             btnAgregar = new Button();
-            clienteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cargoContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ciudadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
             panelSubContenedor.SuspendLayout();
@@ -73,25 +73,25 @@
             // 
             dgvClientes.AutoGenerateColumns = false;
             dgvClientes.BackgroundColor = Color.White;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Columns.AddRange(new DataGridViewColumn[] { clienteIDDataGridViewTextBoxColumn, nombreEmpresaDataGridViewTextBoxColumn, nombreContactoDataGridViewTextBoxColumn, cargoContactoDataGridViewTextBoxColumn, ciudadDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn });
             dgvClientes.DataSource = clienteBindingSource;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new Padding(15, 0, 0, 0);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvClientes.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new Padding(15, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvClientes.DefaultCellStyle = dataGridViewCellStyle4;
             dgvClientes.Dock = DockStyle.Bottom;
             dgvClientes.Location = new Point(0, 426);
             dgvClientes.Name = "dgvClientes";
@@ -101,6 +101,83 @@
             dgvClientes.Size = new Size(1057, 289);
             dgvClientes.TabIndex = 0;
             dgvClientes.CellContentClick += dgvClientes_CellContentClick;
+            // 
+            // clienteIDDataGridViewTextBoxColumn
+            // 
+            clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Padding = new Padding(0, 10, 20, 0);
+            clienteIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            clienteIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            clienteIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
+            clienteIDDataGridViewTextBoxColumn.ReadOnly = true;
+            clienteIDDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // nombreEmpresaDataGridViewTextBoxColumn
+            // 
+            nombreEmpresaDataGridViewTextBoxColumn.DataPropertyName = "NombreEmpresa";
+            nombreEmpresaDataGridViewTextBoxColumn.HeaderText = "Nombre de la Empresa";
+            nombreEmpresaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nombreEmpresaDataGridViewTextBoxColumn.Name = "nombreEmpresaDataGridViewTextBoxColumn";
+            nombreEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            nombreEmpresaDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // nombreContactoDataGridViewTextBoxColumn
+            // 
+            nombreContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreContacto";
+            nombreContactoDataGridViewTextBoxColumn.HeaderText = "Nombre de Contacto";
+            nombreContactoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nombreContactoDataGridViewTextBoxColumn.Name = "nombreContactoDataGridViewTextBoxColumn";
+            nombreContactoDataGridViewTextBoxColumn.ReadOnly = true;
+            nombreContactoDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // cargoContactoDataGridViewTextBoxColumn
+            // 
+            cargoContactoDataGridViewTextBoxColumn.DataPropertyName = "CargoContacto";
+            cargoContactoDataGridViewTextBoxColumn.HeaderText = "Cargo del Contacto";
+            cargoContactoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            cargoContactoDataGridViewTextBoxColumn.Name = "cargoContactoDataGridViewTextBoxColumn";
+            cargoContactoDataGridViewTextBoxColumn.ReadOnly = true;
+            cargoContactoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ciudadDataGridViewTextBoxColumn
+            // 
+            ciudadDataGridViewTextBoxColumn.DataPropertyName = "Ciudad";
+            ciudadDataGridViewTextBoxColumn.HeaderText = "Ciudad";
+            ciudadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
+            ciudadDataGridViewTextBoxColumn.ReadOnly = true;
+            ciudadDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // paisDataGridViewTextBoxColumn
+            // 
+            paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
+            paisDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            paisDataGridViewTextBoxColumn.HeaderText = "Pais";
+            paisDataGridViewTextBoxColumn.MinimumWidth = 6;
+            paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
+            paisDataGridViewTextBoxColumn.ReadOnly = true;
+            paisDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            telefonoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            direccionDataGridViewTextBoxColumn.Width = 125;
             // 
             // clienteBindingSource
             // 
@@ -133,6 +210,17 @@
             panelSubContenedor.Name = "panelSubContenedor";
             panelSubContenedor.Size = new Size(1057, 715);
             panelSubContenedor.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(498, 13);
+            label9.Name = "label9";
+            label9.Size = new Size(130, 41);
+            label9.TabIndex = 20;
+            label9.Text = "Clientes";
             // 
             // label8
             // 
@@ -329,100 +417,12 @@
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
-            // clienteIDDataGridViewTextBoxColumn
-            // 
-            clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Padding = new Padding(0, 10, 20, 0);
-            clienteIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            clienteIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            clienteIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
-            clienteIDDataGridViewTextBoxColumn.ReadOnly = true;
-            clienteIDDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // nombreEmpresaDataGridViewTextBoxColumn
-            // 
-            nombreEmpresaDataGridViewTextBoxColumn.DataPropertyName = "NombreEmpresa";
-            nombreEmpresaDataGridViewTextBoxColumn.HeaderText = "Nombre de la Empresa";
-            nombreEmpresaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nombreEmpresaDataGridViewTextBoxColumn.Name = "nombreEmpresaDataGridViewTextBoxColumn";
-            nombreEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            nombreEmpresaDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // nombreContactoDataGridViewTextBoxColumn
-            // 
-            nombreContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreContacto";
-            nombreContactoDataGridViewTextBoxColumn.HeaderText = "Nombre de Contacto";
-            nombreContactoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nombreContactoDataGridViewTextBoxColumn.Name = "nombreContactoDataGridViewTextBoxColumn";
-            nombreContactoDataGridViewTextBoxColumn.ReadOnly = true;
-            nombreContactoDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // cargoContactoDataGridViewTextBoxColumn
-            // 
-            cargoContactoDataGridViewTextBoxColumn.DataPropertyName = "CargoContacto";
-            cargoContactoDataGridViewTextBoxColumn.HeaderText = "Cargo del Contacto";
-            cargoContactoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            cargoContactoDataGridViewTextBoxColumn.Name = "cargoContactoDataGridViewTextBoxColumn";
-            cargoContactoDataGridViewTextBoxColumn.ReadOnly = true;
-            cargoContactoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ciudadDataGridViewTextBoxColumn
-            // 
-            ciudadDataGridViewTextBoxColumn.DataPropertyName = "Ciudad";
-            ciudadDataGridViewTextBoxColumn.HeaderText = "Ciudad";
-            ciudadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
-            ciudadDataGridViewTextBoxColumn.ReadOnly = true;
-            ciudadDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // paisDataGridViewTextBoxColumn
-            // 
-            paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.TopLeft;
-            paisDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            paisDataGridViewTextBoxColumn.HeaderText = "Pais";
-            paisDataGridViewTextBoxColumn.MinimumWidth = 6;
-            paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
-            paisDataGridViewTextBoxColumn.ReadOnly = true;
-            paisDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            telefonoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            direccionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(498, 13);
-            label9.Name = "label9";
-            label9.Size = new Size(130, 41);
-            label9.TabIndex = 20;
-            label9.Text = "Clientes";
-            // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1126, 711);
+            ClientSize = new Size(1078, 711);
             Controls.Add(panelSubContenedor);
             Name = "ClientesForm";
             Text = "ClientesForm";

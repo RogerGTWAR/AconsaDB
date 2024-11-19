@@ -85,3 +85,7 @@ C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinFo
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.BienvenidadForm.resources
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.ProveedoresForm.resources
 C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.ProyectosForm.resources
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.CategoriasForm.resources
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.MenuProductosForm.resources
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.ProductosForm.resources
+C:\Users\rpere\OneDrive\Desktop\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.AvaluoForm.resources

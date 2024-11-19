@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using SharedModels;
+using SharedModels.Dto.Avaluo;
+using SharedModels.Dto.Categoria;
 using SharedModels.Dto.Cliente;
 using SharedModels.Dto.Empleado;
 using SharedModels.Dto.Proveedor;
@@ -23,6 +25,8 @@ namespace WinForms
         public IRepository<ClienteDto> Clientes { get; set; }
         public IRepository<ProveedorDto> Proveedores { get; set; }
         public IRepository<ProyectoDto> Proyectos { get; set; }
+        public IRepository<CategoriaDto> Categorias { get; set; }
+        public IRepository<AvaluoDto> Avaluos { get; set; }
         public IUserRepository LoginUsers { get; }
         public IUserRepository RegisterUsuarios { get; }
 
@@ -35,6 +39,8 @@ namespace WinForms
             Clientes = new Repository<ClienteDto>(_httpClient, "Cliente");
             Proveedores = new Repository<ProveedorDto>(_httpClient, "Proveedor");
             Proyectos = new Repository<ProyectoDto>(_httpClient, "Proyecto");
+            Categorias = new Repository<CategoriaDto>(_httpClient, "Categoria");
+            Avaluos = new Repository<AvaluoDto>(_httpClient, "Avaluo");
             LoginUsers = new UserRepository(_httpClient, "Auth/Login");
             RegisterUsuarios = new UserRepository(_httpClient, "Auth/Register");
 

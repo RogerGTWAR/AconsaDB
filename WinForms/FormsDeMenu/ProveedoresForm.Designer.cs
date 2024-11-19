@@ -51,7 +51,6 @@
             label1 = new Label();
             txtNombreEmpresa = new TextBox();
             dgvProveedores = new DataGridView();
-            proveedorBindingSource = new BindingSource(components);
             proveedorIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -61,6 +60,7 @@
             paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             correoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            proveedorBindingSource = new BindingSource(components);
             panelSubContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proveedorBindingSource).BeginInit();
@@ -316,10 +316,6 @@
             dgvProveedores.TabIndex = 0;
             dgvProveedores.CellContentClick += dgvProveedores_CellContentClick;
             // 
-            // proveedorBindingSource
-            // 
-            proveedorBindingSource.DataSource = typeof(SharedModels.Proveedor);
-            // 
             // proveedorIDDataGridViewTextBoxColumn
             // 
             proveedorIDDataGridViewTextBoxColumn.DataPropertyName = "ProveedorID";
@@ -401,12 +397,16 @@
             correoDataGridViewTextBoxColumn.ReadOnly = true;
             correoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // proveedorBindingSource
+            // 
+            proveedorBindingSource.DataSource = typeof(SharedModels.Proveedor);
+            // 
             // ProveedoresForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1249, 631);
+            ClientSize = new Size(1232, 631);
             Controls.Add(panelSubContenedor);
             Name = "ProveedoresForm";
             Text = "ProveedoresForm";

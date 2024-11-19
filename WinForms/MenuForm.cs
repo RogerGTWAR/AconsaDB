@@ -197,7 +197,7 @@ namespace WinForms
         private void btnProductos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            //Agregar el form
+            OpenChilForm(new MenuProductosForm(_httpClient));
 
         }
 
@@ -210,6 +210,8 @@ namespace WinForms
         private void btnAvaluos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            OpenChilForm(new AvaluoForm(_httpClient));
+
 
         }
 
