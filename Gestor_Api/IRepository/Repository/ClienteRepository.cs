@@ -81,7 +81,7 @@ public class ClienteRepository : IClienteRepository<Cliente>
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                string query = "UPDATE Clientes SET NombreEmpresa = @NombreEmpresa, NombreContacto = @NombreContacto, " +
+                string query = "UPDATE Clientes SET ClienteID = @ClienteID, NombreEmpresa = @NombreEmpresa, NombreContacto = @NombreContacto, " +
                                "CargoContacto = @CargoContacto, Direccion = @Direccion, Ciudad = @Ciudad, Pais = @Pais, " +
                                "Telefono = @Telefono WHERE ClienteID = @ClienteID";
 

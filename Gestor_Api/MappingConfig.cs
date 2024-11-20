@@ -11,6 +11,7 @@ using SharedModels.Dto.MaquinariaDetalle;
 using SharedModels.Dto.Producto;
 using SharedModels.Dto.Proveedor;
 using SharedModels.Dto.Proyecto;
+using SharedModels.Dto.Rol;
 using SharedModels.Dto.Usuario;
 using SharedModels.Dto.Vehiculo;
 using SharedModels.Dto.VehiculoDetalle;
@@ -87,6 +88,11 @@ namespace Gestor_Api
             CreateMap<EmpleadoDetalle, EmpleadoDetallesDto>().ReverseMap();
             CreateMap<EmpleadoDetalle, EmpleadoDetalleCreateDto>().ReverseMap();
             CreateMap<EmpleadoDetalle, EmpleadoDetalleUpdateDto>().ReverseMap();
+
+            CreateMap<Rol, RolDto>().ReverseMap();
+            CreateMap<Rol, RolCreateDto>().ReverseMap();
+            CreateMap<Rol, RolUpdateDto>().ReverseMap();
+
         }
     }
 }

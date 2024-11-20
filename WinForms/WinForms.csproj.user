@@ -16,10 +16,10 @@
     <Compile Update="FormsDeMenu\EmpleadosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MenuForm.cs">
+    <Compile Update="FormsDeMenu\MaquinariaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LoginForm.cs">
+    <Compile Update="FormsDeMenu\ProductosForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormsDeMenu\ProveedoresForm.cs">
@@ -28,16 +28,19 @@
     <Compile Update="FormsDeMenu\ProyectosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormsDeMenu\MenuProductosForm.cs">
+    <Compile Update="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormsDeMenu\ProductosForm.cs">
+    <Compile Update="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormsDeMenu\MenuProductosForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="VehiculoForm.cs">
+    <Compile Update="FormsDeMenu\VehiculoForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

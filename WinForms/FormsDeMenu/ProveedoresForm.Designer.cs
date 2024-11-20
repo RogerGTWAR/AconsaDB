@@ -98,11 +98,11 @@
             // 
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(954, 302);
+            btnEliminar.Location = new Point(1063, 232);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(113, 50);
+            btnEliminar.Size = new Size(113, 51);
             btnEliminar.TabIndex = 20;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -112,11 +112,11 @@
             // 
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(553, 302);
+            btnModificar.Location = new Point(1046, 161);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(113, 50);
+            btnModificar.Size = new Size(130, 51);
             btnModificar.TabIndex = 19;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -126,11 +126,11 @@
             // 
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(141, 302);
+            btnAgregar.Location = new Point(1063, 80);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(113, 50);
+            btnAgregar.Size = new Size(113, 51);
             btnAgregar.TabIndex = 18;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(6, 121);
+            label8.Location = new Point(8, 144);
             label8.Name = "label8";
             label8.Size = new Size(198, 28);
             label8.TabIndex = 16;
@@ -163,7 +163,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(6, 180);
+            label7.Location = new Point(8, 215);
             label7.Name = "label7";
             label7.Size = new Size(183, 28);
             label7.TabIndex = 15;
@@ -174,7 +174,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(6, 241);
+            label6.Location = new Point(50, 280);
             label6.Name = "label6";
             label6.Size = new Size(94, 28);
             label6.TabIndex = 14;
@@ -185,7 +185,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(775, 59);
+            label5.Location = new Point(666, 75);
             label5.Name = "label5";
             label5.Size = new Size(78, 28);
             label5.TabIndex = 13;
@@ -196,7 +196,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(775, 117);
+            label4.Location = new Point(666, 149);
             label4.Name = "label4";
             label4.Size = new Size(49, 28);
             label4.TabIndex = 12;
@@ -207,7 +207,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(775, 180);
+            label3.Location = new Point(666, 215);
             label3.Name = "label3";
             label3.Size = new Size(90, 28);
             label3.TabIndex = 11;
@@ -218,7 +218,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(775, 241);
+            label2.Location = new Point(666, 280);
             label2.Name = "label2";
             label2.Size = new Size(76, 28);
             label2.TabIndex = 10;
@@ -227,57 +227,58 @@
             // txtTelefono
             // 
             txtTelefono.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTelefono.Location = new Point(925, 178);
+            txtTelefono.Location = new Point(783, 213);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(192, 30);
+            txtTelefono.Size = new Size(191, 30);
             txtTelefono.TabIndex = 9;
             // 
             // txtCorreo
             // 
             txtCorreo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCorreo.Location = new Point(925, 239);
+            txtCorreo.Location = new Point(783, 284);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(192, 30);
+            txtCorreo.Size = new Size(191, 30);
             txtCorreo.TabIndex = 8;
             // 
             // txtNombreContacto
             // 
             txtNombreContacto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreContacto.Location = new Point(224, 119);
+            txtNombreContacto.Location = new Point(224, 143);
             txtNombreContacto.Name = "txtNombreContacto";
-            txtNombreContacto.Size = new Size(192, 30);
+            txtNombreContacto.Size = new Size(191, 30);
             txtNombreContacto.TabIndex = 7;
             // 
             // txtCargoContacto
             // 
             txtCargoContacto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCargoContacto.Location = new Point(224, 178);
+            txtCargoContacto.Location = new Point(224, 213);
             txtCargoContacto.Name = "txtCargoContacto";
-            txtCargoContacto.Size = new Size(192, 30);
+            txtCargoContacto.Size = new Size(191, 30);
             txtCargoContacto.TabIndex = 6;
             // 
             // txtDireccion
             // 
             txtDireccion.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDireccion.Location = new Point(224, 239);
+            txtDireccion.Location = new Point(224, 279);
+            txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(192, 30);
+            txtDireccion.Size = new Size(246, 67);
             txtDireccion.TabIndex = 5;
             // 
             // txtCiudad
             // 
             txtCiudad.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCiudad.Location = new Point(925, 61);
+            txtCiudad.Location = new Point(783, 73);
             txtCiudad.Name = "txtCiudad";
-            txtCiudad.Size = new Size(192, 30);
+            txtCiudad.Size = new Size(191, 30);
             txtCiudad.TabIndex = 4;
             // 
             // txtPais
             // 
             txtPais.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPais.Location = new Point(925, 119);
+            txtPais.Location = new Point(783, 143);
             txtPais.Name = "txtPais";
-            txtPais.Size = new Size(192, 30);
+            txtPais.Size = new Size(191, 30);
             txtPais.TabIndex = 3;
             // 
             // label1
@@ -285,7 +286,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(6, 63);
+            label1.Location = new Point(8, 75);
             label1.Name = "label1";
             label1.Size = new Size(215, 28);
             label1.TabIndex = 2;
@@ -294,9 +295,9 @@
             // txtNombreEmpresa
             // 
             txtNombreEmpresa.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreEmpresa.Location = new Point(224, 61);
+            txtNombreEmpresa.Location = new Point(224, 75);
             txtNombreEmpresa.Name = "txtNombreEmpresa";
-            txtNombreEmpresa.Size = new Size(192, 30);
+            txtNombreEmpresa.Size = new Size(191, 30);
             txtNombreEmpresa.TabIndex = 1;
             // 
             // dgvProveedores

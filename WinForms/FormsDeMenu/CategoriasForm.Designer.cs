@@ -52,7 +52,7 @@
             // txtCategoria
             // 
             txtCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCategoria.Location = new Point(198, 148);
+            txtCategoria.Location = new Point(225, 140);
             txtCategoria.Name = "txtCategoria";
             txtCategoria.Size = new Size(219, 27);
             txtCategoria.TabIndex = 0;
@@ -60,9 +60,10 @@
             // txtDescripcion
             // 
             txtDescripcion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescripcion.Location = new Point(198, 244);
+            txtDescripcion.Location = new Point(225, 207);
+            txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(219, 27);
+            txtDescripcion.Size = new Size(219, 83);
             txtDescripcion.TabIndex = 1;
             // 
             // btnAgregar
@@ -71,9 +72,9 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(451, 99);
+            btnAgregar.Location = new Point(462, 99);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(126, 66);
+            btnAgregar.Size = new Size(126, 67);
             btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -85,9 +86,9 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(451, 171);
+            btnModificar.Location = new Point(462, 171);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(137, 66);
+            btnModificar.Size = new Size(137, 67);
             btnModificar.TabIndex = 3;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -99,9 +100,9 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(462, 244);
+            btnEliminar.Location = new Point(462, 243);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(126, 66);
+            btnEliminar.Size = new Size(126, 67);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -112,29 +113,29 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(198, 117);
+            label1.Location = new Point(14, 137);
             label1.Name = "label1";
-            label1.Size = new Size(219, 28);
+            label1.Size = new Size(223, 28);
             label1.TabIndex = 6;
-            label1.Text = "Nombre de la categoria";
+            label1.Text = "Nombre de la categoria:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(233, 213);
+            label2.Location = new Point(50, 204);
             label2.Name = "label2";
-            label2.Size = new Size(114, 28);
+            label2.Size = new Size(118, 28);
             label2.TabIndex = 7;
-            label2.Text = "Descripcion";
+            label2.Text = "Descripcion:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(315, 34);
+            label3.Location = new Point(225, 37);
             label3.Name = "label3";
             label3.Size = new Size(168, 41);
             label3.TabIndex = 8;
@@ -161,7 +162,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvCategoria.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCategoria.Location = new Point(169, 315);
+            dgvCategoria.Location = new Point(0, 327);
             dgvCategoria.Name = "dgvCategoria";
             dgvCategoria.ReadOnly = true;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -173,7 +174,7 @@
             dgvCategoria.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCategoria.RowHeadersWidth = 51;
             dgvCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCategoria.Size = new Size(445, 257);
+            dgvCategoria.Size = new Size(626, 257);
             dgvCategoria.TabIndex = 9;
             dgvCategoria.CellContentClick += dgvCategoria_CellContentClick;
             // 
@@ -193,7 +194,7 @@
             nombreCategoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
             nombreCategoriaDataGridViewTextBoxColumn.Name = "nombreCategoriaDataGridViewTextBoxColumn";
             nombreCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            nombreCategoriaDataGridViewTextBoxColumn.Width = 125;
+            nombreCategoriaDataGridViewTextBoxColumn.Width = 150;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
@@ -202,7 +203,7 @@
             descripcionDataGridViewTextBoxColumn.MinimumWidth = 6;
             descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            descripcionDataGridViewTextBoxColumn.Width = 125;
+            descripcionDataGridViewTextBoxColumn.Width = 200;
             // 
             // categoriaBindingSource
             // 

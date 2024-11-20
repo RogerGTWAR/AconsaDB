@@ -45,25 +45,25 @@ namespace WinForms
         private async void btnAgregar_Click(object sender, EventArgs e)
         {
 
-                var nuevoProveedor = new Proveedor
-                {
-                    NombreEmpresa = txtNombreEmpresa.Text,
-                    NombreContacto = txtNombreContacto.Text,
-                    CargoContacto = txtCargoContacto.Text,
-                    Direccion = txtDireccion.Text,
-                    Ciudad = txtCiudad.Text,
-                    Pais = txtPais.Text,
-                    Telefono = txtTelefono.Text,
-                    Correo = txtCorreo.Text
-                };
+            var nuevoProveedor = new Proveedor
+            {
+                NombreEmpresa = txtNombreEmpresa.Text,
+                NombreContacto = txtNombreContacto.Text,
+                CargoContacto = txtCargoContacto.Text,
+                Direccion = txtDireccion.Text,
+                Ciudad = txtCiudad.Text,
+                Pais = txtPais.Text,
+                Telefono = txtTelefono.Text,
+                Correo = txtCorreo.Text
+            };
 
-                var success = await _apiClient.Proveedores.CreateAsync(nuevoProveedor);
+            var success = await _apiClient.Proveedores.CreateAsync(nuevoProveedor);
             try
             {
                 MessageBox.Show("¡Proveedor agregado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
-                    await RefreshData();
-                
+                LimpiarCampos();
+                await RefreshData();
+
             }
             catch (Exception ex)
             {

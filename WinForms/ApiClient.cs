@@ -4,9 +4,12 @@ using SharedModels.Dto.Avaluo;
 using SharedModels.Dto.Categoria;
 using SharedModels.Dto.Cliente;
 using SharedModels.Dto.Empleado;
+using SharedModels.Dto.Maquinaria;
 using SharedModels.Dto.Producto;
 using SharedModels.Dto.Proveedor;
 using SharedModels.Dto.Proyecto;
+using SharedModels.Dto.Rol;
+using SharedModels.Dto.Vehiculo;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -29,6 +32,9 @@ namespace WinForms
         public IRepository<CategoriaDto> Categorias { get; set; }
         public IRepository<AvaluoDto> Avaluos { get; set; }
         public IRepository<ProductoDto> Productos { get; set; }
+        public IRepository<VehiculoDto> Vehiculos { get; set; }
+        public IRepository<MaquinariaDto> Maquinarias { get; set; }
+        public IRepository<RolDto> Roles { get; set; }
         public IUserRepository LoginUsers { get; }
         public IUserRepository RegisterUsuarios { get; }
 
@@ -44,16 +50,17 @@ namespace WinForms
             Categorias = new Repository<CategoriaDto>(_httpClient, "Categoria");
             Avaluos = new Repository<AvaluoDto>(_httpClient, "Avaluo");
             Productos = new Repository<ProductoDto>(_httpClient, "Producto");
+            Vehiculos = new Repository<VehiculoDto>(_httpClient, "Vehiculo");
+            Maquinarias = new Repository<MaquinariaDto>(_httpClient, "Maquinaria");
+            Roles = new Repository<RolDto>(_httpClient, "Roles");
             LoginUsers = new UserRepository(_httpClient, "Auth/Login");
             RegisterUsuarios = new UserRepository(_httpClient, "Auth/register");
-
         }
         internal void SetAuthToken(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", token);
         }
-
 
     }
 }

@@ -152,9 +152,9 @@ namespace WinForms
 
                 var result = await _apiClient.Proyectos.CreateAsync(nuevoProyecto);
 
-                    MessageBox.Show("¡Proyecto agregado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    await RefreshData();
-                    LimpiarCampos();
+                MessageBox.Show("¡Proyecto agregado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await RefreshData();
+                LimpiarCampos();
 
 
             }
@@ -200,7 +200,6 @@ namespace WinForms
                 MessageBox.Show($"Error al cargar proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgvProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -226,6 +225,11 @@ namespace WinForms
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }

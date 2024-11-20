@@ -67,7 +67,15 @@ namespace WinForms
         public async Task<bool> DeleteClienteAsync(string id)
         {
             var response = await _httpClient.DeleteAsync($"{_endpoint}/{id}");
-            return response.IsSuccessStatusCode;
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                throw new Exception(errorResponse);
+            }
         }
 
         public async Task<bool> ExistsAsync(int id)
@@ -160,6 +168,22 @@ namespace WinForms
             }
         }
 
+        public async Task<bool> UpdateClienteAsync(string id, object dto)
+        {
+            var json = JsonConvert.SerializeObject(dto);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
+            var response = await _httpClient.PutAsync($"{_endpoint}/{id}", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                throw new Exception(errorResponse);
+            }
+        }
     }
 }

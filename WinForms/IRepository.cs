@@ -15,6 +15,7 @@ namespace WinForms
         Task<bool> DeleteAsync(int id);
         Task<bool> ExistsAsync(int id);
         Task<bool> DeleteClienteAsync(string id);
+        Task<bool> UpdateClienteAsync(string id, object dto);
 
     }
 }

@@ -44,39 +44,41 @@
             // 
             // txtxUserName
             // 
-            txtxUserName.Location = new Point(285, 37);
+            txtxUserName.Location = new Point(249, 28);
+            txtxUserName.Margin = new Padding(3, 2, 3, 2);
             txtxUserName.Name = "txtxUserName";
-            txtxUserName.Size = new Size(202, 27);
+            txtxUserName.Size = new Size(177, 23);
             txtxUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(285, 127);
+            txtPassword.Location = new Point(249, 83);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(202, 27);
+            txtPassword.Size = new Size(177, 23);
             txtPassword.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(49, 66, 82);
-            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.BackColor = Color.FromArgb(31, 30, 68);
+            label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(67, 37);
+            label1.Location = new Point(59, 28);
             label1.Name = "label1";
-            label1.Size = new Size(94, 27);
+            label1.Size = new Size(78, 23);
             label1.TabIndex = 3;
             label1.Text = "Usuario";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(49, 66, 82);
+            label2.BackColor = Color.FromArgb(31, 30, 68);
             label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(37, 127);
+            label2.Location = new Point(44, 80);
             label2.Name = "label2";
-            label2.Size = new Size(142, 27);
+            label2.Size = new Size(117, 23);
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             // 
@@ -87,9 +89,10 @@
             btnCargar.FlatStyle = FlatStyle.Flat;
             btnCargar.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCargar.ForeColor = Color.White;
-            btnCargar.Location = new Point(78, 184);
+            btnCargar.Location = new Point(59, 138);
+            btnCargar.Margin = new Padding(3, 2, 3, 2);
             btnCargar.Name = "btnCargar";
-            btnCargar.Size = new Size(147, 50);
+            btnCargar.Size = new Size(129, 38);
             btnCargar.TabIndex = 5;
             btnCargar.Text = "Acceder";
             btnCargar.UseVisualStyleBackColor = false;
@@ -102,9 +105,10 @@
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(285, 184);
+            btnCrear.Location = new Point(267, 138);
+            btnCrear.Margin = new Padding(3, 2, 3, 2);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(147, 50);
+            btnCrear.Size = new Size(129, 38);
             btnCrear.TabIndex = 6;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = false;
@@ -118,9 +122,10 @@
             panel1.Controls.Add(btnCargar);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(21, 188);
+            panel1.Location = new Point(18, 140);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(587, 386);
+            panel1.Size = new Size(469, 221);
             panel1.TabIndex = 7;
             // 
             // panelTitleBar
@@ -128,17 +133,19 @@
             panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(0, 0);
+            panelTitleBar.Margin = new Padding(3, 2, 3, 2);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(608, 50);
+            panelTitleBar.Size = new Size(499, 38);
             panelTitleBar.TabIndex = 8;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = WinForms.Properties.Resources.Aconsa;
-            pictureBox1.Location = new Point(212, 56);
+            pictureBox1.Location = new Point(169, 42);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(186, 126);
+            pictureBox1.Size = new Size(163, 94);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -147,21 +154,23 @@
             // 
             panel2.BackColor = Color.FromArgb(30, 38, 70);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 636);
+            panel2.Location = new Point(0, 377);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(608, 15);
+            panel2.Size = new Size(499, 11);
             panel2.TabIndex = 9;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(608, 651);
+            ClientSize = new Size(499, 388);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panelTitleBar);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";

@@ -67,6 +67,10 @@ namespace WinForms
             public static Color color7 = Color.FromArgb(34, 193, 195);
             public static Color color8 = Color.FromArgb(253, 187, 45);
             public static Color color9 = Color.FromArgb(252, 74, 85);
+            public static Color color10 = Color.FromArgb(43, 203, 186);
+            public static Color color11 = Color.FromArgb(120, 87, 246);
+            public static Color color12 = Color.FromArgb(255, 159, 67);
+            public static Color color13 = Color.FromArgb(75, 192, 192);
         }
         private void DisableButton()
         {
@@ -136,13 +140,13 @@ namespace WinForms
         }
         private void CustomizeDesing()
         {
-            panelsubmenuDetalles.Visible = false;
+            panelSubContenedor.Visible = false;
         }
 
         private void hidesubMenu()
         {
-            if (panelsubmenuDetalles.Visible == true)
-                panelsubmenuDetalles.Visible = false;
+            if (panelSubContenedor.Visible == true)
+                panelSubContenedor.Visible = false;
         }
         private void showsubMenu(Panel subMenu)
         {
@@ -174,7 +178,6 @@ namespace WinForms
         private void btnDetalles_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color9);
-            showsubMenu(panelsubmenuDetalles);
         }
         //Revisar luego
         private void btnUsuario_Click(object sender, EventArgs e)
@@ -191,7 +194,7 @@ namespace WinForms
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChilForm(new ProveedoresForm(_httpClient));
+            OpenChilForm(new ProyectosForm(_httpClient));
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -218,12 +221,20 @@ namespace WinForms
         private void btnVehiculos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+            OpenChilForm(new VehiculoForm(_httpClient));
 
         }
 
         private void btnMaquinarias_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color8);
+            OpenChilForm(new MaquinariaForm(_httpClient));
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color10);
+            showsubMenu(panelSubContenedor);
 
         }
     }

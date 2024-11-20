@@ -23,7 +23,6 @@ namespace Gestor_Api.Controllers
             _repository = repository;
         }
 
-        // GET: api/Vehiculo
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -43,7 +42,6 @@ namespace Gestor_Api.Controllers
             }
         }
 
-        // GET: api/Vehiculo/{id}
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

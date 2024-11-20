@@ -37,6 +37,7 @@ builder.Services.AddScoped<IRepository<Proveedor>>(sp => new ProveedorRepository
 builder.Services.AddScoped<IRepository<Proyecto>>(sp => new ProyectoRepository(connectionString));
 builder.Services.AddScoped<IRepository<Vehiculo>>(sp => new VehiculoRepository(connectionString));
 builder.Services.AddScoped<IRepository<VehiculoDetalle>>(sp => new VehiculoDetalleRepository(connectionString));
+builder.Services.AddScoped<IRepository<Rol>>(sp => new RolRepository(connectionString));
 builder.Services.AddScoped<IPasswordHasher<Usuarioz>, PasswordHasher<Usuarioz>>();
 // Registrar la dependencia IUsuario
 builder.Services.AddScoped<IUsuario, UsuarioRepository>();

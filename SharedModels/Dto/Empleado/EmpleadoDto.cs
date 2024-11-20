@@ -13,7 +13,6 @@ namespace SharedModels.Dto.Empleado
         public required string Apellidos { get; set; }
         public required string Cedula { get; set; }
         public int RolID { get; set; }
-        public required string Cargo { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaContratacion { get; set; }
         public required string Direccion { get; set; }

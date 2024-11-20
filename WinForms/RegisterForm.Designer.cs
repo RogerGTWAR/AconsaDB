@@ -48,7 +48,7 @@
             btnCrear.FlatStyle = FlatStyle.Flat;
             btnCrear.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(213, 465);
+            btnCrear.Location = new Point(205, 453);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(116, 40);
             btnCrear.TabIndex = 0;
@@ -142,7 +142,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(188, 219);
+            label5.Location = new Point(205, 219);
             label5.Name = "label5";
             label5.Size = new Size(124, 28);
             label5.TabIndex = 10;
@@ -164,7 +164,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(551, 557);
+            ClientSize = new Size(551, 523);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
