@@ -886,12 +886,18 @@
           "System.Configuration.ConfigurationManager": "9.0.0"
         },
         "runtime": {
-          "Gestor_Api.dll": {}
+          "Gestor_Api.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "SharedModels/1.0.0": {
         "runtime": {
-          "SharedModels.dll": {}
+          "SharedModels.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -52,6 +52,7 @@ namespace WinForms
             txtTelefono = new TextBox();
             txtPais = new TextBox();
             txtDireccion = new TextBox();
+            txtCargo = new TextBox();
             txtCedula = new TextBox();
             txtApellidos = new TextBox();
             txtCorreo = new TextBox();
@@ -59,19 +60,18 @@ namespace WinForms
             dtpFechaContratacion = new DateTimePicker();
             dtpFechaNacimiento = new DateTimePicker();
             panelSubcontenedor = new Panel();
-            cbRolID = new ComboBox();
-            label14 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label14 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             ((System.ComponentModel.ISupportInitialize)empleadoBindingSource).BeginInit();
             panelSubcontenedor.SuspendLayout();
@@ -85,12 +85,13 @@ namespace WinForms
             dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { empleadoIDDataGridViewTextBoxColumn, nombresDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, cedulaDataGridViewTextBoxColumn, rolIDDataGridViewTextBoxColumn, fechaNacimientoDataGridViewTextBoxColumn, fechaContratacionDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, correoDataGridViewTextBoxColumn, reportesDataGridViewTextBoxColumn });
             dgvEmpleados.DataSource = empleadoBindingSource;
             dgvEmpleados.Dock = DockStyle.Bottom;
-            dgvEmpleados.Location = new Point(0, 315);
+            dgvEmpleados.Location = new Point(0, 236);
+            dgvEmpleados.Margin = new Padding(3, 2, 3, 2);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
             dgvEmpleados.RowHeadersWidth = 51;
             dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmpleados.Size = new Size(1448, 333);
+            dgvEmpleados.Size = new Size(1267, 250);
             dgvEmpleados.TabIndex = 0;
             dgvEmpleados.CellContentClick += dgvEmpleados_CellContentClick;
             // 
@@ -212,13 +213,13 @@ namespace WinForms
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(1220, 71);
+            btnAgregar.Location = new Point(1054, 50);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(120, 48);
+            btnAgregar.Size = new Size(93, 36);
             btnAgregar.TabIndex = 1;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnEliminar
             // 
@@ -226,13 +227,13 @@ namespace WinForms
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(1220, 143);
+            btnEliminar.Location = new Point(1054, 107);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(127, 48);
+            btnEliminar.Size = new Size(93, 36);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -240,91 +241,107 @@ namespace WinForms
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(1220, 224);
+            btnModificar.Location = new Point(1054, 169);
+            btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(142, 48);
+            btnModificar.Size = new Size(93, 36);
             btnModificar.TabIndex = 3;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
             // 
             // txtNombres
             // 
-            txtNombres.Location = new Point(210, 63);
+            txtNombres.Location = new Point(184, 47);
+            txtNombres.Margin = new Padding(3, 2, 3, 2);
             txtNombres.Name = "txtNombres";
-            txtNombres.Size = new Size(125, 27);
+            txtNombres.Size = new Size(110, 23);
             txtNombres.TabIndex = 4;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(522, 121);
+            txtTelefono.Location = new Point(457, 91);
+            txtTelefono.Margin = new Padding(3, 2, 3, 2);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(125, 27);
+            txtTelefono.Size = new Size(110, 23);
             txtTelefono.TabIndex = 5;
             // 
             // txtPais
             // 
-            txtPais.Location = new Point(522, 63);
+            txtPais.Location = new Point(457, 47);
+            txtPais.Margin = new Padding(3, 2, 3, 2);
             txtPais.Name = "txtPais";
-            txtPais.Size = new Size(125, 27);
+            txtPais.Size = new Size(110, 23);
             txtPais.TabIndex = 6;
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(879, 64);
+            txtDireccion.Location = new Point(769, 48);
+            txtDireccion.Margin = new Padding(3, 2, 3, 2);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(269, 92);
+            txtDireccion.Size = new Size(236, 70);
             txtDireccion.TabIndex = 7;
+            // 
+            // txtCargo
+            // 
+            txtCargo.Location = new Point(769, 139);
+            txtCargo.Margin = new Padding(3, 2, 3, 2);
+            txtCargo.Name = "txtCargo";
+            txtCargo.Size = new Size(110, 23);
+            txtCargo.TabIndex = 8;
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(210, 185);
+            txtCedula.Location = new Point(184, 139);
+            txtCedula.Margin = new Padding(3, 2, 3, 2);
             txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(125, 27);
+            txtCedula.Size = new Size(110, 23);
             txtCedula.TabIndex = 9;
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(210, 121);
+            txtApellidos.Location = new Point(184, 91);
+            txtApellidos.Margin = new Padding(3, 2, 3, 2);
             txtApellidos.Name = "txtApellidos";
-            txtApellidos.Size = new Size(125, 27);
+            txtApellidos.Size = new Size(110, 23);
             txtApellidos.TabIndex = 10;
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(522, 185);
+            txtCorreo.Location = new Point(457, 139);
+            txtCorreo.Margin = new Padding(3, 2, 3, 2);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(182, 27);
+            txtCorreo.Size = new Size(160, 23);
             txtCorreo.TabIndex = 11;
             // 
             // txtReportes
             // 
-            txtReportes.Location = new Point(522, 251);
+            txtReportes.Location = new Point(457, 188);
+            txtReportes.Margin = new Padding(3, 2, 3, 2);
             txtReportes.Name = "txtReportes";
-            txtReportes.Size = new Size(125, 27);
+            txtReportes.Size = new Size(110, 23);
             txtReportes.TabIndex = 12;
             // 
             // dtpFechaContratacion
             // 
-            dtpFechaContratacion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaContratacion.Format = DateTimePickerFormat.Short;
-            dtpFechaContratacion.Location = new Point(975, 260);
+            dtpFechaContratacion.Location = new Point(853, 195);
+            dtpFechaContratacion.Margin = new Padding(3, 2, 3, 2);
             dtpFechaContratacion.Name = "dtpFechaContratacion";
-            dtpFechaContratacion.Size = new Size(143, 30);
+            dtpFechaContratacion.Size = new Size(111, 23);
             dtpFechaContratacion.TabIndex = 13;
             // 
             // dtpFechaNacimiento
             // 
             dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
-            dtpFechaNacimiento.Location = new Point(210, 252);
+            dtpFechaNacimiento.Location = new Point(184, 189);
+            dtpFechaNacimiento.Margin = new Padding(3, 2, 3, 2);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            dtpFechaNacimiento.Size = new Size(126, 27);
+            dtpFechaNacimiento.Size = new Size(111, 23);
             dtpFechaNacimiento.TabIndex = 14;
             // 
             // panelSubcontenedor
             // 
-            panelSubcontenedor.Controls.Add(cbRolID);
             panelSubcontenedor.Controls.Add(label14);
             panelSubcontenedor.Controls.Add(label11);
             panelSubcontenedor.Controls.Add(label10);
@@ -350,161 +367,156 @@ namespace WinForms
             panelSubcontenedor.Controls.Add(txtTelefono);
             panelSubcontenedor.Controls.Add(txtCedula);
             panelSubcontenedor.Controls.Add(txtPais);
+            panelSubcontenedor.Controls.Add(txtCargo);
             panelSubcontenedor.Controls.Add(txtDireccion);
-            panelSubcontenedor.Location = new Point(11, 12);
+            panelSubcontenedor.Location = new Point(10, 9);
+            panelSubcontenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubcontenedor.Name = "panelSubcontenedor";
-            panelSubcontenedor.Size = new Size(1448, 648);
+            panelSubcontenedor.Size = new Size(1267, 486);
             panelSubcontenedor.TabIndex = 15;
-            // 
-            // cbRolID
-            // 
-            cbRolID.FormattingEnabled = true;
-            cbRolID.Location = new Point(879, 182);
-            cbRolID.Name = "cbRolID";
-            cbRolID.Size = new Size(151, 28);
-            cbRolID.TabIndex = 30;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9.75F);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(787, 260);
-            label14.Name = "label14";
-            label14.Size = new Size(183, 23);
-            label14.TabIndex = 29;
-            label14.Text = "Fecha de contratación:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9.75F);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(787, 72);
-            label11.Name = "label11";
-            label11.Size = new Size(85, 23);
-            label11.TabIndex = 26;
-            label11.Text = "Dirección:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9.75F);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(430, 187);
-            label10.Name = "label10";
-            label10.Size = new Size(66, 23);
-            label10.TabIndex = 25;
-            label10.Text = "Correo:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9.75F);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(430, 129);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 23);
-            label9.TabIndex = 24;
-            label9.Text = "Telefono:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(822, 182);
-            label8.Name = "label8";
-            label8.Size = new Size(38, 23);
-            label8.TabIndex = 23;
-            label8.Text = "Rol:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(430, 241);
-            label7.Name = "label7";
-            label7.Size = new Size(81, 23);
-            label7.TabIndex = 22;
-            label7.Text = "Reportes:";
-            label7.Click += label7_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(430, 71);
-            label6.Name = "label6";
-            label6.Size = new Size(43, 23);
-            label6.TabIndex = 21;
-            label6.Text = "Pais:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(595, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(157, 37);
-            label5.TabIndex = 20;
-            label5.Text = "Empleados";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(47, 129);
-            label4.Name = "label4";
-            label4.Size = new Size(83, 23);
-            label4.TabIndex = 19;
-            label4.Text = "Apellidos:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(26, 259);
-            label3.Name = "label3";
-            label3.Size = new Size(175, 23);
-            label3.TabIndex = 18;
-            label3.Text = "Fecha de Nacimiento:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(47, 187);
-            label2.Name = "label2";
-            label2.Size = new Size(67, 23);
-            label2.TabIndex = 17;
-            label2.Text = "Cedula:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(47, 64);
+            label1.Location = new Point(41, 48);
             label1.Name = "label1";
-            label1.Size = new Size(84, 23);
+            label1.Size = new Size(66, 17);
             label1.TabIndex = 16;
             label1.Text = "Nombres:";
             label1.Click += label1_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(41, 140);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 17);
+            label2.TabIndex = 17;
+            label2.Text = "Cedula:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(23, 194);
+            label3.Name = "label3";
+            label3.Size = new Size(133, 17);
+            label3.TabIndex = 18;
+            label3.Text = "Fecha de Nacimiento:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(41, 97);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 17);
+            label4.TabIndex = 19;
+            label4.Text = "Apellidos:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(521, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(119, 30);
+            label5.TabIndex = 20;
+            label5.Text = "Empleados";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(376, 53);
+            label6.Name = "label6";
+            label6.Size = new Size(34, 17);
+            label6.TabIndex = 21;
+            label6.Text = "Pais:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9.75F);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(376, 181);
+            label7.Name = "label7";
+            label7.Size = new Size(64, 17);
+            label7.TabIndex = 22;
+            label7.Text = "Reportes:";
+            label7.Click += label7_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9.75F);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(689, 140);
+            label8.Name = "label8";
+            label8.Size = new Size(47, 17);
+            label8.TabIndex = 23;
+            label8.Text = "Cargo:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9.75F);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(376, 97);
+            label9.Name = "label9";
+            label9.Size = new Size(61, 17);
+            label9.TabIndex = 24;
+            label9.Text = "Telefono:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9.75F);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(376, 140);
+            label10.Name = "label10";
+            label10.Size = new Size(52, 17);
+            label10.TabIndex = 25;
+            label10.Text = "Correo:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9.75F);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(689, 54);
+            label11.Name = "label11";
+            label11.Size = new Size(65, 17);
+            label11.TabIndex = 26;
+            label11.Text = "Dirección:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9.75F);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(689, 195);
+            label14.Name = "label14";
+            label14.Size = new Size(139, 17);
+            label14.TabIndex = 29;
+            label14.Text = "Fecha de contratación:";
+            // 
             // EmpleadosForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1199, 562);
             Controls.Add(panelSubcontenedor);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmpleadosForm";
             Text = "EmpleadosForm";
             Load += EmpleadosForm_Load;
@@ -525,6 +537,7 @@ namespace WinForms
         private TextBox txtTelefono;
         private TextBox txtPais;
         private TextBox txtDireccion;
+        private TextBox txtCargo;
         private TextBox txtCedula;
         private TextBox txtApellidos;
         private TextBox txtCorreo;
@@ -557,6 +570,5 @@ namespace WinForms
         private Label label8;
         private Label label7;
         private Label label14;
-        private ComboBox cbRolID;
     }
 }

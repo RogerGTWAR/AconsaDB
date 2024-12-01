@@ -39,8 +39,8 @@
             // 
             btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.FlatStyle = FlatStyle.Flat;
-            btnProductos.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProductos.Location = new Point(36, 30);
+            btnProductos.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProductos.Location = new Point(94, 40);
             btnProductos.Margin = new Padding(5);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(164, 45);
@@ -53,8 +53,8 @@
             // 
             btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.FlatStyle = FlatStyle.Flat;
-            btnCategorias.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCategorias.Location = new Point(210, 30);
+            btnCategorias.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnCategorias.Location = new Point(279, 40);
             btnCategorias.Margin = new Padding(5);
             btnCategorias.Name = "btnCategorias";
             btnCategorias.Size = new Size(164, 45);
@@ -70,7 +70,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1720, 75);
+            panel1.Size = new Size(1720, 114);
             panel1.TabIndex = 2;
             // 
             // panelContenedor
@@ -78,9 +78,9 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
             panelContenedor.ForeColor = Color.Black;
-            panelContenedor.Location = new Point(0, 75);
+            panelContenedor.Location = new Point(0, 114);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(1720, 637);
+            panelContenedor.Size = new Size(1720, 598);
             panelContenedor.TabIndex = 3;
             // 
             // MenuProductosForm

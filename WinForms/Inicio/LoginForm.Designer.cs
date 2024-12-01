@@ -33,7 +33,6 @@
             label1 = new Label();
             label2 = new Label();
             btnCargar = new Button();
-            btnCrear = new Button();
             panel1 = new Panel();
             panelTitleBar = new Panel();
             pictureBox1 = new PictureBox();
@@ -89,7 +88,7 @@
             btnCargar.FlatStyle = FlatStyle.Flat;
             btnCargar.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCargar.ForeColor = Color.White;
-            btnCargar.Location = new Point(59, 138);
+            btnCargar.Location = new Point(160, 137);
             btnCargar.Margin = new Padding(3, 2, 3, 2);
             btnCargar.Name = "btnCargar";
             btnCargar.Size = new Size(129, 38);
@@ -98,26 +97,9 @@
             btnCargar.UseVisualStyleBackColor = false;
             btnCargar.Click += btnCargar_Click;
             // 
-            // btnCrear
-            // 
-            btnCrear.BackColor = Color.FromArgb(46, 59, 104);
-            btnCrear.FlatAppearance.BorderSize = 0;
-            btnCrear.FlatStyle = FlatStyle.Flat;
-            btnCrear.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCrear.ForeColor = Color.White;
-            btnCrear.Location = new Point(267, 138);
-            btnCrear.Margin = new Padding(3, 2, 3, 2);
-            btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(129, 38);
-            btnCrear.TabIndex = 6;
-            btnCrear.Text = "Crear";
-            btnCrear.UseVisualStyleBackColor = false;
-            btnCrear.Click += btnCrear_Click;
-            // 
             // panel1
             // 
             panel1.Controls.Add(txtxUserName);
-            panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(txtPassword);
             panel1.Controls.Add(btnCargar);
             panel1.Controls.Add(label1);
@@ -188,7 +170,6 @@
         private Label label1;
         private Label label2;
         private Button btnCargar;
-        private Button btnCrear;
         private Panel panel1;
         private Panel panelTitleBar;
         private PictureBox pictureBox1;

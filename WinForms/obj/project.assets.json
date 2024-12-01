@@ -5025,23 +5025,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rpere\\.nuget\\packages\\": {},
+    "C:\\Users\\Wsofneell\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rpere\\OneDrive\\Desktop\\AconsaDB\\WinForms\\WinForms.csproj",
+      "projectUniqueName": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\WinForms\\WinForms.csproj",
       "projectName": "WinForms",
-      "projectPath": "C:\\Users\\rpere\\OneDrive\\Desktop\\AconsaDB\\WinForms\\WinForms.csproj",
-      "packagesPath": "C:\\Users\\rpere\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rpere\\OneDrive\\Desktop\\AconsaDB\\WinForms\\obj\\",
+      "projectPath": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\WinForms\\WinForms.csproj",
+      "packagesPath": "C:\\Users\\Wsofneell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\WinForms\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\rpere\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Wsofneell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5050,18 +5050,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\rpere\\OneDrive\\Desktop\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj": {
-              "projectPath": "C:\\Users\\rpere\\OneDrive\\Desktop\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj"
+            "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj": {
+              "projectPath": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj"
             },
-            "C:\\Users\\rpere\\OneDrive\\Desktop\\AconsaDB\\SharedModels\\SharedModels.csproj": {
-              "projectPath": "C:\\Users\\rpere\\OneDrive\\Desktop\\AconsaDB\\SharedModels\\SharedModels.csproj"
+            "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {
+              "projectPath": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj"
             }
           }
         }
@@ -5074,8 +5073,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
-      }
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -5121,7 +5121,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

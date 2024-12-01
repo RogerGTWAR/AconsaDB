@@ -4,9 +4,6 @@
     <Compile Update="FormsDeMenu\AvaluoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="BienvenidadForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FormsDeMenu\CategoriasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -28,10 +25,13 @@
     <Compile Update="FormsDeMenu\ProyectosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LoginForm.cs">
+    <Compile Update="Inicio\BienvenidadForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MenuForm.cs">
+    <Compile Update="Inicio\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Inicio\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormsDeMenu\MenuProductosForm.cs">

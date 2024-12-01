@@ -148,12 +148,12 @@ namespace WinForms
             }
             if (string.IsNullOrWhiteSpace(txtTelefono.Text) || !IsTelefonoValido(txtTelefono.Text))
             {
-                txtTelefono.BackColor = Color.LightCoral;
-                esValido = false;
+                txtTelefono.BackColor = Color.LightCoral;  
+                esValido = false;  
             }
             else
             {
-                txtTelefono.BackColor = Color.White;
+                txtTelefono.BackColor = Color.White;  
             }
 
             return esValido;
@@ -179,48 +179,19 @@ namespace WinForms
         private async void btnModificar_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                if (dgvClientes.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Seleccione un cliente para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                var clienteSeleccionado = dgvClientes.SelectedRows[0].DataBoundItem as ClienteDto;
-
-                if (clienteSeleccionado == null)
-                {
-                    MessageBox.Show("No se pudo obtener el cliente seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                clienteSeleccionado.ClienteID = txtClienteID.Text;
-                clienteSeleccionado.NombreEmpresa = txtNombreEmpresa.Text;
-                clienteSeleccionado.NombreContacto = txtNombreContacto.Text;
-                clienteSeleccionado.CargoContacto = txtCargoContacto.Text;
-                clienteSeleccionado.Direccion = txtDireccion.Text;
-                clienteSeleccionado.Ciudad = txtCiudad.Text;
-                clienteSeleccionado.Pais = txtPais.Text;
-                clienteSeleccionado.Telefono = txtTelefono.Text;
-
-                await _apiClient.Clientes.UpdateClienteAsync(clienteSeleccionado.ClienteID, clienteSeleccionado);
-
-                MessageBox.Show("Cliente modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                await RefreshData();
-                LimpiarCamposCliente();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al modificar cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
+            await Eliminar();
+
+        }
+
+        private async Task Eliminar()
+        {
             try
             {
+                // Verificar si se ha ingresado un ClienteID
                 if (string.IsNullOrWhiteSpace(txtClienteID.Text))
                 {
                     MessageBox.Show("Por favor, ingrese un ClienteID para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -229,10 +200,12 @@ namespace WinForms
 
                 var clienteID = txtClienteID.Text;
 
+                // Confirmación de eliminación
                 var confirmResult = MessageBox.Show("¿Está seguro de que desea eliminar este cliente?", "Confirmar Eliminación",
                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (confirmResult == DialogResult.Yes)
                 {
+                    // Llamada a la API para eliminar el cliente por su ClienteID
                     var success = await _apiClient.Clientes.DeleteClienteAsync(clienteID);
 
                     if (success)
@@ -252,6 +225,7 @@ namespace WinForms
                 MessageBox.Show($"Error al eliminar cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try

@@ -67,11 +67,11 @@ namespace WindowsForm
 
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-            var mainForm = new RegisterForm(_apiClient, _httpClient);
-            mainForm.Show();
-        }
+        //private void btnCrear_Click(object sender, EventArgs e)
+        //{
+        //    var mainForm = new RegisterForm(_apiClient, _httpClient);
+        //    mainForm.Show();
+        //}
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 

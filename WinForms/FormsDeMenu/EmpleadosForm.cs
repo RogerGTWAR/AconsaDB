@@ -15,6 +15,9 @@ namespace WinForms
     public partial class EmpleadosForm : Form
     {
         private readonly ApiClient _apiClient;
+        private int registrosPorPagina = 10;
+        private int totalPaginas;
+        private List<EmpleadoDto> empleados;
 
         public EmpleadosForm(HttpClient _httpClient)
         {
@@ -22,28 +25,25 @@ namespace WinForms
             _apiClient = new ApiClient();
         }
 
-        private async Task CargarRoles()
+        private void CargarPaginas()
         {
-            try
-            {
-                var roles = await _apiClient.Roles.GetAllAsync();
-                cbRolID.DataSource = roles.ToList();
-                cbRolID.DisplayMember = "RolID";
-                cbRolID.ValueMember = "RolID";
-                cbRolID.SelectedIndex = -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar los roles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private async Task RefreshData()
         {
             try
             {
-                var empleados = await _apiClient.Empleados.GetAllAsync();
-                dgvEmpleados.DataSource = empleados.ToList();
+                //    var empleados = await _apiClient.Empleados.GetAllAsync();
+                //dgvEmpleados.DataSource = empleados.ToList();
+                empleados = (await _apiClient.Empleados.GetAllAsync()).ToList();
+
+                totalPaginas = (int)Math.Ceiling((double)empleados.Count / registrosPorPagina);
+
+                // Configura el ComboBox con las páginas
+                CargarComboBoxPaginas();
+
+                // Carga la primera página
+                CargarPagina(1);
             }
             catch (Exception ex)
             {
@@ -51,40 +51,73 @@ namespace WinForms
             }
         }
 
+        private void CargarPagina(int pagina)
+        {
+            if (empleados == null || empleados.Count == 0)
+                return;
+
+            // Obtiene los empleados correspondientes a la página seleccionada
+            var empleadosPagina = empleados
+                .Skip((pagina - 1) * registrosPorPagina)
+                .Take(registrosPorPagina)
+                .ToList();
+
+            // Asigna los datos al DataGridView
+            dgvEmpleados.DataSource = empleadosPagina;
+        }
+
+        private void cmbPaginas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int pagina = cbPagina.SelectedIndex + 1;
+            CargarPagina(pagina);
+        }
+
+        private void CargarComboBoxPaginas()
+        {
+            // Limpia el ComboBox
+            cbPagina.Items.Clear();
+
+            // Añade las páginas al ComboBox
+            for (int i = 1; i <= totalPaginas; i++)
+            {
+                cbPagina.Items.Add($"Página {i}");
+            }
+
+            // Selecciona la primera página por defecto
+            if (cbPagina.Items.Count > 0)
+                cbPagina.SelectedIndex = 0;
+        }
+
         private async void EmpleadosForm_Load(object sender, EventArgs e)
         {
             await RefreshData();
-            await CargarRoles();
+
         }
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex >= 0)
             {
-                if (e.RowIndex >= 0)
-                {
-                    var empleadoSeleccionado = dgvEmpleados.Rows[e.RowIndex].DataBoundItem as EmpleadoDto;
+                var empleado = (EmpleadoDto)dgvEmpleados.Rows[e.RowIndex].DataBoundItem;
+                txtNombres.Text = empleado.Nombres;
+                txtApellidos.Text = empleado.Apellidos;
+                txtCedula.Text = empleado.Cedula;
+                txtCargo.Text = empleado.Cargo;
+                dtpFechaNacimiento.Value = empleado.FechaNacimiento;
+                dtpFechaContratacion.Value = empleado.FechaContratacion;
+                txtDireccion.Text = empleado.Direccion;
+                txtPais.Text = empleado.Pais;
+                txtTelefono.Text = empleado.Telefono;
+                txtCorreo.Text = empleado.Correo;
+            }
+        }
 
-                    if (empleadoSeleccionado != null)
-                    {
-                        txtNombres.Text = empleadoSeleccionado.Nombres;
-                        txtApellidos.Text = empleadoSeleccionado.Apellidos;
-                        txtCedula.Text = empleadoSeleccionado.Cedula;
-                        cbRolID.SelectedValue = empleadoSeleccionado.RolID;
-                        dtpFechaNacimiento.Value = empleadoSeleccionado.FechaNacimiento;
-                        dtpFechaContratacion.Value = empleadoSeleccionado.FechaContratacion;
-                        txtDireccion.Text = empleadoSeleccionado.Direccion;
-                        txtPais.Text = empleadoSeleccionado.Pais;
-                        txtTelefono.Text = empleadoSeleccionado.Telefono;
-                        txtCorreo.Text = empleadoSeleccionado.Correo;
-                        txtReportes.Text = empleadoSeleccionado.Reportes?.ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al seleccionar empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void cbPagina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int paginaSeleccionada = cbPagina.SelectedIndex + 1;
+
+            // Llama al método con el argumento correcto
+            CargarPagina(paginaSeleccionada);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -100,122 +133,6 @@ namespace WinForms
         private void label7_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private async void btnModificar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgvEmpleados.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Seleccione un empleado para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                var empleadoSeleccionado = dgvEmpleados.SelectedRows[0].DataBoundItem as EmpleadoDto;
-
-                if (empleadoSeleccionado == null)
-                {
-                    MessageBox.Show("No se pudo obtener el empleado seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                empleadoSeleccionado.Nombres = txtNombres.Text;
-                empleadoSeleccionado.Apellidos = txtApellidos.Text;
-                empleadoSeleccionado.Cedula = txtCedula.Text;
-                empleadoSeleccionado.RolID = (int)cbRolID.SelectedValue;
-                empleadoSeleccionado.FechaNacimiento = dtpFechaNacimiento.Value;
-                empleadoSeleccionado.FechaContratacion = dtpFechaContratacion.Value;
-                empleadoSeleccionado.Direccion = txtDireccion.Text;
-                empleadoSeleccionado.Pais = txtPais.Text;
-                empleadoSeleccionado.Telefono = txtTelefono.Text;
-                empleadoSeleccionado.Correo = txtCorreo.Text;
-                empleadoSeleccionado.Reportes = string.IsNullOrEmpty(txtReportes.Text) ? null : int.Parse(txtReportes.Text);
-
-                await _apiClient.Empleados.UpdateAsync(empleadoSeleccionado.EmpleadoID, empleadoSeleccionado);
-                MessageBox.Show("Empleado modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                await RefreshData();
-                LimpiarCampos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al modificar empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private async void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgvEmpleados.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Seleccione un empleado para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                var empleadoSeleccionado = dgvEmpleados.SelectedRows[0].DataBoundItem as EmpleadoDto;
-
-                if (empleadoSeleccionado == null)
-                {
-                    MessageBox.Show("No se pudo obtener el empleado seleccionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                var confirmResult = MessageBox.Show("¿Está seguro de que desea eliminar este empleado?",
-                    "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (confirmResult == DialogResult.Yes)
-                {
-                    await _apiClient.Empleados.DeleteAsync(empleadoSeleccionado.EmpleadoID);
-                    MessageBox.Show("Empleado eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    await RefreshData();
-                    LimpiarCampos();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al eliminar empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private async void btnAgregar_Click(object sender, EventArgs e)
-        {
-            var nuevoEmpleado = new EmpleadoDto
-            {
-                Nombres = txtNombres.Text,
-                Apellidos = txtApellidos.Text,
-                Cedula = txtCedula.Text,
-                RolID = (int)cbRolID.SelectedValue,
-                FechaNacimiento = dtpFechaNacimiento.Value,
-                FechaContratacion = dtpFechaContratacion.Value,
-                Direccion = txtDireccion.Text,
-                Pais = txtPais.Text,
-                Telefono = txtTelefono.Text,
-                Correo = txtCorreo.Text,
-                Reportes = string.IsNullOrEmpty(txtReportes.Text) ? null : int.Parse(txtReportes.Text)
-            };
-
-            await _apiClient.Empleados.CreateAsync(nuevoEmpleado);
-            MessageBox.Show("Empleado agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            await RefreshData();
-            LimpiarCampos();
-        }
-        private void LimpiarCampos()
-        {
-            txtNombres.Text = string.Empty;
-            txtApellidos.Text = string.Empty;
-            txtCedula.Text = string.Empty;
-            txtDireccion.Text = string.Empty;
-            txtPais.Text = string.Empty;
-            txtTelefono.Text = string.Empty;
-            txtCorreo.Text = string.Empty;
-            txtReportes.Text = string.Empty;
-            cbRolID.SelectedIndex = -1;
-            dtpFechaNacimiento.Value = DateTime.Now;
-            dtpFechaContratacion.Value = DateTime.Now;
         }
     }
 }
