@@ -1,23 +1,73 @@
 use AconsaDB
 
-CREATE VIEW Vista_Proyectos_Clientes AS
+ALTER VIEW ReporteClientesProyectosRecursos AS
 SELECT 
-    P.ProyectoID,
-    P.NombreProyecto,
-    P.Descripcion,
-    P.Ubicacion,
-    C.NombreEmpresa AS Cliente,
-    C.Ciudad,
-    C.Pais
-FROM 
-    Proyectos P
-JOIN 
-    Clientes C ON P.ClienteID = C.ClienteID;
+    c.NombreEmpresa AS NombreCliente,
+    c.NombreContacto,
+    c.CargoContacto,
+    c.Dirección AS DirecciónCliente,
+    c.Ciudad AS CiudadCliente,
+    c.País AS PaísCliente,
+    c.Teléfono AS TeléfonoCliente,
+    
+    p.NombreProyecto,
+    p.Descripcion AS DescripcionProyecto,
+    p.Ubicacion AS UbicaciónProyecto,
+    p.FechaInicio,
+    p.FechaFin,
+    p.Estado AS EstadoProyecto,
+    p.PresupuestoTotal,
+    
+    -- Avaluos relacionados con el proyecto
+    a.Descripcion AS DescripcionAvaluo,
+    a.MontoEjecutado,
+    a.FechaInicio AS FechaInicioAvaluo,
+    a.FechaFin AS FechaFinAvaluo,
 
+    -- Productos utilizados en el proyecto
+    pr.NombreProducto,
+    pd.Cantidad AS CantidadProducto,
+    pd.PrecioUnitario AS PrecioProducto,
 
-	select * from Vista_Proyectos_Clientes
+    -- Maquinarias utilizadas en el proyecto
+    m.NombreMaquinaria,
+    md.HorasUtilizadas,
+    md.FechaInicioAsignacion AS FechaInicioMaquinaria,
+    md.FechaFinAsignacion AS FechaFinMaquinaria,
 
+    -- Vehículos utilizados en el proyecto
+    v.Marca AS MarcaVehiculo,
+    v.Modelo AS ModeloVehiculo,
+    vd.FechaAsignacion AS FechaAsignacionVehiculo,
+    vd.FechaFinAsignacion AS FechaFinAsignacionVehiculo
 
+FROM Clientes c
+INNER JOIN Proyectos p ON c.ClienteID = p.ClienteID
+LEFT JOIN Avaluos a ON p.ProyectoID = a.ProyectoID
+LEFT JOIN [Avaluo Detalles] pd ON a.AvaluoID = pd.AvaluoID
+LEFT JOIN Productos pr ON pd.ProductoID = pr.ProductoID
+LEFT JOIN [Maquinaria Detalles] md ON p.ProyectoID = md.ProyectoID
+LEFT JOIN Maquinaria m ON md.MaquinariaID = m.MaquinariaID
+LEFT JOIN [Empleados Detalles] ed ON p.ProyectoID = ed.ProyectoID
+LEFT JOIN [Vehiculo Detalles] vd ON ed.EmpleadoID = vd.EmpleadoID
+LEFT JOIN Vehiculos v ON vd.VehiculoID = v.VehiculoID;
+
+---------------------------------
+CREATE VIEW EmpleadosActivosEnProyectos AS
+SELECT 
+    e.Nombres + ' ' + e.Apellidos AS NombreEmpleado,
+    e.Cedula AS CedulaEmpleado,
+    e.Telefono AS TelefonoEmpleado,
+    p.NombreProyecto,
+    p.FechaInicio,
+    p.FechaFin,
+    p.Estado AS EstadoProyecto
+FROM Empleados e
+INNER JOIN [Empleados Detalles] ed ON e.EmpleadoID = ed.EmpleadoID
+INNER JOIN Proyectos p ON ed.ProyectoID = p.ProyectoID
+WHERE p.Estado = 'Activo' AND p.FechaFin >= GETDATE();
+
+------------------------------------------------------------
 Create VIEW Vista_Empleados_Vehiculos AS
 SELECT 
     E.EmpleadoID,
@@ -35,21 +85,7 @@ JOIN [Vehiculos] AS V ON V.VehiculoID = VD.VehiculoID;
 
 select *from Vista_Empleados_Vehiculos
 
-CREATE VIEW Vista_Maquinaria_Proyectos AS
-SELECT 
-    MD.ProyectoID,
-    M.NombreMaquinaria,
-    M.Modelo,
-    MD.FechaInicioAsignacion,
-    MD.FechaFinAsignacion
-FROM 
-    [Maquinaria Detalles] AS MD
-JOIN 
-    Maquinarias AS M ON MD.MaquinariaID = M.MaquinariaID;
-
-	select *from Vista_Maquinaria_Proyectos
-
-
+-------------------------------------------------------------
 --Store Procedures--
 
 
@@ -63,7 +99,7 @@ Create PROCEDURE ActualizarEmpleado
     @FechaNacimiento DATE,
     @FechaContratacion DATE,
     @Direccion NVARCHAR(150),
-	@Pa�s VARCHAR(50),
+	@País VARCHAR(50),
     @Telefono VARCHAR(15),
     @Correo VARCHAR(100),
     @Reportes INT
@@ -77,7 +113,7 @@ BEGIN
         FechaNacimiento = @FechaNacimiento,
         FechaContratacion = @FechaContratacion,
         Direccion = @Direccion,
-		Pa�s = @Pa�s,
+		País = @País,
         Telefono = @Telefono,
         Correo = @Correo,
         Reportes = @Reportes
@@ -88,13 +124,13 @@ END;
 EXEC ActualizarEmpleado
     @EmpleadoID = 1,
     @Nombres = 'Juan',
-    @Apellidos = 'P�rez',
+    @Apellidos = 'Pérez',
     @Cedula = '0871604678967P',
     @Cargo = 'Gerente',
     @FechaNacimiento = '1980-05-15',
     @FechaContratacion = '2020-01-10',
     @Direccion = 'Calle Principal 123',
-	@Pa�s = 'Nicaragua',
+	@País = 'Nicaragua',
     @Telefono = '8595-1212',
     @Correo = 'juan.perez@empresa.com',
     @Reportes = 5;
@@ -115,11 +151,11 @@ BEGIN
         WHERE VehiculoID = @VehiculoID;
 
         COMMIT TRANSACTION;
-        PRINT 'El veh�culo y sus detalles fueron eliminados correctamente.';
+        PRINT 'El vehículo y sus detalles fueron eliminados correctamente.';
     END TRY
     BEGIN CATCH
         ROLLBACK TRANSACTION;
-        PRINT 'Error al eliminar el veh�culo y sus detalles.';
+        PRINT 'Error al eliminar el vehículo y sus detalles.';
         THROW;
     END CATCH
 END;
