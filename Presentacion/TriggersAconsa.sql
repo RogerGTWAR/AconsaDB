@@ -67,6 +67,97 @@ BEGIN
 END;
 
 
+------TRIGGER ESTADO MAQUINARIAS QUE USA CURSOR
+
+CREATE TRIGGER Trig_ActualizarEstadoMaquinaria
+ON Maquinarias
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @MaquinariaID INT, @FechaFinalizacionRenta DATE, @FechaHoy DATE;
+
+    SET @FechaHoy = GETDATE();
+
+    -- Recorrer registros afectados
+    DECLARE cursorMaquinarias CURSOR FOR
+    SELECT MaquinariaID, FechaFinalizacionRenta
+    FROM inserted;
+
+    OPEN cursorMaquinarias;
+    FETCH NEXT FROM cursorMaquinarias INTO @MaquinariaID, @FechaFinalizacionRenta;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Actualizar Estado basado en FechaFinalizacionRenta
+        IF @FechaFinalizacionRenta IS NOT NULL AND @FechaFinalizacionRenta > @FechaHoy
+        BEGIN
+            UPDATE Maquinarias
+            SET Estado = 'Operando'
+            WHERE MaquinariaID = @MaquinariaID;
+        END
+        ELSE IF @FechaFinalizacionRenta IS NOT NULL AND @FechaFinalizacionRenta = @FechaHoy
+        BEGIN
+            UPDATE Maquinarias
+            SET Estado = 'Contrato Terminado'
+            WHERE MaquinariaID = @MaquinariaID;
+        END
+        ELSE IF @FechaFinalizacionRenta IS NOT NULL AND @FechaFinalizacionRenta < @FechaHoy
+        BEGIN
+            UPDATE Maquinarias
+            SET Estado = 'En Mantenimiento'
+            WHERE MaquinariaID = @MaquinariaID;
+        END
+        ELSE
+        BEGIN
+            UPDATE Maquinarias
+            SET Estado = 'Contrato Terminado'
+            WHERE MaquinariaID = @MaquinariaID;
+        END
+
+        FETCH NEXT FROM cursorMaquinarias INTO @MaquinariaID, @FechaFinalizacionRenta;
+    END;
+
+    CLOSE cursorMaquinarias;
+    DEALLOCATE cursorMaquinarias;
+END;
+
+
+
+
+-----------
+
+CREATE TRIGGER Trig_VerificarClienteExistente
+ON Proyectos
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @ClienteID NCHAR(5);
+
+    SELECT @ClienteID = inserted.ClienteID
+    FROM inserted;
+
+    -- Verificar si el ClienteID existe en la tabla Clientes
+    IF NOT EXISTS (SELECT 1 FROM Clientes WHERE ClienteID = @ClienteID)
+    BEGIN
+        PRINT 'No se puede registrar el proyecto, el ClienteID no existe.';
+        ROLLBACK TRANSACTION;
+    END
+END;
+
+-------------------
+
+CREATE TRIGGER Trig_AsignarMaquinaria
+ON [Maquinaria Detalles]
+AFTER INSERT
+AS
+BEGIN
+    UPDATE Maquinarias
+    SET Estado = 'Operando'
+    WHERE MaquinariaID IN (SELECT MaquinariaID FROM inserted);
+END;
+
 
 
 ---------TRIGGERS NEUVOS (TABLAS TEMPS)
