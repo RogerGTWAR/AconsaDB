@@ -645,3 +645,95 @@ BEGIN
     END CATCH
 END;
 
+-------------------AGREGAR PROYECTOS
+
+CREATE PROCEDURE AgregarProyecto
+    @ClienteID NCHAR(5),
+    @NombreProyecto VARCHAR(100),
+    @Descripcion NVARCHAR(150),
+    @Ubicacion VARCHAR(100),
+    @FechaInicio DATE,
+    @FechaFin DATE,
+    @PresupuestoTotal MONEY,
+    @Estado VARCHAR(50)
+AS
+BEGIN
+    BEGIN TRY
+        INSERT INTO Proyectos (ClienteID, NombreProyecto, Descripcion, Ubicacion, FechaInicio, FechaFin, PresupuestoTotal, Estado)
+        VALUES (@ClienteID, @NombreProyecto, @Descripcion, @Ubicacion, @FechaInicio, @FechaFin, @PresupuestoTotal, @Estado);
+        
+        PRINT 'Proyecto agregado correctamente.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error al agregar el proyecto: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+
+------------------M0DIFICAR PROEYCTO
+
+CREATE PROCEDURE ModificarProyecto
+    @ProyectoID INT,
+    @ClienteID NCHAR(5),
+    @NombreProyecto VARCHAR(100),
+    @Descripcion NVARCHAR(150),
+    @Ubicacion VARCHAR(100),
+    @FechaInicio DATE,
+    @FechaFin DATE,
+    @PresupuestoTotal MONEY,
+    @Estado VARCHAR(50)
+AS
+BEGIN
+    BEGIN TRY
+        UPDATE Proyectos
+        SET ClienteID = @ClienteID,
+            NombreProyecto = @NombreProyecto,
+            Descripcion = @Descripcion,
+            Ubicacion = @Ubicacion,
+            FechaInicio = @FechaInicio,
+            FechaFin = @FechaFin,
+            PresupuestoTotal = @PresupuestoTotal,
+            Estado = @Estado
+        WHERE ProyectoID = @ProyectoID;
+
+        PRINT 'Proyecto modificado correctamente.';
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error al modificar el proyecto: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+
+----------------ELIMINAR PROYECTO
+
+CREATE PROCEDURE EliminarProyecto
+    @ProyectoID INT
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Eliminar registros dependientes en Avaluos
+        DELETE FROM Avaluos
+        WHERE ProyectoID = @ProyectoID;
+
+        -- Eliminar registros dependientes en Maquinaria Detalles
+        DELETE FROM [Maquinaria Detalles]
+        WHERE ProyectoID = @ProyectoID;
+
+        -- Eliminar registros dependientes en Empleados Detalles
+        DELETE FROM [Empleados Detalles]
+        WHERE ProyectoID = @ProyectoID;
+
+        -- Eliminar el proyecto
+        DELETE FROM Proyectos
+        WHERE ProyectoID = @ProyectoID;
+
+        COMMIT TRANSACTION;
+        PRINT 'Proyecto y sus detalles relacionados eliminados correctamente.';
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        PRINT 'Error al eliminar el proyecto: ' + ERROR_MESSAGE();
+    END CATCH
+END;
+
+
