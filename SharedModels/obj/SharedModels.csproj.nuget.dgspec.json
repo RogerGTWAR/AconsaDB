@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {}
+    "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {
+    "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj",
+        "projectUniqueName": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj",
         "projectName": "SharedModels",
-        "projectPath": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj",
+        "projectPath": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj",
         "packagesPath": "C:\\Users\\Wsofneell\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\SharedModels\\obj\\",
         "projectStyle": "PackageReference",

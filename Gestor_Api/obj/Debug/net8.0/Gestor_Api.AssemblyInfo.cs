@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gestor_Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a07fdc4663a20ea659aec52acc3cf9e6f977eb2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e51ca2e168f1f71ed0f7adc3a6e422c56af688a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gestor_Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gestor_Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
