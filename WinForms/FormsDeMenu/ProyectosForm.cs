@@ -200,7 +200,6 @@ namespace WinForms
                 MessageBox.Show($"Error al cargar proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgvProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try

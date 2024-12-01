@@ -12,6 +12,7 @@
           "Gestor_Api": "1.0.0",
           "Microsoft.Data.SqlClient": "5.2.2",
           "Newtonsoft.Json": "13.0.3",
+          "QuestPDF": "2024.10.4",
           "SharedModels": "1.0.0",
           "System.Configuration.ConfigurationManager": "9.0.0",
           "System.Net.Http": "4.3.4"
@@ -343,6 +344,51 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.2.22727"
+          }
+        }
+      },
+      "QuestPDF/2024.10.4": {
+        "runtime": {
+          "lib/net8.0/QuestPDF.dll": {
+            "assemblyVersion": "2024.10.4.0",
+            "fileVersion": "2024.10.4.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libQuestPdfSkia.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libQuestPdfSkia.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libQuestPdfSkia.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libQuestPdfSkia.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libQuestPdfSkia.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/QuestPdfSkia.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/QuestPdfSkia.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1110,6 +1156,13 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "QuestPDF/2024.10.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4QqO28jvDpaqR0GYhIi9QymJWgEmTw9zMsvVvSA1OKpT0FuLXIwrOBC6akUT4wH3pVqICRW+DOmf10SOfYthSw==",
+      "path": "questpdf/2024.10.4",
+      "hashPath": "questpdf.2024.10.4.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "type": "package",

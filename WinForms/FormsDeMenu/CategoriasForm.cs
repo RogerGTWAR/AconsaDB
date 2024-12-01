@@ -90,7 +90,7 @@ namespace WinForms
                 MessageBox.Show("Categoría modificada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 await RefreshData();
-                LimpiarCampos(); 
+                LimpiarCampos();
 
             }
             catch (Exception ex)

@@ -89,22 +89,20 @@
             panelSubContenedor.Controls.Add(label1);
             panelSubContenedor.Controls.Add(txtNombreEmpresa);
             panelSubContenedor.Controls.Add(dgvProveedores);
-            panelSubContenedor.Location = new Point(5, 9);
-            panelSubContenedor.Margin = new Padding(3, 2, 3, 2);
+            panelSubContenedor.Location = new Point(6, 12);
             panelSubContenedor.Name = "panelSubContenedor";
-            panelSubContenedor.Size = new Size(1049, 446);
+            panelSubContenedor.Size = new Size(1199, 595);
             panelSubContenedor.TabIndex = 0;
             // 
             // btnEliminar
             // 
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(930, 131);
-            btnEliminar.Margin = new Padding(3, 2, 3, 2);
+            btnEliminar.Location = new Point(1063, 232);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(99, 38);
+            btnEliminar.Size = new Size(113, 51);
             btnEliminar.TabIndex = 20;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -114,12 +112,11 @@
             // 
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(930, 201);
-            btnModificar.Margin = new Padding(3, 2, 3, 2);
+            btnModificar.Location = new Point(1046, 161);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(99, 38);
+            btnModificar.Size = new Size(130, 51);
             btnModificar.TabIndex = 19;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -129,12 +126,11 @@
             // 
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(930, 60);
-            btnAgregar.Margin = new Padding(3, 2, 3, 2);
+            btnAgregar.Location = new Point(1063, 80);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(99, 38);
+            btnAgregar.Size = new Size(113, 51);
             btnAgregar.TabIndex = 18;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -145,9 +141,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(429, 7);
+            label9.Location = new Point(490, 9);
             label9.Name = "label9";
-            label9.Size = new Size(157, 32);
+            label9.Size = new Size(192, 41);
             label9.TabIndex = 17;
             label9.Text = "Proveedores";
             // 
@@ -156,9 +152,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(7, 108);
+            label8.Location = new Point(8, 144);
             label8.Name = "label8";
-            label8.Size = new Size(155, 21);
+            label8.Size = new Size(198, 28);
             label8.TabIndex = 16;
             label8.Text = "Nombre de contacto:";
             // 
@@ -167,9 +163,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(7, 161);
+            label7.Location = new Point(8, 215);
             label7.Name = "label7";
-            label7.Size = new Size(143, 21);
+            label7.Size = new Size(183, 28);
             label7.TabIndex = 15;
             label7.Text = "Cargo del contacto:";
             // 
@@ -178,9 +174,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(44, 210);
+            label6.Location = new Point(50, 280);
             label6.Name = "label6";
-            label6.Size = new Size(75, 21);
+            label6.Size = new Size(94, 28);
             label6.TabIndex = 14;
             label6.Text = "Direccion";
             // 
@@ -189,9 +185,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(583, 56);
+            label5.Location = new Point(666, 75);
             label5.Name = "label5";
-            label5.Size = new Size(62, 21);
+            label5.Size = new Size(78, 28);
             label5.TabIndex = 13;
             label5.Text = "Ciudad:";
             // 
@@ -200,9 +196,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(583, 112);
+            label4.Location = new Point(666, 149);
             label4.Name = "label4";
-            label4.Size = new Size(40, 21);
+            label4.Size = new Size(49, 28);
             label4.TabIndex = 12;
             label4.Text = "Pais:";
             // 
@@ -211,9 +207,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(583, 161);
+            label3.Location = new Point(666, 215);
             label3.Name = "label3";
-            label3.Size = new Size(71, 21);
+            label3.Size = new Size(90, 28);
             label3.TabIndex = 11;
             label3.Text = "Telefono:";
             // 
@@ -222,74 +218,67 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(583, 210);
+            label2.Location = new Point(666, 280);
             label2.Name = "label2";
-            label2.Size = new Size(61, 21);
+            label2.Size = new Size(76, 28);
             label2.TabIndex = 10;
             label2.Text = "Correo:";
             // 
             // txtTelefono
             // 
             txtTelefono.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTelefono.Location = new Point(685, 160);
-            txtTelefono.Margin = new Padding(3, 2, 3, 2);
+            txtTelefono.Location = new Point(783, 213);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(168, 26);
+            txtTelefono.Size = new Size(191, 30);
             txtTelefono.TabIndex = 9;
             // 
             // txtCorreo
             // 
             txtCorreo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCorreo.Location = new Point(685, 213);
-            txtCorreo.Margin = new Padding(3, 2, 3, 2);
+            txtCorreo.Location = new Point(783, 284);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(168, 26);
+            txtCorreo.Size = new Size(191, 30);
             txtCorreo.TabIndex = 8;
             // 
             // txtNombreContacto
             // 
             txtNombreContacto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreContacto.Location = new Point(196, 107);
-            txtNombreContacto.Margin = new Padding(3, 2, 3, 2);
+            txtNombreContacto.Location = new Point(224, 143);
             txtNombreContacto.Name = "txtNombreContacto";
-            txtNombreContacto.Size = new Size(168, 26);
+            txtNombreContacto.Size = new Size(191, 30);
             txtNombreContacto.TabIndex = 7;
             // 
             // txtCargoContacto
             // 
             txtCargoContacto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCargoContacto.Location = new Point(196, 160);
-            txtCargoContacto.Margin = new Padding(3, 2, 3, 2);
+            txtCargoContacto.Location = new Point(224, 213);
             txtCargoContacto.Name = "txtCargoContacto";
-            txtCargoContacto.Size = new Size(168, 26);
+            txtCargoContacto.Size = new Size(191, 30);
             txtCargoContacto.TabIndex = 6;
             // 
             // txtDireccion
             // 
             txtDireccion.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDireccion.Location = new Point(196, 209);
-            txtDireccion.Margin = new Padding(3, 2, 3, 2);
+            txtDireccion.Location = new Point(224, 279);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(216, 51);
+            txtDireccion.Size = new Size(246, 67);
             txtDireccion.TabIndex = 5;
             // 
             // txtCiudad
             // 
             txtCiudad.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCiudad.Location = new Point(685, 55);
-            txtCiudad.Margin = new Padding(3, 2, 3, 2);
+            txtCiudad.Location = new Point(783, 73);
             txtCiudad.Name = "txtCiudad";
-            txtCiudad.Size = new Size(168, 26);
+            txtCiudad.Size = new Size(191, 30);
             txtCiudad.TabIndex = 4;
             // 
             // txtPais
             // 
             txtPais.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPais.Location = new Point(685, 107);
-            txtPais.Margin = new Padding(3, 2, 3, 2);
+            txtPais.Location = new Point(783, 143);
             txtPais.Name = "txtPais";
-            txtPais.Size = new Size(168, 26);
+            txtPais.Size = new Size(191, 30);
             txtPais.TabIndex = 3;
             // 
             // label1
@@ -297,19 +286,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(7, 56);
+            label1.Location = new Point(8, 75);
             label1.Name = "label1";
-            label1.Size = new Size(172, 21);
+            label1.Size = new Size(215, 28);
             label1.TabIndex = 2;
             label1.Text = "Nombre de la empresa:";
             // 
             // txtNombreEmpresa
             // 
             txtNombreEmpresa.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreEmpresa.Location = new Point(196, 56);
-            txtNombreEmpresa.Margin = new Padding(3, 2, 3, 2);
+            txtNombreEmpresa.Location = new Point(224, 75);
             txtNombreEmpresa.Name = "txtNombreEmpresa";
-            txtNombreEmpresa.Size = new Size(168, 26);
+            txtNombreEmpresa.Size = new Size(191, 30);
             txtNombreEmpresa.TabIndex = 1;
             // 
             // dgvProveedores
@@ -320,13 +308,12 @@
             dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { proveedorIDDataGridViewTextBoxColumn, nombreEmpresaDataGridViewTextBoxColumn, nombreContactoDataGridViewTextBoxColumn, cargoContactoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, ciudadDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, correoDataGridViewTextBoxColumn });
             dgvProveedores.DataSource = proveedorBindingSource;
             dgvProveedores.Dock = DockStyle.Bottom;
-            dgvProveedores.Location = new Point(0, 275);
-            dgvProveedores.Margin = new Padding(3, 2, 3, 2);
+            dgvProveedores.Location = new Point(0, 367);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.ReadOnly = true;
             dgvProveedores.RowHeadersWidth = 51;
             dgvProveedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProveedores.Size = new Size(1049, 171);
+            dgvProveedores.Size = new Size(1199, 228);
             dgvProveedores.TabIndex = 0;
             dgvProveedores.CellContentClick += dgvProveedores_CellContentClick;
             // 
@@ -417,12 +404,11 @@
             // 
             // ProveedoresForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1078, 473);
+            ClientSize = new Size(1232, 631);
             Controls.Add(panelSubContenedor);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ProveedoresForm";
             Text = "ProveedoresForm";
             Load += ProveedoresForm_Load;

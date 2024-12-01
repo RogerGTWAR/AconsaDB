@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -61,7 +62,6 @@
             estadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tiempoTotalDiasDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             proyectoBindingSource = new BindingSource(components);
-            label9 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProyectos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proyectoBindingSource).BeginInit();
@@ -90,21 +90,32 @@
             panel1.Controls.Add(btnModificar);
             panel1.Controls.Add(btnEliminar);
             panel1.Controls.Add(dgvProyectos);
-            panel1.Location = new Point(10, 9);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(11, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1110, 520);
+            panel1.Size = new Size(1269, 693);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(555, 12);
+            label9.Name = "label9";
+            label9.Size = new Size(133, 37);
+            label9.TabIndex = 21;
+            label9.Text = "Proyecto";
+            label9.Click += label9_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(23, 122);
+            label8.Location = new Point(26, 163);
             label8.Name = "label8";
-            label8.Size = new Size(161, 21);
+            label8.Size = new Size(205, 28);
             label8.TabIndex = 20;
             label8.Text = "Nombre del proyecto:";
             // 
@@ -113,9 +124,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(23, 184);
+            label7.Location = new Point(26, 245);
             label7.Name = "label7";
-            label7.Size = new Size(94, 21);
+            label7.Size = new Size(118, 28);
             label7.TabIndex = 19;
             label7.Text = "Descripcion:";
             // 
@@ -124,9 +135,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(23, 247);
+            label6.Location = new Point(26, 329);
             label6.Name = "label6";
-            label6.Size = new Size(81, 21);
+            label6.Size = new Size(103, 28);
             label6.TabIndex = 18;
             label6.Text = "Ubicacion:";
             // 
@@ -135,9 +146,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(535, 76);
+            label5.Location = new Point(611, 101);
             label5.Name = "label5";
-            label5.Size = new Size(99, 21);
+            label5.Size = new Size(123, 28);
             label5.TabIndex = 17;
             label5.Text = "Presupuesto:";
             // 
@@ -146,9 +157,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(535, 250);
+            label4.Location = new Point(611, 333);
             label4.Name = "label4";
-            label4.Size = new Size(159, 21);
+            label4.Size = new Size(200, 28);
             label4.TabIndex = 16;
             label4.Text = "Fecha de Finalizacion:";
             // 
@@ -157,9 +168,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(535, 127);
+            label3.Location = new Point(611, 169);
             label3.Name = "label3";
-            label3.Size = new Size(59, 21);
+            label3.Size = new Size(75, 28);
             label3.TabIndex = 15;
             label3.Text = "Estado:";
             // 
@@ -168,9 +179,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(535, 184);
+            label2.Location = new Point(611, 245);
             label2.Name = "label2";
-            label2.Size = new Size(115, 21);
+            label2.Size = new Size(145, 28);
             label2.TabIndex = 14;
             label2.Text = "Fecha de inicio:";
             // 
@@ -179,97 +190,88 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(24, 69);
+            label1.Location = new Point(27, 92);
             label1.Name = "label1";
-            label1.Size = new Size(80, 21);
+            label1.Size = new Size(100, 28);
             label1.TabIndex = 13;
             label1.Text = "Cliente ID:";
             // 
             // txtPresupuestoTotal
             // 
             txtPresupuestoTotal.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPresupuestoTotal.Location = new Point(716, 71);
-            txtPresupuestoTotal.Margin = new Padding(3, 2, 3, 2);
+            txtPresupuestoTotal.Location = new Point(818, 95);
             txtPresupuestoTotal.Name = "txtPresupuestoTotal";
-            txtPresupuestoTotal.Size = new Size(168, 26);
+            txtPresupuestoTotal.Size = new Size(191, 30);
             txtPresupuestoTotal.TabIndex = 12;
             // 
             // dtpFechaInicio
             // 
             dtpFechaInicio.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaInicio.Format = DateTimePickerFormat.Short;
-            dtpFechaInicio.Location = new Point(716, 184);
-            dtpFechaInicio.Margin = new Padding(3, 2, 3, 2);
+            dtpFechaInicio.Location = new Point(818, 245);
             dtpFechaInicio.Name = "dtpFechaInicio";
-            dtpFechaInicio.Size = new Size(124, 26);
+            dtpFechaInicio.Size = new Size(141, 30);
             dtpFechaInicio.TabIndex = 11;
             // 
             // dtpFechaFin
             // 
             dtpFechaFin.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaFin.Format = DateTimePickerFormat.Short;
-            dtpFechaFin.Location = new Point(716, 246);
-            dtpFechaFin.Margin = new Padding(3, 2, 3, 2);
+            dtpFechaFin.Location = new Point(818, 328);
             dtpFechaFin.Name = "dtpFechaFin";
-            dtpFechaFin.Size = new Size(124, 26);
+            dtpFechaFin.Size = new Size(141, 30);
             dtpFechaFin.TabIndex = 10;
             // 
             // cbEstado
             // 
             cbEstado.FormattingEnabled = true;
-            cbEstado.Location = new Point(716, 125);
-            cbEstado.Margin = new Padding(3, 2, 3, 2);
+            cbEstado.Location = new Point(818, 167);
             cbEstado.Name = "cbEstado";
-            cbEstado.Size = new Size(124, 23);
+            cbEstado.Size = new Size(141, 28);
             cbEstado.TabIndex = 9;
             // 
             // txtDescripcion
             // 
             txtDescripcion.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescripcion.Location = new Point(195, 183);
-            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
+            txtDescripcion.Location = new Point(223, 244);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(168, 43);
+            txtDescripcion.Size = new Size(191, 56);
             txtDescripcion.TabIndex = 8;
             // 
             // txtNombreProyecto
             // 
             txtNombreProyecto.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreProyecto.Location = new Point(195, 122);
-            txtNombreProyecto.Margin = new Padding(3, 2, 3, 2);
+            txtNombreProyecto.Location = new Point(223, 163);
             txtNombreProyecto.Name = "txtNombreProyecto";
-            txtNombreProyecto.Size = new Size(168, 26);
+            txtNombreProyecto.Size = new Size(191, 30);
             txtNombreProyecto.TabIndex = 7;
             // 
             // txtUbicacion
             // 
             txtUbicacion.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUbicacion.Location = new Point(195, 246);
-            txtUbicacion.Margin = new Padding(3, 2, 3, 2);
+            txtUbicacion.Location = new Point(223, 328);
             txtUbicacion.Name = "txtUbicacion";
-            txtUbicacion.Size = new Size(168, 26);
+            txtUbicacion.Size = new Size(191, 30);
             txtUbicacion.TabIndex = 6;
             // 
             // cbClienteID
             // 
             cbClienteID.FormattingEnabled = true;
-            cbClienteID.Location = new Point(195, 71);
-            cbClienteID.Margin = new Padding(3, 2, 3, 2);
+            cbClienteID.Location = new Point(223, 95);
             cbClienteID.Name = "cbClienteID";
-            cbClienteID.Size = new Size(168, 23);
+            cbClienteID.Size = new Size(191, 28);
             cbClienteID.TabIndex = 4;
             // 
             // btnAgregar
             // 
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(952, 68);
-            btnAgregar.Margin = new Padding(3, 2, 3, 2);
+            btnAgregar.Location = new Point(1088, 91);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(95, 50);
+            btnAgregar.Size = new Size(126, 67);
             btnAgregar.TabIndex = 3;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -279,12 +281,11 @@
             // 
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(952, 218);
-            btnModificar.Margin = new Padding(3, 2, 3, 2);
+            btnModificar.Location = new Point(1088, 291);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(108, 50);
+            btnModificar.Size = new Size(140, 67);
             btnModificar.TabIndex = 2;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -294,12 +295,11 @@
             // 
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(952, 141);
-            btnEliminar.Margin = new Padding(3, 2, 3, 2);
+            btnEliminar.Location = new Point(1088, 188);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(95, 50);
+            btnEliminar.Size = new Size(126, 67);
             btnEliminar.TabIndex = 1;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -313,13 +313,12 @@
             dgvProyectos.Columns.AddRange(new DataGridViewColumn[] { proyectoIDDataGridViewTextBoxColumn, clienteIDDataGridViewTextBoxColumn, nombreProyectoDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn, ubicacionDataGridViewTextBoxColumn, fechaInicioDataGridViewTextBoxColumn, fechaFinDataGridViewTextBoxColumn, presupuestoTotalDataGridViewTextBoxColumn, estadoDataGridViewTextBoxColumn, tiempoTotalDiasDataGridViewTextBoxColumn });
             dgvProyectos.DataSource = proyectoBindingSource;
             dgvProyectos.Dock = DockStyle.Bottom;
-            dgvProyectos.Location = new Point(0, 313);
-            dgvProyectos.Margin = new Padding(3, 2, 3, 2);
+            dgvProyectos.Location = new Point(0, 417);
             dgvProyectos.Name = "dgvProyectos";
             dgvProyectos.ReadOnly = true;
             dgvProyectos.RowHeadersWidth = 51;
             dgvProyectos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProyectos.Size = new Size(1110, 207);
+            dgvProyectos.Size = new Size(1269, 276);
             dgvProyectos.TabIndex = 0;
             dgvProyectos.CellContentClick += dgvProyectos_CellContentClick;
             // 
@@ -417,26 +416,13 @@
             // 
             proyectoBindingSource.DataSource = typeof(SharedModels.Proyecto);
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(486, 9);
-            label9.Name = "label9";
-            label9.Size = new Size(100, 30);
-            label9.TabIndex = 21;
-            label9.Text = "Proyecto";
-            label9.Click += label9_Click;
-            // 
             // ProyectosForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1131, 560);
+            ClientSize = new Size(1293, 747);
             Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ProyectosForm";
             Text = "ProyectosForm";
             Load += ProyectosForm_Load;

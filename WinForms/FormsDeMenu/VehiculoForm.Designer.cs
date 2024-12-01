@@ -64,14 +64,12 @@
             dgvVehiculo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVehiculo.Columns.AddRange(new DataGridViewColumn[] { vehiculoIDDataGridViewTextBoxColumn, proveedorIDDataGridViewTextBoxColumn, marcaDataGridViewTextBoxColumn, modeloDataGridViewTextBoxColumn, añoDataGridViewTextBoxColumn, placaDataGridViewTextBoxColumn, tipoDeVehiculoDataGridViewTextBoxColumn, tipoDeCombustibleDataGridViewTextBoxColumn, estadoDataGridViewTextBoxColumn, fechaRegistroDataGridViewTextBoxColumn });
             dgvVehiculo.DataSource = vehiculoBindingSource;
-            dgvVehiculo.Dock = DockStyle.Bottom;
-            dgvVehiculo.Location = new Point(0, 258);
-            dgvVehiculo.Margin = new Padding(3, 2, 3, 2);
+            dgvVehiculo.Location = new Point(29, 329);
             dgvVehiculo.Name = "dgvVehiculo";
             dgvVehiculo.ReadOnly = true;
             dgvVehiculo.RowHeadersWidth = 51;
             dgvVehiculo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVehiculo.Size = new Size(1065, 304);
+            dgvVehiculo.Size = new Size(944, 223);
             dgvVehiculo.TabIndex = 0;
             dgvVehiculo.CellContentClick += dgvVehiculo_CellContentClick;
             // 
@@ -171,69 +169,61 @@
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(83, 98);
-            txtMarca.Margin = new Padding(3, 2, 3, 2);
+            txtMarca.Location = new Point(119, 119);
             txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(154, 23);
+            txtMarca.Size = new Size(175, 27);
             txtMarca.TabIndex = 2;
             // 
             // txtTipoDeVehiculo
             // 
-            txtTipoDeVehiculo.Location = new Point(475, 88);
-            txtTipoDeVehiculo.Margin = new Padding(3, 2, 3, 2);
+            txtTipoDeVehiculo.Location = new Point(439, 119);
             txtTipoDeVehiculo.Name = "txtTipoDeVehiculo";
-            txtTipoDeVehiculo.Size = new Size(154, 23);
+            txtTipoDeVehiculo.Size = new Size(175, 27);
             txtTipoDeVehiculo.TabIndex = 3;
             // 
             // txtPlaca
             // 
-            txtPlaca.Location = new Point(475, 38);
-            txtPlaca.Margin = new Padding(3, 2, 3, 2);
+            txtPlaca.Location = new Point(439, 52);
             txtPlaca.Name = "txtPlaca";
-            txtPlaca.Size = new Size(154, 23);
+            txtPlaca.Size = new Size(175, 27);
             txtPlaca.TabIndex = 4;
             // 
             // txtAño
             // 
-            txtAño.Location = new Point(83, 193);
-            txtAño.Margin = new Padding(3, 2, 3, 2);
+            txtAño.Location = new Point(119, 245);
             txtAño.Name = "txtAño";
-            txtAño.Size = new Size(154, 23);
+            txtAño.Size = new Size(175, 27);
             txtAño.TabIndex = 5;
             // 
             // txtModelo
             // 
-            txtModelo.Location = new Point(83, 147);
-            txtModelo.Margin = new Padding(3, 2, 3, 2);
+            txtModelo.Location = new Point(119, 184);
             txtModelo.Name = "txtModelo";
-            txtModelo.Size = new Size(154, 23);
+            txtModelo.Size = new Size(175, 27);
             txtModelo.TabIndex = 6;
             // 
             // txtTipoDeCombustible
             // 
-            txtTipoDeCombustible.Location = new Point(475, 137);
-            txtTipoDeCombustible.Margin = new Padding(3, 2, 3, 2);
+            txtTipoDeCombustible.Location = new Point(439, 184);
             txtTipoDeCombustible.Name = "txtTipoDeCombustible";
-            txtTipoDeCombustible.Size = new Size(154, 23);
+            txtTipoDeCombustible.Size = new Size(175, 27);
             txtTipoDeCombustible.TabIndex = 8;
             // 
             // cbEstado
             // 
             cbEstado.FormattingEnabled = true;
-            cbEstado.Location = new Point(475, 183);
-            cbEstado.Margin = new Padding(3, 2, 3, 2);
+            cbEstado.Location = new Point(439, 245);
             cbEstado.Name = "cbEstado";
-            cbEstado.Size = new Size(154, 23);
+            cbEstado.Size = new Size(175, 28);
             cbEstado.TabIndex = 9;
             // 
             // dtpFechaRegistro
             // 
             dtpFechaRegistro.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaRegistro.Format = DateTimePickerFormat.Short;
-            dtpFechaRegistro.Location = new Point(674, 34);
-            dtpFechaRegistro.Margin = new Padding(3, 2, 3, 2);
+            dtpFechaRegistro.Location = new Point(666, 47);
             dtpFechaRegistro.Name = "dtpFechaRegistro";
-            dtpFechaRegistro.Size = new Size(126, 26);
+            dtpFechaRegistro.Size = new Size(143, 30);
             dtpFechaRegistro.TabIndex = 10;
             // 
             // bntAgregar
@@ -242,10 +232,9 @@
             bntAgregar.FlatStyle = FlatStyle.Flat;
             bntAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntAgregar.ForeColor = Color.White;
-            bntAgregar.Location = new Point(943, 38);
-            bntAgregar.Margin = new Padding(3, 2, 3, 2);
+            bntAgregar.Location = new Point(843, 35);
             bntAgregar.Name = "bntAgregar";
-            bntAgregar.Size = new Size(97, 39);
+            bntAgregar.Size = new Size(111, 52);
             bntAgregar.TabIndex = 11;
             bntAgregar.Text = "Agregar";
             bntAgregar.UseVisualStyleBackColor = true;
@@ -257,10 +246,9 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(943, 105);
-            btnModificar.Margin = new Padding(3, 2, 3, 2);
+            btnModificar.Location = new Point(843, 131);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(114, 39);
+            btnModificar.Size = new Size(130, 52);
             btnModificar.TabIndex = 12;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -272,10 +260,9 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(943, 175);
-            btnEliminar.Margin = new Padding(3, 2, 3, 2);
+            btnEliminar.Location = new Point(843, 220);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(97, 39);
+            btnEliminar.Size = new Size(111, 52);
             btnEliminar.TabIndex = 13;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -284,18 +271,17 @@
             // cbProveedorID
             // 
             cbProveedorID.FormattingEnabled = true;
-            cbProveedorID.Location = new Point(83, 48);
-            cbProveedorID.Margin = new Padding(3, 2, 3, 2);
+            cbProveedorID.Location = new Point(119, 52);
             cbProveedorID.Name = "cbProveedorID";
-            cbProveedorID.Size = new Size(154, 23);
+            cbProveedorID.Size = new Size(175, 28);
             cbProveedorID.TabIndex = 14;
             // 
             // VehiculoForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1065, 562);
+            ClientSize = new Size(1008, 583);
             Controls.Add(cbProveedorID);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
@@ -309,7 +295,6 @@
             Controls.Add(txtTipoDeVehiculo);
             Controls.Add(txtMarca);
             Controls.Add(dgvVehiculo);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "VehiculoForm";
             Text = "VehiculoForm";
             Load += VehiculoForm_Load;
@@ -323,6 +308,7 @@
 
         private DataGridView dgvVehiculo;
         private BindingSource vehiculoBindingSource;
+        private ComboBox comboBox1;
         private TextBox txtMarca;
         private TextBox txtTipoDeVehiculo;
         private TextBox txtPlaca;
