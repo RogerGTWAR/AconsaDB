@@ -212,3 +212,7 @@ C:\Users\Wsofneell\Source\Repos\AconsaDB\WinForms\bin\Debug\net8.0-windows\runti
 C:\Users\Wsofneell\Source\Repos\AconsaDB\WinForms\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libQuestPdfSkia.dylib
 C:\Users\Wsofneell\Source\Repos\AconsaDB\WinForms\bin\Debug\net8.0-windows\runtimes\win-x64\native\QuestPdfSkia.dll
 C:\Users\Wsofneell\Source\Repos\AconsaDB\WinForms\bin\Debug\net8.0-windows\runtimes\win-x86\native\QuestPdfSkia.dll
+C:\Users\Wsofneell\source\repos\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.FormsDeMenu.Detalles.AvaluoDetallesForm.resources
+C:\Users\Wsofneell\source\repos\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.FormsDeMenu.Detalles.EmpleadosDetallesForm.resources
+C:\Users\Wsofneell\source\repos\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.FormsDeMenu.Detalles.VehiculosDetallesForm.resources
+C:\Users\Wsofneell\source\repos\AconsaDB\WinForms\obj\Debug\net8.0-windows\WinForms.FormsDeMenu.Detalles.MaquinariaDetallesForm.resources

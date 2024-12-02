@@ -1,6 +1,7 @@
 using FontAwesome.Sharp;
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using WinForms.FormsDeMenu.Detalles;
 
 namespace WinForms
 {
@@ -236,6 +237,30 @@ namespace WinForms
             ActivateButton(sender, RGBColors.color10);
             showsubMenu(panelSubContenedor);
 
+        }
+
+        private void btnAvaluosDetalles_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color8);
+            OpenChilForm(new AvaluoDetallesForm(_httpClient));
+        }
+
+        private void btnEmpleadosDetalles_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color9);
+            OpenChilForm(new EmpleadosDetallesForm(_httpClient));
+        }
+
+        private void btnVehiculosDetalles_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color10);
+            OpenChilForm(new VehiculosDetallesForm(_httpClient));
+        }
+
+        private void btnMaquinariaDetalle_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color11);
+            OpenChilForm(new MaquinariaDetallesForm(_httpClient));
         }
     }
 }
