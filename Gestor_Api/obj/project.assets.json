@@ -2151,11 +2151,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj",
+      "projectUniqueName": "C:\\Users\\Wsofneell\\Desktop\\Final\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj",
       "projectName": "Gestor_Api",
-      "projectPath": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj",
+      "projectPath": "C:\\Users\\Wsofneell\\Desktop\\Final\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj",
       "packagesPath": "C:\\Users\\Wsofneell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Wsofneell\\Source\\Repos\\AconsaDB\\Gestor_Api\\obj\\",
+      "outputPath": "C:\\Users\\Wsofneell\\Desktop\\Final\\AconsaDB\\Gestor_Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2176,8 +2176,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {
-              "projectPath": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj"
+            "C:\\Users\\Wsofneell\\Desktop\\Final\\AconsaDB\\SharedModels\\SharedModels.csproj": {
+              "projectPath": "C:\\Users\\Wsofneell\\Desktop\\Final\\AconsaDB\\SharedModels\\SharedModels.csproj"
             }
           }
         }

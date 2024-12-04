@@ -213,7 +213,7 @@
             Controls.Add(cbEmpleadoID);
             Controls.Add(cbVehiculoID);
             Name = "VehiculosDetallesForm";
-            Text = "VehiculosDetallesForm";
+            Text = "m";
             Load += VehiculosDetallesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVehiculoDetalles).EndInit();
             ((System.ComponentModel.ISupportInitialize)vehiculoDetalleBindingSource).EndInit();

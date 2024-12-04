@@ -22,3 +22,15 @@ C:\Users\Wsofneell\Source\Repos\AconsaDB\SharedModels\obj\Debug\net8.0\SharedMod
 C:\Users\Wsofneell\Source\Repos\AconsaDB\SharedModels\obj\Debug\net8.0\refint\SharedModels.dll
 C:\Users\Wsofneell\Source\Repos\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.pdb
 C:\Users\Wsofneell\Source\Repos\AconsaDB\SharedModels\obj\Debug\net8.0\ref\SharedModels.dll
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\bin\Debug\net8.0\SharedModels.deps.json
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\bin\Debug\net8.0\SharedModels.dll
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\bin\Debug\net8.0\SharedModels.pdb
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.AssemblyInfoInputs.cache
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.AssemblyInfo.cs
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.csproj.CoreCompileInputs.cache
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.sourcelink.json
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.dll
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\refint\SharedModels.dll
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\SharedModels.pdb
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\SharedModels\obj\Debug\net8.0\ref\SharedModels.dll

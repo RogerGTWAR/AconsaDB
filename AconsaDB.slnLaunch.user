@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "WinForms\\WinForms.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Gestor_Api\\Gestor_Api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -165,9 +165,9 @@
             // panelContenedor
             // 
             panelContenedor.BackColor = Color.FromArgb(34, 33, 74);
+            panelContenedor.Controls.Add(pictureBox1);
             panelContenedor.Controls.Add(label1);
             panelContenedor.Controls.Add(lblUsuario);
-            panelContenedor.Controls.Add(pictureBox1);
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(192, 56);
             panelContenedor.Margin = new Padding(3, 2, 3, 2);
@@ -190,10 +190,10 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.Aconsa;
-            pictureBox1.Location = new Point(572, 259);
+            pictureBox1.Location = new Point(509, 281);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(102, 114);
+            pictureBox1.Size = new Size(179, 128);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;

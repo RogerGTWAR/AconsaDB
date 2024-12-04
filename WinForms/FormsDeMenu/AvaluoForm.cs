@@ -31,7 +31,7 @@ namespace WinForms
         {
             try
             {
-                var proyectos = await _apiClient.Productos.GetAllAsync();
+                var proyectos = await _apiClient.Proyectos.GetAllAsync();
                 cbProyectoID.DataSource = proyectos.ToList();
                 cbProyectoID.DisplayMember = "NombreProyecto";
                 cbProyectoID.ValueMember = "ProyectoID";

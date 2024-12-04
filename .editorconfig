@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# CS8603: Posible tipo de valor devuelto de referencia nulo
+dotnet_diagnostic.CS8603.severity = silent
+
+# CS8618: Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de agregar el modificador "required" o declararlo como un valor que acepta valores NULL.
+dotnet_diagnostic.CS8618.severity = silent
+
+# CS8605: Conversión unboxing a un valor posiblemente NULL.
+dotnet_diagnostic.CS8605.severity = silent
