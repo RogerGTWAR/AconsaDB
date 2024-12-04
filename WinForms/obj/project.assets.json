@@ -5138,23 +5138,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Wsofneell\\.nuget\\packages\\": {},
+    "C:\\Users\\ulise\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\WinForms\\WinForms.csproj",
+      "projectUniqueName": "C:\\Users\\ulise\\Source\\Repos\\AconsaDB\\WinForms\\WinForms.csproj",
       "projectName": "WinForms",
-      "projectPath": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\WinForms\\WinForms.csproj",
-      "packagesPath": "C:\\Users\\Wsofneell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\WinForms\\obj\\",
+      "projectPath": "C:\\Users\\ulise\\Source\\Repos\\AconsaDB\\WinForms\\WinForms.csproj",
+      "packagesPath": "C:\\Users\\ulise\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ulise\\Source\\Repos\\AconsaDB\\WinForms\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Wsofneell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ulise\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5169,11 +5169,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj": {
-              "projectPath": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj"
+            "C:\\Users\\ulise\\Source\\Repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj": {
+              "projectPath": "C:\\Users\\ulise\\Source\\Repos\\AconsaDB\\Gestor_Api\\Gestor_Api.csproj"
             },
-            "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {
-              "projectPath": "C:\\Users\\Wsofneell\\source\\repos\\AconsaDB\\SharedModels\\SharedModels.csproj"
+            "C:\\Users\\ulise\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj": {
+              "projectPath": "C:\\Users\\ulise\\Source\\Repos\\AconsaDB\\SharedModels\\SharedModels.csproj"
             }
           }
         }

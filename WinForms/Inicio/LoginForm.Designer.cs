@@ -43,7 +43,7 @@
             // 
             // txtxUserName
             // 
-            txtxUserName.Location = new Point(249, 28);
+            txtxUserName.Location = new Point(176, 32);
             txtxUserName.Margin = new Padding(3, 2, 3, 2);
             txtxUserName.Name = "txtxUserName";
             txtxUserName.Size = new Size(177, 23);
@@ -51,7 +51,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(249, 83);
+            txtPassword.Location = new Point(176, 83);
             txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(177, 23);
@@ -60,30 +60,30 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(31, 30, 68);
+            label1.BackColor = Color.FromArgb(33, 33, 56);
             label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(59, 28);
+            label1.Location = new Point(82, 28);
             label1.Name = "label1";
-            label1.Size = new Size(78, 23);
+            label1.Size = new Size(88, 23);
             label1.TabIndex = 3;
-            label1.Text = "Usuario";
+            label1.Text = "Usuario :";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(31, 30, 68);
+            label2.BackColor = Color.FromArgb(33, 33, 56);
             label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(44, 80);
             label2.Name = "label2";
-            label2.Size = new Size(117, 23);
+            label2.Size = new Size(127, 23);
             label2.TabIndex = 4;
-            label2.Text = "Contraseña";
+            label2.Text = "Contraseña :";
             // 
             // btnCargar
             // 
-            btnCargar.BackColor = Color.FromArgb(46, 59, 104);
+            btnCargar.BackColor = Color.FromArgb(33, 33, 56);
             btnCargar.FlatAppearance.BorderSize = 0;
             btnCargar.FlatStyle = FlatStyle.Flat;
             btnCargar.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -112,7 +112,7 @@
             // 
             // panelTitleBar
             // 
-            panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
+            panelTitleBar.BackColor = Color.FromArgb(33, 33, 56);
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(0, 0);
             panelTitleBar.Margin = new Padding(3, 2, 3, 2);
@@ -146,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
+            BackColor = Color.FromArgb(33, 33, 56);
             ClientSize = new Size(499, 388);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);

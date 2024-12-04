@@ -254,5 +254,10 @@ namespace WinForms
                 MessageBox.Show($"Error al seleccionar avalúo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -274,5 +274,10 @@ namespace WinForms
                 MessageBox.Show($"Error al seleccionar cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

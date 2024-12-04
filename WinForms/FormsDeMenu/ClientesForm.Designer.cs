@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgvClientes = new DataGridView();
             clienteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -72,28 +72,28 @@
             // dgvClientes
             // 
             dgvClientes.AutoGenerateColumns = false;
-            dgvClientes.BackgroundColor = Color.White;
-            dataGridViewCellStyle13.BackColor = SystemColors.Control;
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle13.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dgvClientes.BackgroundColor = Color.LightGray;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Columns.AddRange(new DataGridViewColumn[] { clienteIDDataGridViewTextBoxColumn, nombreEmpresaDataGridViewTextBoxColumn, nombreContactoDataGridViewTextBoxColumn, cargoContactoDataGridViewTextBoxColumn, ciudadDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn });
             dgvClientes.DataSource = clienteBindingSource;
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = SystemColors.Window;
-            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle16.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle16.Padding = new Padding(15, 0, 0, 0);
-            dataGridViewCellStyle16.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
-            dgvClientes.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new Padding(15, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvClientes.DefaultCellStyle = dataGridViewCellStyle4;
             dgvClientes.Dock = DockStyle.Bottom;
-            dgvClientes.Location = new Point(0, 319);
+            dgvClientes.Location = new Point(0, 298);
             dgvClientes.Margin = new Padding(3, 2, 3, 2);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
@@ -106,9 +106,9 @@
             // clienteIDDataGridViewTextBoxColumn
             // 
             clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Padding = new Padding(0, 10, 20, 0);
-            clienteIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Padding = new Padding(0, 10, 20, 0);
+            clienteIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             clienteIDDataGridViewTextBoxColumn.HeaderText = "ID";
             clienteIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
@@ -154,8 +154,8 @@
             // paisDataGridViewTextBoxColumn
             // 
             paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.TopLeft;
-            paisDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopLeft;
+            paisDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             paisDataGridViewTextBoxColumn.HeaderText = "Pais";
             paisDataGridViewTextBoxColumn.MinimumWidth = 6;
             paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
@@ -186,7 +186,7 @@
             // 
             // panelSubContenedor
             // 
-            panelSubContenedor.Controls.Add(label9);
+            panelSubContenedor.BackColor = Color.FromArgb(33, 33, 56);
             panelSubContenedor.Controls.Add(label8);
             panelSubContenedor.Controls.Add(txtCiudad);
             panelSubContenedor.Controls.Add(label7);
@@ -207,10 +207,10 @@
             panelSubContenedor.Controls.Add(btnEliminar);
             panelSubContenedor.Controls.Add(btnAgregar);
             panelSubContenedor.Controls.Add(dgvClientes);
-            panelSubContenedor.Location = new Point(2, 4);
+            panelSubContenedor.Location = new Point(0, 55);
             panelSubContenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubContenedor.Name = "panelSubContenedor";
-            panelSubContenedor.Size = new Size(925, 536);
+            panelSubContenedor.Size = new Size(925, 515);
             panelSubContenedor.TabIndex = 1;
             // 
             // label9
@@ -218,18 +218,19 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(410, 5);
+            label9.Location = new Point(415, 9);
             label9.Name = "label9";
             label9.Size = new Size(104, 32);
             label9.TabIndex = 20;
             label9.Text = "Clientes";
+            label9.Click += label9_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(457, 161);
+            label8.Location = new Point(473, 161);
             label8.Name = "label8";
             label8.Size = new Size(62, 21);
             label8.TabIndex = 19;
@@ -249,7 +250,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(10, 67);
+            label7.Location = new Point(153, 67);
             label7.Name = "label7";
             label7.Size = new Size(28, 21);
             label7.TabIndex = 17;
@@ -269,7 +270,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(457, 114);
+            label6.Location = new Point(464, 114);
             label6.Name = "label6";
             label6.Size = new Size(71, 21);
             label6.TabIndex = 15;
@@ -280,7 +281,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(457, 62);
+            label5.Location = new Point(495, 62);
             label5.Name = "label5";
             label5.Size = new Size(40, 21);
             label5.TabIndex = 14;
@@ -302,7 +303,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(10, 211);
+            label3.Location = new Point(35, 210);
             label3.Name = "label3";
             label3.Size = new Size(146, 21);
             label3.TabIndex = 12;
@@ -313,7 +314,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(9, 161);
+            label2.Location = new Point(23, 162);
             label2.Name = "label2";
             label2.Size = new Size(158, 21);
             label2.TabIndex = 11;
@@ -387,7 +388,9 @@
             // 
             // btnModificar
             // 
-            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.BackColor = Color.DimGray;
+            btnModificar.FlatAppearance.BorderColor = Color.Black;
+            btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
@@ -397,12 +400,14 @@
             btnModificar.Size = new Size(120, 46);
             btnModificar.TabIndex = 3;
             btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.UseVisualStyleBackColor = false;
             btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.BackColor = Color.DimGray;
+            btnEliminar.FlatAppearance.BorderColor = Color.Black;
+            btnEliminar.FlatAppearance.BorderSize = 2;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
@@ -412,12 +417,14 @@
             btnEliminar.Size = new Size(120, 46);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.BackColor = Color.DimGray;
+            btnAgregar.FlatAppearance.BorderColor = Color.Black;
+            btnAgregar.FlatAppearance.BorderSize = 2;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
@@ -427,16 +434,17 @@
             btnAgregar.Size = new Size(120, 46);
             btnAgregar.TabIndex = 1;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(943, 533);
+            BackColor = Color.FromArgb(0, 64, 64);
+            ClientSize = new Size(922, 568);
             Controls.Add(panelSubContenedor);
+            Controls.Add(label9);
             Margin = new Padding(3, 2, 3, 2);
             Name = "ClientesForm";
             Text = "ClientesForm";
@@ -446,6 +454,7 @@
             panelSubContenedor.ResumeLayout(false);
             panelSubContenedor.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

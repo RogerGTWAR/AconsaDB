@@ -32,11 +32,13 @@
             btnCategorias = new Button();
             panel1 = new Panel();
             panelContenedor = new Panel();
+            label7 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnProductos
             // 
+            btnProductos.BackColor = Color.DarkSlateGray;
             btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.FlatStyle = FlatStyle.Flat;
             btnProductos.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -46,31 +48,33 @@
             btnProductos.Size = new Size(164, 45);
             btnProductos.TabIndex = 0;
             btnProductos.Text = "Productos";
-            btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.UseVisualStyleBackColor = false;
             btnProductos.Click += btnProductos_Click;
             // 
             // btnCategorias
             // 
+            btnCategorias.BackColor = Color.DarkSlateGray;
             btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.FlatStyle = FlatStyle.Flat;
             btnCategorias.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCategorias.Location = new Point(210, 30);
+            btnCategorias.Location = new Point(192, 30);
             btnCategorias.Margin = new Padding(5);
             btnCategorias.Name = "btnCategorias";
             btnCategorias.Size = new Size(164, 45);
             btnCategorias.TabIndex = 1;
             btnCategorias.Text = "Categorias";
-            btnCategorias.UseVisualStyleBackColor = true;
+            btnCategorias.UseVisualStyleBackColor = false;
             btnCategorias.Click += btnCategorias_Click;
             // 
             // panel1
             // 
             panel1.Controls.Add(btnProductos);
             panel1.Controls.Add(btnCategorias);
+            panel1.Controls.Add(label7);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1720, 75);
+            panel1.Size = new Size(1078, 96);
             panel1.TabIndex = 2;
             // 
             // panelContenedor
@@ -78,17 +82,25 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
             panelContenedor.ForeColor = Color.Black;
-            panelContenedor.Location = new Point(0, 75);
+            panelContenedor.Location = new Point(0, 96);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(1720, 637);
+            panelContenedor.Size = new Size(1078, 266);
             panelContenedor.TabIndex = 3;
+            // 
+            // label7
+            // 
+            label7.BackColor = Color.DarkSlateGray;
+            label7.Location = new Point(0, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(1078, 96);
+            label7.TabIndex = 17;
             // 
             // MenuProductosForm
             // 
-            AutoScaleDimensions = new SizeF(14F, 31F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1720, 712);
+            BackColor = Color.FromArgb(33, 33, 56);
+            ClientSize = new Size(1078, 362);
             Controls.Add(panelContenedor);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
@@ -107,5 +119,6 @@
         private Button btnCategorias;
         private Panel panel1;
         private Panel panelContenedor;
+        private Label label7;
     }
 }
