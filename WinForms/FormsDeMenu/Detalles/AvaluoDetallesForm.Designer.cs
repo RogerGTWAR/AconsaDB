@@ -58,8 +58,8 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(12, 153);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(3, 153);
             label5.Name = "label5";
             label5.Size = new Size(94, 21);
             label5.TabIndex = 26;
@@ -69,8 +69,8 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(12, 105);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(3, 105);
             label4.Name = "label4";
             label4.Size = new Size(95, 21);
             label4.TabIndex = 25;
@@ -80,8 +80,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 49);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(17, 51);
             label1.Name = "label1";
             label1.Size = new Size(80, 21);
             label1.TabIndex = 22;
@@ -89,52 +89,55 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.BackColor = Color.White;
+            btnEliminar.FlatAppearance.BorderSize = 2;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(714, 87);
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.Location = new Point(518, 139);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 46);
             btnEliminar.TabIndex = 21;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
-            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.BackColor = Color.White;
+            btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(714, 153);
+            btnModificar.ForeColor = Color.Black;
+            btnModificar.Location = new Point(518, 189);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(112, 46);
             btnModificar.TabIndex = 20;
             btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.UseVisualStyleBackColor = false;
             btnModificar.Click += btnModificar_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.BackColor = Color.White;
+            btnAgregar.FlatAppearance.BorderSize = 2;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(714, 26);
+            btnAgregar.ForeColor = Color.Black;
+            btnAgregar.Location = new Point(400, 139);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(112, 46);
             btnAgregar.TabIndex = 19;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(164, 155);
+            txtDescripcion.Location = new Point(103, 155);
             txtDescripcion.Margin = new Padding(3, 2, 3, 2);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
@@ -144,7 +147,7 @@
             // cbAvaluoID
             // 
             cbAvaluoID.FormattingEnabled = true;
-            cbAvaluoID.Location = new Point(164, 49);
+            cbAvaluoID.Location = new Point(103, 51);
             cbAvaluoID.Margin = new Padding(3, 2, 3, 2);
             cbAvaluoID.Name = "cbAvaluoID";
             cbAvaluoID.Size = new Size(176, 23);
@@ -152,24 +155,24 @@
             // 
             // txtPrecioUnitario
             // 
-            txtPrecioUnitario.Location = new Point(500, 92);
+            txtPrecioUnitario.Location = new Point(405, 94);
             txtPrecioUnitario.Margin = new Padding(3, 2, 3, 2);
             txtPrecioUnitario.Name = "txtPrecioUnitario";
-            txtPrecioUnitario.Size = new Size(176, 23);
+            txtPrecioUnitario.Size = new Size(230, 23);
             txtPrecioUnitario.TabIndex = 27;
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(500, 49);
+            txtCantidad.Location = new Point(405, 51);
             txtCantidad.Margin = new Padding(3, 2, 3, 2);
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(176, 23);
+            txtCantidad.Size = new Size(230, 23);
             txtCantidad.TabIndex = 28;
             // 
             // cbProductoID
             // 
             cbProductoID.FormattingEnabled = true;
-            cbProductoID.Location = new Point(164, 103);
+            cbProductoID.Location = new Point(103, 103);
             cbProductoID.Margin = new Padding(3, 2, 3, 2);
             cbProductoID.Name = "cbProductoID";
             cbProductoID.Size = new Size(176, 23);
@@ -179,19 +182,20 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(379, 51);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(324, 53);
             label2.Name = "label2";
             label2.Size = new Size(75, 21);
             label2.TabIndex = 30;
             label2.Text = "Cantidad:";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(379, 90);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(287, 96);
             label3.Name = "label3";
             label3.Size = new Size(116, 21);
             label3.TabIndex = 31;
@@ -204,11 +208,11 @@
             dgvAvaluoDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAvaluoDetalle.Columns.AddRange(new DataGridViewColumn[] { avaluoDetalleIDDataGridViewTextBoxColumn, avaluoIDDataGridViewTextBoxColumn, productoIDDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn, cantidadDataGridViewTextBoxColumn, precioUnitarioDataGridViewTextBoxColumn });
             dgvAvaluoDetalle.DataSource = avaluoDetalleBindingSource;
-            dgvAvaluoDetalle.Location = new Point(12, 275);
+            dgvAvaluoDetalle.Location = new Point(0, 273);
             dgvAvaluoDetalle.Name = "dgvAvaluoDetalle";
             dgvAvaluoDetalle.ReadOnly = true;
             dgvAvaluoDetalle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAvaluoDetalle.Size = new Size(664, 150);
+            dgvAvaluoDetalle.Size = new Size(653, 175);
             dgvAvaluoDetalle.TabIndex = 32;
             dgvAvaluoDetalle.CellContentClick += dgvAvaluoDetalle_CellContentClick;
             // 
@@ -258,12 +262,12 @@
             // 
             avaluoDetalleBindingSource.DataSource = typeof(SharedModels.AvaluoDetalle);
             // 
-            // AvaluoDetalles
+            // AvaluoDetallesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(854, 450);
+            BackColor = Color.SlateGray;
+            ClientSize = new Size(642, 443);
             Controls.Add(dgvAvaluoDetalle);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -278,7 +282,7 @@
             Controls.Add(btnAgregar);
             Controls.Add(txtDescripcion);
             Controls.Add(cbAvaluoID);
-            Name = "AvaluoDetalles";
+            Name = "AvaluoDetallesForm";
             Text = "AvaluoDetalles";
             Load += AvaluoDetalles_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAvaluoDetalle).EndInit();

@@ -251,5 +251,10 @@ namespace WinForms.FormsDeMenu.Detalles
                 MessageBox.Show($"Error al cargar los detalles de vehículos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

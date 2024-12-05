@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BienvenidadForm));
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             lblUserName = new Label();
@@ -38,15 +39,14 @@
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
             progressBar1 = new ProgressBar();
-            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(33, 33, 56);
+            panel1.BackColor = Color.DarkOliveGreen;
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -56,13 +56,25 @@
             panel1.Size = new Size(858, 53);
             panel1.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.DarkOliveGreen;
+            pictureBox2.Image = Properties.Resources.Aconsa;
+            pictureBox2.Location = new Point(387, 2);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(50, 49);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Broadway", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(31, 9);
             label1.Name = "label1";
             label1.Size = new Size(350, 26);
             label1.TabIndex = 2;
@@ -120,17 +132,6 @@
             progressBar1.Size = new Size(403, 22);
             progressBar1.TabIndex = 5;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.Aconsa;
-            pictureBox2.Location = new Point(368, 2);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 49);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
-            // 
             // BienvenidadForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -149,8 +150,8 @@
             Load += BienvenidadForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

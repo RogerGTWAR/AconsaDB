@@ -51,8 +51,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
+            btnAvaluos = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvAvaluo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)avaluoBindingSource).BeginInit();
             SuspendLayout();
@@ -188,13 +187,13 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.BackColor = Color.DimGray;
+            btnAgregar.BackColor = Color.WhiteSmoke;
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatAppearance.BorderSize = 2;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(676, 54);
+            btnAgregar.ForeColor = Color.Black;
+            btnAgregar.Location = new Point(676, 62);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(112, 46);
@@ -205,13 +204,13 @@
             // 
             // btnModificar
             // 
-            btnModificar.BackColor = Color.DimGray;
+            btnModificar.BackColor = Color.WhiteSmoke;
             btnModificar.FlatAppearance.BorderColor = Color.Black;
             btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = SystemColors.Window;
-            btnModificar.Location = new Point(807, 54);
+            btnModificar.ForeColor = Color.Black;
+            btnModificar.Location = new Point(807, 62);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(112, 46);
@@ -222,13 +221,13 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DimGray;
+            btnEliminar.BackColor = Color.WhiteSmoke;
             btnEliminar.FlatAppearance.BorderColor = Color.Black;
             btnEliminar.FlatAppearance.BorderSize = 2;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = SystemColors.Window;
-            btnEliminar.Location = new Point(807, 116);
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.Location = new Point(807, 121);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 46);
@@ -241,7 +240,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(46, 65);
             label1.Name = "label1";
             label1.Size = new Size(93, 21);
@@ -252,7 +251,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(395, 102);
             label2.Name = "label2";
             label2.Size = new Size(75, 21);
@@ -263,7 +262,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(395, 65);
             label3.Name = "label3";
             label3.Size = new Size(91, 21);
@@ -274,7 +273,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(10, 141);
             label4.Name = "label4";
             label4.Size = new Size(130, 21);
@@ -285,41 +284,41 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(46, 101);
             label5.Name = "label5";
             label5.Size = new Size(94, 21);
             label5.TabIndex = 13;
             label5.Text = "Descripcion:";
             // 
-            // label6
+            // btnAvaluos
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.DarkSlateGray;
-            label6.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(399, 5);
-            label6.Name = "label6";
-            label6.Size = new Size(108, 32);
-            label6.TabIndex = 14;
-            label6.Text = "Avaluos";
-            // 
-            // label7
-            // 
-            label7.BackColor = Color.DarkSlateGray;
-            label7.Location = new Point(0, -2);
-            label7.Name = "label7";
-            label7.Size = new Size(960, 43);
-            label7.TabIndex = 15;
-            label7.Click += label7_Click;
+            btnAvaluos.BackColor = Color.DarkOliveGreen;
+            btnAvaluos.Dock = DockStyle.Top;
+            btnAvaluos.FlatStyle = FlatStyle.Flat;
+            btnAvaluos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAvaluos.ForeColor = Color.Black;
+            btnAvaluos.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            btnAvaluos.IconColor = Color.White;
+            btnAvaluos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAvaluos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAvaluos.Location = new Point(0, 0);
+            btnAvaluos.Margin = new Padding(3, 2, 3, 2);
+            btnAvaluos.Name = "btnAvaluos";
+            btnAvaluos.Padding = new Padding(0, 8, 18, 0);
+            btnAvaluos.Size = new Size(926, 58);
+            btnAvaluos.TabIndex = 14;
+            btnAvaluos.Text = "Avaluos";
+            btnAvaluos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAvaluos.UseVisualStyleBackColor = false;
             // 
             // AvaluoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(33, 33, 56);
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(926, 471);
-            Controls.Add(label6);
+            Controls.Add(btnAvaluos);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -334,7 +333,6 @@
             Controls.Add(dtpFechaFin);
             Controls.Add(dtpFechaInicio);
             Controls.Add(cbProyectoID);
-            Controls.Add(label7);
             Margin = new Padding(3, 2, 3, 2);
             Name = "AvaluoForm";
             Text = "AvaluoForm";
@@ -369,7 +367,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label6;
-        private Label label7;
+        private FontAwesome.Sharp.IconButton btnAvaluos;
     }
 }

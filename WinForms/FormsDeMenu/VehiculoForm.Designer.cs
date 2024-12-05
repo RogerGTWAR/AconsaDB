@@ -53,8 +53,6 @@
             btnModificar = new Button();
             btnEliminar = new Button();
             cbProveedorID = new ComboBox();
-            label5 = new Label();
-            label12 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -64,6 +62,7 @@
             label4 = new Label();
             label9 = new Label();
             label10 = new Label();
+            btnVehiculos = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvVehiculo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vehiculoBindingSource).BeginInit();
             SuspendLayout();
@@ -248,12 +247,12 @@
             // 
             // bntAgregar
             // 
-            bntAgregar.BackColor = Color.DimGray;
+            bntAgregar.BackColor = Color.White;
             bntAgregar.FlatAppearance.BorderColor = Color.Black;
             bntAgregar.FlatAppearance.BorderSize = 2;
             bntAgregar.FlatStyle = FlatStyle.Flat;
             bntAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bntAgregar.ForeColor = Color.White;
+            bntAgregar.ForeColor = Color.Black;
             bntAgregar.Location = new Point(1045, 113);
             bntAgregar.Margin = new Padding(3, 2, 3, 2);
             bntAgregar.Name = "bntAgregar";
@@ -265,12 +264,12 @@
             // 
             // btnModificar
             // 
-            btnModificar.BackColor = Color.DimGray;
+            btnModificar.BackColor = Color.White;
             btnModificar.FlatAppearance.BorderColor = Color.Black;
             btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
+            btnModificar.ForeColor = Color.Black;
             btnModificar.Location = new Point(1045, 185);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
@@ -282,12 +281,12 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DimGray;
+            btnEliminar.BackColor = Color.White;
             btnEliminar.FlatAppearance.BorderColor = Color.Black;
             btnEliminar.FlatAppearance.BorderSize = 2;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
+            btnEliminar.ForeColor = Color.Black;
             btnEliminar.Location = new Point(1045, 252);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
@@ -305,27 +304,6 @@
             cbProveedorID.Name = "cbProveedorID";
             cbProveedorID.Size = new Size(154, 23);
             cbProveedorID.TabIndex = 14;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.DarkSlateGray;
-            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(501, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(107, 30);
-            label5.TabIndex = 32;
-            label5.Text = "Vehiculos";
-            label5.Click += label5_Click;
-            // 
-            // label12
-            // 
-            label12.BackColor = Color.DarkSlateGray;
-            label12.Location = new Point(-216, -5);
-            label12.Name = "label12";
-            label12.Size = new Size(1425, 65);
-            label12.TabIndex = 33;
             // 
             // label8
             // 
@@ -427,12 +405,34 @@
             label10.TabIndex = 43;
             label10.Text = "Modelo:";
             // 
+            // btnVehiculos
+            // 
+            btnVehiculos.BackColor = Color.DarkOliveGreen;
+            btnVehiculos.Dock = DockStyle.Top;
+            btnVehiculos.FlatStyle = FlatStyle.Flat;
+            btnVehiculos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVehiculos.ForeColor = Color.Black;
+            btnVehiculos.IconChar = FontAwesome.Sharp.IconChar.CarSide;
+            btnVehiculos.IconColor = Color.White;
+            btnVehiculos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVehiculos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnVehiculos.Location = new Point(0, 0);
+            btnVehiculos.Margin = new Padding(3, 2, 3, 2);
+            btnVehiculos.Name = "btnVehiculos";
+            btnVehiculos.Padding = new Padding(0, 8, 18, 0);
+            btnVehiculos.Size = new Size(1208, 58);
+            btnVehiculos.TabIndex = 44;
+            btnVehiculos.Text = "Vehiculos";
+            btnVehiculos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnVehiculos.UseVisualStyleBackColor = false;
+            // 
             // VehiculoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(33, 33, 56);
+            BackColor = Color.SlateGray;
             ClientSize = new Size(1208, 489);
+            Controls.Add(btnVehiculos);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label4);
@@ -442,8 +442,6 @@
             Controls.Add(label6);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(label5);
-            Controls.Add(label12);
             Controls.Add(cbProveedorID);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
@@ -494,8 +492,6 @@
         private DataGridViewTextBoxColumn tipoDeCombustibleDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn;
-        private Label label5;
-        private Label label12;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -505,5 +501,6 @@
         private Label label4;
         private Label label9;
         private Label label10;
+        private FontAwesome.Sharp.IconButton btnVehiculos;
     }
 }

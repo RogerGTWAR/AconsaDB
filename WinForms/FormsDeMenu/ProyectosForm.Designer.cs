@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -62,7 +61,7 @@
             estadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             tiempoTotalDiasDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             proyectoBindingSource = new BindingSource(components);
-            label10 = new Label();
+            btnProyectos = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProyectos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proyectoBindingSource).BeginInit();
@@ -70,7 +69,8 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label9);
+            panel1.BackColor = Color.SlateGray;
+            panel1.Controls.Add(btnProyectos);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
@@ -91,26 +91,12 @@
             panel1.Controls.Add(btnModificar);
             panel1.Controls.Add(btnEliminar);
             panel1.Controls.Add(dgvProyectos);
-            panel1.Controls.Add(label10);
             panel1.Location = new Point(0, -2);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(1131, 562);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.DarkSlateGray;
-            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(523, 11);
-            label9.Name = "label9";
-            label9.Size = new Size(100, 30);
-            label9.TabIndex = 21;
-            label9.Text = "Proyecto";
-            label9.Click += label9_Click;
             // 
             // label8
             // 
@@ -438,13 +424,26 @@
             // 
             proyectoBindingSource.DataSource = typeof(SharedModels.Proyecto);
             // 
-            // label10
+            // btnProyectos
             // 
-            label10.BackColor = Color.DarkSlateGray;
-            label10.Location = new Point(0, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(1131, 53);
-            label10.TabIndex = 22;
+            btnProyectos.BackColor = Color.DarkOliveGreen;
+            btnProyectos.Dock = DockStyle.Top;
+            btnProyectos.FlatStyle = FlatStyle.Flat;
+            btnProyectos.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProyectos.ForeColor = Color.Black;
+            btnProyectos.IconChar = FontAwesome.Sharp.IconChar.PersonDigging;
+            btnProyectos.IconColor = Color.White;
+            btnProyectos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnProyectos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnProyectos.Location = new Point(0, 0);
+            btnProyectos.Margin = new Padding(3, 2, 3, 2);
+            btnProyectos.Name = "btnProyectos";
+            btnProyectos.Padding = new Padding(0, 8, 18, 0);
+            btnProyectos.Size = new Size(1131, 58);
+            btnProyectos.TabIndex = 21;
+            btnProyectos.Text = "Proyectos";
+            btnProyectos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnProyectos.UseVisualStyleBackColor = false;
             // 
             // ProyectosForm
             // 
@@ -498,7 +497,6 @@
         private DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tiempoTotalDiasDataGridViewTextBoxColumn;
         private BindingSource proyectoBindingSource;
-        private Label label9;
-        private Label label10;
+        private FontAwesome.Sharp.IconButton btnProyectos;
     }
 }

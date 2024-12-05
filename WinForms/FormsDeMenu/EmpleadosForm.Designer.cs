@@ -67,12 +67,11 @@ namespace WinForms
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
-            label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            label12 = new Label();
+            btnEmpleados = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             ((System.ComponentModel.ISupportInitialize)empleadoBindingSource).BeginInit();
             panelSubcontenedor.SuspendLayout();
@@ -210,12 +209,12 @@ namespace WinForms
             // 
             // btnAgregar
             // 
-            btnAgregar.BackColor = Color.DimGray;
+            btnAgregar.BackColor = Color.WhiteSmoke;
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatAppearance.BorderSize = 2;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
+            btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(1071, 103);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
@@ -227,12 +226,12 @@ namespace WinForms
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DimGray;
+            btnEliminar.BackColor = Color.WhiteSmoke;
             btnEliminar.FlatAppearance.BorderColor = Color.Black;
             btnEliminar.FlatAppearance.BorderSize = 2;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
+            btnEliminar.ForeColor = Color.Black;
             btnEliminar.Location = new Point(1071, 157);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
@@ -244,12 +243,12 @@ namespace WinForms
             // 
             // btnModificar
             // 
-            btnModificar.BackColor = Color.DimGray;
+            btnModificar.BackColor = Color.WhiteSmoke;
             btnModificar.FlatAppearance.BorderColor = Color.Black;
             btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
+            btnModificar.ForeColor = Color.Black;
             btnModificar.Location = new Point(1071, 218);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
@@ -345,7 +344,8 @@ namespace WinForms
             // 
             // panelSubcontenedor
             // 
-            panelSubcontenedor.BackColor = Color.FromArgb(33, 33, 56);
+            panelSubcontenedor.BackColor = Color.SlateGray;
+            panelSubcontenedor.Controls.Add(btnEmpleados);
             panelSubcontenedor.Controls.Add(cbRolID);
             panelSubcontenedor.Controls.Add(label14);
             panelSubcontenedor.Controls.Add(label11);
@@ -354,7 +354,6 @@ namespace WinForms
             panelSubcontenedor.Controls.Add(label8);
             panelSubcontenedor.Controls.Add(label7);
             panelSubcontenedor.Controls.Add(label6);
-            panelSubcontenedor.Controls.Add(label5);
             panelSubcontenedor.Controls.Add(label4);
             panelSubcontenedor.Controls.Add(label3);
             panelSubcontenedor.Controls.Add(label2);
@@ -373,7 +372,6 @@ namespace WinForms
             panelSubcontenedor.Controls.Add(txtCedula);
             panelSubcontenedor.Controls.Add(txtPais);
             panelSubcontenedor.Controls.Add(txtDireccion);
-            panelSubcontenedor.Controls.Add(label12);
             panelSubcontenedor.Location = new Point(0, -1);
             panelSubcontenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubcontenedor.Name = "panelSubcontenedor";
@@ -467,18 +465,6 @@ namespace WinForms
             label6.TabIndex = 21;
             label6.Text = "Pais:";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.DarkSlateGray;
-            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(609, 10);
-            label5.Name = "label5";
-            label5.Size = new Size(119, 30);
-            label5.TabIndex = 20;
-            label5.Text = "Empleados";
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -524,13 +510,26 @@ namespace WinForms
             label1.Text = "Nombres:";
             label1.Click += label1_Click;
             // 
-            // label12
+            // btnEmpleados
             // 
-            label12.BackColor = Color.DarkSlateGray;
-            label12.Location = new Point(0, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(1292, 43);
-            label12.TabIndex = 31;
+            btnEmpleados.BackColor = Color.DarkOliveGreen;
+            btnEmpleados.Dock = DockStyle.Top;
+            btnEmpleados.FlatStyle = FlatStyle.Flat;
+            btnEmpleados.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEmpleados.ForeColor = Color.Black;
+            btnEmpleados.IconChar = FontAwesome.Sharp.IconChar.Users;
+            btnEmpleados.IconColor = Color.White;
+            btnEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEmpleados.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEmpleados.Location = new Point(0, 0);
+            btnEmpleados.Margin = new Padding(3, 2, 3, 2);
+            btnEmpleados.Name = "btnEmpleados";
+            btnEmpleados.Padding = new Padding(0, 8, 18, 0);
+            btnEmpleados.Size = new Size(1295, 58);
+            btnEmpleados.TabIndex = 31;
+            btnEmpleados.Text = "Empleados";
+            btnEmpleados.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEmpleados.UseVisualStyleBackColor = false;
             // 
             // EmpleadosForm
             // 
@@ -580,7 +579,6 @@ namespace WinForms
         private DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn reportesDataGridViewTextBoxColumn;
         private BindingSource empleadoBindingSource;
-        private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
@@ -593,6 +591,6 @@ namespace WinForms
         private Label label7;
         private Label label14;
         private ComboBox cbRolID;
-        private Label label12;
+        private FontAwesome.Sharp.IconButton btnEmpleados;
     }
 }

@@ -44,7 +44,6 @@
             direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clienteBindingSource = new BindingSource(components);
             panelSubContenedor = new Panel();
-            label9 = new Label();
             label8 = new Label();
             txtCiudad = new TextBox();
             label7 = new Label();
@@ -64,6 +63,7 @@
             btnModificar = new Button();
             btnEliminar = new Button();
             btnAgregar = new Button();
+            btnClientes = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
             panelSubContenedor.SuspendLayout();
@@ -186,7 +186,7 @@
             // 
             // panelSubContenedor
             // 
-            panelSubContenedor.BackColor = Color.FromArgb(33, 33, 56);
+            panelSubContenedor.BackColor = Color.LightSlateGray;
             panelSubContenedor.Controls.Add(label8);
             panelSubContenedor.Controls.Add(txtCiudad);
             panelSubContenedor.Controls.Add(label7);
@@ -213,23 +213,11 @@
             panelSubContenedor.Size = new Size(925, 515);
             panelSubContenedor.TabIndex = 1;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(415, 9);
-            label9.Name = "label9";
-            label9.Size = new Size(104, 32);
-            label9.TabIndex = 20;
-            label9.Text = "Clientes";
-            label9.Click += label9_Click;
-            // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
+            label8.ForeColor = Color.Black;
             label8.Location = new Point(473, 161);
             label8.Name = "label8";
             label8.Size = new Size(62, 21);
@@ -249,7 +237,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(153, 67);
             label7.Name = "label7";
             label7.Size = new Size(28, 21);
@@ -269,7 +257,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(464, 114);
             label6.Name = "label6";
             label6.Size = new Size(71, 21);
@@ -280,7 +268,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(495, 62);
             label5.Name = "label5";
             label5.Size = new Size(40, 21);
@@ -291,7 +279,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(457, 211);
             label4.Name = "label4";
             label4.Size = new Size(78, 21);
@@ -302,7 +290,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(35, 210);
             label3.Name = "label3";
             label3.Size = new Size(146, 21);
@@ -313,7 +301,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(23, 162);
             label2.Name = "label2";
             label2.Size = new Size(158, 21);
@@ -324,7 +312,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(9, 114);
             label1.Name = "label1";
             label1.Size = new Size(172, 21);
@@ -388,12 +376,12 @@
             // 
             // btnModificar
             // 
-            btnModificar.BackColor = Color.DimGray;
+            btnModificar.BackColor = Color.WhiteSmoke;
             btnModificar.FlatAppearance.BorderColor = Color.Black;
             btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
+            btnModificar.ForeColor = Color.Black;
             btnModificar.Location = new Point(783, 136);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
@@ -405,12 +393,12 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DimGray;
+            btnEliminar.BackColor = Color.WhiteSmoke;
             btnEliminar.FlatAppearance.BorderColor = Color.Black;
             btnEliminar.FlatAppearance.BorderSize = 2;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
+            btnEliminar.ForeColor = Color.Black;
             btnEliminar.Location = new Point(783, 198);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
@@ -422,12 +410,12 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.BackColor = Color.DimGray;
+            btnAgregar.BackColor = Color.WhiteSmoke;
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatAppearance.BorderSize = 2;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
+            btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(783, 78);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
@@ -437,14 +425,35 @@
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
+            // btnClientes
+            // 
+            btnClientes.BackColor = Color.DarkOliveGreen;
+            btnClientes.Dock = DockStyle.Top;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClientes.ForeColor = Color.Black;
+            btnClientes.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            btnClientes.IconColor = Color.White;
+            btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClientes.Location = new Point(0, 0);
+            btnClientes.Margin = new Padding(3, 2, 3, 2);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Padding = new Padding(0, 8, 18, 0);
+            btnClientes.Size = new Size(922, 58);
+            btnClientes.TabIndex = 3;
+            btnClientes.Text = "Clientes";
+            btnClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClientes.UseVisualStyleBackColor = false;
+            // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 64);
             ClientSize = new Size(922, 568);
+            Controls.Add(btnClientes);
             Controls.Add(panelSubContenedor);
-            Controls.Add(label9);
             Margin = new Padding(3, 2, 3, 2);
             Name = "ClientesForm";
             Text = "ClientesForm";
@@ -454,7 +463,6 @@
             panelSubContenedor.ResumeLayout(false);
             panelSubContenedor.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -489,6 +497,6 @@
         private DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
-        private Label label9;
+        private FontAwesome.Sharp.IconButton btnClientes;
     }
 }

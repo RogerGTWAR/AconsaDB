@@ -145,13 +145,13 @@ namespace WinForms.FormsDeMenu.Detalles
                 MessageBox.Show($"Error al modificar el detalle del avalúo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
 
         private void dgvAvaluoDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.RowIndex >= 0) 
+                if (e.RowIndex >= 0)
                 {
                     var detalle = (AvaluoDetallesDto)dgvAvaluoDetalle.Rows[e.RowIndex].DataBoundItem;
                     cbAvaluoID.SelectedValue = detalle.AvaluoID;
@@ -271,6 +271,11 @@ namespace WinForms.FormsDeMenu.Detalles
             {
                 MessageBox.Show($"Error al cargar los detalles de avalúo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -61,8 +61,7 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            label10 = new Label();
-            label12 = new Label();
+            btnMaquinarias = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvMaquinaria).BeginInit();
             ((System.ComponentModel.ISupportInitialize)maquinariaBindingSource).BeginInit();
             SuspendLayout();
@@ -379,34 +378,34 @@
             label9.TabIndex = 21;
             label9.Text = "Precio Por Hora:";
             // 
-            // label10
+            // btnMaquinarias
             // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.DarkSlateGray;
-            label10.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(475, 7);
-            label10.Name = "label10";
-            label10.Size = new Size(125, 30);
-            label10.TabIndex = 32;
-            label10.Text = "Maquinaria";
-            // 
-            // label12
-            // 
-            label12.BackColor = Color.DarkSlateGray;
-            label12.Location = new Point(-134, -3);
-            label12.Name = "label12";
-            label12.Size = new Size(1292, 43);
-            label12.TabIndex = 33;
+            btnMaquinarias.BackColor = Color.DarkOliveGreen;
+            btnMaquinarias.Dock = DockStyle.Top;
+            btnMaquinarias.FlatStyle = FlatStyle.Flat;
+            btnMaquinarias.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMaquinarias.ForeColor = Color.Black;
+            btnMaquinarias.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            btnMaquinarias.IconColor = Color.White;
+            btnMaquinarias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMaquinarias.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMaquinarias.Location = new Point(0, 0);
+            btnMaquinarias.Margin = new Padding(3, 2, 3, 2);
+            btnMaquinarias.Name = "btnMaquinarias";
+            btnMaquinarias.Padding = new Padding(0, 8, 18, 0);
+            btnMaquinarias.Size = new Size(950, 58);
+            btnMaquinarias.TabIndex = 22;
+            btnMaquinarias.Text = "Maquinaria";
+            btnMaquinarias.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnMaquinarias.UseVisualStyleBackColor = false;
             // 
             // MaquinariaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(33, 33, 56);
+            BackColor = Color.SlateGray;
             ClientSize = new Size(950, 479);
-            Controls.Add(label10);
-            Controls.Add(label12);
+            Controls.Add(btnMaquinarias);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -473,7 +472,6 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private Label label10;
-        private Label label12;
+        private FontAwesome.Sharp.IconButton btnMaquinarias;
     }
 }

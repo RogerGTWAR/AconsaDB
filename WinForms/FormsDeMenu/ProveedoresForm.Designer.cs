@@ -33,7 +33,6 @@
             btnEliminar = new Button();
             btnModificar = new Button();
             btnAgregar = new Button();
-            label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -61,7 +60,7 @@
             telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             correoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             proveedorBindingSource = new BindingSource(components);
-            label10 = new Label();
+            btnProveedores = new FontAwesome.Sharp.IconButton();
             panelSubContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)proveedorBindingSource).BeginInit();
@@ -69,11 +68,11 @@
             // 
             // panelSubContenedor
             // 
-            panelSubContenedor.BackColor = Color.FromArgb(33, 33, 56);
+            panelSubContenedor.BackColor = Color.SlateGray;
+            panelSubContenedor.Controls.Add(btnProveedores);
             panelSubContenedor.Controls.Add(btnEliminar);
             panelSubContenedor.Controls.Add(btnModificar);
             panelSubContenedor.Controls.Add(btnAgregar);
-            panelSubContenedor.Controls.Add(label9);
             panelSubContenedor.Controls.Add(label8);
             panelSubContenedor.Controls.Add(label7);
             panelSubContenedor.Controls.Add(label6);
@@ -91,7 +90,6 @@
             panelSubContenedor.Controls.Add(label1);
             panelSubContenedor.Controls.Add(txtNombreEmpresa);
             panelSubContenedor.Controls.Add(dgvProveedores);
-            panelSubContenedor.Controls.Add(label10);
             panelSubContenedor.Location = new Point(-3, -3);
             panelSubContenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubContenedor.Name = "panelSubContenedor";
@@ -100,12 +98,12 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DimGray;
+            btnEliminar.BackColor = Color.WhiteSmoke;
             btnEliminar.FlatAppearance.BorderColor = Color.Black;
             btnEliminar.FlatAppearance.BorderSize = 2;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
+            btnEliminar.ForeColor = Color.Black;
             btnEliminar.Location = new Point(908, 222);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
@@ -117,12 +115,12 @@
             // 
             // btnModificar
             // 
-            btnModificar.BackColor = Color.DimGray;
+            btnModificar.BackColor = Color.WhiteSmoke;
             btnModificar.FlatAppearance.BorderColor = Color.Black;
             btnModificar.FlatAppearance.BorderSize = 2;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
+            btnModificar.ForeColor = Color.Black;
             btnModificar.Location = new Point(908, 169);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
@@ -134,12 +132,12 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.BackColor = Color.DimGray;
+            btnAgregar.BackColor = Color.WhiteSmoke;
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatAppearance.BorderSize = 2;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
+            btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(908, 108);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
@@ -149,23 +147,11 @@
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.DarkSlateGray;
-            label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(471, 12);
-            label9.Name = "label9";
-            label9.Size = new Size(157, 32);
-            label9.TabIndex = 17;
-            label9.Text = "Proveedores";
-            // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
+            label8.ForeColor = Color.Black;
             label8.Location = new Point(25, 120);
             label8.Name = "label8";
             label8.Size = new Size(155, 21);
@@ -176,7 +162,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(37, 172);
             label7.Name = "label7";
             label7.Size = new Size(143, 21);
@@ -187,7 +173,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(105, 222);
             label6.Name = "label6";
             label6.Size = new Size(78, 21);
@@ -198,7 +184,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(614, 84);
             label5.Name = "label5";
             label5.Size = new Size(62, 21);
@@ -209,7 +195,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(635, 141);
             label4.Name = "label4";
             label4.Size = new Size(40, 21);
@@ -220,7 +206,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(604, 190);
             label3.Name = "label3";
             label3.Size = new Size(71, 21);
@@ -231,7 +217,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(614, 239);
             label2.Name = "label2";
             label2.Size = new Size(61, 21);
@@ -306,7 +292,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(15, 68);
             label1.Name = "label1";
             label1.Size = new Size(172, 21);
@@ -425,13 +411,26 @@
             // 
             proveedorBindingSource.DataSource = typeof(SharedModels.Proveedor);
             // 
-            // label10
+            // btnProveedores
             // 
-            label10.BackColor = Color.DarkSlateGray;
-            label10.Location = new Point(0, 1);
-            label10.Name = "label10";
-            label10.Size = new Size(1052, 54);
-            label10.TabIndex = 21;
+            btnProveedores.BackColor = Color.DarkOliveGreen;
+            btnProveedores.Dock = DockStyle.Top;
+            btnProveedores.FlatStyle = FlatStyle.Flat;
+            btnProveedores.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProveedores.ForeColor = Color.Black;
+            btnProveedores.IconChar = FontAwesome.Sharp.IconChar.PeopleCarryBox;
+            btnProveedores.IconColor = Color.White;
+            btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnProveedores.ImageAlign = ContentAlignment.MiddleLeft;
+            btnProveedores.Location = new Point(0, 0);
+            btnProveedores.Margin = new Padding(3, 2, 3, 2);
+            btnProveedores.Name = "btnProveedores";
+            btnProveedores.Padding = new Padding(0, 8, 18, 0);
+            btnProveedores.Size = new Size(1052, 58);
+            btnProveedores.TabIndex = 21;
+            btnProveedores.Text = "Proveedores";
+            btnProveedores.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnProveedores.UseVisualStyleBackColor = false;
             // 
             // ProveedoresForm
             // 
@@ -472,7 +471,6 @@
         private Label label1;
         private TextBox txtNombreEmpresa;
         private Button btnAgregar;
-        private Label label9;
         private Button btnEliminar;
         private Button btnModificar;
         private DataGridViewTextBoxColumn proveedorIDDataGridViewTextBoxColumn;
@@ -485,6 +483,6 @@
         private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
         private BindingSource proveedorBindingSource;
-        private Label label10;
+        private FontAwesome.Sharp.IconButton btnProveedores;
     }
 }
