@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             dgvVehiculo = new DataGridView();
             vehiculoIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             proveedorIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -59,17 +64,46 @@
             // 
             // dgvVehiculo
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvVehiculo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvVehiculo.AutoGenerateColumns = false;
             dgvVehiculo.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvVehiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvVehiculo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVehiculo.Columns.AddRange(new DataGridViewColumn[] { vehiculoIDDataGridViewTextBoxColumn, proveedorIDDataGridViewTextBoxColumn, marcaDataGridViewTextBoxColumn, modeloDataGridViewTextBoxColumn, añoDataGridViewTextBoxColumn, placaDataGridViewTextBoxColumn, tipoDeVehiculoDataGridViewTextBoxColumn, tipoDeCombustibleDataGridViewTextBoxColumn, estadoDataGridViewTextBoxColumn, fechaRegistroDataGridViewTextBoxColumn });
             dgvVehiculo.DataSource = vehiculoBindingSource;
-            dgvVehiculo.Location = new Point(29, 329);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvVehiculo.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvVehiculo.Location = new Point(12, 254);
+            dgvVehiculo.Margin = new Padding(3, 2, 3, 2);
             dgvVehiculo.Name = "dgvVehiculo";
             dgvVehiculo.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvVehiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvVehiculo.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvVehiculo.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvVehiculo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVehiculo.Size = new Size(944, 223);
+            dgvVehiculo.Size = new Size(1062, 167);
             dgvVehiculo.TabIndex = 0;
             dgvVehiculo.CellContentClick += dgvVehiculo_CellContentClick;
             // 
@@ -169,61 +203,69 @@
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(119, 119);
+            txtMarca.Location = new Point(104, 89);
+            txtMarca.Margin = new Padding(3, 2, 3, 2);
             txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(175, 27);
+            txtMarca.Size = new Size(154, 23);
             txtMarca.TabIndex = 2;
             // 
             // txtTipoDeVehiculo
             // 
-            txtTipoDeVehiculo.Location = new Point(439, 119);
+            txtTipoDeVehiculo.Location = new Point(384, 89);
+            txtTipoDeVehiculo.Margin = new Padding(3, 2, 3, 2);
             txtTipoDeVehiculo.Name = "txtTipoDeVehiculo";
-            txtTipoDeVehiculo.Size = new Size(175, 27);
+            txtTipoDeVehiculo.Size = new Size(154, 23);
             txtTipoDeVehiculo.TabIndex = 3;
             // 
             // txtPlaca
             // 
-            txtPlaca.Location = new Point(439, 52);
+            txtPlaca.Location = new Point(384, 39);
+            txtPlaca.Margin = new Padding(3, 2, 3, 2);
             txtPlaca.Name = "txtPlaca";
-            txtPlaca.Size = new Size(175, 27);
+            txtPlaca.Size = new Size(154, 23);
             txtPlaca.TabIndex = 4;
             // 
             // txtAño
             // 
-            txtAño.Location = new Point(119, 245);
+            txtAño.Location = new Point(104, 184);
+            txtAño.Margin = new Padding(3, 2, 3, 2);
             txtAño.Name = "txtAño";
-            txtAño.Size = new Size(175, 27);
+            txtAño.Size = new Size(154, 23);
             txtAño.TabIndex = 5;
             // 
             // txtModelo
             // 
-            txtModelo.Location = new Point(119, 184);
+            txtModelo.Location = new Point(104, 138);
+            txtModelo.Margin = new Padding(3, 2, 3, 2);
             txtModelo.Name = "txtModelo";
-            txtModelo.Size = new Size(175, 27);
+            txtModelo.Size = new Size(154, 23);
             txtModelo.TabIndex = 6;
             // 
             // txtTipoDeCombustible
             // 
-            txtTipoDeCombustible.Location = new Point(439, 184);
+            txtTipoDeCombustible.Location = new Point(384, 138);
+            txtTipoDeCombustible.Margin = new Padding(3, 2, 3, 2);
             txtTipoDeCombustible.Name = "txtTipoDeCombustible";
-            txtTipoDeCombustible.Size = new Size(175, 27);
+            txtTipoDeCombustible.Size = new Size(154, 23);
             txtTipoDeCombustible.TabIndex = 8;
             // 
             // cbEstado
             // 
             cbEstado.FormattingEnabled = true;
-            cbEstado.Location = new Point(439, 245);
+            cbEstado.Location = new Point(384, 184);
+            cbEstado.Margin = new Padding(3, 2, 3, 2);
             cbEstado.Name = "cbEstado";
-            cbEstado.Size = new Size(175, 28);
+            cbEstado.Size = new Size(154, 23);
             cbEstado.TabIndex = 9;
             // 
             // dtpFechaRegistro
             // 
             dtpFechaRegistro.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaRegistro.Format = DateTimePickerFormat.Short;
-            dtpFechaRegistro.Location = new Point(666, 47);
+            dtpFechaRegistro.Location = new Point(583, 35);
+            dtpFechaRegistro.Margin = new Padding(3, 2, 3, 2);
             dtpFechaRegistro.Name = "dtpFechaRegistro";
-            dtpFechaRegistro.Size = new Size(143, 30);
+            dtpFechaRegistro.Size = new Size(126, 26);
             dtpFechaRegistro.TabIndex = 10;
             // 
             // bntAgregar
@@ -232,9 +274,10 @@
             bntAgregar.FlatStyle = FlatStyle.Flat;
             bntAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bntAgregar.ForeColor = Color.White;
-            bntAgregar.Location = new Point(843, 35);
+            bntAgregar.Location = new Point(738, 26);
+            bntAgregar.Margin = new Padding(3, 2, 3, 2);
             bntAgregar.Name = "bntAgregar";
-            bntAgregar.Size = new Size(111, 52);
+            bntAgregar.Size = new Size(97, 39);
             bntAgregar.TabIndex = 11;
             bntAgregar.Text = "Agregar";
             bntAgregar.UseVisualStyleBackColor = true;
@@ -246,9 +289,10 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(843, 131);
+            btnModificar.Location = new Point(738, 98);
+            btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(130, 52);
+            btnModificar.Size = new Size(114, 39);
             btnModificar.TabIndex = 12;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -260,9 +304,10 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(843, 220);
+            btnEliminar.Location = new Point(738, 165);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(111, 52);
+            btnEliminar.Size = new Size(97, 39);
             btnEliminar.TabIndex = 13;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -271,17 +316,18 @@
             // cbProveedorID
             // 
             cbProveedorID.FormattingEnabled = true;
-            cbProveedorID.Location = new Point(119, 52);
+            cbProveedorID.Location = new Point(104, 39);
+            cbProveedorID.Margin = new Padding(3, 2, 3, 2);
             cbProveedorID.Name = "cbProveedorID";
-            cbProveedorID.Size = new Size(175, 28);
+            cbProveedorID.Size = new Size(154, 23);
             cbProveedorID.TabIndex = 14;
             // 
             // VehiculoForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1008, 583);
+            ClientSize = new Size(1083, 447);
             Controls.Add(cbProveedorID);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
@@ -295,8 +341,9 @@
             Controls.Add(txtTipoDeVehiculo);
             Controls.Add(txtMarca);
             Controls.Add(dgvVehiculo);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "VehiculoForm";
-            Text = "VehiculoForm";
+            Text = "Vehiculos";
             Load += VehiculoForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVehiculo).EndInit();
             ((System.ComponentModel.ISupportInitialize)vehiculoBindingSource).EndInit();
@@ -308,7 +355,6 @@
 
         private DataGridView dgvVehiculo;
         private BindingSource vehiculoBindingSource;
-        private ComboBox comboBox1;
         private TextBox txtMarca;
         private TextBox txtTipoDeVehiculo;
         private TextBox txtPlaca;

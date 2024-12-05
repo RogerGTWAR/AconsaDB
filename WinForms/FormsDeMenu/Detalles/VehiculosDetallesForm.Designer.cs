@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             cbVehiculoID = new ComboBox();
             cbEmpleadoID = new ComboBox();
             dtpFechaAsignacion = new DateTimePicker();
@@ -138,25 +143,54 @@
             // 
             // dgvVehiculoDetalles
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvVehiculoDetalles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvVehiculoDetalles.AutoGenerateColumns = false;
             dgvVehiculoDetalles.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvVehiculoDetalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvVehiculoDetalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVehiculoDetalles.Columns.AddRange(new DataGridViewColumn[] { vehiculoDetalleIDDataGridViewTextBoxColumn, empleadoIDDataGridViewTextBoxColumn, vehiculoIDDataGridViewTextBoxColumn, fechaAsignacionDataGridViewTextBoxColumn, fechaFinAsignacionDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn });
             dgvVehiculoDetalles.DataSource = vehiculoDetalleBindingSource;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvVehiculoDetalles.DefaultCellStyle = dataGridViewCellStyle3;
             dgvVehiculoDetalles.Location = new Point(44, 207);
             dgvVehiculoDetalles.Name = "dgvVehiculoDetalles";
             dgvVehiculoDetalles.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvVehiculoDetalles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvVehiculoDetalles.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvVehiculoDetalles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVehiculoDetalles.Size = new Size(648, 150);
+            dgvVehiculoDetalles.Size = new Size(652, 150);
             dgvVehiculoDetalles.TabIndex = 28;
             dgvVehiculoDetalles.CellContentClick += dgvVehiculoDetalles_CellContentClick;
             // 
             // vehiculoDetalleIDDataGridViewTextBoxColumn
             // 
             vehiculoDetalleIDDataGridViewTextBoxColumn.DataPropertyName = "Vehiculo_DetalleID";
-            vehiculoDetalleIDDataGridViewTextBoxColumn.HeaderText = "Vehiculo_DetalleID";
+            vehiculoDetalleIDDataGridViewTextBoxColumn.HeaderText = "ID";
             vehiculoDetalleIDDataGridViewTextBoxColumn.Name = "vehiculoDetalleIDDataGridViewTextBoxColumn";
             vehiculoDetalleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            vehiculoDetalleIDDataGridViewTextBoxColumn.Width = 80;
             // 
             // empleadoIDDataGridViewTextBoxColumn
             // 
@@ -175,14 +209,14 @@
             // fechaAsignacionDataGridViewTextBoxColumn
             // 
             fechaAsignacionDataGridViewTextBoxColumn.DataPropertyName = "FechaAsignacion";
-            fechaAsignacionDataGridViewTextBoxColumn.HeaderText = "FechaAsignacion";
+            fechaAsignacionDataGridViewTextBoxColumn.HeaderText = "Fecha de Asignacion";
             fechaAsignacionDataGridViewTextBoxColumn.Name = "fechaAsignacionDataGridViewTextBoxColumn";
             fechaAsignacionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaFinAsignacionDataGridViewTextBoxColumn
             // 
             fechaFinAsignacionDataGridViewTextBoxColumn.DataPropertyName = "FechaFinAsignacion";
-            fechaFinAsignacionDataGridViewTextBoxColumn.HeaderText = "FechaFinAsignacion";
+            fechaFinAsignacionDataGridViewTextBoxColumn.HeaderText = "Fecha de Finalizacion";
             fechaFinAsignacionDataGridViewTextBoxColumn.Name = "fechaFinAsignacionDataGridViewTextBoxColumn";
             fechaFinAsignacionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -213,7 +247,7 @@
             Controls.Add(cbEmpleadoID);
             Controls.Add(cbVehiculoID);
             Name = "VehiculosDetallesForm";
-            Text = "m";
+            Text = "VehiculosDetalles";
             Load += VehiculosDetallesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVehiculoDetalles).EndInit();
             ((System.ComponentModel.ISupportInitialize)vehiculoDetalleBindingSource).EndInit();
@@ -232,12 +266,12 @@
         private Button btnModificar;
         private Button btnAgregar;
         private DataGridView dgvVehiculoDetalles;
+        private BindingSource vehiculoDetalleBindingSource;
         private DataGridViewTextBoxColumn vehiculoDetalleIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn empleadoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn vehiculoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaAsignacionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaFinAsignacionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private BindingSource vehiculoDetalleBindingSource;
     }
 }

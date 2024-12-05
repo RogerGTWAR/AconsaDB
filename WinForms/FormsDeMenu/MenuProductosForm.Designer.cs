@@ -85,7 +85,7 @@
             // 
             // MenuProductosForm
             // 
-            AutoScaleDimensions = new SizeF(14F, 31F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
             ClientSize = new Size(1720, 712);
@@ -96,7 +96,7 @@
             Margin = new Padding(5);
             Name = "MenuProductosForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MenuProductosForm";
+            Text = "MenuProductos";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }

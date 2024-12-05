@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
@@ -43,13 +48,13 @@
             label2 = new Label();
             label3 = new Label();
             dgvAvaluoDetalle = new DataGridView();
+            avaluoDetalleBindingSource = new BindingSource(components);
             avaluoDetalleIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             avaluoIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             productoIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descripcionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cantidadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             precioUnitarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            avaluoDetalleBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dgvAvaluoDetalle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)avaluoDetalleBindingSource).BeginInit();
             SuspendLayout();
@@ -199,25 +204,58 @@
             // 
             // dgvAvaluoDetalle
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAvaluoDetalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvAvaluoDetalle.AutoGenerateColumns = false;
             dgvAvaluoDetalle.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvAvaluoDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvAvaluoDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAvaluoDetalle.Columns.AddRange(new DataGridViewColumn[] { avaluoDetalleIDDataGridViewTextBoxColumn, avaluoIDDataGridViewTextBoxColumn, productoIDDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn, cantidadDataGridViewTextBoxColumn, precioUnitarioDataGridViewTextBoxColumn });
             dgvAvaluoDetalle.DataSource = avaluoDetalleBindingSource;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvAvaluoDetalle.DefaultCellStyle = dataGridViewCellStyle3;
             dgvAvaluoDetalle.Location = new Point(12, 275);
             dgvAvaluoDetalle.Name = "dgvAvaluoDetalle";
             dgvAvaluoDetalle.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvAvaluoDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAvaluoDetalle.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvAvaluoDetalle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAvaluoDetalle.Size = new Size(664, 150);
             dgvAvaluoDetalle.TabIndex = 32;
             dgvAvaluoDetalle.CellContentClick += dgvAvaluoDetalle_CellContentClick;
             // 
+            // avaluoDetalleBindingSource
+            // 
+            avaluoDetalleBindingSource.DataSource = typeof(SharedModels.AvaluoDetalle);
+            // 
             // avaluoDetalleIDDataGridViewTextBoxColumn
             // 
             avaluoDetalleIDDataGridViewTextBoxColumn.DataPropertyName = "Avaluo_DetalleID";
-            avaluoDetalleIDDataGridViewTextBoxColumn.HeaderText = "Avaluo_DetalleID";
+            avaluoDetalleIDDataGridViewTextBoxColumn.HeaderText = "ID";
             avaluoDetalleIDDataGridViewTextBoxColumn.Name = "avaluoDetalleIDDataGridViewTextBoxColumn";
             avaluoDetalleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            avaluoDetalleIDDataGridViewTextBoxColumn.Width = 80;
             // 
             // avaluoIDDataGridViewTextBoxColumn
             // 
@@ -250,15 +288,11 @@
             // precioUnitarioDataGridViewTextBoxColumn
             // 
             precioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecioUnitario";
-            precioUnitarioDataGridViewTextBoxColumn.HeaderText = "PrecioUnitario";
+            precioUnitarioDataGridViewTextBoxColumn.HeaderText = "Precio Unitario";
             precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
             precioUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // avaluoDetalleBindingSource
-            // 
-            avaluoDetalleBindingSource.DataSource = typeof(SharedModels.AvaluoDetalle);
-            // 
-            // AvaluoDetalles
+            // AvaluoDetallesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -278,7 +312,7 @@
             Controls.Add(btnAgregar);
             Controls.Add(txtDescripcion);
             Controls.Add(cbAvaluoID);
-            Name = "AvaluoDetalles";
+            Name = "AvaluoDetallesForm";
             Text = "AvaluoDetalles";
             Load += AvaluoDetalles_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAvaluoDetalle).EndInit();
@@ -303,12 +337,12 @@
         private Label label2;
         private Label label3;
         private DataGridView dgvAvaluoDetalle;
+        private BindingSource avaluoDetalleBindingSource;
         private DataGridViewTextBoxColumn avaluoDetalleIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn avaluoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn productoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
-        private BindingSource avaluoDetalleBindingSource;
     }
 }

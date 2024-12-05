@@ -82,13 +82,13 @@ namespace Gestor_Api.Controllers
 
             try
             {
-                _logger.LogInformation($"Creando un nuevo Cliente con NombreEmpresa: {createDto.ClienteID}");
+                _logger.LogInformation($"Creando un nuevo Cliente con signas: {createDto.ClienteID}");
 
                 var newCliente = _mapper.Map<Cliente>(createDto);
 
                 await _repository.InsertAsync(newCliente);
 
-                _logger.LogInformation($"Nuevo Cliente creado con NombreEmpresa '{createDto.ClienteID}' y ID: {newCliente.ClienteID}");
+                _logger.LogInformation($"Nuevo Cliente creado con sus signas '{createDto.ClienteID}' y ID: {newCliente.ClienteID}");
                 return CreatedAtAction(nameof(GetClienteById), new { id = newCliente.ClienteID }, _mapper.Map<ClienteDto>(newCliente));
             }
             catch (Exception ex)
@@ -118,7 +118,7 @@ namespace Gestor_Api.Controllers
 
                 var rowsAffected = await _repository.UpdateAsync(clienteToUpdate);
 
-                if (rowsAffected == 0)
+                if (rowsAffected == null)
                 {
                     _logger.LogWarning($"Cliente con ID {id} no encontrado o no actualizado.");
                     return NotFound("El Cliente no existe.");
@@ -139,6 +139,7 @@ namespace Gestor_Api.Controllers
             }
         }
 
+
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -149,7 +150,7 @@ namespace Gestor_Api.Controllers
             try
             {
                 var result = await _repository.DeleteAsync(id);
-                if (result == 0)
+                if (result == null)
                 {
                     return NotFound();
                 }

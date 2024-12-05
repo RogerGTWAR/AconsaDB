@@ -50,21 +50,27 @@ namespace WinForms
                 MessageBox.Show("Por favor, corrija los campos resaltados.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var nuevoCliente = new Cliente
-            {
+
+            var clientesExistentes = await _apiClient.Clientes.GetAllAsync();
+            if (clientesExistentes.Any(c => c.ClienteID == txtClienteID.Text))
+                {
+                    MessageBox.Show("El ClienteID ya existe. Por favor, utilice uno diferente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var nuevoCliente = new Cliente
+                {
                 ClienteID = txtClienteID.Text,
                 NombreEmpresa = txtNombreEmpresa.Text,
                 NombreContacto = txtNombreContacto.Text,
                 CargoContacto = txtCargoContacto.Text,
-                Direccion = txtDireccion.Text,
+                    Dirección = txtDireccion.Text,
                 Ciudad = txtCiudad.Text,
-                Pais = txtPais.Text,
-                Telefono = txtTelefono.Text
-            };
-
+                    País = txtPais.Text,
+                Teléfono = txtTelefono.Text
+                 };
             try
             {
-                var success = await _apiClient.Clientes.CreateAsync(nuevoCliente);
+                    var success = await _apiClient.Clientes.CreateAsync(nuevoCliente);
 
                 if (success != null)
                 {
@@ -198,10 +204,10 @@ namespace WinForms
                 clienteSeleccionado.NombreEmpresa = txtNombreEmpresa.Text;
                 clienteSeleccionado.NombreContacto = txtNombreContacto.Text;
                 clienteSeleccionado.CargoContacto = txtCargoContacto.Text;
-                clienteSeleccionado.Direccion = txtDireccion.Text;
+                clienteSeleccionado.Dirección = txtDireccion.Text;
                 clienteSeleccionado.Ciudad = txtCiudad.Text;
-                clienteSeleccionado.Pais = txtPais.Text;
-                clienteSeleccionado.Telefono = txtTelefono.Text;
+                clienteSeleccionado.País = txtPais.Text;
+                clienteSeleccionado.Teléfono = txtTelefono.Text;
 
                 await _apiClient.Clientes.UpdateClienteAsync(clienteSeleccionado.ClienteID, clienteSeleccionado);
 
@@ -263,10 +269,10 @@ namespace WinForms
                     txtNombreEmpresa.Text = cliente.NombreEmpresa;
                     txtNombreContacto.Text = cliente.NombreContacto;
                     txtCargoContacto.Text = cliente.CargoContacto;
-                    txtDireccion.Text = cliente.Direccion;
+                    txtDireccion.Text = cliente.Dirección;
                     txtCiudad.Text = cliente.Ciudad;
-                    txtPais.Text = cliente.Pais;
-                    txtTelefono.Text = cliente.Telefono;
+                    txtPais.Text = cliente.País;
+                    txtTelefono.Text = cliente.Teléfono;
                 }
             }
             catch (Exception ex)

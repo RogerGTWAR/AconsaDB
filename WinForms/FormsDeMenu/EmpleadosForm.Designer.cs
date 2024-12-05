@@ -31,6 +31,11 @@ namespace WinForms
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             dgvEmpleados = new DataGridView();
             empleadoIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nombresDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -40,7 +45,7 @@ namespace WinForms
             fechaNacimientoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             fechaContratacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             direccionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            paísDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             telefonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             correoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             reportesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -79,128 +84,134 @@ namespace WinForms
             // 
             // dgvEmpleados
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvEmpleados.AutoGenerateColumns = false;
             dgvEmpleados.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { empleadoIDDataGridViewTextBoxColumn, nombresDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, cedulaDataGridViewTextBoxColumn, rolIDDataGridViewTextBoxColumn, fechaNacimientoDataGridViewTextBoxColumn, fechaContratacionDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, correoDataGridViewTextBoxColumn, reportesDataGridViewTextBoxColumn });
+            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { empleadoIDDataGridViewTextBoxColumn, nombresDataGridViewTextBoxColumn, apellidosDataGridViewTextBoxColumn, cedulaDataGridViewTextBoxColumn, rolIDDataGridViewTextBoxColumn, fechaNacimientoDataGridViewTextBoxColumn, fechaContratacionDataGridViewTextBoxColumn, direccionDataGridViewTextBoxColumn, paísDataGridViewTextBoxColumn, telefonoDataGridViewTextBoxColumn, correoDataGridViewTextBoxColumn, reportesDataGridViewTextBoxColumn });
             dgvEmpleados.DataSource = empleadoBindingSource;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
             dgvEmpleados.Dock = DockStyle.Bottom;
-            dgvEmpleados.Location = new Point(0, 315);
+            dgvEmpleados.Location = new Point(0, 244);
+            dgvEmpleados.Margin = new Padding(3, 2, 3, 2);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvEmpleados.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmpleados.Size = new Size(1448, 333);
+            dgvEmpleados.Size = new Size(1055, 250);
             dgvEmpleados.TabIndex = 0;
             dgvEmpleados.CellContentClick += dgvEmpleados_CellContentClick;
             // 
             // empleadoIDDataGridViewTextBoxColumn
             // 
             empleadoIDDataGridViewTextBoxColumn.DataPropertyName = "EmpleadoID";
-            empleadoIDDataGridViewTextBoxColumn.HeaderText = "EmpleadoID";
-            empleadoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            empleadoIDDataGridViewTextBoxColumn.HeaderText = "ID";
             empleadoIDDataGridViewTextBoxColumn.Name = "empleadoIDDataGridViewTextBoxColumn";
             empleadoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            empleadoIDDataGridViewTextBoxColumn.Width = 125;
+            empleadoIDDataGridViewTextBoxColumn.Width = 80;
             // 
             // nombresDataGridViewTextBoxColumn
             // 
             nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
             nombresDataGridViewTextBoxColumn.HeaderText = "Nombres";
-            nombresDataGridViewTextBoxColumn.MinimumWidth = 6;
             nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
             nombresDataGridViewTextBoxColumn.ReadOnly = true;
-            nombresDataGridViewTextBoxColumn.Width = 125;
             // 
             // apellidosDataGridViewTextBoxColumn
             // 
             apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
             apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
-            apellidosDataGridViewTextBoxColumn.MinimumWidth = 6;
             apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
             apellidosDataGridViewTextBoxColumn.ReadOnly = true;
-            apellidosDataGridViewTextBoxColumn.Width = 125;
             // 
             // cedulaDataGridViewTextBoxColumn
             // 
             cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
             cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            cedulaDataGridViewTextBoxColumn.MinimumWidth = 6;
             cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
             cedulaDataGridViewTextBoxColumn.ReadOnly = true;
-            cedulaDataGridViewTextBoxColumn.Width = 125;
             // 
             // rolIDDataGridViewTextBoxColumn
             // 
             rolIDDataGridViewTextBoxColumn.DataPropertyName = "RolID";
             rolIDDataGridViewTextBoxColumn.HeaderText = "RolID";
-            rolIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             rolIDDataGridViewTextBoxColumn.Name = "rolIDDataGridViewTextBoxColumn";
             rolIDDataGridViewTextBoxColumn.ReadOnly = true;
-            rolIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // fechaNacimientoDataGridViewTextBoxColumn
             // 
             fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "FechaNacimiento";
-            fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "FechaNacimiento";
-            fechaNacimientoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "Fecha de Nacimiento";
             fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
             fechaNacimientoDataGridViewTextBoxColumn.ReadOnly = true;
-            fechaNacimientoDataGridViewTextBoxColumn.Width = 125;
             // 
             // fechaContratacionDataGridViewTextBoxColumn
             // 
             fechaContratacionDataGridViewTextBoxColumn.DataPropertyName = "FechaContratacion";
-            fechaContratacionDataGridViewTextBoxColumn.HeaderText = "FechaContratacion";
-            fechaContratacionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            fechaContratacionDataGridViewTextBoxColumn.HeaderText = "Fecha de Contratacion";
             fechaContratacionDataGridViewTextBoxColumn.Name = "fechaContratacionDataGridViewTextBoxColumn";
             fechaContratacionDataGridViewTextBoxColumn.ReadOnly = true;
-            fechaContratacionDataGridViewTextBoxColumn.Width = 125;
             // 
             // direccionDataGridViewTextBoxColumn
             // 
             direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
             direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
             direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            direccionDataGridViewTextBoxColumn.Width = 125;
             // 
-            // paisDataGridViewTextBoxColumn
+            // paísDataGridViewTextBoxColumn
             // 
-            paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
-            paisDataGridViewTextBoxColumn.HeaderText = "Pais";
-            paisDataGridViewTextBoxColumn.MinimumWidth = 6;
-            paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
-            paisDataGridViewTextBoxColumn.ReadOnly = true;
-            paisDataGridViewTextBoxColumn.Width = 125;
+            paísDataGridViewTextBoxColumn.DataPropertyName = "País";
+            paísDataGridViewTextBoxColumn.HeaderText = "País";
+            paísDataGridViewTextBoxColumn.Name = "paísDataGridViewTextBoxColumn";
+            paísDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
             telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
             telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
             telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            telefonoDataGridViewTextBoxColumn.Width = 125;
             // 
             // correoDataGridViewTextBoxColumn
             // 
             correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
             correoDataGridViewTextBoxColumn.HeaderText = "Correo";
-            correoDataGridViewTextBoxColumn.MinimumWidth = 6;
             correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
             correoDataGridViewTextBoxColumn.ReadOnly = true;
-            correoDataGridViewTextBoxColumn.Width = 125;
             // 
             // reportesDataGridViewTextBoxColumn
             // 
             reportesDataGridViewTextBoxColumn.DataPropertyName = "Reportes";
             reportesDataGridViewTextBoxColumn.HeaderText = "Reportes";
-            reportesDataGridViewTextBoxColumn.MinimumWidth = 6;
             reportesDataGridViewTextBoxColumn.Name = "reportesDataGridViewTextBoxColumn";
             reportesDataGridViewTextBoxColumn.ReadOnly = true;
-            reportesDataGridViewTextBoxColumn.Width = 125;
             // 
             // empleadoBindingSource
             // 
@@ -212,9 +223,10 @@ namespace WinForms
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(1220, 71);
+            btnAgregar.Location = new Point(933, 54);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(120, 48);
+            btnAgregar.Size = new Size(105, 36);
             btnAgregar.TabIndex = 1;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -226,9 +238,10 @@ namespace WinForms
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(1220, 143);
+            btnEliminar.Location = new Point(933, 108);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(127, 48);
+            btnEliminar.Size = new Size(111, 36);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -240,9 +253,10 @@ namespace WinForms
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(1220, 224);
+            btnModificar.Location = new Point(928, 169);
+            btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(142, 48);
+            btnModificar.Size = new Size(124, 36);
             btnModificar.TabIndex = 3;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -250,76 +264,86 @@ namespace WinForms
             // 
             // txtNombres
             // 
-            txtNombres.Location = new Point(210, 63);
+            txtNombres.Location = new Point(184, 47);
+            txtNombres.Margin = new Padding(3, 2, 3, 2);
             txtNombres.Name = "txtNombres";
-            txtNombres.Size = new Size(125, 27);
+            txtNombres.Size = new Size(110, 23);
             txtNombres.TabIndex = 4;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(522, 121);
+            txtTelefono.Location = new Point(457, 91);
+            txtTelefono.Margin = new Padding(3, 2, 3, 2);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(125, 27);
+            txtTelefono.Size = new Size(110, 23);
             txtTelefono.TabIndex = 5;
             // 
             // txtPais
             // 
-            txtPais.Location = new Point(522, 63);
+            txtPais.Location = new Point(457, 47);
+            txtPais.Margin = new Padding(3, 2, 3, 2);
             txtPais.Name = "txtPais";
-            txtPais.Size = new Size(125, 27);
+            txtPais.Size = new Size(110, 23);
             txtPais.TabIndex = 6;
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(879, 64);
+            txtDireccion.Location = new Point(691, 48);
+            txtDireccion.Margin = new Padding(3, 2, 3, 2);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(269, 92);
+            txtDireccion.Size = new Size(236, 70);
             txtDireccion.TabIndex = 7;
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(210, 185);
+            txtCedula.Location = new Point(184, 139);
+            txtCedula.Margin = new Padding(3, 2, 3, 2);
             txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(125, 27);
+            txtCedula.Size = new Size(110, 23);
             txtCedula.TabIndex = 9;
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(210, 121);
+            txtApellidos.Location = new Point(184, 91);
+            txtApellidos.Margin = new Padding(3, 2, 3, 2);
             txtApellidos.Name = "txtApellidos";
-            txtApellidos.Size = new Size(125, 27);
+            txtApellidos.Size = new Size(110, 23);
             txtApellidos.TabIndex = 10;
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(522, 185);
+            txtCorreo.Location = new Point(457, 139);
+            txtCorreo.Margin = new Padding(3, 2, 3, 2);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(182, 27);
+            txtCorreo.Size = new Size(160, 23);
             txtCorreo.TabIndex = 11;
             // 
             // txtReportes
             // 
-            txtReportes.Location = new Point(522, 251);
+            txtReportes.Location = new Point(457, 188);
+            txtReportes.Margin = new Padding(3, 2, 3, 2);
             txtReportes.Name = "txtReportes";
-            txtReportes.Size = new Size(125, 27);
+            txtReportes.Size = new Size(110, 23);
             txtReportes.TabIndex = 12;
             // 
             // dtpFechaContratacion
             // 
             dtpFechaContratacion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaContratacion.Format = DateTimePickerFormat.Short;
-            dtpFechaContratacion.Location = new Point(975, 260);
+            dtpFechaContratacion.Location = new Point(775, 195);
+            dtpFechaContratacion.Margin = new Padding(3, 2, 3, 2);
             dtpFechaContratacion.Name = "dtpFechaContratacion";
-            dtpFechaContratacion.Size = new Size(143, 30);
+            dtpFechaContratacion.Size = new Size(126, 26);
             dtpFechaContratacion.TabIndex = 13;
             // 
             // dtpFechaNacimiento
             // 
             dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
-            dtpFechaNacimiento.Location = new Point(210, 252);
+            dtpFechaNacimiento.Location = new Point(184, 189);
+            dtpFechaNacimiento.Margin = new Padding(3, 2, 3, 2);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            dtpFechaNacimiento.Size = new Size(126, 27);
+            dtpFechaNacimiento.Size = new Size(111, 23);
             dtpFechaNacimiento.TabIndex = 14;
             // 
             // panelSubcontenedor
@@ -351,17 +375,19 @@ namespace WinForms
             panelSubcontenedor.Controls.Add(txtCedula);
             panelSubcontenedor.Controls.Add(txtPais);
             panelSubcontenedor.Controls.Add(txtDireccion);
-            panelSubcontenedor.Location = new Point(11, 12);
+            panelSubcontenedor.Location = new Point(10, 1);
+            panelSubcontenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubcontenedor.Name = "panelSubcontenedor";
-            panelSubcontenedor.Size = new Size(1448, 648);
+            panelSubcontenedor.Size = new Size(1055, 494);
             panelSubcontenedor.TabIndex = 15;
             // 
             // cbRolID
             // 
             cbRolID.FormattingEnabled = true;
-            cbRolID.Location = new Point(879, 182);
+            cbRolID.Location = new Point(691, 136);
+            cbRolID.Margin = new Padding(3, 2, 3, 2);
             cbRolID.Name = "cbRolID";
-            cbRolID.Size = new Size(151, 28);
+            cbRolID.Size = new Size(133, 23);
             cbRolID.TabIndex = 30;
             // 
             // label14
@@ -369,9 +395,9 @@ namespace WinForms
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9.75F);
             label14.ForeColor = Color.White;
-            label14.Location = new Point(787, 260);
+            label14.Location = new Point(611, 195);
             label14.Name = "label14";
-            label14.Size = new Size(183, 23);
+            label14.Size = new Size(139, 17);
             label14.TabIndex = 29;
             label14.Text = "Fecha de contratación:";
             // 
@@ -380,9 +406,9 @@ namespace WinForms
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9.75F);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(787, 72);
+            label11.Location = new Point(611, 54);
             label11.Name = "label11";
-            label11.Size = new Size(85, 23);
+            label11.Size = new Size(65, 17);
             label11.TabIndex = 26;
             label11.Text = "Dirección:";
             // 
@@ -391,9 +417,9 @@ namespace WinForms
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9.75F);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(430, 187);
+            label10.Location = new Point(376, 140);
             label10.Name = "label10";
-            label10.Size = new Size(66, 23);
+            label10.Size = new Size(52, 17);
             label10.TabIndex = 25;
             label10.Text = "Correo:";
             // 
@@ -402,9 +428,9 @@ namespace WinForms
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9.75F);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(430, 129);
+            label9.Location = new Point(376, 97);
             label9.Name = "label9";
-            label9.Size = new Size(78, 23);
+            label9.Size = new Size(61, 17);
             label9.TabIndex = 24;
             label9.Text = "Telefono:";
             // 
@@ -413,9 +439,9 @@ namespace WinForms
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9.75F);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(822, 182);
+            label8.Location = new Point(641, 136);
             label8.Name = "label8";
-            label8.Size = new Size(38, 23);
+            label8.Size = new Size(30, 17);
             label8.TabIndex = 23;
             label8.Text = "Rol:";
             // 
@@ -424,9 +450,9 @@ namespace WinForms
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9.75F);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(430, 241);
+            label7.Location = new Point(376, 181);
             label7.Name = "label7";
-            label7.Size = new Size(81, 23);
+            label7.Size = new Size(64, 17);
             label7.TabIndex = 22;
             label7.Text = "Reportes:";
             label7.Click += label7_Click;
@@ -436,9 +462,9 @@ namespace WinForms
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(430, 71);
+            label6.Location = new Point(376, 53);
             label6.Name = "label6";
-            label6.Size = new Size(43, 23);
+            label6.Size = new Size(34, 17);
             label6.TabIndex = 21;
             label6.Text = "Pais:";
             // 
@@ -447,9 +473,9 @@ namespace WinForms
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(595, 0);
+            label5.Location = new Point(515, 8);
             label5.Name = "label5";
-            label5.Size = new Size(157, 37);
+            label5.Size = new Size(119, 30);
             label5.TabIndex = 20;
             label5.Text = "Empleados";
             // 
@@ -458,9 +484,9 @@ namespace WinForms
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(47, 129);
+            label4.Location = new Point(41, 97);
             label4.Name = "label4";
-            label4.Size = new Size(83, 23);
+            label4.Size = new Size(65, 17);
             label4.TabIndex = 19;
             label4.Text = "Apellidos:";
             // 
@@ -469,9 +495,9 @@ namespace WinForms
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(26, 259);
+            label3.Location = new Point(23, 194);
             label3.Name = "label3";
-            label3.Size = new Size(175, 23);
+            label3.Size = new Size(133, 17);
             label3.TabIndex = 18;
             label3.Text = "Fecha de Nacimiento:";
             // 
@@ -480,9 +506,9 @@ namespace WinForms
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(47, 187);
+            label2.Location = new Point(41, 140);
             label2.Name = "label2";
-            label2.Size = new Size(67, 23);
+            label2.Size = new Size(51, 17);
             label2.TabIndex = 17;
             label2.Text = "Cedula:";
             // 
@@ -491,22 +517,23 @@ namespace WinForms
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(47, 64);
+            label1.Location = new Point(41, 48);
             label1.Name = "label1";
-            label1.Size = new Size(84, 23);
+            label1.Size = new Size(66, 17);
             label1.TabIndex = 16;
             label1.Text = "Nombres:";
             label1.Click += label1_Click;
             // 
             // EmpleadosForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1073, 562);
             Controls.Add(panelSubcontenedor);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmpleadosForm";
-            Text = "EmpleadosForm";
+            Text = "Empleados";
             Load += EmpleadosForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ((System.ComponentModel.ISupportInitialize)empleadoBindingSource).EndInit();
@@ -532,19 +559,7 @@ namespace WinForms
         private DateTimePicker dtpFechaContratacion;
         private DateTimePicker dtpFechaNacimiento;
         private Panel panelSubcontenedor;
-        private DataGridViewTextBoxColumn empleadoIDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn rolIDDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fechaContratacionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn reportesDataGridViewTextBoxColumn;
-        private BindingSource empleadoBindingSource;
         private Label label5;
         private Label label4;
         private Label label3;
@@ -558,5 +573,18 @@ namespace WinForms
         private Label label7;
         private Label label14;
         private ComboBox cbRolID;
+        private DataGridViewTextBoxColumn empleadoIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn rolIDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fechaNacimientoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fechaContratacionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn paísDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn reportesDataGridViewTextBoxColumn;
+        private BindingSource empleadoBindingSource;
     }
 }

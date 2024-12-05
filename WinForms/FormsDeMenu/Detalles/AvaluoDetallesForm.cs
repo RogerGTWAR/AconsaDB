@@ -250,7 +250,7 @@ namespace WinForms.FormsDeMenu.Detalles
             {
                 var productos = await _apiClient.Productos.GetAllAsync();
                 cbProductoID.DataSource = productos.ToList();
-                cbProductoID.DisplayMember = "Nombre"; // Ajustar según el modelo de producto.
+                cbProductoID.DisplayMember = "NombreProducto"; // Ajustar según el modelo de producto.
                 cbProductoID.ValueMember = "ProductoID";
                 cbProductoID.SelectedIndex = -1;
             }

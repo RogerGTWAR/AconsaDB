@@ -16,7 +16,6 @@ namespace WinForms
         private readonly HttpClient _httpClient;
         private readonly string _endpoint;
         private readonly Context _context;
-        private HttpClient httpClient;
 
         public Repository(Context context)
         {

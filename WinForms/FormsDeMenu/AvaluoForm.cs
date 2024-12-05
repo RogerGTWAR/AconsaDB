@@ -157,7 +157,7 @@ namespace WinForms
                 return;
             }
             var filaSeleccionada = dgvAvaluo.SelectedRows[0];
-            int avaluoID = Convert.ToInt32(filaSeleccionada.Cells["AvaluoID"].Value);
+            int avaluoID = Convert.ToInt32(filaSeleccionada.Cells["avaluoIDDataGridViewTextBoxColumn"].Value);
             var confirmResult = MessageBox.Show($"¿Está seguro de que desea eliminar el avalúo con ID {avaluoID}?",
                                                 "Confirmación",
                                                 MessageBoxButtons.YesNo,
@@ -196,7 +196,7 @@ namespace WinForms
                 return;
             }
             var filaSeleccionada = dgvAvaluo.SelectedRows[0];
-            int avaluoID = Convert.ToInt32(filaSeleccionada.Cells["AvaluoID"].Value);
+            int avaluoID = Convert.ToInt32(filaSeleccionada.Cells["avaluoIDDataGridViewTextBoxColumn"].Value);
             if (cbProyectoID.SelectedItem == null || string.IsNullOrEmpty(txtDescripcion.Text) ||
                 string.IsNullOrEmpty(txtMontoEjecutado.Text) || dtpFechaInicio.Value >= dtpFechaFin.Value)
             {

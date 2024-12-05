@@ -76,6 +76,16 @@ namespace WinForms
                     return;
                 }
 
+                var vehiculosExistentes = await _apiClient.Vehiculos.GetAllAsync();
+
+                var placaEnUso = vehiculosExistentes.Any(v => v.Placa == txtPlaca.Text && v.VehiculoID != vehiculoSeleccionado.VehiculoID);
+
+                if (placaEnUso)
+                {
+                    MessageBox.Show("La placa ya está en uso por otro vehículo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 vehiculoSeleccionado.ProveedorID = (int)cbProveedorID.SelectedValue;
                 vehiculoSeleccionado.Marca = txtMarca.Text;
                 vehiculoSeleccionado.Modelo = txtModelo.Text;
@@ -148,16 +158,16 @@ namespace WinForms
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtMarca.Text) ||
-                    string.IsNullOrWhiteSpace(txtModelo.Text) ||
-                    string.IsNullOrWhiteSpace(txtAño.Text) ||
-                    string.IsNullOrWhiteSpace(txtPlaca.Text) ||
-                    cbEstado.SelectedIndex == -1 ||
-                    cbProveedorID.SelectedIndex == -1)
+                // Verificar si ya existe un vehículo con la misma placa
+                var vehiculosExistentes = await _apiClient.Vehiculos.GetAllAsync();
+                if (vehiculosExistentes.Any(v => v.Placa == txtPlaca.Text))
                 {
-                    MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ya existe un vehículo con la misma placa. Por favor, ingrese una placa diferente.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                // Crear el nuevo vehículo
                 var nuevoVehiculo = new VehiculoDto
                 {
                     Marca = txtMarca.Text,
@@ -171,15 +181,23 @@ namespace WinForms
                     FechaRegistro = DateTime.Now
                 };
 
+                // Crear el vehículo en la base de datos
                 await _apiClient.Vehiculos.CreateAsync(nuevoVehiculo);
+
+                // Mostrar mensaje de éxito
                 MessageBox.Show("Vehículo agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refrescar los datos y limpiar los campos
                 await RefreshData();
                 LimpiarCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al agregar vehículo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Manejar cualquier error que ocurra
+                MessageBox.Show($"Ocurrió un error al agregar el vehículo: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void dgvVehiculo_CellContentClick(object sender, DataGridViewCellEventArgs e)

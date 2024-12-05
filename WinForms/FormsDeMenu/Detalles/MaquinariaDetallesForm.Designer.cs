@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             cbProyectoID = new ComboBox();
             cbMaquinariaID = new ComboBox();
             txtHorasUtilizadas = new TextBox();
@@ -83,24 +88,54 @@
             // 
             // dgvMaquinariaDetalle
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMaquinariaDetalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvMaquinariaDetalle.AutoGenerateColumns = false;
             dgvMaquinariaDetalle.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvMaquinariaDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvMaquinariaDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMaquinariaDetalle.Columns.AddRange(new DataGridViewColumn[] { maquinariaDetalleIDDataGridViewTextBoxColumn, proyectoIDDataGridViewTextBoxColumn, maquinariaIDDataGridViewTextBoxColumn, horasUtilizadasDataGridViewTextBoxColumn, fechaInicioAsignacionDataGridViewTextBoxColumn, fechaFinAsignacionDataGridViewTextBoxColumn });
             dgvMaquinariaDetalle.DataSource = maquinariaDetalleBindingSource;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvMaquinariaDetalle.DefaultCellStyle = dataGridViewCellStyle3;
             dgvMaquinariaDetalle.Location = new Point(38, 263);
             dgvMaquinariaDetalle.Name = "dgvMaquinariaDetalle";
             dgvMaquinariaDetalle.ReadOnly = true;
-            dgvMaquinariaDetalle.Size = new Size(647, 150);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvMaquinariaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMaquinariaDetalle.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvMaquinariaDetalle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMaquinariaDetalle.Size = new Size(637, 150);
             dgvMaquinariaDetalle.TabIndex = 4;
             dgvMaquinariaDetalle.CellContentClick += dgvMaquinariaDetalle_CellContentClick;
             // 
             // maquinariaDetalleIDDataGridViewTextBoxColumn
             // 
             maquinariaDetalleIDDataGridViewTextBoxColumn.DataPropertyName = "Maquinaria_DetalleID";
-            maquinariaDetalleIDDataGridViewTextBoxColumn.HeaderText = "Maquinaria_DetalleID";
+            maquinariaDetalleIDDataGridViewTextBoxColumn.HeaderText = "ID";
             maquinariaDetalleIDDataGridViewTextBoxColumn.Name = "maquinariaDetalleIDDataGridViewTextBoxColumn";
             maquinariaDetalleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            maquinariaDetalleIDDataGridViewTextBoxColumn.Width = 80;
             // 
             // proyectoIDDataGridViewTextBoxColumn
             // 
@@ -119,21 +154,21 @@
             // horasUtilizadasDataGridViewTextBoxColumn
             // 
             horasUtilizadasDataGridViewTextBoxColumn.DataPropertyName = "HorasUtilizadas";
-            horasUtilizadasDataGridViewTextBoxColumn.HeaderText = "HorasUtilizadas";
+            horasUtilizadasDataGridViewTextBoxColumn.HeaderText = "Horas Utilizadas";
             horasUtilizadasDataGridViewTextBoxColumn.Name = "horasUtilizadasDataGridViewTextBoxColumn";
             horasUtilizadasDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaInicioAsignacionDataGridViewTextBoxColumn
             // 
             fechaInicioAsignacionDataGridViewTextBoxColumn.DataPropertyName = "FechaInicioAsignacion";
-            fechaInicioAsignacionDataGridViewTextBoxColumn.HeaderText = "FechaInicioAsignacion";
+            fechaInicioAsignacionDataGridViewTextBoxColumn.HeaderText = "Fecha de Asignacion";
             fechaInicioAsignacionDataGridViewTextBoxColumn.Name = "fechaInicioAsignacionDataGridViewTextBoxColumn";
             fechaInicioAsignacionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaFinAsignacionDataGridViewTextBoxColumn
             // 
             fechaFinAsignacionDataGridViewTextBoxColumn.DataPropertyName = "FechaFinAsignacion";
-            fechaFinAsignacionDataGridViewTextBoxColumn.HeaderText = "FechaFinAsignacion";
+            fechaFinAsignacionDataGridViewTextBoxColumn.HeaderText = "Fecha de Finalizacion";
             fechaFinAsignacionDataGridViewTextBoxColumn.Name = "fechaFinAsignacionDataGridViewTextBoxColumn";
             fechaFinAsignacionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -211,7 +246,7 @@
             Controls.Add(cbMaquinariaID);
             Controls.Add(cbProyectoID);
             Name = "MaquinariaDetallesForm";
-            Text = "MaquinariaDetallesForm";
+            Text = "MaquinariaDetalles";
             Load += MaquinariaDetallesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMaquinariaDetalle).EndInit();
             ((System.ComponentModel.ISupportInitialize)maquinariaDetalleBindingSource).EndInit();
@@ -230,12 +265,12 @@
         private Button btnEliminar;
         private Button btnModificar;
         private Button btnAgregar;
+        private BindingSource maquinariaDetalleBindingSource;
         private DataGridViewTextBoxColumn maquinariaDetalleIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn proyectoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn maquinariaIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn horasUtilizadasDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaInicioAsignacionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaFinAsignacionDataGridViewTextBoxColumn;
-        private BindingSource maquinariaDetalleBindingSource;
     }
 }

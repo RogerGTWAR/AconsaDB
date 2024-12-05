@@ -41,7 +41,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                             FechaNacimiento = reader.GetDateTime(5),
                             FechaContratacion = reader.GetDateTime(6),
                             Direccion = reader.GetString(7),
-                            Pais = reader.GetString(8),
+                            País = reader.GetString(8),
                             Telefono = reader.GetString(9),
                             Correo = reader.GetString(10),
                             Reportes = reader.IsDBNull(11) ? null : reader.GetInt32(11)
@@ -82,7 +82,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                             FechaNacimiento = reader.GetDateTime(5),
                             FechaContratacion = reader.GetDateTime(6),
                             Direccion = reader.GetString(7),
-                            Pais = reader.GetString(8),
+                            País = reader.GetString(8),
                             Telefono = reader.GetString(9),
                             Correo = reader.GetString(10),
                             Reportes = reader.IsDBNull(11) ? null : reader.GetInt32(11)
@@ -99,8 +99,8 @@ public class EmpleadoRepository : IRepository<Empleado>
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            string query = "INSERT INTO Empleados (Nombres, Apellidos, Cedula, RolID, FechaNacimiento, FechaContratacion, Direccion, Pais, Telefono, Correo, Reportes) " +
-                           "VALUES (@Nombres, @Apellidos, @Cedula, @RolID, @FechaNacimiento, @FechaContratacion, @Direccion, @Pais, @Telefono, @Correo, @Reportes)";
+            string query = "INSERT INTO Empleados (Nombres, Apellidos, Cedula, RolID, FechaNacimiento, FechaContratacion, Direccion, País, Telefono, Correo, Reportes) " +
+                           "VALUES (@Nombres, @Apellidos, @Cedula, @RolID, @FechaNacimiento, @FechaContratacion, @Direccion, @País, @Telefono, @Correo, @Reportes)";
 
             await connection.OpenAsync();
 
@@ -113,7 +113,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                 command.Parameters.AddWithValue("@FechaNacimiento", entity.FechaNacimiento);
                 command.Parameters.AddWithValue("@FechaContratacion", entity.FechaContratacion);
                 command.Parameters.AddWithValue("@Direccion", entity.Direccion);
-                command.Parameters.AddWithValue("@Pais", entity.Pais);
+                command.Parameters.AddWithValue("@País", entity.País);
                 command.Parameters.AddWithValue("@Telefono", entity.Telefono    );
                 command.Parameters.AddWithValue("@Correo", entity.Correo);
                 command.Parameters.AddWithValue("@Reportes", entity.Reportes ?? (object)DBNull.Value);
@@ -128,7 +128,7 @@ public class EmpleadoRepository : IRepository<Empleado>
         using (var connection = new SqlConnection(_connectionString))
         {
             string query = "UPDATE Empleados SET Nombres = @Nombres, Apellidos = @Apellidos, Cedula = @Cedula, RolID = @RolID, " +
-                           "FechaNacimiento = @FechaNacimiento, FechaContratacion = @FechaContratacion, Direccion = @Direccion, Pais = @Pais, " +
+                           "FechaNacimiento = @FechaNacimiento, FechaContratacion = @FechaContratacion, Direccion = @Direccion, País = @País, " +
                            "Telefono = @Telefono, Correo = @Correo, Reportes = @Reportes WHERE EmpleadoID = @EmpleadoID";
 
             await connection.OpenAsync();
@@ -143,7 +143,7 @@ public class EmpleadoRepository : IRepository<Empleado>
                 command.Parameters.AddWithValue("@FechaNacimiento", entity.FechaNacimiento);
                 command.Parameters.AddWithValue("@FechaContratacion", entity.FechaContratacion);
                 command.Parameters.AddWithValue("@Direccion", entity.Direccion);
-                command.Parameters.AddWithValue("@Pais", entity.Pais);
+                command.Parameters.AddWithValue("@País", entity.País);
                 command.Parameters.AddWithValue("@Telefono", entity.Telefono);
                 command.Parameters.AddWithValue("@Correo", entity.Correo);
                 command.Parameters.AddWithValue("@Reportes", entity.Reportes ?? (object)DBNull.Value);

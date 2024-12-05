@@ -205,7 +205,7 @@ namespace WinForms.FormsDeMenu.Detalles
             {
                 var empleados = await _apiClient.Empleados.GetAllAsync();
                 cbEmpleadoID.DataSource = empleados.ToList();
-                cbEmpleadoID.DisplayMember = "Nombre"; // Ajustar según el modelo.
+                cbEmpleadoID.DisplayMember = "Nombres"; 
                 cbEmpleadoID.ValueMember = "EmpleadoID";
                 cbEmpleadoID.SelectedIndex = -1;
             }
@@ -221,7 +221,7 @@ namespace WinForms.FormsDeMenu.Detalles
             {
                 var proyectos = await _apiClient.Proyectos.GetAllAsync();
                 cbProyectoID.DataSource = proyectos.ToList();
-                cbProyectoID.DisplayMember = "Nombre"; // Ajustar según el modelo.
+                cbProyectoID.DisplayMember = "NombreProyecto";
                 cbProyectoID.ValueMember = "ProyectoID";
                 cbProyectoID.SelectedIndex = -1;
             }

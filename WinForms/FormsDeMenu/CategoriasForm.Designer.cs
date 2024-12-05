@@ -32,6 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             txtCategoria = new TextBox();
             txtDescripcion = new TextBox();
             btnAgregar = new Button();
@@ -52,18 +54,20 @@
             // txtCategoria
             // 
             txtCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCategoria.Location = new Point(225, 140);
+            txtCategoria.Location = new Point(197, 105);
+            txtCategoria.Margin = new Padding(3, 2, 3, 2);
             txtCategoria.Name = "txtCategoria";
-            txtCategoria.Size = new Size(219, 27);
+            txtCategoria.Size = new Size(192, 23);
             txtCategoria.TabIndex = 0;
             // 
             // txtDescripcion
             // 
             txtDescripcion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescripcion.Location = new Point(225, 207);
+            txtDescripcion.Location = new Point(197, 155);
+            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(219, 83);
+            txtDescripcion.Size = new Size(192, 63);
             txtDescripcion.TabIndex = 1;
             // 
             // btnAgregar
@@ -72,9 +76,10 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(462, 99);
+            btnAgregar.Location = new Point(404, 74);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(126, 67);
+            btnAgregar.Size = new Size(110, 50);
             btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -86,9 +91,10 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(462, 171);
+            btnModificar.Location = new Point(404, 128);
+            btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(137, 67);
+            btnModificar.Size = new Size(120, 50);
             btnModificar.TabIndex = 3;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(462, 243);
+            btnEliminar.Location = new Point(404, 182);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(126, 67);
+            btnEliminar.Size = new Size(110, 50);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -113,9 +120,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(14, 137);
+            label1.Location = new Point(12, 103);
             label1.Name = "label1";
-            label1.Size = new Size(223, 28);
+            label1.Size = new Size(176, 21);
             label1.TabIndex = 6;
             label1.Text = "Nombre de la categoria:";
             // 
@@ -124,9 +131,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(50, 204);
+            label2.Location = new Point(44, 153);
             label2.Name = "label2";
-            label2.Size = new Size(118, 28);
+            label2.Size = new Size(94, 21);
             label2.TabIndex = 7;
             label2.Text = "Descripcion:";
             // 
@@ -135,46 +142,52 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(225, 37);
+            label3.Location = new Point(197, 28);
             label3.Name = "label3";
-            label3.Size = new Size(168, 41);
+            label3.Size = new Size(135, 32);
             label3.TabIndex = 8;
             label3.Text = "Categorias";
             // 
             // dgvCategoria
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCategoria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvCategoria.AutoGenerateColumns = false;
             dgvCategoria.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgvCategoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dgvCategoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategoria.Columns.AddRange(new DataGridViewColumn[] { categoriaIDDataGridViewTextBoxColumn, nombreCategoriaDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn });
             dgvCategoria.DataSource = categoriaBindingSource;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCategoria.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCategoria.Location = new Point(0, 327);
-            dgvCategoria.Name = "dgvCategoria";
-            dgvCategoria.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvCategoria.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvCategoria.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvCategoria.Location = new Point(0, 245);
+            dgvCategoria.Margin = new Padding(3, 2, 3, 2);
+            dgvCategoria.Name = "dgvCategoria";
+            dgvCategoria.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvCategoria.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvCategoria.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCategoria.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCategoria.Size = new Size(626, 257);
+            dgvCategoria.Size = new Size(548, 193);
             dgvCategoria.TabIndex = 9;
             dgvCategoria.CellContentClick += dgvCategoria_CellContentClick;
             // 
@@ -211,10 +224,10 @@
             // 
             // CategoriasForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(626, 584);
+            ClientSize = new Size(548, 438);
             Controls.Add(dgvCategoria);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -225,8 +238,9 @@
             Controls.Add(txtDescripcion);
             Controls.Add(txtCategoria);
             ForeColor = SystemColors.ControlText;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CategoriasForm";
-            Text = "CategoriasForm";
+            Text = "Categorias";
             Load += CategoriasForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).EndInit();
             ((System.ComponentModel.ISupportInitialize)categoriaBindingSource).EndInit();

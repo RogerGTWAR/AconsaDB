@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             cbEmpleadoID = new ComboBox();
             cbProyectoID = new ComboBox();
             dtpFechaProyecto = new DateTimePicker();
@@ -72,25 +77,54 @@
             // 
             // dgvEmpleadosDetalles
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmpleadosDetalles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvEmpleadosDetalles.AutoGenerateColumns = false;
             dgvEmpleadosDetalles.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvEmpleadosDetalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvEmpleadosDetalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEmpleadosDetalles.Columns.AddRange(new DataGridViewColumn[] { empleadoDetalleIDDataGridViewTextBoxColumn, empleadoIDDataGridViewTextBoxColumn, proyectoIDDataGridViewTextBoxColumn, fechaDeProyectoDataGridViewTextBoxColumn });
             dgvEmpleadosDetalles.DataSource = empleadoDetalleBindingSource;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvEmpleadosDetalles.DefaultCellStyle = dataGridViewCellStyle3;
             dgvEmpleadosDetalles.Location = new Point(40, 241);
             dgvEmpleadosDetalles.Name = "dgvEmpleadosDetalles";
             dgvEmpleadosDetalles.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvEmpleadosDetalles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmpleadosDetalles.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvEmpleadosDetalles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmpleadosDetalles.Size = new Size(452, 220);
+            dgvEmpleadosDetalles.Size = new Size(507, 220);
             dgvEmpleadosDetalles.TabIndex = 3;
             dgvEmpleadosDetalles.CellContentClick += dgvEmpleadosDetalles_CellContentClick;
             // 
             // empleadoDetalleIDDataGridViewTextBoxColumn
             // 
             empleadoDetalleIDDataGridViewTextBoxColumn.DataPropertyName = "Empleado_DetalleID";
-            empleadoDetalleIDDataGridViewTextBoxColumn.HeaderText = "Empleado_DetalleID";
+            empleadoDetalleIDDataGridViewTextBoxColumn.HeaderText = "ID";
             empleadoDetalleIDDataGridViewTextBoxColumn.Name = "empleadoDetalleIDDataGridViewTextBoxColumn";
             empleadoDetalleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            empleadoDetalleIDDataGridViewTextBoxColumn.Width = 80;
             // 
             // empleadoIDDataGridViewTextBoxColumn
             // 
@@ -109,9 +143,10 @@
             // fechaDeProyectoDataGridViewTextBoxColumn
             // 
             fechaDeProyectoDataGridViewTextBoxColumn.DataPropertyName = "FechaDeProyecto";
-            fechaDeProyectoDataGridViewTextBoxColumn.HeaderText = "FechaDeProyecto";
+            fechaDeProyectoDataGridViewTextBoxColumn.HeaderText = "Fecha de Inicio del Proyecto";
             fechaDeProyectoDataGridViewTextBoxColumn.Name = "fechaDeProyectoDataGridViewTextBoxColumn";
             fechaDeProyectoDataGridViewTextBoxColumn.ReadOnly = true;
+            fechaDeProyectoDataGridViewTextBoxColumn.Width = 120;
             // 
             // empleadoDetalleBindingSource
             // 
@@ -176,7 +211,7 @@
             Controls.Add(cbProyectoID);
             Controls.Add(cbEmpleadoID);
             Name = "EmpleadosDetallesForm";
-            Text = "EmpleadosDetallesForm";
+            Text = "EmpleadosDetalles";
             Load += EmpleadosDetallesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEmpleadosDetalles).EndInit();
             ((System.ComponentModel.ISupportInitialize)empleadoDetalleBindingSource).EndInit();
@@ -192,10 +227,10 @@
         private Button btnEliminar;
         private Button btnModificar;
         private Button btnAgregar;
+        private BindingSource empleadoDetalleBindingSource;
         private DataGridViewTextBoxColumn empleadoDetalleIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn empleadoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn proyectoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaDeProyectoDataGridViewTextBoxColumn;
-        private BindingSource empleadoDetalleBindingSource;
     }
 }

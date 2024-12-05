@@ -74,7 +74,7 @@ namespace WinForms
                         dtpFechaNacimiento.Value = empleadoSeleccionado.FechaNacimiento;
                         dtpFechaContratacion.Value = empleadoSeleccionado.FechaContratacion;
                         txtDireccion.Text = empleadoSeleccionado.Direccion;
-                        txtPais.Text = empleadoSeleccionado.Pais;
+                        txtPais.Text = empleadoSeleccionado.País;
                         txtTelefono.Text = empleadoSeleccionado.Telefono;
                         txtCorreo.Text = empleadoSeleccionado.Correo;
                         txtReportes.Text = empleadoSeleccionado.Reportes?.ToString();
@@ -120,6 +120,14 @@ namespace WinForms
                     return;
                 }
 
+                var empleadosExistentes = await _apiClient.Empleados.GetAllAsync();
+                var cedulaEnUso = empleadosExistentes.Any(e => e.Cedula == txtCedula.Text && e.EmpleadoID != empleadoSeleccionado.EmpleadoID);
+
+                if (cedulaEnUso)
+                {
+                    MessageBox.Show("La cédula ya está en uso por otro empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 empleadoSeleccionado.Nombres = txtNombres.Text;
                 empleadoSeleccionado.Apellidos = txtApellidos.Text;
                 empleadoSeleccionado.Cedula = txtCedula.Text;
@@ -127,14 +135,13 @@ namespace WinForms
                 empleadoSeleccionado.FechaNacimiento = dtpFechaNacimiento.Value;
                 empleadoSeleccionado.FechaContratacion = dtpFechaContratacion.Value;
                 empleadoSeleccionado.Direccion = txtDireccion.Text;
-                empleadoSeleccionado.Pais = txtPais.Text;
+                empleadoSeleccionado.País = txtPais.Text;
                 empleadoSeleccionado.Telefono = txtTelefono.Text;
                 empleadoSeleccionado.Correo = txtCorreo.Text;
                 empleadoSeleccionado.Reportes = string.IsNullOrEmpty(txtReportes.Text) ? null : int.Parse(txtReportes.Text);
 
                 await _apiClient.Empleados.UpdateAsync(empleadoSeleccionado.EmpleadoID, empleadoSeleccionado);
                 MessageBox.Show("Empleado modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 await RefreshData();
                 LimpiarCampos();
             }
@@ -182,26 +189,43 @@ namespace WinForms
 
         private async void btnAgregar_Click(object sender, EventArgs e)
         {
-            var nuevoEmpleado = new EmpleadoDto
+            try
             {
-                Nombres = txtNombres.Text,
-                Apellidos = txtApellidos.Text,
-                Cedula = txtCedula.Text,
-                RolID = (int)cbRolID.SelectedValue,
-                FechaNacimiento = dtpFechaNacimiento.Value,
-                FechaContratacion = dtpFechaContratacion.Value,
-                Direccion = txtDireccion.Text,
-                Pais = txtPais.Text,
-                Telefono = txtTelefono.Text,
-                Correo = txtCorreo.Text,
-                Reportes = string.IsNullOrEmpty(txtReportes.Text) ? null : int.Parse(txtReportes.Text)
-            };
+                var empleadosExistentes = await _apiClient.Empleados.GetAllAsync();
+                if (empleadosExistentes.Any(e => e.Cedula == txtCedula.Text))
+                {
+                    MessageBox.Show("Ya existe un empleado con la misma cédula. Por favor, ingrese una cédula diferente.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            await _apiClient.Empleados.CreateAsync(nuevoEmpleado);
-            MessageBox.Show("Empleado agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var nuevoEmpleado = new EmpleadoDto
+                {
+                    Nombres = txtNombres.Text,
+                    Apellidos = txtApellidos.Text,
+                    Cedula = txtCedula.Text,
+                    RolID = (int)cbRolID.SelectedValue,
+                    FechaNacimiento = dtpFechaNacimiento.Value,
+                    FechaContratacion = dtpFechaContratacion.Value,
+                    Direccion = txtDireccion.Text,
+                    País = txtPais.Text,
+                    Telefono = txtTelefono.Text,
+                    Correo = txtCorreo.Text,
+                    Reportes = string.IsNullOrEmpty(txtReportes.Text) ? null : int.Parse(txtReportes.Text)
+                };
 
-            await RefreshData();
-            LimpiarCampos();
+                await _apiClient.Empleados.CreateAsync(nuevoEmpleado);
+
+                MessageBox.Show("Empleado agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                await RefreshData();
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al agregar el empleado: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void LimpiarCampos()
         {

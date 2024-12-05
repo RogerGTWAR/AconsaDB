@@ -37,8 +37,8 @@
             IconoFormulario = new FontAwesome.Sharp.IconPictureBox();
             lblUsuario = new Label();
             panelContenedor = new Panel();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
             horafecha = new System.Windows.Forms.Timer(components);
             panelLogo = new Panel();
             btnHome = new PictureBox();
@@ -175,17 +175,6 @@
             panelContenedor.Size = new Size(1250, 717);
             panelContenedor.TabIndex = 3;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(5, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 32);
-            label1.TabIndex = 6;
-            label1.Text = "Bienvenido";
-            // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
@@ -197,6 +186,17 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(5, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(142, 32);
+            label1.TabIndex = 6;
+            label1.Text = "Bienvenido";
             // 
             // horafecha
             // 
@@ -456,7 +456,7 @@
             panelSubContenedor.Location = new Point(0, 627);
             panelSubContenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubContenedor.Name = "panelSubContenedor";
-            panelSubContenedor.Size = new Size(192, 106);
+            panelSubContenedor.Size = new Size(192, 135);
             panelSubContenedor.TabIndex = 15;
             // 
             // btnMaquinariaDetalle
@@ -464,14 +464,17 @@
             btnMaquinariaDetalle.Dock = DockStyle.Top;
             btnMaquinariaDetalle.FlatAppearance.BorderSize = 0;
             btnMaquinariaDetalle.FlatStyle = FlatStyle.Flat;
+            btnMaquinariaDetalle.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMaquinariaDetalle.ForeColor = Color.White;
-            btnMaquinariaDetalle.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnMaquinariaDetalle.IconColor = Color.Black;
+            btnMaquinariaDetalle.IconChar = FontAwesome.Sharp.IconChar.TruckArrowRight;
+            btnMaquinariaDetalle.IconColor = Color.White;
             btnMaquinariaDetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMaquinariaDetalle.Location = new Point(0, 66);
+            btnMaquinariaDetalle.IconSize = 30;
+            btnMaquinariaDetalle.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMaquinariaDetalle.Location = new Point(0, 87);
             btnMaquinariaDetalle.Margin = new Padding(3, 2, 3, 2);
             btnMaquinariaDetalle.Name = "btnMaquinariaDetalle";
-            btnMaquinariaDetalle.Size = new Size(192, 22);
+            btnMaquinariaDetalle.Size = new Size(192, 29);
             btnMaquinariaDetalle.TabIndex = 3;
             btnMaquinariaDetalle.Text = "Maquinaria";
             btnMaquinariaDetalle.UseVisualStyleBackColor = true;
@@ -482,14 +485,17 @@
             btnVehiculosDetalles.Dock = DockStyle.Top;
             btnVehiculosDetalles.FlatAppearance.BorderSize = 0;
             btnVehiculosDetalles.FlatStyle = FlatStyle.Flat;
+            btnVehiculosDetalles.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVehiculosDetalles.ForeColor = Color.White;
-            btnVehiculosDetalles.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnVehiculosDetalles.IconColor = Color.Black;
+            btnVehiculosDetalles.IconChar = FontAwesome.Sharp.IconChar.Car;
+            btnVehiculosDetalles.IconColor = Color.White;
             btnVehiculosDetalles.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnVehiculosDetalles.Location = new Point(0, 44);
+            btnVehiculosDetalles.IconSize = 30;
+            btnVehiculosDetalles.ImageAlign = ContentAlignment.MiddleLeft;
+            btnVehiculosDetalles.Location = new Point(0, 58);
             btnVehiculosDetalles.Margin = new Padding(3, 2, 3, 2);
             btnVehiculosDetalles.Name = "btnVehiculosDetalles";
-            btnVehiculosDetalles.Size = new Size(192, 22);
+            btnVehiculosDetalles.Size = new Size(192, 29);
             btnVehiculosDetalles.TabIndex = 2;
             btnVehiculosDetalles.Text = "Vehiculos";
             btnVehiculosDetalles.UseVisualStyleBackColor = true;
@@ -500,14 +506,17 @@
             btnEmpleadosDetalles.Dock = DockStyle.Top;
             btnEmpleadosDetalles.FlatAppearance.BorderSize = 0;
             btnEmpleadosDetalles.FlatStyle = FlatStyle.Flat;
+            btnEmpleadosDetalles.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEmpleadosDetalles.ForeColor = Color.White;
-            btnEmpleadosDetalles.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEmpleadosDetalles.IconColor = Color.Black;
+            btnEmpleadosDetalles.IconChar = FontAwesome.Sharp.IconChar.Users;
+            btnEmpleadosDetalles.IconColor = Color.White;
             btnEmpleadosDetalles.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEmpleadosDetalles.Location = new Point(0, 22);
+            btnEmpleadosDetalles.IconSize = 30;
+            btnEmpleadosDetalles.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEmpleadosDetalles.Location = new Point(0, 29);
             btnEmpleadosDetalles.Margin = new Padding(3, 2, 3, 2);
             btnEmpleadosDetalles.Name = "btnEmpleadosDetalles";
-            btnEmpleadosDetalles.Size = new Size(192, 22);
+            btnEmpleadosDetalles.Size = new Size(192, 29);
             btnEmpleadosDetalles.TabIndex = 1;
             btnEmpleadosDetalles.Text = "Empleados";
             btnEmpleadosDetalles.UseVisualStyleBackColor = true;
@@ -518,14 +527,17 @@
             btnAvaluosDetalles.Dock = DockStyle.Top;
             btnAvaluosDetalles.FlatAppearance.BorderSize = 0;
             btnAvaluosDetalles.FlatStyle = FlatStyle.Flat;
+            btnAvaluosDetalles.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAvaluosDetalles.ForeColor = Color.White;
-            btnAvaluosDetalles.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnAvaluosDetalles.IconColor = Color.Black;
+            btnAvaluosDetalles.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            btnAvaluosDetalles.IconColor = Color.White;
             btnAvaluosDetalles.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAvaluosDetalles.IconSize = 30;
+            btnAvaluosDetalles.ImageAlign = ContentAlignment.MiddleLeft;
             btnAvaluosDetalles.Location = new Point(0, 0);
             btnAvaluosDetalles.Margin = new Padding(3, 2, 3, 2);
             btnAvaluosDetalles.Name = "btnAvaluosDetalles";
-            btnAvaluosDetalles.Size = new Size(192, 22);
+            btnAvaluosDetalles.Size = new Size(192, 29);
             btnAvaluosDetalles.TabIndex = 0;
             btnAvaluosDetalles.Text = "Avaluos";
             btnAvaluosDetalles.UseVisualStyleBackColor = true;

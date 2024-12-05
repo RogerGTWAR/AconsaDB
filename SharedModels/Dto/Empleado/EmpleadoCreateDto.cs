@@ -15,7 +15,7 @@ namespace SharedModels.Dto.Empleado
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaContratacion { get; set; }
         public required string Direccion { get; set; }
-        public required string Pais { get; set; }
+        public required string País { get; set; }
         public required string Telefono { get; set; }
         public required string Correo { get; set; }
         public int? Reportes { get; set; }

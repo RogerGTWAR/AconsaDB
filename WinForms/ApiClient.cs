@@ -37,7 +37,6 @@ namespace WinForms
         public IRepository<CategoriaDto> Categorias { get; set; }
         public IRepository<AvaluoDto> Avaluos { get; set; }
         public IRepository<AvaluoDetallesDto> AvaluosDetalles { get; set; }
-
         public IRepository<ProductoDto> Productos { get; set; }
         public IRepository<VehiculoDto> Vehiculos { get; set; }
         public IRepository<VehiculoDetallesDto> VehiculosDetalles { get; set; }

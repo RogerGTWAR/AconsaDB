@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             cbProyectoID = new ComboBox();
             dtpFechaInicio = new DateTimePicker();
             dtpFechaFin = new DateTimePicker();
@@ -59,56 +64,90 @@
             // cbProyectoID
             // 
             cbProyectoID.FormattingEnabled = true;
-            cbProyectoID.Location = new Point(185, 74);
+            cbProyectoID.Location = new Point(162, 56);
+            cbProyectoID.Margin = new Padding(3, 2, 3, 2);
             cbProyectoID.Name = "cbProyectoID";
-            cbProyectoID.Size = new Size(200, 28);
+            cbProyectoID.Size = new Size(176, 23);
             cbProyectoID.TabIndex = 0;
             // 
             // dtpFechaInicio
             // 
             dtpFechaInicio.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaInicio.Format = DateTimePickerFormat.Short;
-            dtpFechaInicio.Location = new Point(593, 73);
+            dtpFechaInicio.Location = new Point(562, 53);
+            dtpFechaInicio.Margin = new Padding(3, 2, 3, 2);
             dtpFechaInicio.Name = "dtpFechaInicio";
-            dtpFechaInicio.Size = new Size(143, 30);
+            dtpFechaInicio.Size = new Size(126, 26);
             dtpFechaInicio.TabIndex = 1;
             // 
             // dtpFechaFin
             // 
             dtpFechaFin.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaFin.Format = DateTimePickerFormat.Short;
-            dtpFechaFin.Location = new Point(593, 124);
+            dtpFechaFin.Location = new Point(562, 91);
+            dtpFechaFin.Margin = new Padding(3, 2, 3, 2);
             dtpFechaFin.Name = "dtpFechaFin";
-            dtpFechaFin.Size = new Size(143, 30);
+            dtpFechaFin.Size = new Size(126, 26);
             dtpFechaFin.TabIndex = 2;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(185, 125);
+            txtDescripcion.Location = new Point(162, 94);
+            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(200, 27);
+            txtDescripcion.Size = new Size(176, 23);
             txtDescripcion.TabIndex = 3;
             // 
             // txtMontoEjecutado
             // 
-            txtMontoEjecutado.Location = new Point(185, 180);
+            txtMontoEjecutado.Location = new Point(162, 135);
+            txtMontoEjecutado.Margin = new Padding(3, 2, 3, 2);
             txtMontoEjecutado.Name = "txtMontoEjecutado";
-            txtMontoEjecutado.Size = new Size(200, 27);
+            txtMontoEjecutado.Size = new Size(176, 23);
             txtMontoEjecutado.TabIndex = 4;
             // 
             // dgvAvaluo
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAvaluo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvAvaluo.AutoGenerateColumns = false;
             dgvAvaluo.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvAvaluo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvAvaluo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAvaluo.Columns.AddRange(new DataGridViewColumn[] { avaluoIDDataGridViewTextBoxColumn, proyectoIDDataGridViewTextBoxColumn, descripcionDataGridViewTextBoxColumn, montoEjecutadoDataGridViewTextBoxColumn, fechaInicioDataGridViewTextBoxColumn, fechaFinDataGridViewTextBoxColumn, tiempoTotalDiasDataGridViewTextBoxColumn });
             dgvAvaluo.DataSource = avaluoBindingSource;
-            dgvAvaluo.Location = new Point(0, 301);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvAvaluo.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvAvaluo.Location = new Point(0, 226);
+            dgvAvaluo.Margin = new Padding(3, 2, 3, 2);
             dgvAvaluo.Name = "dgvAvaluo";
             dgvAvaluo.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvAvaluo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvAvaluo.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvAvaluo.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvAvaluo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAvaluo.Size = new Size(956, 331);
+            dgvAvaluo.Size = new Size(940, 248);
             dgvAvaluo.TabIndex = 5;
             dgvAvaluo.CellContentClick += dgvAvaluo_CellContentClick;
             // 
@@ -185,9 +224,10 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(798, 41);
+            btnAgregar.Location = new Point(828, 35);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(128, 62);
+            btnAgregar.Size = new Size(112, 46);
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -199,9 +239,10 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(798, 194);
+            btnModificar.Location = new Point(828, 150);
+            btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(128, 62);
+            btnModificar.Size = new Size(112, 46);
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -213,9 +254,10 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(798, 126);
+            btnEliminar.Location = new Point(828, 98);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(128, 62);
+            btnEliminar.Size = new Size(112, 46);
             btnEliminar.TabIndex = 8;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -226,9 +268,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 74);
+            label1.Location = new Point(10, 56);
             label1.Name = "label1";
-            label1.Size = new Size(118, 28);
+            label1.Size = new Size(93, 21);
             label1.TabIndex = 9;
             label1.Text = "Proyecto ID:";
             // 
@@ -237,9 +279,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(451, 124);
+            label2.Location = new Point(438, 91);
             label2.Name = "label2";
-            label2.Size = new Size(93, 28);
+            label2.Size = new Size(75, 21);
             label2.TabIndex = 10;
             label2.Text = "Fecha Fin";
             // 
@@ -248,9 +290,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(451, 74);
+            label3.Location = new Point(438, 54);
             label3.Name = "label3";
-            label3.Size = new Size(114, 28);
+            label3.Size = new Size(91, 21);
             label3.TabIndex = 11;
             label3.Text = "Fecha Inicio";
             // 
@@ -259,9 +301,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(12, 176);
+            label4.Location = new Point(10, 132);
             label4.Name = "label4";
-            label4.Size = new Size(167, 28);
+            label4.Size = new Size(130, 21);
             label4.TabIndex = 12;
             label4.Text = "Monto Ejecutado:";
             // 
@@ -270,9 +312,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(12, 124);
+            label5.Location = new Point(10, 93);
             label5.Name = "label5";
-            label5.Size = new Size(118, 28);
+            label5.Size = new Size(94, 21);
             label5.TabIndex = 13;
             label5.Text = "Descripcion:";
             // 
@@ -281,18 +323,18 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(416, 9);
+            label6.Location = new Point(438, 9);
             label6.Name = "label6";
-            label6.Size = new Size(128, 41);
+            label6.Size = new Size(104, 32);
             label6.TabIndex = 14;
             label6.Text = "Avaluos";
             // 
             // AvaluoForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(941, 644);
+            ClientSize = new Size(949, 447);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -308,8 +350,9 @@
             Controls.Add(dtpFechaFin);
             Controls.Add(dtpFechaInicio);
             Controls.Add(cbProyectoID);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AvaluoForm";
-            Text = "AvaluoForm";
+            Text = "Avaluo";
             Load += AvaluoForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAvaluo).EndInit();
             ((System.ComponentModel.ISupportInitialize)avaluoBindingSource).EndInit();

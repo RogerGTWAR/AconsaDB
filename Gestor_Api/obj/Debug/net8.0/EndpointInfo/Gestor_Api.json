@@ -3922,7 +3922,7 @@
             "type": "string",
             "nullable": true
           },
-          "direccion": {
+          "dirección": {
             "type": "string",
             "nullable": true
           },
@@ -3930,11 +3930,11 @@
             "type": "string",
             "nullable": true
           },
-          "pais": {
+          "país": {
             "type": "string",
             "nullable": true
           },
-          "telefono": {
+          "teléfono": {
             "type": "string",
             "nullable": true
           }
@@ -3964,7 +3964,7 @@
             "type": "string",
             "nullable": true
           },
-          "direccion": {
+          "dirección": {
             "type": "string",
             "nullable": true
           },
@@ -3972,11 +3972,11 @@
             "type": "string",
             "nullable": true
           },
-          "pais": {
+          "país": {
             "type": "string",
             "nullable": true
           },
-          "telefono": {
+          "teléfono": {
             "type": "string",
             "nullable": true
           }
@@ -4006,7 +4006,7 @@
             "type": "string",
             "nullable": true
           },
-          "direccion": {
+          "dirección": {
             "type": "string",
             "nullable": true
           },
@@ -4014,11 +4014,11 @@
             "type": "string",
             "nullable": true
           },
-          "pais": {
+          "país": {
             "type": "string",
             "nullable": true
           },
-          "telefono": {
+          "teléfono": {
             "type": "string",
             "nullable": true
           }
@@ -4032,7 +4032,7 @@
           "correo",
           "direccion",
           "nombres",
-          "pais",
+          "país",
           "telefono"
         ],
         "type": "object",
@@ -4065,7 +4065,7 @@
             "type": "string",
             "nullable": true
           },
-          "pais": {
+          "país": {
             "type": "string",
             "nullable": true
           },
@@ -4154,7 +4154,7 @@
           "correo",
           "direccion",
           "nombres",
-          "pais",
+          "país",
           "telefono"
         ],
         "type": "object",
@@ -4191,7 +4191,7 @@
             "type": "string",
             "nullable": true
           },
-          "pais": {
+          "país": {
             "type": "string",
             "nullable": true
           },
@@ -4218,7 +4218,7 @@
           "correo",
           "direccion",
           "nombres",
-          "pais",
+          "país",
           "telefono"
         ],
         "type": "object",
@@ -4255,7 +4255,7 @@
             "type": "string",
             "nullable": true
           },
-          "pais": {
+          "país": {
             "type": "string",
             "nullable": true
           },
