@@ -72,7 +72,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "EmpleadosProyectosForm";
-            this.Text = "EmpleadosProyectosForm";
+            this.Text = "Empleados Proyectos";
             this.Load += new System.EventHandler(this.EmpleadosProyectosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporteEmpleadosProyectosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo1DS)).EndInit();

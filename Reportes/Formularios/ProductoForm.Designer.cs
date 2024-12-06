@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.vistasGrupo1DS = new Reportes.VistasGrupo1DS();
             this.reporteProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vistasGrupo1DS = new Reportes.VistasGrupo1DS();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reporteProductosTableAdapter = new Reportes.VistasGrupo1DSTableAdapters.ReporteProductosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo1DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteProductosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo1DS)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reporteProductosBindingSource
+            // 
+            this.reporteProductosBindingSource.DataMember = "ReporteProductos";
+            this.reporteProductosBindingSource.DataSource = this.vistasGrupo1DS;
+            // 
+            // vistasGrupo1DS
+            // 
+            this.vistasGrupo1DS.DataSetName = "VistasGrupo1DS";
+            this.vistasGrupo1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // vistasGrupo1DS
-            // 
-            this.vistasGrupo1DS.DataSetName = "VistasGrupo1DS";
-            this.vistasGrupo1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reporteProductosBindingSource
-            // 
-            this.reporteProductosBindingSource.DataMember = "ReporteProductos";
-            this.reporteProductosBindingSource.DataSource = this.vistasGrupo1DS;
-            // 
             // reporteProductosTableAdapter
             // 
             this.reporteProductosTableAdapter.ClearBeforeFill = true;
@@ -72,10 +72,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ProductoForm";
-            this.Text = "ProductoForm";
+            this.Text = "Productos";
             this.Load += new System.EventHandler(this.ProductoForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo1DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteProductosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo1DS)).EndInit();
             this.ResumeLayout(false);
 
         }

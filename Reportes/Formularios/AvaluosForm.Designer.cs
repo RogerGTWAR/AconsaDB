@@ -79,7 +79,7 @@
             this.ClientSize = new System.Drawing.Size(946, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "AvaluosForm";
-            this.Text = "AvaluoForm";
+            this.Text = "Avaluo";
             this.Load += new System.EventHandler(this.ProyectoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reportProyectosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo1DS)).EndInit();

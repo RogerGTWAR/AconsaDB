@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reporteAvaluoDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vistasGrupo2DS = new Reportes.VistasGrupo2DS();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -51,9 +51,9 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "AvaluoDetalleReportDS";
-            reportDataSource2.Value = this.reporteAvaluoDetalleBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "AvaluoDetalleReportDS";
+            reportDataSource1.Value = this.reporteAvaluoDetalleBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reportes.Informes.AvaluoDetalle.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -72,7 +72,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "AvaluoDetalleForm";
-            this.Text = "AvaluoDetalleForm";
+            this.Text = "Avaluos Detalles";
             this.Load += new System.EventHandler(this.AvaluoDetalleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporteAvaluoDetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).EndInit();

@@ -338,7 +338,7 @@ CREATE PROCEDURE AgregarEmpleado
     @Nombres VARCHAR(100),
     @Apellidos VARCHAR(100),
     @Cedula NVARCHAR(15),
-    @Cargo NVARCHAR(50),
+    @RolID int,
     @FechaNacimiento DATE,
     @FechaContratacion DATE,
     @Direccion NVARCHAR(150),
@@ -353,7 +353,7 @@ BEGIN
         Nombres,
         Apellidos,
         Cedula,
-        Cargo,
+        RolID,
         FechaNacimiento,
         FechaContratacion,
         Direccion,
@@ -367,7 +367,7 @@ BEGIN
         @Nombres,
         @Apellidos,
         @Cedula,
-        @Cargo,
+        @RolID,
         @FechaNacimiento,
         @FechaContratacion,
         @Direccion,
@@ -414,7 +414,7 @@ END;
 
 
 -- ELIMINAR EMPLEADO Y SUS DETALLES RELACIONADOS
-ALTER PROCEDURE EliminarEmpleado
+Create PROCEDURE EliminarEmpleado
     @EmpleadoID INT
 AS
 BEGIN
@@ -571,18 +571,18 @@ CREATE PROCEDURE AgregarCliente
     @NombreEmpresa VARCHAR(100),
     @NombreContacto VARCHAR(100),
     @CargoContacto VARCHAR(50),
-    @Direccion VARCHAR(150),
+    @Dirección VARCHAR(150),
     @Ciudad VARCHAR(100),
     @Pais VARCHAR(50),
-    @Telefono NVARCHAR(20)
+    @Teléfono NVARCHAR(20)
 AS
 BEGIN
     BEGIN TRY
         BEGIN TRANSACTION;
 
         -- Insertar el cliente en la tabla Clientes
-        INSERT INTO Clientes (ClienteID, NombreEmpresa, NombreContacto, CargoContacto, Direccion, Ciudad, Pais, Telefono)
-        VALUES (@ClienteID, @NombreEmpresa, @NombreContacto, @CargoContacto, @Direccion, @Ciudad, @Pais, @Telefono);
+        INSERT INTO Clientes (ClienteID, NombreEmpresa, NombreContacto, CargoContacto, Dirección, Ciudad, País, Teléfono)
+        VALUES (@ClienteID, @NombreEmpresa, @NombreContacto, @CargoContacto, @Dirección, @Ciudad, @Pais, @Teléfono);
 
         COMMIT TRANSACTION;
         PRINT 'El cliente fue agregado correctamente.';
@@ -617,10 +617,10 @@ BEGIN
             NombreEmpresa = @NombreEmpresa,
             NombreContacto = @NombreContacto,
             CargoContacto = @CargoContacto,
-            Direccion = @Direccion,
+            Dirección = @Direccion,
             Ciudad = @Ciudad,
-            Pais = @Pais,
-            Telefono = @Telefono
+            País = @Pais,
+            Teléfono = @Telefono
         WHERE ClienteID = @ClienteID;
 
         COMMIT TRANSACTION;
@@ -689,7 +689,7 @@ BEGIN
         BEGIN TRANSACTION;
 
         -- Insertar el proveedor en la tabla Proveedores
-        INSERT INTO Proveedores (NombreEmpresa, NombreContacto, CargoContacto, Direccion, Ciudad, Pais, Telefono, Correo)
+        INSERT INTO Proveedores (NombreEmpresa, NombreContacto, CargoContacto, Direccion, Ciudad, País, Teléfono, Correo)
         VALUES (@NombreEmpresa, @NombreContacto, @CargoContacto, @Direccion, @Ciudad, @Pais, @Telefono, @Correo);
 
         COMMIT TRANSACTION;
@@ -727,8 +727,8 @@ BEGIN
             CargoContacto = @CargoContacto,
             Direccion = @Direccion,
             Ciudad = @Ciudad,
-            Pais = @Pais,
-            Telefono = @Telefono,
+            País = @Pais,
+            Teléfono = @Telefono,
             Correo = @Correo
         WHERE ProveedorID = @ProveedorID;
 

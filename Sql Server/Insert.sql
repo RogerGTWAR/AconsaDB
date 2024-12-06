@@ -175,7 +175,7 @@ VALUES
 ('Andrés Felipe', 'Jiménez Vargas', '2810409770017R', 3, '1987-10-28', '2020-01-09', 'Residencial El Dorado, Manzana C, Casa 8', 'Nicaragua', '8142-5567', 'andres.jimenez@empresa.com', null),
 ('Jorge Manuel', 'López García', '4011711740021J', 3, '1985-11-17', '2016-02-17', 'Villa Fontana, Calle del Club, Casa 23', 'Nicaragua', '8111-7878', 'jorge.lopez@empresa.com', 6),
 ('Jimmy Alejandro', 'Arevalo Gutiérrez', '0012403770060F', 3, '1990-12-04', '2021-04-05', 'Urbanización Las Mercedes, Casa 5A', 'Nicaragua', '8333-9488', 'jimmy.arevalo@empresa.com', 9),
-('Andrea', 'Ramirez', '123-456-789', 7, '1980-01-01', '2024-01-01', 'Av. Principal 123', 'Nicaragua', '12345678', 'andrea.ramirez@empresa.com', null),
+('Andrea', 'Ramirez', '123-456-789', 9, '1980-01-01', '2024-01-01', 'Av. Principal 123', 'Nicaragua', '12345678', 'andrea.ramirez@empresa.com', null),
 ('Roger', 'Perez', '234-567-890', 8, '1990-05-15', '2024-05-01', 'Calle Secundaria 456', 'Nicaragua', '87654321', 'roger.perez@empresa.com', null),
 ('Ulises', 'Tucker', '345-678-901', 8, '1995-08-20', '2024-06-15', 'Barrio Tercero 789', 'Nicaragua', '11223344', 'ulises.tucker@empresa.com',null);
 

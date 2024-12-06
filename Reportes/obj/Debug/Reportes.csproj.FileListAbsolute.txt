@@ -148,4 +148,4 @@ C:\Users\Wsofneell\Desktop\Final\AconsaDB\Reportes\obj\Debug\Reportes.Formulario
 C:\Users\Wsofneell\Desktop\Final\AconsaDB\Reportes\obj\Debug\Reportes.Formularios.MaquinariaForm.resources
 C:\Users\Wsofneell\Desktop\Final\AconsaDB\Reportes\obj\Debug\Reportes.Formularios.AvaluoDetalleForm.resources
 C:\Users\Wsofneell\Desktop\Final\AconsaDB\Reportes\obj\Debug\Reportes.Formularios.EmpleadosForm.resources
-C:\Users\Wsofneell\Desktop\Final\AconsaDB\Reportes\obj\Debug\Reportes.RegisterForm.resources
+C:\Users\Wsofneell\Desktop\Final\AconsaDB\Reportes\obj\Debug\Reportes.LoginForm.resources

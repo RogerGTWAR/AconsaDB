@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.vistasGrupo2DS = new Reportes.VistasGrupo2DS();
             this.reporteEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vistasGrupo2DS = new Reportes.VistasGrupo2DS();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reporteEmpleadosTableAdapter = new Reportes.VistasGrupo2DSTableAdapters.ReporteEmpleadosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteEmpleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reporteEmpleadosBindingSource
+            // 
+            this.reporteEmpleadosBindingSource.DataMember = "ReporteEmpleados";
+            this.reporteEmpleadosBindingSource.DataSource = this.vistasGrupo2DS;
+            // 
+            // vistasGrupo2DS
+            // 
+            this.vistasGrupo2DS.DataSetName = "VistasGrupo2DS";
+            this.vistasGrupo2DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // vistasGrupo2DS
-            // 
-            this.vistasGrupo2DS.DataSetName = "VistasGrupo2DS";
-            this.vistasGrupo2DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reporteEmpleadosBindingSource
-            // 
-            this.reporteEmpleadosBindingSource.DataMember = "ReporteEmpleados";
-            this.reporteEmpleadosBindingSource.DataSource = this.vistasGrupo2DS;
-            // 
             // reporteEmpleadosTableAdapter
             // 
             this.reporteEmpleadosTableAdapter.ClearBeforeFill = true;
@@ -72,10 +72,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "EmpleadosForm";
-            this.Text = "EmpleadosForm";
+            this.Text = "Empleados";
             this.Load += new System.EventHandler(this.EmpleadosForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteEmpleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).EndInit();
             this.ResumeLayout(false);
 
         }

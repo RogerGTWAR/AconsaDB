@@ -29,37 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.vistasGrupo2DS = new Reportes.VistasGrupo2DS();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reporteMaquinariasUtilizadaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vistasGrupo2DS = new Reportes.VistasGrupo2DS();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reporteMaquinariasUtilizadaTableAdapter = new Reportes.VistasGrupo2DSTableAdapters.ReporteMaquinariasUtilizadaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteMaquinariasUtilizadaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // reporteMaquinariasUtilizadaBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "MaquinariaUtilizadaReportDS";
-            reportDataSource1.Value = this.reporteMaquinariasUtilizadaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reportes.Informes.MaquinariasUtilizadas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
+            this.reporteMaquinariasUtilizadaBindingSource.DataMember = "ReporteMaquinariasUtilizada";
+            this.reporteMaquinariasUtilizadaBindingSource.DataSource = this.vistasGrupo2DS;
             // 
             // vistasGrupo2DS
             // 
             this.vistasGrupo2DS.DataSetName = "VistasGrupo2DS";
             this.vistasGrupo2DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // reporteMaquinariasUtilizadaBindingSource
+            // reportViewer1
             // 
-            this.reporteMaquinariasUtilizadaBindingSource.DataMember = "ReporteMaquinariasUtilizada";
-            this.reporteMaquinariasUtilizadaBindingSource.DataSource = this.vistasGrupo2DS;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "MaquinariaUtilizadaReportDS";
+            reportDataSource2.Value = this.reporteMaquinariasUtilizadaBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reportes.Informes.MaquinariasUtilizadas.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // reporteMaquinariasUtilizadaTableAdapter
             // 
@@ -72,10 +72,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "MaquinariaForm";
-            this.Text = "MaquinariaForm";
+            this.Text = "Maquinarias";
             this.Load += new System.EventHandler(this.MaquinariaForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteMaquinariasUtilizadaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistasGrupo2DS)).EndInit();
             this.ResumeLayout(false);
 
         }
