@@ -79,5 +79,15 @@ namespace WinForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diseño_3D_Edificios_Industriales__ACONSA {
+            get {
+                object obj = ResourceManager.GetObject("Diseño 3D Edificios Industriales. ACONSA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

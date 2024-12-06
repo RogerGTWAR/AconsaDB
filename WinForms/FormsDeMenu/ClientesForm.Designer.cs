@@ -96,7 +96,7 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvClientes.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvClientes.Location = new Point(48, 301);
+            dgvClientes.Location = new Point(-23, 289);
             dgvClientes.Margin = new Padding(3, 2, 3, 2);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
@@ -112,7 +112,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.Size = new Size(845, 613);
+            dgvClientes.Size = new Size(1002, 613);
             dgvClientes.TabIndex = 0;
             dgvClientes.CellContentClick += dgvClientes_CellContentClick;
             // 
@@ -143,10 +143,10 @@
             panelSubContenedor.Controls.Add(btnEliminar);
             panelSubContenedor.Controls.Add(btnAgregar);
             panelSubContenedor.Controls.Add(dgvClientes);
-            panelSubContenedor.Location = new Point(117, 9);
+            panelSubContenedor.Location = new Point(106, 9);
             panelSubContenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubContenedor.Name = "panelSubContenedor";
-            panelSubContenedor.Size = new Size(937, 613);
+            panelSubContenedor.Size = new Size(1002, 613);
             panelSubContenedor.TabIndex = 1;
             // 
             // label9
@@ -394,6 +394,7 @@
             cargoContactoDataGridViewTextBoxColumn.HeaderText = "Cargo del Contacto";
             cargoContactoDataGridViewTextBoxColumn.Name = "cargoContactoDataGridViewTextBoxColumn";
             cargoContactoDataGridViewTextBoxColumn.ReadOnly = true;
+            cargoContactoDataGridViewTextBoxColumn.Width = 150;
             // 
             // direcciónDataGridViewTextBoxColumn
             // 
@@ -401,6 +402,7 @@
             direcciónDataGridViewTextBoxColumn.HeaderText = "Dirección";
             direcciónDataGridViewTextBoxColumn.Name = "direcciónDataGridViewTextBoxColumn";
             direcciónDataGridViewTextBoxColumn.ReadOnly = true;
+            direcciónDataGridViewTextBoxColumn.Width = 200;
             // 
             // ciudadDataGridViewTextBoxColumn
             // 

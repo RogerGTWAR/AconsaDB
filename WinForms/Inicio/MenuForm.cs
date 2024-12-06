@@ -25,7 +25,8 @@ namespace WinForms
             //this.ControlBox = false;
             //this.DoubleBuffered = true;
             ////Para solucionarlo
-            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; 
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.WindowState = FormWindowState.Maximized;
             _httpClient = new HttpClient
             {
                 BaseAddress = new Uri("https://localhost:7067/api/")
