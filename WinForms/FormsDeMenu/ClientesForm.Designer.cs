@@ -35,6 +35,14 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             dgvClientes = new DataGridView();
+            clienteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombreContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cargoContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            direcciónDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ciudadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            paísDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            teléfonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             clienteBindingSource = new BindingSource(components);
             panelSubContenedor = new Panel();
             label9 = new Label();
@@ -57,14 +65,6 @@
             btnModificar = new Button();
             btnEliminar = new Button();
             btnAgregar = new Button();
-            clienteIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreEmpresaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombreContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cargoContactoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            direcciónDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ciudadDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            paísDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            teléfonoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
             panelSubContenedor.SuspendLayout();
@@ -116,12 +116,72 @@
             dgvClientes.TabIndex = 0;
             dgvClientes.CellContentClick += dgvClientes_CellContentClick;
             // 
+            // clienteIDDataGridViewTextBoxColumn
+            // 
+            clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
+            clienteIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
+            clienteIDDataGridViewTextBoxColumn.ReadOnly = true;
+            clienteIDDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // nombreEmpresaDataGridViewTextBoxColumn
+            // 
+            nombreEmpresaDataGridViewTextBoxColumn.DataPropertyName = "NombreEmpresa";
+            nombreEmpresaDataGridViewTextBoxColumn.HeaderText = "Nombre de la Empresa";
+            nombreEmpresaDataGridViewTextBoxColumn.Name = "nombreEmpresaDataGridViewTextBoxColumn";
+            nombreEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreContactoDataGridViewTextBoxColumn
+            // 
+            nombreContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreContacto";
+            nombreContactoDataGridViewTextBoxColumn.HeaderText = "Nombre de Contacto";
+            nombreContactoDataGridViewTextBoxColumn.Name = "nombreContactoDataGridViewTextBoxColumn";
+            nombreContactoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cargoContactoDataGridViewTextBoxColumn
+            // 
+            cargoContactoDataGridViewTextBoxColumn.DataPropertyName = "CargoContacto";
+            cargoContactoDataGridViewTextBoxColumn.HeaderText = "Cargo del Contacto";
+            cargoContactoDataGridViewTextBoxColumn.Name = "cargoContactoDataGridViewTextBoxColumn";
+            cargoContactoDataGridViewTextBoxColumn.ReadOnly = true;
+            cargoContactoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // direcciónDataGridViewTextBoxColumn
+            // 
+            direcciónDataGridViewTextBoxColumn.DataPropertyName = "Dirección";
+            direcciónDataGridViewTextBoxColumn.HeaderText = "Dirección";
+            direcciónDataGridViewTextBoxColumn.Name = "direcciónDataGridViewTextBoxColumn";
+            direcciónDataGridViewTextBoxColumn.ReadOnly = true;
+            direcciónDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // ciudadDataGridViewTextBoxColumn
+            // 
+            ciudadDataGridViewTextBoxColumn.DataPropertyName = "Ciudad";
+            ciudadDataGridViewTextBoxColumn.HeaderText = "Ciudad";
+            ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
+            ciudadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paísDataGridViewTextBoxColumn
+            // 
+            paísDataGridViewTextBoxColumn.DataPropertyName = "País";
+            paísDataGridViewTextBoxColumn.HeaderText = "País";
+            paísDataGridViewTextBoxColumn.Name = "paísDataGridViewTextBoxColumn";
+            paísDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // teléfonoDataGridViewTextBoxColumn
+            // 
+            teléfonoDataGridViewTextBoxColumn.DataPropertyName = "Teléfono";
+            teléfonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            teléfonoDataGridViewTextBoxColumn.Name = "teléfonoDataGridViewTextBoxColumn";
+            teléfonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // clienteBindingSource
             // 
             clienteBindingSource.DataSource = typeof(SharedModels.Cliente);
             // 
             // panelSubContenedor
             // 
+            panelSubContenedor.BackColor = Color.Beige;
             panelSubContenedor.Controls.Add(label9);
             panelSubContenedor.Controls.Add(label8);
             panelSubContenedor.Controls.Add(txtCiudad);
@@ -153,7 +213,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
+            label9.ForeColor = Color.Black;
             label9.Location = new Point(410, 5);
             label9.Name = "label9";
             label9.Size = new Size(104, 32);
@@ -164,7 +224,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
+            label8.ForeColor = Color.Black;
             label8.Location = new Point(457, 161);
             label8.Name = "label8";
             label8.Size = new Size(62, 21);
@@ -184,8 +244,8 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(10, 67);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(59, 62);
             label7.Name = "label7";
             label7.Size = new Size(28, 21);
             label7.TabIndex = 17;
@@ -204,7 +264,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(457, 114);
             label6.Name = "label6";
             label6.Size = new Size(71, 21);
@@ -215,7 +275,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(457, 62);
             label5.Name = "label5";
             label5.Size = new Size(40, 21);
@@ -226,7 +286,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(457, 211);
             label4.Name = "label4";
             label4.Size = new Size(78, 21);
@@ -237,7 +297,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(10, 211);
             label3.Name = "label3";
             label3.Size = new Size(146, 21);
@@ -248,7 +308,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(9, 161);
             label2.Name = "label2";
             label2.Size = new Size(158, 21);
@@ -259,7 +319,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(9, 114);
             label1.Name = "label1";
             label1.Size = new Size(172, 21);
@@ -326,8 +386,8 @@
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(806, 134);
+            btnModificar.ForeColor = Color.Black;
+            btnModificar.Location = new Point(806, 198);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(120, 46);
@@ -341,8 +401,8 @@
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(806, 196);
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.Location = new Point(806, 141);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(120, 46);
@@ -356,7 +416,7 @@
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
+            btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(806, 76);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
@@ -366,70 +426,11 @@
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
-            // clienteIDDataGridViewTextBoxColumn
-            // 
-            clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
-            clienteIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
-            clienteIDDataGridViewTextBoxColumn.ReadOnly = true;
-            clienteIDDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // nombreEmpresaDataGridViewTextBoxColumn
-            // 
-            nombreEmpresaDataGridViewTextBoxColumn.DataPropertyName = "NombreEmpresa";
-            nombreEmpresaDataGridViewTextBoxColumn.HeaderText = "Nombre de la Empresa";
-            nombreEmpresaDataGridViewTextBoxColumn.Name = "nombreEmpresaDataGridViewTextBoxColumn";
-            nombreEmpresaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreContactoDataGridViewTextBoxColumn
-            // 
-            nombreContactoDataGridViewTextBoxColumn.DataPropertyName = "NombreContacto";
-            nombreContactoDataGridViewTextBoxColumn.HeaderText = "Nombre de Contacto";
-            nombreContactoDataGridViewTextBoxColumn.Name = "nombreContactoDataGridViewTextBoxColumn";
-            nombreContactoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cargoContactoDataGridViewTextBoxColumn
-            // 
-            cargoContactoDataGridViewTextBoxColumn.DataPropertyName = "CargoContacto";
-            cargoContactoDataGridViewTextBoxColumn.HeaderText = "Cargo del Contacto";
-            cargoContactoDataGridViewTextBoxColumn.Name = "cargoContactoDataGridViewTextBoxColumn";
-            cargoContactoDataGridViewTextBoxColumn.ReadOnly = true;
-            cargoContactoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // direcciónDataGridViewTextBoxColumn
-            // 
-            direcciónDataGridViewTextBoxColumn.DataPropertyName = "Dirección";
-            direcciónDataGridViewTextBoxColumn.HeaderText = "Dirección";
-            direcciónDataGridViewTextBoxColumn.Name = "direcciónDataGridViewTextBoxColumn";
-            direcciónDataGridViewTextBoxColumn.ReadOnly = true;
-            direcciónDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // ciudadDataGridViewTextBoxColumn
-            // 
-            ciudadDataGridViewTextBoxColumn.DataPropertyName = "Ciudad";
-            ciudadDataGridViewTextBoxColumn.HeaderText = "Ciudad";
-            ciudadDataGridViewTextBoxColumn.Name = "ciudadDataGridViewTextBoxColumn";
-            ciudadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paísDataGridViewTextBoxColumn
-            // 
-            paísDataGridViewTextBoxColumn.DataPropertyName = "País";
-            paísDataGridViewTextBoxColumn.HeaderText = "País";
-            paísDataGridViewTextBoxColumn.Name = "paísDataGridViewTextBoxColumn";
-            paísDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // teléfonoDataGridViewTextBoxColumn
-            // 
-            teléfonoDataGridViewTextBoxColumn.DataPropertyName = "Teléfono";
-            teléfonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
-            teléfonoDataGridViewTextBoxColumn.Name = "teléfonoDataGridViewTextBoxColumn";
-            teléfonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // ClientesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
+            BackColor = Color.Beige;
             ClientSize = new Size(1131, 633);
             Controls.Add(panelSubContenedor);
             Margin = new Padding(3, 2, 3, 2);

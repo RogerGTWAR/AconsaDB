@@ -467,7 +467,7 @@
         </TablixRowHierarchy>
         <DataSetName>EmpleadosReport</DataSetName>
         <Top>0.17639cm</Top>
-        <Left>0.23527cm</Left>
+        <Left>0.59277cm</Left>
         <Height>1.2cm</Height>
         <Width>15.66146cm</Width>
         <Style>
@@ -480,7 +480,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.33842in</Width>
+  <Width>6.75509in</Width>
   <Page>
     <PageHeader>
       <Height>3.91584cm</Height>
@@ -491,8 +491,7 @@
           <Source>Embedded</Source>
           <Value>Aconsa235x300</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.22049cm</Top>
-          <Left>12.09208cm</Left>
+          <Left>12.12798cm</Left>
           <Height>3.51896cm</Height>
           <Width>2.93625cm</Width>
           <Style>
@@ -518,8 +517,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox14</rd:DefaultName>
-          <Top>1.52136cm</Top>
-          <Left>5.23527cm</Left>
+          <Top>1.30087cm</Top>
+          <Left>5.27117cm</Left>
           <Height>1.36137cm</Height>
           <Width>6.31cm</Width>
           <ZIndex>1</ZIndex>
@@ -541,7 +540,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.98979cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -559,10 +558,79 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>1.68011cm</Top>
-          <Left>5.83027cm</Left>
+          <Top>2.04583cm</Top>
+          <Left>7.282cm</Left>
           <Height>0.6cm</Height>
           <Width>5.06646cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Autorizado por: Ing. Roger Perez</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.11552cm</Top>
+          <Left>11.69459cm</Left>
+          <Height>0.57354cm</Height>
+          <Width>5.14583cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Revisado por: Ing. Jose Ulises </Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>                     Ing. Andrea Ramirez</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.63927cm</Top>
+          <Left>0.59277cm</Left>
+          <Height>1.04979cm</Height>
+          <Width>6.44229cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

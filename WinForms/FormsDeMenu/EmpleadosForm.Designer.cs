@@ -221,7 +221,7 @@ namespace WinForms
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
+            btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(992, 53);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
@@ -236,7 +236,7 @@ namespace WinForms
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
+            btnEliminar.ForeColor = Color.Black;
             btnEliminar.Location = new Point(992, 107);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
@@ -251,7 +251,7 @@ namespace WinForms
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
+            btnModificar.ForeColor = Color.Black;
             btnModificar.Location = new Point(987, 168);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
@@ -347,6 +347,7 @@ namespace WinForms
             // 
             // panelSubcontenedor
             // 
+            panelSubcontenedor.BackColor = Color.Beige;
             panelSubcontenedor.Controls.Add(cbRolID);
             panelSubcontenedor.Controls.Add(label14);
             panelSubcontenedor.Controls.Add(label11);
@@ -392,66 +393,66 @@ namespace WinForms
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9.75F);
-            label14.ForeColor = Color.White;
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Black;
             label14.Location = new Point(611, 195);
             label14.Name = "label14";
-            label14.Size = new Size(139, 17);
+            label14.Size = new Size(164, 21);
             label14.TabIndex = 29;
             label14.Text = "Fecha de contratación:";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9.75F);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(611, 54);
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(607, 68);
             label11.Name = "label11";
-            label11.Size = new Size(65, 17);
+            label11.Size = new Size(78, 21);
             label11.TabIndex = 26;
             label11.Text = "Dirección:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9.75F);
-            label10.ForeColor = Color.White;
+            label10.Font = new Font("Segoe UI", 12F);
+            label10.ForeColor = Color.Black;
             label10.Location = new Point(376, 140);
             label10.Name = "label10";
-            label10.Size = new Size(52, 17);
+            label10.Size = new Size(61, 21);
             label10.TabIndex = 25;
             label10.Text = "Correo:";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9.75F);
-            label9.ForeColor = Color.White;
+            label9.Font = new Font("Segoe UI", 12F);
+            label9.ForeColor = Color.Black;
             label9.Location = new Point(376, 97);
             label9.Name = "label9";
-            label9.Size = new Size(61, 17);
+            label9.Size = new Size(71, 21);
             label9.TabIndex = 24;
             label9.Text = "Telefono:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9.75F);
-            label8.ForeColor = Color.White;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
             label8.Location = new Point(641, 136);
             label8.Name = "label8";
-            label8.Size = new Size(30, 17);
+            label8.Size = new Size(36, 21);
             label8.TabIndex = 23;
             label8.Text = "Rol:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F);
-            label7.ForeColor = Color.White;
+            label7.Font = new Font("Segoe UI", 12F);
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(376, 181);
             label7.Name = "label7";
-            label7.Size = new Size(64, 17);
+            label7.Size = new Size(75, 21);
             label7.TabIndex = 22;
             label7.Text = "Reportes:";
             label7.Click += label7_Click;
@@ -459,11 +460,11 @@ namespace WinForms
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9.75F);
-            label6.ForeColor = Color.White;
+            label6.Font = new Font("Segoe UI", 12F);
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(376, 53);
             label6.Name = "label6";
-            label6.Size = new Size(34, 17);
+            label6.Size = new Size(40, 21);
             label6.TabIndex = 21;
             label6.Text = "Pais:";
             // 
@@ -471,7 +472,7 @@ namespace WinForms
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(515, 8);
             label5.Name = "label5";
             label5.Size = new Size(119, 30);
@@ -481,44 +482,44 @@ namespace WinForms
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F);
-            label4.ForeColor = Color.White;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(41, 97);
             label4.Name = "label4";
-            label4.Size = new Size(65, 17);
+            label4.Size = new Size(77, 21);
             label4.TabIndex = 19;
             label4.Text = "Apellidos:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F);
-            label3.ForeColor = Color.White;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(23, 194);
             label3.Name = "label3";
-            label3.Size = new Size(133, 17);
+            label3.Size = new Size(158, 21);
             label3.TabIndex = 18;
             label3.Text = "Fecha de Nacimiento:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F);
-            label2.ForeColor = Color.White;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(41, 140);
             label2.Name = "label2";
-            label2.Size = new Size(51, 17);
+            label2.Size = new Size(61, 21);
             label2.TabIndex = 17;
             label2.Text = "Cedula:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F);
-            label1.ForeColor = Color.White;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(41, 48);
             label1.Name = "label1";
-            label1.Size = new Size(66, 17);
+            label1.Size = new Size(78, 21);
             label1.TabIndex = 16;
             label1.Text = "Nombres:";
             label1.Click += label1_Click;
@@ -527,7 +528,7 @@ namespace WinForms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
+            BackColor = Color.Beige;
             ClientSize = new Size(1131, 633);
             Controls.Add(panelSubcontenedor);
             Margin = new Padding(3, 2, 3, 2);

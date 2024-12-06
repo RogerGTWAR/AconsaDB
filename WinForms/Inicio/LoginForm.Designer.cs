@@ -99,20 +99,21 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.FromArgb(34, 33, 74);
             panel1.Controls.Add(txtxUserName);
             panel1.Controls.Add(txtPassword);
             panel1.Controls.Add(btnCargar);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(18, 140);
+            panel1.Location = new Point(12, 140);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(469, 221);
+            panel1.Size = new Size(469, 198);
             panel1.TabIndex = 7;
             // 
             // panelTitleBar
             // 
-            panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
+            panelTitleBar.BackColor = Color.FromArgb(6, 57, 112);
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(0, 0);
             panelTitleBar.Margin = new Padding(3, 2, 3, 2);
@@ -124,7 +125,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = WinForms.Properties.Resources.Aconsa;
-            pictureBox1.Location = new Point(169, 42);
+            pictureBox1.Location = new Point(172, 42);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(163, 94);
@@ -134,12 +135,12 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(30, 38, 70);
+            panel2.BackColor = Color.FromArgb(6, 57, 112);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 377);
+            panel2.Location = new Point(0, 342);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(499, 11);
+            panel2.Size = new Size(499, 46);
             panel2.TabIndex = 9;
             // 
             // LoginForm

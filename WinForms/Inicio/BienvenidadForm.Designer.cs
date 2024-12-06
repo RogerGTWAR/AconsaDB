@@ -46,21 +46,23 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(26, 25, 62);
+            panel1.BackColor = Color.FromArgb(6, 57, 112);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(982, 71);
+            panel1.Size = new Size(859, 53);
             panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Aconsa;
-            pictureBox2.Location = new Point(387, 3);
+            pictureBox2.Location = new Point(339, 2);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(120, 65);
+            pictureBox2.Size = new Size(105, 49);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
@@ -70,18 +72,19 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(10, 7);
             label1.Name = "label1";
-            label1.Size = new Size(369, 41);
+            label1.Size = new Size(297, 32);
             label1.TabIndex = 2;
             label1.Text = "Sistema de Administracion";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 60);
+            pictureBox1.Location = new Point(3, 45);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(489, 395);
+            pictureBox1.Size = new Size(428, 296);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -91,9 +94,9 @@
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblUserName.ForeColor = Color.White;
-            lblUserName.Location = new Point(595, 128);
+            lblUserName.Location = new Point(521, 96);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(157, 41);
+            lblUserName.Size = new Size(125, 32);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "UserName";
             // 
@@ -102,9 +105,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(0, 100, 182);
-            label2.Location = new Point(498, 74);
+            label2.Location = new Point(436, 56);
             label2.Name = "label2";
-            label2.Size = new Size(220, 54);
+            label2.Size = new Size(177, 45);
             label2.TabIndex = 4;
             label2.Text = "Bienvenido";
             // 
@@ -121,22 +124,24 @@
             // progressBar1
             // 
             progressBar1.ForeColor = Color.FromArgb(0, 100, 182);
-            progressBar1.Location = new Point(509, 403);
+            progressBar1.Location = new Point(445, 302);
+            progressBar1.Margin = new Padding(3, 2, 3, 2);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(461, 29);
+            progressBar1.Size = new Size(403, 22);
             progressBar1.TabIndex = 5;
             // 
             // BienvenidadForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(982, 453);
+            ClientSize = new Size(859, 340);
             Controls.Add(progressBar1);
             Controls.Add(label2);
             Controls.Add(lblUserName);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "BienvenidadForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BienvenidadFrom";

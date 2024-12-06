@@ -576,7 +576,7 @@
           <Value>Aconsa235x300</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.19403cm</Top>
-          <Left>19.43334cm</Left>
+          <Left>22.07917cm</Left>
           <Height>3.51896cm</Height>
           <Width>2.93625cm</Width>
           <Style>
@@ -605,7 +605,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox14</rd:DefaultName>
           <Top>1.905cm</Top>
-          <Left>8.94292cm</Left>
+          <Left>11.58875cm</Left>
           <Height>1.36137cm</Height>
           <Width>8.87646cm</Width>
           <ZIndex>1</ZIndex>
@@ -627,7 +627,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>3.00772cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -645,10 +645,79 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>1.53459cm</Top>
-          <Left>10.71751cm</Left>
+          <Top>1.82563cm</Top>
+          <Left>12.22564cm</Left>
           <Height>0.6cm</Height>
           <Width>5.06646cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Revisado por: Ing. Jose Ulises </Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>                     Ing. Andrea Ramirez</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.47171cm</Top>
+          <Left>3.69125cm</Left>
+          <Height>1.04979cm</Height>
+          <Width>6.44229cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Autorizado por: Ing. Roger Perez</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.94796cm</Top>
+          <Left>20.09542cm</Left>
+          <Height>0.57354cm</Height>
+          <Width>6.73333cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

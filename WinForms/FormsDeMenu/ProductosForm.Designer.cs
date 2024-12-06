@@ -71,7 +71,7 @@
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
+            btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(935, 60);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(138, 64);
@@ -92,8 +92,8 @@
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(935, 153);
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.Location = new Point(935, 123);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(138, 64);
             btnEliminar.TabIndex = 3;
@@ -106,10 +106,10 @@
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(935, 225);
+            btnModificar.ForeColor = Color.Black;
+            btnModificar.Location = new Point(933, 193);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(153, 64);
+            btnModificar.Size = new Size(138, 64);
             btnModificar.TabIndex = 4;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -282,11 +282,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F);
-            label1.ForeColor = Color.White;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(7, 63);
             label1.Name = "label1";
-            label1.Size = new Size(144, 19);
+            label1.Size = new Size(163, 21);
             label1.TabIndex = 12;
             label1.Text = "Nombre del Producto:";
             label1.Click += label1_Click;
@@ -294,33 +294,33 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.2F);
-            label2.ForeColor = Color.White;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(522, 71);
             label2.Name = "label2";
-            label2.Size = new Size(82, 19);
+            label2.Size = new Size(94, 21);
             label2.TabIndex = 13;
             label2.Text = "Descripción:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F);
-            label3.ForeColor = Color.White;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(7, 242);
             label3.Name = "label3";
-            label3.Size = new Size(125, 19);
+            label3.Size = new Size(140, 21);
             label3.TabIndex = 14;
             label3.Text = "Unidad de Medida:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.2F);
-            label4.ForeColor = Color.White;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(522, 178);
             label4.Name = "label4";
-            label4.Size = new Size(123, 19);
+            label4.Size = new Size(137, 21);
             label4.TabIndex = 15;
             label4.Text = "Cantidad en Stock:";
             label4.Click += label4_Click;
@@ -328,44 +328,44 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.2F);
-            label5.ForeColor = Color.White;
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(522, 251);
             label5.Name = "label5";
-            label5.Size = new Size(99, 19);
+            label5.Size = new Size(113, 21);
             label5.TabIndex = 16;
             label5.Text = "Precio Unitario";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F);
-            label6.ForeColor = Color.White;
+            label6.Font = new Font("Segoe UI", 12F);
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(7, 123);
             label6.Name = "label6";
-            label6.Size = new Size(86, 19);
+            label6.Size = new Size(97, 21);
             label6.TabIndex = 17;
             label6.Text = "ProveedorID";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10.2F);
-            label7.ForeColor = Color.White;
+            label7.Font = new Font("Segoe UI", 12F);
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(10, 178);
             label7.Name = "label7";
-            label7.Size = new Size(82, 19);
+            label7.Size = new Size(92, 21);
             label7.TabIndex = 18;
             label7.Text = "CategoriaID";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
+            label8.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
             label8.Location = new Point(497, 9);
             label8.Name = "label8";
-            label8.Size = new Size(113, 30);
+            label8.Size = new Size(131, 32);
             label8.TabIndex = 19;
             label8.Text = "Productos";
             label8.TextAlign = ContentAlignment.MiddleRight;
@@ -375,7 +375,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
+            BackColor = Color.Beige;
             ClientSize = new Size(1083, 447);
             Controls.Add(label8);
             Controls.Add(label7);

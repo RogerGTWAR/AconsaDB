@@ -36,7 +36,7 @@ namespace Reportes
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(102, 179, 102);
+                currentBtn.BackColor = Color.FromArgb(6, 57, 112);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -72,7 +72,7 @@ namespace Reportes
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(102, 179, 102);
+                currentBtn.BackColor = Color.FromArgb(6, 57, 112);
                 currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.White;
@@ -175,6 +175,11 @@ namespace Reportes
         {
             ActivateButton(sender, RGBColors.color8);
             OpenChilForm(new EmpleadosForm());
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         //private void CustomizeDesing()

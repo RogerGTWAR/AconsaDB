@@ -467,7 +467,7 @@
         </TablixRowHierarchy>
         <DataSetName>EmpleadosProyectosReport</DataSetName>
         <Top>0.36724cm</Top>
-        <Left>0.52854cm</Left>
+        <Left>0.67375cm</Left>
         <Height>1.2cm</Height>
         <Width>21.02146cm</Width>
         <Style>
@@ -477,7 +477,7 @@
         </Style>
       </Tablix>
       <Line Name="Line1">
-        <Left>0.52854cm</Left>
+        <Left>2.11604cm</Left>
         <Height>0cm</Height>
         <Width>20.75563cm</Width>
         <ZIndex>1</ZIndex>
@@ -491,7 +491,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>8.48425in</Width>
+  <Width>9.00459in</Width>
   <Page>
     <PageHeader>
       <Height>3.75709cm</Height>
@@ -502,8 +502,8 @@
           <Source>Embedded</Source>
           <Value>Aconsa235x300</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.09702cm</Top>
-          <Left>16.13833cm</Left>
+          <Top>0.06174cm</Top>
+          <Left>17.36958cm</Left>
           <Height>3.51896cm</Height>
           <Width>2.93625cm</Width>
           <Style>
@@ -531,8 +531,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox14</rd:DefaultName>
-          <Top>1.8124cm</Top>
-          <Left>6.42875cm</Left>
+          <Top>1.77712cm</Top>
+          <Left>7.66cm</Left>
           <Height>1.36137cm</Height>
           <Width>8.61188cm</Width>
           <ZIndex>1</ZIndex>
@@ -554,7 +554,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>3.25438cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -572,10 +572,79 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>1.65365cm</Top>
-          <Left>8.12758cm</Left>
+          <Top>2.17813cm</Top>
+          <Left>7.94979cm</Left>
           <Height>0.6cm</Height>
           <Width>5.06646cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Revisado por: Ing. Jose Ulises </Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>                     Ing. Andrea Ramirez</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.74511cm</Top>
+          <Left>0.67375cm</Left>
+          <Height>1.04979cm</Height>
+          <Width>6.44229cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Autorizado por: Ing. Roger Perez</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.22136cm</Top>
+          <Left>14.41854cm</Left>
+          <Height>0.57354cm</Height>
+          <Width>6.73333cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

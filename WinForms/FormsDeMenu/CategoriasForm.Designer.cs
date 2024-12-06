@@ -75,8 +75,8 @@
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(710, 55);
+            btnAgregar.ForeColor = Color.Black;
+            btnAgregar.Location = new Point(744, 59);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(110, 50);
@@ -90,8 +90,8 @@
             btnModificar.FlatAppearance.BorderSize = 0;
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(710, 109);
+            btnModificar.ForeColor = Color.Black;
+            btnModificar.Location = new Point(744, 113);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(120, 50);
@@ -105,8 +105,8 @@
             btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(710, 163);
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.Location = new Point(744, 167);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(110, 50);
@@ -119,7 +119,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(318, 84);
             label1.Name = "label1";
             label1.Size = new Size(176, 21);
@@ -130,7 +130,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(350, 134);
             label2.Name = "label2";
             label2.Size = new Size(94, 21);
@@ -141,7 +141,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(503, 9);
             label3.Name = "label3";
             label3.Size = new Size(135, 32);
@@ -187,7 +187,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCategoria.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCategoria.Size = new Size(548, 193);
+            dgvCategoria.Size = new Size(548, 319);
             dgvCategoria.TabIndex = 9;
             dgvCategoria.CellContentClick += dgvCategoria_CellContentClick;
             // 
@@ -226,8 +226,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1146, 496);
+            BackColor = Color.Beige;
+            ClientSize = new Size(1146, 548);
             Controls.Add(dgvCategoria);
             Controls.Add(label3);
             Controls.Add(label2);

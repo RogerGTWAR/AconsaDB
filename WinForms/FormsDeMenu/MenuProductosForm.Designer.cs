@@ -40,6 +40,7 @@
             btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.FlatStyle = FlatStyle.Flat;
             btnProductos.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProductos.ForeColor = Color.Black;
             btnProductos.Location = new Point(391, 22);
             btnProductos.Margin = new Padding(5);
             btnProductos.Name = "btnProductos";
@@ -54,6 +55,7 @@
             btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.FlatStyle = FlatStyle.Flat;
             btnCategorias.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCategorias.ForeColor = Color.Black;
             btnCategorias.Location = new Point(643, 22);
             btnCategorias.Margin = new Padding(5);
             btnCategorias.Name = "btnCategorias";
@@ -65,6 +67,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Beige;
             panel1.Controls.Add(btnProductos);
             panel1.Controls.Add(btnCategorias);
             panel1.Dock = DockStyle.Top;
@@ -75,6 +78,7 @@
             // 
             // panelContenedor
             // 
+            panelContenedor.BackColor = Color.Beige;
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
             panelContenedor.ForeColor = Color.Black;

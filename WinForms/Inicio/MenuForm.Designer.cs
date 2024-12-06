@@ -57,6 +57,8 @@
             btnVehiculosDetalles = new FontAwesome.Sharp.IconButton();
             btnEmpleadosDetalles = new FontAwesome.Sharp.IconButton();
             btnAvaluosDetalles = new FontAwesome.Sharp.IconButton();
+            label2 = new Label();
+            label3 = new Label();
             panelTituloBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IconoFormulario).BeginInit();
             panelContenedor.SuspendLayout();
@@ -69,7 +71,8 @@
             // 
             // panelTituloBarra
             // 
-            panelTituloBarra.BackColor = Color.FromArgb(26, 25, 62);
+            panelTituloBarra.BackColor = Color.FromArgb(6, 57, 112);
+            panelTituloBarra.Controls.Add(label2);
             panelTituloBarra.Controls.Add(btnUsuario);
             panelTituloBarra.Controls.Add(lblFecha);
             panelTituloBarra.Controls.Add(lblHora);
@@ -108,7 +111,7 @@
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFecha.ForeColor = Color.White;
-            lblFecha.Location = new Point(335, 14);
+            lblFecha.Location = new Point(917, 10);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(78, 32);
             lblFecha.TabIndex = 3;
@@ -120,7 +123,7 @@
             lblHora.AutoSize = true;
             lblHora.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHora.ForeColor = Color.White;
-            lblHora.Location = new Point(200, 14);
+            lblHora.Location = new Point(193, 10);
             lblHora.Name = "lblHora";
             lblHora.Size = new Size(70, 32);
             lblHora.TabIndex = 2;
@@ -138,13 +141,13 @@
             // 
             // IconoFormulario
             // 
-            IconoFormulario.BackColor = Color.FromArgb(26, 25, 62);
+            IconoFormulario.BackColor = Color.FromArgb(6, 57, 112);
             IconoFormulario.ForeColor = Color.MediumPurple;
             IconoFormulario.IconChar = FontAwesome.Sharp.IconChar.House;
             IconoFormulario.IconColor = Color.MediumPurple;
             IconoFormulario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             IconoFormulario.IconSize = 22;
-            IconoFormulario.Location = new Point(5, 27);
+            IconoFormulario.Location = new Point(6, 20);
             IconoFormulario.Margin = new Padding(3, 2, 3, 2);
             IconoFormulario.Name = "IconoFormulario";
             IconoFormulario.Size = new Size(24, 22);
@@ -156,7 +159,7 @@
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsuario.ForeColor = Color.Black;
-            lblUsuario.Location = new Point(164, 16);
+            lblUsuario.Location = new Point(165, 15);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(102, 32);
             lblUsuario.TabIndex = 5;
@@ -165,6 +168,7 @@
             // panelContenedor
             // 
             panelContenedor.BackColor = Color.White;
+            panelContenedor.Controls.Add(label3);
             panelContenedor.Controls.Add(pictureBox1);
             panelContenedor.Controls.Add(label1);
             panelContenedor.Controls.Add(lblUsuario);
@@ -178,10 +182,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Diseño_3D_Edificios_Industriales__ACONSA;
-            pictureBox1.Location = new Point(6, 72);
+            pictureBox1.Location = new Point(6, 84);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1127, 599);
+            pictureBox1.Size = new Size(1127, 587);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -191,7 +195,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(5, 16);
+            label1.Location = new Point(6, 15);
             label1.Name = "label1";
             label1.Size = new Size(142, 32);
             label1.TabIndex = 6;
@@ -204,6 +208,7 @@
             // 
             // panelLogo
             // 
+            panelLogo.BackColor = Color.FromArgb(6, 57, 112);
             panelLogo.Controls.Add(btnHome);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
@@ -239,7 +244,7 @@
             btnEmpleados.Margin = new Padding(3, 2, 3, 2);
             btnEmpleados.Name = "btnEmpleados";
             btnEmpleados.Padding = new Padding(0, 8, 18, 0);
-            btnEmpleados.Size = new Size(192, 58);
+            btnEmpleados.Size = new Size(192, 57);
             btnEmpleados.TabIndex = 1;
             btnEmpleados.Text = "Empleados";
             btnEmpleados.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -257,7 +262,7 @@
             btnClientes.IconColor = Color.White;
             btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClientes.Location = new Point(0, 163);
+            btnClientes.Location = new Point(0, 162);
             btnClientes.Margin = new Padding(3, 2, 3, 2);
             btnClientes.Name = "btnClientes";
             btnClientes.Padding = new Padding(0, 8, 18, 0);
@@ -279,7 +284,7 @@
             btnProveedores.IconColor = Color.White;
             btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnProveedores.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProveedores.Location = new Point(0, 221);
+            btnProveedores.Location = new Point(0, 220);
             btnProveedores.Margin = new Padding(3, 2, 3, 2);
             btnProveedores.Name = "btnProveedores";
             btnProveedores.Padding = new Padding(0, 8, 18, 0);
@@ -301,7 +306,7 @@
             btnProductos.IconColor = Color.White;
             btnProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnProductos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProductos.Location = new Point(0, 279);
+            btnProductos.Location = new Point(0, 278);
             btnProductos.Margin = new Padding(3, 2, 3, 2);
             btnProductos.Name = "btnProductos";
             btnProductos.Padding = new Padding(0, 8, 18, 0);
@@ -323,7 +328,7 @@
             btnProyectos.IconColor = Color.White;
             btnProyectos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnProyectos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProyectos.Location = new Point(0, 337);
+            btnProyectos.Location = new Point(0, 336);
             btnProyectos.Margin = new Padding(3, 2, 3, 2);
             btnProyectos.Name = "btnProyectos";
             btnProyectos.Padding = new Padding(0, 8, 18, 0);
@@ -345,7 +350,7 @@
             btnAvaluos.IconColor = Color.White;
             btnAvaluos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAvaluos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAvaluos.Location = new Point(0, 395);
+            btnAvaluos.Location = new Point(0, 394);
             btnAvaluos.Margin = new Padding(3, 2, 3, 2);
             btnAvaluos.Name = "btnAvaluos";
             btnAvaluos.Padding = new Padding(0, 8, 18, 0);
@@ -367,7 +372,7 @@
             btnVehiculos.IconColor = Color.White;
             btnVehiculos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnVehiculos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVehiculos.Location = new Point(0, 453);
+            btnVehiculos.Location = new Point(0, 452);
             btnVehiculos.Margin = new Padding(3, 2, 3, 2);
             btnVehiculos.Name = "btnVehiculos";
             btnVehiculos.Padding = new Padding(0, 8, 18, 0);
@@ -389,7 +394,7 @@
             btnMaquinarias.IconColor = Color.White;
             btnMaquinarias.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMaquinarias.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMaquinarias.Location = new Point(0, 511);
+            btnMaquinarias.Location = new Point(0, 510);
             btnMaquinarias.Margin = new Padding(3, 2, 3, 2);
             btnMaquinarias.Name = "btnMaquinarias";
             btnMaquinarias.Padding = new Padding(0, 8, 18, 0);
@@ -402,7 +407,7 @@
             // 
             // btnReportes
             // 
-            btnReportes.BackColor = Color.FromArgb(31, 30, 68);
+            btnReportes.BackColor = Color.FromArgb(6, 57, 112);
             btnReportes.Dock = DockStyle.Top;
             btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.FlatStyle = FlatStyle.Flat;
@@ -412,7 +417,7 @@
             btnReportes.IconColor = Color.White;
             btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnReportes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReportes.Location = new Point(0, 569);
+            btnReportes.Location = new Point(0, 568);
             btnReportes.Margin = new Padding(3, 2, 3, 2);
             btnReportes.Name = "btnReportes";
             btnReportes.Padding = new Padding(0, 8, 18, 0);
@@ -425,7 +430,7 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(31, 30, 68);
+            panelMenu.BackColor = Color.FromArgb(6, 57, 112);
             panelMenu.Controls.Add(panelSubContenedor);
             panelMenu.Controls.Add(btnReportes);
             panelMenu.Controls.Add(btnMaquinarias);
@@ -452,7 +457,7 @@
             panelSubContenedor.Controls.Add(btnEmpleadosDetalles);
             panelSubContenedor.Controls.Add(btnAvaluosDetalles);
             panelSubContenedor.Dock = DockStyle.Top;
-            panelSubContenedor.Location = new Point(0, 627);
+            panelSubContenedor.Location = new Point(0, 626);
             panelSubContenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubContenedor.Name = "panelSubContenedor";
             panelSubContenedor.Size = new Size(192, 135);
@@ -542,6 +547,28 @@
             btnAvaluosDetalles.UseVisualStyleBackColor = true;
             btnAvaluosDetalles.Click += btnAvaluosDetalles_Click_1;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(392, 13);
+            label2.Name = "label2";
+            label2.Size = new Size(340, 32);
+            label2.TabIndex = 5;
+            label2.Text = "Asesoría y Construcción S.A.";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(418, 49);
+            label3.Name = "label3";
+            label3.Size = new Size(267, 30);
+            label3.TabIndex = 6;
+            label3.Text = "\"Construyendo Tus Ideas\"";
+            // 
             // MenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -597,5 +624,7 @@
         private FontAwesome.Sharp.IconButton btnVehiculosDetalles;
         private FontAwesome.Sharp.IconButton btnEmpleadosDetalles;
         private FontAwesome.Sharp.IconButton btnAvaluosDetalles;
+        private Label label2;
+        private Label label3;
     }
 }
