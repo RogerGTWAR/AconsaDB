@@ -79,7 +79,7 @@
             panelTituloBarra.Location = new Point(192, 0);
             panelTituloBarra.Margin = new Padding(3, 2, 3, 2);
             panelTituloBarra.Name = "panelTituloBarra";
-            panelTituloBarra.Size = new Size(1250, 56);
+            panelTituloBarra.Size = new Size(1063, 56);
             panelTituloBarra.TabIndex = 2;
             panelTituloBarra.MouseDown += panelTituloBarra_MouseDown;
             // 
@@ -94,10 +94,10 @@
             btnUsuario.IconColor = Color.White;
             btnUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuario.Location = new Point(1188, 11);
+            btnUsuario.Location = new Point(1001, 2);
             btnUsuario.Margin = new Padding(3, 2, 3, 2);
             btnUsuario.Name = "btnUsuario";
-            btnUsuario.Size = new Size(52, 34);
+            btnUsuario.Size = new Size(52, 43);
             btnUsuario.TabIndex = 4;
             btnUsuario.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUsuario.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsuario.ForeColor = Color.White;
+            lblUsuario.ForeColor = Color.Black;
             lblUsuario.Location = new Point(164, 16);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(102, 32);
@@ -164,7 +164,7 @@
             // 
             // panelContenedor
             // 
-            panelContenedor.BackColor = Color.FromArgb(34, 33, 74);
+            panelContenedor.BackColor = Color.White;
             panelContenedor.Controls.Add(pictureBox1);
             panelContenedor.Controls.Add(label1);
             panelContenedor.Controls.Add(lblUsuario);
@@ -172,17 +172,16 @@
             panelContenedor.Location = new Point(192, 56);
             panelContenedor.Margin = new Padding(3, 2, 3, 2);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(1250, 717);
+            panelContenedor.Size = new Size(1063, 709);
             panelContenedor.TabIndex = 3;
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.Aconsa;
-            pictureBox1.Location = new Point(509, 281);
+            pictureBox1.Image = Properties.Resources.Calculo_y_Diseño_Estructural__ACONSA;
+            pictureBox1.Location = new Point(178, 70);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(179, 128);
+            pictureBox1.Size = new Size(791, 530);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -191,7 +190,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(5, 16);
             label1.Name = "label1";
             label1.Size = new Size(142, 32);
@@ -442,7 +441,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(3, 2, 3, 2);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(192, 773);
+            panelMenu.Size = new Size(192, 765);
             panelMenu.TabIndex = 1;
             panelMenu.Paint += panelMenu_Paint;
             // 
@@ -547,7 +546,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1442, 773);
+            ClientSize = new Size(1255, 765);
             Controls.Add(panelContenedor);
             Controls.Add(panelTituloBarra);
             Controls.Add(panelMenu);

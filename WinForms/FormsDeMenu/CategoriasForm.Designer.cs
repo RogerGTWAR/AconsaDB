@@ -54,7 +54,7 @@
             // txtCategoria
             // 
             txtCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCategoria.Location = new Point(197, 105);
+            txtCategoria.Location = new Point(503, 86);
             txtCategoria.Margin = new Padding(3, 2, 3, 2);
             txtCategoria.Name = "txtCategoria";
             txtCategoria.Size = new Size(192, 23);
@@ -63,7 +63,7 @@
             // txtDescripcion
             // 
             txtDescripcion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescripcion.Location = new Point(197, 155);
+            txtDescripcion.Location = new Point(503, 136);
             txtDescripcion.Margin = new Padding(3, 2, 3, 2);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
@@ -76,7 +76,7 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(404, 74);
+            btnAgregar.Location = new Point(710, 55);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(110, 50);
@@ -91,7 +91,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(404, 128);
+            btnModificar.Location = new Point(710, 109);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(120, 50);
@@ -106,7 +106,7 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(404, 182);
+            btnEliminar.Location = new Point(710, 163);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(110, 50);
@@ -120,7 +120,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 103);
+            label1.Location = new Point(318, 84);
             label1.Name = "label1";
             label1.Size = new Size(176, 21);
             label1.TabIndex = 6;
@@ -131,7 +131,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(44, 153);
+            label2.Location = new Point(350, 134);
             label2.Name = "label2";
             label2.Size = new Size(94, 21);
             label2.TabIndex = 7;
@@ -142,7 +142,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(197, 28);
+            label3.Location = new Point(503, 9);
             label3.Name = "label3";
             label3.Size = new Size(135, 32);
             label3.TabIndex = 8;
@@ -171,7 +171,7 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvCategoria.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvCategoria.Location = new Point(0, 245);
+            dgvCategoria.Location = new Point(306, 226);
             dgvCategoria.Margin = new Padding(3, 2, 3, 2);
             dgvCategoria.Name = "dgvCategoria";
             dgvCategoria.ReadOnly = true;
@@ -227,7 +227,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(548, 438);
+            ClientSize = new Size(1146, 496);
             Controls.Add(dgvCategoria);
             Controls.Add(label3);
             Controls.Add(label2);

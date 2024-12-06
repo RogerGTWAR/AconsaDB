@@ -50,6 +50,12 @@
             fechaFinAsignacionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descripcionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             vehiculoDetalleBindingSource = new BindingSource(components);
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvVehiculoDetalles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vehiculoDetalleBindingSource).BeginInit();
             SuspendLayout();
@@ -57,7 +63,7 @@
             // cbVehiculoID
             // 
             cbVehiculoID.FormattingEnabled = true;
-            cbVehiculoID.Location = new Point(44, 45);
+            cbVehiculoID.Location = new Point(376, 52);
             cbVehiculoID.Name = "cbVehiculoID";
             cbVehiculoID.Size = new Size(155, 23);
             cbVehiculoID.TabIndex = 0;
@@ -65,7 +71,7 @@
             // cbEmpleadoID
             // 
             cbEmpleadoID.FormattingEnabled = true;
-            cbEmpleadoID.Location = new Point(44, 112);
+            cbEmpleadoID.Location = new Point(376, 117);
             cbEmpleadoID.Name = "cbEmpleadoID";
             cbEmpleadoID.Size = new Size(155, 23);
             cbEmpleadoID.TabIndex = 1;
@@ -74,7 +80,7 @@
             // 
             dtpFechaAsignacion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaAsignacion.Format = DateTimePickerFormat.Short;
-            dtpFechaAsignacion.Location = new Point(283, 40);
+            dtpFechaAsignacion.Location = new Point(724, 48);
             dtpFechaAsignacion.Name = "dtpFechaAsignacion";
             dtpFechaAsignacion.Size = new Size(108, 25);
             dtpFechaAsignacion.TabIndex = 2;
@@ -83,14 +89,14 @@
             // 
             dtpFechaFinAsignacion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaFinAsignacion.Format = DateTimePickerFormat.Short;
-            dtpFechaFinAsignacion.Location = new Point(283, 107);
+            dtpFechaFinAsignacion.Location = new Point(724, 114);
             dtpFechaFinAsignacion.Name = "dtpFechaFinAsignacion";
             dtpFechaFinAsignacion.Size = new Size(108, 25);
             dtpFechaFinAsignacion.TabIndex = 3;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(427, 76);
+            txtDescripcion.Location = new Point(376, 172);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(185, 79);
@@ -102,7 +108,7 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(689, 90);
+            btnEliminar.Location = new Point(855, 113);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 46);
@@ -117,7 +123,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(689, 156);
+            btnModificar.Location = new Point(855, 179);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(112, 46);
@@ -132,7 +138,7 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(689, 29);
+            btnAgregar.Location = new Point(855, 52);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(112, 46);
@@ -161,12 +167,12 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.ForeColor = Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvVehiculoDetalles.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvVehiculoDetalles.Location = new Point(44, 207);
+            dgvVehiculoDetalles.Location = new Point(301, 273);
             dgvVehiculoDetalles.Name = "dgvVehiculoDetalles";
             dgvVehiculoDetalles.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -180,7 +186,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvVehiculoDetalles.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvVehiculoDetalles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVehiculoDetalles.Size = new Size(652, 150);
+            dgvVehiculoDetalles.Size = new Size(652, 242);
             dgvVehiculoDetalles.TabIndex = 28;
             dgvVehiculoDetalles.CellContentClick += dgvVehiculoDetalles_CellContentClick;
             // 
@@ -231,12 +237,84 @@
             // 
             vehiculoDetalleBindingSource.DataSource = typeof(SharedModels.VehiculoDetalle);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(275, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(98, 21);
+            label1.TabIndex = 29;
+            label1.Text = "Empleado ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(282, 117);
+            label2.Name = "label2";
+            label2.Size = new Size(88, 21);
+            label2.TabIndex = 30;
+            label2.Text = "Vehiculo ID";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(275, 198);
+            label3.Name = "label3";
+            label3.Size = new Size(91, 21);
+            label3.TabIndex = 31;
+            label3.Text = "Descripcion";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(598, 117);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 21);
+            label4.TabIndex = 32;
+            label4.Text = "Fecha Fin";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(598, 54);
+            label5.Name = "label5";
+            label5.Size = new Size(91, 21);
+            label5.TabIndex = 33;
+            label5.Text = "Fecha Inicio";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(545, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(209, 32);
+            label6.TabIndex = 34;
+            label6.Text = "Vehiculo Detalles";
+            // 
             // VehiculosDetallesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1157, 573);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(dgvVehiculoDetalles);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
@@ -246,6 +324,7 @@
             Controls.Add(dtpFechaAsignacion);
             Controls.Add(cbEmpleadoID);
             Controls.Add(cbVehiculoID);
+            ForeColor = Color.Black;
             Name = "VehiculosDetallesForm";
             Text = "VehiculosDetalles";
             Load += VehiculosDetallesForm_Load;
@@ -273,5 +352,11 @@
         private DataGridViewTextBoxColumn fechaAsignacionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaFinAsignacionDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
     }
 }

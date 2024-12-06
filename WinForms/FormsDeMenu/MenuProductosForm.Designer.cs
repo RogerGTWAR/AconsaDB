@@ -40,7 +40,7 @@
             btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.FlatStyle = FlatStyle.Flat;
             btnProductos.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProductos.Location = new Point(36, 30);
+            btnProductos.Location = new Point(455, 22);
             btnProductos.Margin = new Padding(5);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(164, 45);
@@ -54,7 +54,7 @@
             btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.FlatStyle = FlatStyle.Flat;
             btnCategorias.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCategorias.Location = new Point(210, 30);
+            btnCategorias.Location = new Point(707, 22);
             btnCategorias.Margin = new Padding(5);
             btnCategorias.Name = "btnCategorias";
             btnCategorias.Size = new Size(164, 45);

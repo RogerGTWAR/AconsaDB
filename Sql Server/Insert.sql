@@ -9,7 +9,9 @@ VALUES
 ('Conductor', 'Encargado del transporte de bienes o personas.'),
 ('Albañil', 'Encargado de trabajos de construcción.'),
 ('Ingeniero Residente Proyectos', 'Responsable técnico en proyectos de construcción.'),
-('Topografo', 'Especialista en mediciones y delimitación de terrenos.');
+('Topografo', 'Especialista en mediciones y delimitación de terrenos.'),
+('Administrador', 'Tiene acceso a todos los módulos del sistema'),
+('Marketing', 'Tiene acceso solo a los reportes');
 
 INSERT INTO Clientes (ClienteID, NombreEmpresa, NombreContacto, CargoContacto, Dirección, Ciudad, País, Teléfono)
 VALUES ('ALDSC', 'Alcaldía San Carlos', 'Roberto Santos', 'Secretario', 'Alcaldía San Carlos', 'San Carlos', 'Nicaragua', '(+505) 8741-5542'),
@@ -153,7 +155,7 @@ VALUES
     ('Adhesivo para Cerámica', 1, 8, 'Adhesivo para cerámica y azulejos.', 'litro', 50, 120.00),
     ('Cinta Aislante', 5, 8, 'Cinta aislante para instalaciones eléctricas.', 'unidad', 50, 90.00);
 
-INSERT INTO Empleados (Nombres, Apellidos, Cedula, RolID, FechaNacimiento, FechaContratacion, Direccion, Pais, Telefono, Correo, Reportes)
+INSERT INTO Empleados (Nombres, Apellidos, Cedula, RolID, FechaNacimiento, FechaContratacion, Direccion, País, Telefono, Correo, Reportes)
 VALUES
 ('María Fernanda', 'Molina Vargas', '0871604660010P', 1, '1965-07-22', '2018-01-15', 'Colonia Centroamérica, Casa A-12', 'Nicaragua', '8211-1123', 'maria.molina@empresa.com', NULL),
 ('Ana Patricia', 'Rivas Morales', '2411011810009X', 2, '1980-11-24', '2015-06-01', 'Residencial Las Colinas, Módulo 3, Casa 14', 'Nicaragua', '8789-2234', 'ana.rivas@empresa.com', NULL),
@@ -172,7 +174,10 @@ VALUES
 ('Luis Enrique', 'Castillo Ramírez', '2442403930099K', 3, '1978-03-24', '2019-03-11', 'Reparto Schick, Casa 9', 'Nicaragua', '8145-4556', 'luis.castillo@empresa.com', null),
 ('Andrés Felipe', 'Jiménez Vargas', '2810409770017R', 3, '1987-10-28', '2020-01-09', 'Residencial El Dorado, Manzana C, Casa 8', 'Nicaragua', '8142-5567', 'andres.jimenez@empresa.com', null),
 ('Jorge Manuel', 'López García', '4011711740021J', 3, '1985-11-17', '2016-02-17', 'Villa Fontana, Calle del Club, Casa 23', 'Nicaragua', '8111-7878', 'jorge.lopez@empresa.com', 6),
-('Jimmy Alejandro', 'Arevalo Gutiérrez', '0012403770060F', 3, '1990-12-04', '2021-04-05', 'Urbanización Las Mercedes, Casa 5A', 'Nicaragua', '8333-9488', 'jimmy.arevalo@empresa.com', 9);
+('Jimmy Alejandro', 'Arevalo Gutiérrez', '0012403770060F', 3, '1990-12-04', '2021-04-05', 'Urbanización Las Mercedes, Casa 5A', 'Nicaragua', '8333-9488', 'jimmy.arevalo@empresa.com', 9),
+('Andrea', 'Ramirez', '123-456-789', 7, '1980-01-01', '2024-01-01', 'Av. Principal 123', 'Nicaragua', '12345678', 'andrea.ramirez@empresa.com', null),
+('Roger', 'Perez', '234-567-890', 8, '1990-05-15', '2024-05-01', 'Calle Secundaria 456', 'Nicaragua', '87654321', 'roger.perez@empresa.com', null),
+('Ulises', 'Tucker', '345-678-901', 8, '1995-08-20', '2024-06-15', 'Barrio Tercero 789', 'Nicaragua', '11223344', 'ulises.tucker@empresa.com',null);
 
 INSERT INTO Proyectos (ClienteID, NombreProyecto, Descripcion, Ubicacion, FechaInicio, FechaFin, PresupuestoTotal, Estado)
 VALUES 

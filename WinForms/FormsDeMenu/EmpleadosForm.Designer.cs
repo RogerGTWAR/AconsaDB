@@ -107,8 +107,7 @@ namespace WinForms
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvEmpleados.Dock = DockStyle.Bottom;
-            dgvEmpleados.Location = new Point(0, 244);
+            dgvEmpleados.Location = new Point(0, 296);
             dgvEmpleados.Margin = new Padding(3, 2, 3, 2);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
@@ -124,7 +123,7 @@ namespace WinForms
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmpleados.Size = new Size(1055, 250);
+            dgvEmpleados.Size = new Size(1124, 317);
             dgvEmpleados.TabIndex = 0;
             dgvEmpleados.CellContentClick += dgvEmpleados_CellContentClick;
             // 
@@ -223,7 +222,7 @@ namespace WinForms
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(933, 54);
+            btnAgregar.Location = new Point(992, 53);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(105, 36);
@@ -238,7 +237,7 @@ namespace WinForms
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(933, 108);
+            btnEliminar.Location = new Point(992, 107);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(111, 36);
@@ -253,7 +252,7 @@ namespace WinForms
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(928, 169);
+            btnModificar.Location = new Point(987, 168);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(124, 36);
@@ -378,7 +377,7 @@ namespace WinForms
             panelSubcontenedor.Location = new Point(10, 1);
             panelSubcontenedor.Margin = new Padding(3, 2, 3, 2);
             panelSubcontenedor.Name = "panelSubcontenedor";
-            panelSubcontenedor.Size = new Size(1055, 494);
+            panelSubcontenedor.Size = new Size(1124, 613);
             panelSubcontenedor.TabIndex = 15;
             // 
             // cbRolID
@@ -529,7 +528,7 @@ namespace WinForms
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1073, 562);
+            ClientSize = new Size(1131, 633);
             Controls.Add(panelSubcontenedor);
             Margin = new Padding(3, 2, 3, 2);
             Name = "EmpleadosForm";

@@ -46,6 +46,10 @@
             btnEliminar = new Button();
             btnModificar = new Button();
             btnAgregar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleadosDetalles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)empleadoDetalleBindingSource).BeginInit();
             SuspendLayout();
@@ -53,7 +57,7 @@
             // cbEmpleadoID
             // 
             cbEmpleadoID.FormattingEnabled = true;
-            cbEmpleadoID.Location = new Point(40, 44);
+            cbEmpleadoID.Location = new Point(500, 57);
             cbEmpleadoID.Name = "cbEmpleadoID";
             cbEmpleadoID.Size = new Size(155, 23);
             cbEmpleadoID.TabIndex = 0;
@@ -61,7 +65,7 @@
             // cbProyectoID
             // 
             cbProyectoID.FormattingEnabled = true;
-            cbProyectoID.Location = new Point(40, 99);
+            cbProyectoID.Location = new Point(500, 110);
             cbProyectoID.Name = "cbProyectoID";
             cbProyectoID.Size = new Size(155, 23);
             cbProyectoID.TabIndex = 1;
@@ -70,7 +74,7 @@
             // 
             dtpFechaProyecto.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtpFechaProyecto.Format = DateTimePickerFormat.Short;
-            dtpFechaProyecto.Location = new Point(40, 152);
+            dtpFechaProyecto.Location = new Point(522, 165);
             dtpFechaProyecto.Name = "dtpFechaProyecto";
             dtpFechaProyecto.Size = new Size(111, 25);
             dtpFechaProyecto.TabIndex = 2;
@@ -100,7 +104,7 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvEmpleadosDetalles.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvEmpleadosDetalles.Location = new Point(40, 241);
+            dgvEmpleadosDetalles.Location = new Point(330, 241);
             dgvEmpleadosDetalles.Name = "dgvEmpleadosDetalles";
             dgvEmpleadosDetalles.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -158,7 +162,7 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(416, 105);
+            btnEliminar.Location = new Point(707, 120);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 46);
@@ -173,7 +177,7 @@
             btnModificar.FlatStyle = FlatStyle.Flat;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(416, 171);
+            btnModificar.Location = new Point(707, 186);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(112, 46);
@@ -188,7 +192,7 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(416, 44);
+            btnAgregar.Location = new Point(707, 59);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(112, 46);
@@ -197,12 +201,60 @@
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(342, 59);
+            label1.Name = "label1";
+            label1.Size = new Size(98, 21);
+            label1.TabIndex = 25;
+            label1.Text = "Empleado ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(342, 112);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 21);
+            label2.TabIndex = 26;
+            label2.Text = "Proyecto ID";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(303, 169);
+            label3.Name = "label3";
+            label3.Size = new Size(202, 21);
+            label3.TabIndex = 27;
+            label3.Text = "Fecha de Inicio del Proyecto";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(479, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(236, 32);
+            label4.TabIndex = 28;
+            label4.Text = "Empleados Detalles";
+            // 
             // EmpleadosDetallesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(832, 473);
+            ClientSize = new Size(1066, 473);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
@@ -216,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvEmpleadosDetalles).EndInit();
             ((System.ComponentModel.ISupportInitialize)empleadoDetalleBindingSource).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -232,5 +285,9 @@
         private DataGridViewTextBoxColumn empleadoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn proyectoIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaDeProyectoDataGridViewTextBoxColumn;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }

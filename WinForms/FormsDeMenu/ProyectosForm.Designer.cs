@@ -98,18 +98,18 @@
             panel1.Location = new Point(10, 9);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1124, 520);
+            panel1.Size = new Size(1124, 613);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(486, 9);
+            label9.Location = new Point(466, 12);
             label9.Name = "label9";
-            label9.Size = new Size(100, 30);
+            label9.Size = new Size(116, 32);
             label9.TabIndex = 21;
             label9.Text = "Proyecto";
             label9.Click += label9_Click;
@@ -348,7 +348,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvProyectos.DefaultCellStyle = dataGridViewCellStyle3;
             dgvProyectos.Dock = DockStyle.Bottom;
-            dgvProyectos.Location = new Point(0, 313);
+            dgvProyectos.Location = new Point(0, 296);
             dgvProyectos.Margin = new Padding(3, 2, 3, 2);
             dgvProyectos.Name = "dgvProyectos";
             dgvProyectos.ReadOnly = true;
@@ -364,7 +364,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProyectos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvProyectos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProyectos.Size = new Size(1124, 207);
+            dgvProyectos.Size = new Size(1124, 317);
             dgvProyectos.TabIndex = 0;
             dgvProyectos.CellContentClick += dgvProyectos_CellContentClick;
             // 
@@ -467,7 +467,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 33, 74);
-            ClientSize = new Size(1131, 447);
+            ClientSize = new Size(1131, 633);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "ProyectosForm";
