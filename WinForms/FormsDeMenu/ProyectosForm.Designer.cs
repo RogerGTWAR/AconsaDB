@@ -281,13 +281,13 @@
             // btnAgregar
             // 
             btnAgregar.FlatAppearance.BorderSize = 0;
-            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.FlatStyle = FlatStyle.System;
             btnAgregar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(948, 71);
             btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(110, 50);
+            btnAgregar.Size = new Size(114, 38);
             btnAgregar.TabIndex = 3;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -296,13 +296,13 @@
             // btnModificar
             // 
             btnModificar.FlatAppearance.BorderSize = 0;
-            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.FlatStyle = FlatStyle.System;
             btnModificar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             btnModificar.ForeColor = Color.Black;
             btnModificar.Location = new Point(948, 221);
             btnModificar.Margin = new Padding(3, 2, 3, 2);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(122, 50);
+            btnModificar.Size = new Size(114, 38);
             btnModificar.TabIndex = 2;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
@@ -311,13 +311,13 @@
             // btnEliminar
             // 
             btnEliminar.FlatAppearance.BorderSize = 0;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.FlatStyle = FlatStyle.System;
             btnEliminar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             btnEliminar.ForeColor = Color.Black;
             btnEliminar.Location = new Point(948, 144);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(110, 50);
+            btnEliminar.Size = new Size(114, 38);
             btnEliminar.TabIndex = 1;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;

@@ -13,14 +13,13 @@ UPDATE Roles
 SET Permisos = 'Usuario autorizado con restricciones'
 WHERE Cargo = 'Marketing';
 
--- Inserción de Usuarios (sin cifrado, sin hash)
+-- Inserción de Usuarios
 INSERT INTO Usuarios (EmpleadoID, Usuario, Contraseña, FechaCreacion, FechaModificacion)
 VALUES 
 (19, 'Andrea', 'andrea123', GETDATE(), GETDATE()),
 --(20, 'Roger', 'roger123', GETDATE(), GETDATE()), 
 --(21, 'Ulises', 'ulises123', GETDATE(), GETDATE());
 
--- 4 Verificación de Datos
 SELECT * FROM Roles;
 SELECT * FROM Empleados;
 SELECT * FROM Usuarios;

@@ -216,10 +216,10 @@
     <Compile Include="Formularios\ProyectosForm.Designer.cs">
       <DependentUpon>ProyectosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="Inicio\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
+    <Compile Include="Inicio\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ProductoForm.cs">
@@ -236,10 +236,10 @@
     <Compile Include="Formularios\AvaluosForm.Designer.cs">
       <DependentUpon>AvaluosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Inicio\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Inicio\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VistasGrupo1DS.Designer.cs">
@@ -280,7 +280,7 @@
     <EmbeddedResource Include="Informes\MaquinariasUtilizadas.rdlc" />
     <EmbeddedResource Include="Informes\ReporteAvaluo.rdlc" />
     <EmbeddedResource Include="Informes\ProyectosVerdadero.rdlc" />
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="Inicio\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informes\ProductosReport.rdlc" />
@@ -297,7 +297,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Inicio\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
